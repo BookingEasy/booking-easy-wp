@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package Akismet
+ * @package MyReservation
  */
 /*
   Plugin Name: My Reservation System

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package Akismet
+ * @package MyReservation
  * Developer Zohaib
  * Date 2014-02-19
  */
