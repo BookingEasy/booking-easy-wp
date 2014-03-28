@@ -1,8 +1,8 @@
 === Magic Fields 2 ===
-Contributors: Zohaib,Mike
-Tags: cms, reservation, reservation system, online reservation system, booking system
+Contributors: Zohaib
+Tags: cms, reservation, reservation system, online reservation system, booking system, events
 Requires at least: 3.0
-Tested up to: 3.6
+Tested up to: 3.8
 Stable tag: 1.0.0
 License: GPLv2 or later
 
