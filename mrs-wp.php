@@ -29,4 +29,16 @@
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 define("DirPath", plugins_url('', __FILE__));
+
+class MyReservationSystem {
+
+    public function __construct() {
+        PluginInstall::init();
+        Admin::init();
+    }
+
+}
+
+$objReservation = new MyReservationSystem();
+
 ?>
