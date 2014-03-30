@@ -29,10 +29,16 @@
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 define("DirPath", plugins_url('', __FILE__));
+if (!function_exists('is_plugin_active')) {
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+}
+include_once( ABSPATH . 'wp-content/plugins/mrs-wp/admin/admin.php' );
+include_once( ABSPATH . 'wp-content/plugins/mrs-wp/classes/PluginInstall.php');
 
 class MyReservationSystem {
 
     public function __construct() {
+
         PluginInstall::init();
         Admin::init();
     }
@@ -40,5 +46,4 @@ class MyReservationSystem {
 }
 
 $objReservation = new MyReservationSystem();
-
 ?>

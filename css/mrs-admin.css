@@ -10,3 +10,8 @@ root {
     display: block;
 }
 
+.mrs-settings {
+    width: 100%;
+    display: block;
+    border: solid thin red;
+}
