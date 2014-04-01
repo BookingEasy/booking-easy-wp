@@ -27,6 +27,7 @@
     border-bottom: 1px solid #ddd;
     padding: 0px;
     display: block;
+    line-height: 2;
 }
 
 span.status {
@@ -43,5 +44,8 @@ span.status {
     display: block;
 }
 .form-table {
+    padding: 15px;
+}
+.footer {
     padding: 15px;
 }
