@@ -6,12 +6,42 @@
         Purpose of the stylesheet follows.
 */
 
-root { 
+.mrs-settings {
+    width: 100%;
+    display: block;   
+    overflow: hidden;
+}
+.mrs-heading {
+    font-size: 30px;
+    color: #000000;
+    display: block;
+    width: 100%;
+    padding: 0px;
+    line-height: 1.5;
+}
+
+.mrs-title {
+    font-size: 1.4em;
+    margin: 1.6em 0 1em;
+    padding: 0 0 6px 0;
+    border-bottom: 1px solid #ddd;
+    padding: 0px;
     display: block;
 }
 
-.mrs-settings {
-    width: 100%;
+span.status {
+    display: inline-block;
+    padding: 3px 6px;
+    color: white;
+    font-size: 12px;
+    background-color: lightGrey;
+    font-weight: bold;
+}
+.mrs1-reservation-form {    
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
     display: block;
-    border: solid thin red;
+}
+.form-table {
+    padding: 15px;
 }

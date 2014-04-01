@@ -25,7 +25,7 @@ class PluginInstall {
     //put your code here
     //Constructor to Call Uninstall Plugin
     private function __construct() {
-        register_activation_hook(__FILE__, array($this, 'mrs_set_default_options'));
+        register_activation_hook('mrs-wp/mrs-wp.php', array($this, 'mrs_set_default_options'));
     }
 
     function mrs_set_default_options() {
