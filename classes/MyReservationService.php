@@ -8,15 +8,17 @@
 class MyReservationService {
 
     //put your code here
+    protected $apiUrl = 'https://mrs2.apphb.com/api/ValidateAccount/';
+
     public function __construct() {
         
     }
 
-    public function ValidateAuthCode($authCode) {        
+    public function ValidateAuthCode($authCode) {
         $results = false;
         try {
-            $json = @file_get_contents('https://mrs2.apphb.com/api/ValidateAccount/' . $authCode);
-            $results = json_decode($json);           
+            $json = @file_get_contents($this->apiUrl . $authCode);
+            $results = json_decode($json);
         } catch (Exception $exc) {
             $results = false;
         }
