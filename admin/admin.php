@@ -42,8 +42,11 @@ class Admin {
 
     function mrs_admin_theme_js() {
 
-        wp_register_script('mrs', ABSPATH . 'wp-content/plugins/mrs-wp/js/mrs-admin.js', array('jquery'), false, true);
+        wp_register_script('mrs2', MRS1_PLUGIN_URL . 'js/mrs-admin.js', array('jquery'), true, false);
+        wp_register_script('mrs', MRS1_PLUGIN_URL . 'js/jquery.js', array('jquery'), true, false);
+        //wp_enqueue_script(array('jquery', 'mrs', 'mrs2'));
         wp_enqueue_script('mrs');
+        wp_enqueue_script('mrs2');
     }
 
     function mrs_admin_theme_styles() {
@@ -54,6 +57,9 @@ class Admin {
     function show_mrs_settings() {
         $tab = 'mrs-settings';
         $options = get_option('mrs1_authentication_code');
+        include_once( ABSPATH . 'wp-content/plugins/mrs-wp/classes/MyReservationService.php');
+        $obj = new MyReservationService();
+        $connected = $obj->ValidateAuthCode($options);
         include_once( ABSPATH . 'wp-content/plugins/mrs-wp/admin/templates/config.php');
     }
 
@@ -63,7 +69,8 @@ class Admin {
 
     function process_mrs_options() {
         $auth_code = "";
-        if (!current_user_can('manage_options')) wp_die('Not allowed');
+        if (!current_user_can('manage_options'))
+            wp_die('Not allowed');
         check_admin_referer('mrs1');
         $options = get_option('mrs1_authentication_code');
 

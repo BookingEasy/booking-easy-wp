@@ -1,9 +1,7 @@
-<?php $connected = FALSE;
-?>
 <div id="mrs-<?php echo $tab; ?>" class="wrap mrs-settings">
     <form class="mrs1-reservation-form" action="admin-post.php" method="post">
         <div class="mrs-heading">
-            My Reservation System for WordPress: MRS Settings
+            My Reservation System for WordPress: MRS Settings           
         </div>
         <?php settings_errors(); ?>
         <h3 class="mrs-title">MRS Authentication Settings <?php if ($connected) { ?><span class="status positive">CONNECTED</span> <?php } else { ?><span class="status negative">NOT CONNECTED</span><?php } ?></h3>
