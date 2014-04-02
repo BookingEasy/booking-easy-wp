@@ -29,7 +29,7 @@
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 define("DirPath", plugins_url('', __FILE__));
-define("MRS1_PLUGIN_URL", plugins_url( '/' , __FILE__ ) );
+define("MRS1_PLUGIN_URL", plugins_url('/', __FILE__));
 if (!function_exists('is_plugin_active')) {
     include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
@@ -42,6 +42,11 @@ class MyReservationSystem {
 
         PluginInstall::init();
         Admin::init();
+        add_filter('admin_footer_text', array($this, 'concent_custom_admin_footer'));
+    }
+
+    function concent_custom_admin_footer() {
+        echo '<span id="footer-thankyou">Developed by <a href="http://www.ding.se/" target="_blank">IterationCorp</a></span>.';
     }
 
 }

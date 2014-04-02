@@ -7,8 +7,8 @@
  */
 class MyReservationService {
 
-    //put your code here
-    protected $apiUrl = 'https://mrs2.apphb.com/api/ValidateAccount/';
+    
+    protected $apiUrl = 'https://mrs2.apphb.com/api/';
 
     public function __construct() {
         
@@ -17,7 +17,7 @@ class MyReservationService {
     public function ValidateAuthCode($authCode) {
         $results = false;
         try {
-            $json = @file_get_contents($this->apiUrl . $authCode);
+            $json = @file_get_contents($this->apiUrl .'ValidateAccount/' . $authCode);
             $results = json_decode($json);
         } catch (Exception $exc) {
             $results = false;
