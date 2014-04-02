@@ -19,5 +19,7 @@ function ValidateToken(token) {
 }
 
 $(document).ready(function() {         
-    //ValidateToken();
-    });
+    //ValidateToken(token);
+   
+       
+});
