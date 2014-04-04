@@ -24,11 +24,16 @@ class ShortCode {
     }
 
     private function __construct() {
+        add_action('wp_enqueue_scripts', array($this, 'LoadJqueryandJS'));
         add_shortcode('mrs1_reservation', array($this, 'ch2ts_twitter_feed_shortcode'));
         add_action('wp_enqueue_scripts', array($this, 'theme_styles'));
     }
 
-    function ch2ts_twitter_feed_shortcode($atts) {
+    protected function LoadJqueryandJS() {
+        wp_enqueue_script('jquery');
+    }
+
+    protected function ch2ts_twitter_feed_shortcode($atts) {
         $output = '';
         return $output;
     }

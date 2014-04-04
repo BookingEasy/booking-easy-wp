@@ -7,7 +7,6 @@
  */
 class MyReservationService {
 
-    
     protected $apiUrl = 'https://mrs2.apphb.com/api/';
 
     public function __construct() {
@@ -17,20 +16,36 @@ class MyReservationService {
     public function ValidateAuthCode($authCode) {
         $results = false;
         try {
-            $json = @file_get_contents($this->apiUrl .'ValidateAccount/' . $authCode);
+            $json = @file_get_contents($this->apiUrl . 'ValidateAccount/' . $authCode);
             $results = json_decode($json);
         } catch (Exception $exc) {
-            $results = false;
+            
+        }
+        return $results->Success;
+    }
+
+    public function getBookableItems($authCode) {
+        $results = false;
+        try {
+            $json = @file_get_contents($this->apiUrl . '/Events/GetBookableItemList/' . $authCode);
+            $results = json_decode($json);
+        } catch (Exception $exc) {
+            
         }
         return $results;
     }
 
-    public function getBookableItems($authCode) {
-        
-    }
+    public function getEventsList($authCode, $starDat = "06-25-2014", $endDate = "07-30-2014") {
+        // /api/Events/GetAvailability/{apitoken}/{from date}/{to date}   
 
-    public function getEventsList($bookableItemID) {
-        
+        $results = false;
+        try {
+            $json = @file_get_contents($this->apiUrl . '/Events/GetAvailability/' . $authCode . '/'.$starDat.'/'.$endDate);
+            $results = json_decode($json);            
+        } catch (Exception $exc) {
+            
+        }
+        return $results;
     }
 
     public function subscribeToEvent() {
@@ -38,4 +53,5 @@ class MyReservationService {
     }
 
 }
+
 ?>

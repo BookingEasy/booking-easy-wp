@@ -1,3 +1,9 @@
+<?php
+print_r($obj->getBookableItems($options));
+echo "<br />";
+print_r($obj->getEventsList($options));
+
+?>
 <div id="mrs-<?php echo $tab; ?>" class="wrap mrs-settings">
     <form class="mrs1-reservation-form" action="admin-post.php" method="post">
         <div class="mrs-heading">
