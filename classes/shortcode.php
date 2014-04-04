@@ -27,10 +27,15 @@ class ShortCode {
         add_action('wp_enqueue_scripts', array($this, 'LoadJqueryandJS'));
         add_shortcode('mrs1_reservation', array($this, 'ch2ts_twitter_feed_shortcode'));
         add_action('wp_enqueue_scripts', array($this, 'theme_styles'));
+        add_shortcode('submit-book-event', 'mrs1_book_event_form');
     }
 
     protected function LoadJqueryandJS() {
         wp_enqueue_script('jquery');
+    }
+
+    protected function mrs1_book_event_form() {
+        
     }
 
     protected function ch2ts_twitter_feed_shortcode($atts) {

@@ -35,7 +35,7 @@ class MyReservationService {
         return $results;
     }
 
-    public function getEventsList($authCode, $starDat = "06-25-2014", $endDate = "07-30-2014") {
+    public function getEventsList($authCode, $starDat = "02-25-2014", $endDate = "03-30-2014") {
         // /api/Events/GetAvailability/{apitoken}/{from date}/{to date}   
 
         $results = false;
