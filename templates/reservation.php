@@ -14,7 +14,8 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <form role="form">
+            <form method="post" id="subscribe_event" action="" role="form">
+                <?php wp_nonce_field( 'add_reservation_form', 'br_user_form' ); ?>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Please select a date</label>
                     <div class="input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">

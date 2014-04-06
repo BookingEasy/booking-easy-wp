@@ -26,12 +26,21 @@ class ShortCode {
     private function __construct() {
         add_action('wp_enqueue_scripts', array($this, 'LoadJqueryandJS'));
         add_shortcode('mrs1_reservation', array($this, 'ch2ts_twitter_feed_shortcode'));
-        add_action('wp_enqueue_scripts', array($this, 'theme_styles'));
+        add_action('wp_enqueue_scripts', array($this, 'mrs_theme_styles'));
         add_shortcode('submit-book-event', 'mrs1_book_event_form');
     }
 
     protected function LoadJqueryandJS() {
+        wp_register_script('mrs', MRS1_PLUGIN_URL . 'js/mrs.js', array('jquery'), true, false);
+        wp_register_script('mrs2', MRS1_PLUGIN_URL . 'js/bootstrap.js', array('jquery'), true, false);
         wp_enqueue_script('jquery');
+        wp_enqueue_script('mrs');
+        wp_enqueue_script('mrs2');
+    }
+
+    function mrs_theme_styles() {
+        wp_register_style('style', '/wp-content/plugins/mrs-wp/css/mrs.css');
+        wp_enqueue_style('style');
     }
 
     protected function mrs1_book_event_form() {
