@@ -79,35 +79,10 @@ jQuery(document).ready(function($) {
     //Save Button Click
     
     $("#bookableitemsss").change(function() {                   
-        jQuery.ajax({
-            type: 'POST',    
-            url: ajaxurl,
-            dataType: 'html',
-            data: {
-                action: 'getEventsList',
-                startDate: formatDate(checkin.date),
-                endDate:formatDate(checkout.date),
-                BookableItemId: '',
-                EventScheduleId: '',
-                Courtesy:'',
-                FirstName:'',
-                LastName :'',
-                PhoneNumber:'',
-                Email:'',
-                Description:''
-            },
-            success: function(data) {
-                jQuery("#events-list").html('');
-                jQuery("#events-list").append(data);
-            
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-            
-            }
+       
+    
+    
         });
-    
-    
-    });
     
     
     $("input[name='event-item']").live("click", function() { 
@@ -123,7 +98,34 @@ jQuery(document).ready(function($) {
     });
     
     $("#subscribe_event").submit(function(){
-       alert("Hoo");
-       return false;
+        alert($('#description').val());
+        alert($("#email").val());        
+        jQuery.ajax({
+            type: 'POST',    
+            url: ajaxurl,
+            dataType: 'html',
+            data: {
+                action: 'getEventsList',
+                startDate: formatDate(checkin.date),
+                endDate:formatDate(checkout.date),
+                BookableItemId: $('#bookableitems :selected').val(),
+                EventScheduleId: $("input:radio[name=event-item]:checked").val(),
+                Courtesy:$("input:radio[name=optionsRadios]:checked").val(),
+                FirstName:$('#firstName').val(),
+                LastName :$('#lastName').val(),
+                PhoneNumber:$('#phonenumber').val(),
+                Email:$('#email').val(),
+                Description:$('#description').val()
+            },
+            success: function(data) {
+                jQuery("#events-list").html('');
+                jQuery("#events-list").append(data);
+            
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+            
+            }
+        });
+        return false;
     });
 });    

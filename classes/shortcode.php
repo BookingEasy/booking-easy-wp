@@ -31,6 +31,8 @@ class ShortCode {
         add_shortcode('mrs_reservation', array($this, 'mrs1_book_event_form'));
         add_action('wp_ajax_getEventsList', array($this, 'getEventsList_callback'));
         add_action('wp_ajax_nopriv_getEventsList', array($this, 'getEventsList_callback'));
+        add_action('wp_ajax_subscribeForEvent', array($this, 'subscribeForEvent_callback'));
+        add_action('wp_ajax_nopriv_subscribeForEvent', array($this, 'subscribeForEvent_callback'));
     }
 
     function LoadJqueryandJS() {
@@ -75,18 +77,29 @@ class ShortCode {
         $authCode = get_option('mrs1_authentication_code');
         $events = $mrsService->getEventsList($authCode, $startDate, $endDate);
         $eventslist = "<ul class='events'>";
-        
-        
+
+
         foreach ($events as $event) {
-            $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> <input type='radio' name='event-item' value='".$event->EventScheduleId."' id='".$event->EventScheduleId."'>". $event->Title ."</label></li>";
+            $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> <input type='radio' name='event-item' value='" . $event->EventScheduleId . "' id='" . $event->EventScheduleId . "'>" . $event->Title . "</label></li>";
         }
         $eventslist .= "</ul>";
         echo $eventslist;
         die();
     }
-    
-    function SubscribeForEvent() {
+
+    function subscribeForEvent_callback() {
         $authCode = get_option('mrs1_authentication_code');
+        $startDate = $_POST["startDate"];
+        $endDate = $_POST["endDate"];
+        $BookableItemId = $_POST["BookableItemId"];
+        $EventScheduleId = $_POST["EventScheduleId"];
+        $Courtesy = $_POST["Courtesy"];
+        $FirstName = $_POST["FirstName"];
+        $LastName = $_POST["LastName"];
+        $PhoneNumber = $_POST["PhoneNumber"];
+        $email = $_POST["email"];
+        $description = $_POST["description"];
+        $mrsService = new MyReservationService();
     }
 
 }

@@ -63,7 +63,7 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">Email</label>
                         <br />
-                        <input type="email" class="form-control" id="firstName" placeholder="Email">
+                        <input type="email" class="form-control" id="email" placeholder="Email">
                     </div>
                 </div>
             </div>
