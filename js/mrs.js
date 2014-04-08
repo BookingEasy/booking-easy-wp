@@ -7,18 +7,18 @@ jQuery(document).ready(function($) {
         }
         return num;
     }
-
+    
     function formatDate(date) {
         return padNum(date.getMonth() + 1, 2) + '-' +        
         padNum(date.getDate(), 2) + '-' +
         padNum(date.getFullYear(), 4) ;
     }
     
-
+    
     //Date Pickers  
     var nowTemp = new Date();
     var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
- 
+    
     var checkin = $('#dpd1').datepicker({
         format: 'mm-dd-yyyy',
         onRender: function(date) {
@@ -65,13 +65,65 @@ jQuery(document).ready(function($) {
                 success: function(data) {
                     jQuery("#events-list").html('');
                     jQuery("#events-list").append(data);
-                                
+                
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
-            
+                
                 }
             });
-    
+        
         }
+    });
+    
+    
+    //Save Button Click
+    
+    $("#bookableitemsss").change(function() {                   
+        jQuery.ajax({
+            type: 'POST',    
+            url: ajaxurl,
+            dataType: 'html',
+            data: {
+                action: 'getEventsList',
+                startDate: formatDate(checkin.date),
+                endDate:formatDate(checkout.date),
+                BookableItemId: '',
+                EventScheduleId: '',
+                Courtesy:'',
+                FirstName:'',
+                LastName :'',
+                PhoneNumber:'',
+                Email:'',
+                Description:''
+            },
+            success: function(data) {
+                jQuery("#events-list").html('');
+                jQuery("#events-list").append(data);
+            
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+            
+            }
+        });
+    
+    
+    });
+    
+    
+    $("input[name='event-item']").live("click", function() { 
+        
+        var value = this.value;
+        $("#form-step1").hide();
+        $("#booking-form").show();
+    }); 
+    
+    $("#backtocalender").live("click", function() {
+        $("#booking-form").hide();
+        $("#form-step1").show();
+    });
+    
+    $("#subscribe_event").submit(function(){
+       alert("Hoo");
+       return false;
     });
 });    

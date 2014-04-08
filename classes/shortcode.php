@@ -35,7 +35,7 @@ class ShortCode {
 
     function LoadJqueryandJS() {
 
-        wp_register_script('mrs', MRS1_PLUGIN_URL . 'js/mrs.js', array('jquery'), true, false);
+        wp_register_script('mrs', MRS1_PLUGIN_URL . 'js/mrs.js', array('jquery'), false, true);
         wp_register_script('mrs2', MRS1_PLUGIN_URL . 'js/bootstrap.min.js', array('jquery'), true, false);
         wp_register_script('mrs3', MRS1_PLUGIN_URL . 'js/bootstrap-datepicker.js', array('jquery'), true, false);
         wp_enqueue_script('jquery');
@@ -75,12 +75,18 @@ class ShortCode {
         $authCode = get_option('mrs1_authentication_code');
         $events = $mrsService->getEventsList($authCode, $startDate, $endDate);
         $eventslist = "<ul class='events'>";
+        
+        
         foreach ($events as $event) {
-            $eventslist .= "<li>" . $event->Title . " </li>";
+            $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> <input type='radio' name='event-item' value='".$event->EventScheduleId."' id='".$event->EventScheduleId."'>". $event->Title ."</label></li>";
         }
         $eventslist .= "</ul>";
         echo $eventslist;
         die();
+    }
+    
+    function SubscribeForEvent() {
+        $authCode = get_option('mrs1_authentication_code');
     }
 
 }
