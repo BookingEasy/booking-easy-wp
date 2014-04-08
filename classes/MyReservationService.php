@@ -35,20 +35,19 @@ class MyReservationService {
         return $results;
     }
 
-    public function getEventsList($authCode, $starDat = "02-25-2014", $endDate = "03-30-2014") {
-        // /api/Events/GetAvailability/{apitoken}/{from date}/{to date}   
-
+    public function getEventsList($authCode, $startDate = "04-08-2014", $endDate = "04-10-2014") {
         $results = false;
         try {
-            $json = @file_get_contents($this->apiUrl . '/Events/GetAvailability/' . $authCode . '/'.$starDat.'/'.$endDate);
-            $results = json_decode($json);            
+            $json = @file_get_contents($this->apiUrl . '/Events/GetAvailability/' . $authCode . '/' . $startDate . '/' . $endDate);
+            $results = json_decode($json);
         } catch (Exception $exc) {
             
         }
         return $results;
     }
 
-    public function subscribeToEvent() {
+    public function subscribeToEvent() {        
+        
         
     }
 

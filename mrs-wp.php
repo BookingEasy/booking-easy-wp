@@ -35,14 +35,19 @@ if (!function_exists('is_plugin_active')) {
 }
 include_once( ABSPATH . 'wp-content/plugins/mrs-wp/admin/admin.php' );
 include_once( ABSPATH . 'wp-content/plugins/mrs-wp/classes/PluginInstall.php');
+include_once( ABSPATH . 'wp-content/plugins/mrs-wp/classes/shortcode.php' );
 
 class MyReservationSystem {
 
     public function __construct() {
 
         PluginInstall::init();
-        Admin::init();
-        add_filter('admin_footer_text', array($this, 'concent_custom_admin_footer'));
+       // if (is_admin()) {
+            Admin::init();
+            add_filter('admin_footer_text', array($this, 'concent_custom_admin_footer'));
+        //} else {
+            ShortCode::init();
+        //}
     }
 
     function concent_custom_admin_footer() {
