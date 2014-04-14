@@ -10,7 +10,7 @@
  *
  * @author zohaib
  */
-class SubscribeForEvent {
+class SubscribeForEvent implements JsonSerializable {
 
     //put your code here
     private $ApiToken;
@@ -102,6 +102,11 @@ class SubscribeForEvent {
 
     public function setDescription($Description) {
         $this->Description = $Description;
+    }
+
+    function jsonSerialize() {
+        $data = (array) $this;
+        return $data;
     }
 
 }

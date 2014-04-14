@@ -97,15 +97,13 @@ jQuery(document).ready(function($) {
         $("#form-step1").show();
     });
     
-    $("#subscribe_event").submit(function(){
-        alert($('#description').val());
-        alert($("#email").val());        
+    $("#submit-reservation").live("click",function(){        
         jQuery.ajax({
             type: 'POST',    
             url: ajaxurl,
             dataType: 'html',
             data: {
-                action: 'getEventsList',
+                action: 'subscribeForEvent',
                 startDate: formatDate(checkin.date),
                 endDate:formatDate(checkout.date),
                 BookableItemId: $('#bookableitems :selected').val(),
@@ -118,14 +116,15 @@ jQuery(document).ready(function($) {
                 Description:$('#description').val()
             },
             success: function(data) {
-                jQuery("#events-list").html('');
-                jQuery("#events-list").append(data);
+                //jQuery("#events-list").html('');
+                //jQuery("#events-list").append(data);
+                console.log(data);
             
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
-            
+                alert("Error");
             }
         });
-        return false;
+        
     });
 });    

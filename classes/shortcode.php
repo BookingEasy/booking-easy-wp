@@ -10,6 +10,7 @@
  * @author zohaib
  */
 include_once( ABSPATH . 'wp-content/plugins/mrs-wp/classes/MyReservationService.php');
+include_once( ABSPATH . 'wp-content/plugins/mrs-wp/classes/SubscribeForEvent.php');
 
 class ShortCode {
 
@@ -88,18 +89,20 @@ class ShortCode {
     }
 
     function subscribeForEvent_callback() {
-        $authCode = get_option('mrs1_authentication_code');
-        $startDate = $_POST["startDate"];
-        $endDate = $_POST["endDate"];
-        $BookableItemId = $_POST["BookableItemId"];
-        $EventScheduleId = $_POST["EventScheduleId"];
-        $Courtesy = $_POST["Courtesy"];
-        $FirstName = $_POST["FirstName"];
-        $LastName = $_POST["LastName"];
-        $PhoneNumber = $_POST["PhoneNumber"];
-        $email = $_POST["email"];
-        $description = $_POST["description"];
+//         $obeEvent = new SubscribeForEvent();
+//        $obeEvent->setStartDate($_POST["startDate"]);
+//        $obeEvent->setBookableItemId($_POST["BookableItemId"]);
+//        $obeEvent->setEventScheduleId($_POST["EventScheduleId"]);
+//        $obeEvent->setCourtesy($_POST["Courtesy"]);
+//        $obeEvent->setFirstName($_POST["FirstName"]);
+//        $obeEvent->setLastName($_POST["LastName"]);
+//        $obeEvent->setPhoneNumber($_POST["PhoneNumber"]);
+//        $obeEvent->setEmail($_POST["email"]);
+//        $obeEvent->setDescription($_POST["Description"]);
         $mrsService = new MyReservationService();
+        echo $mrsService->subscribeToEvent($_POST["startDate"], $_POST["BookableItemId"], $_POST["EventScheduleId"], $_POST["Courtesy"], $_POST["FirstName"], $_POST["LastName"], $_POST["PhoneNumber"], $_POST["Email"], $_POST["Description"]);
+
+        die();
     }
 
 }
