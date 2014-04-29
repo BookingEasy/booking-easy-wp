@@ -62,6 +62,8 @@ class ShortCode {
 
     function mrs1_book_event_form() {
         $bookableItems = $this->getBookableItems();
+        $mrsService = new MyReservationService();
+        
         include_once( ABSPATH . 'wp-content/plugins/mrs-wp/templates/reservation.php');
     }
 

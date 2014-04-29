@@ -1,6 +1,7 @@
 <?php
 //echo "<br />";
-//print_r($obj->subscribeToEvent());
+//print_r($obj->getEventsList($options));
+//$obj->subscribeForEvent();
 ?>
 <div id="mrs-<?php echo $tab; ?>" class="wrap mrs-settings">
     <form class="mrs1-reservation-form" action="admin-post.php" method="post">
