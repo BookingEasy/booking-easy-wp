@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="reservation-form-heading">
-                        On 27 September 2013 from 10.00 to 13.00                        
+                               
                     </div>
                 </div>
             </div>
@@ -14,12 +14,12 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1">Courtesy</label>
                         <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="Mr" checked>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="Mr" checked />
                             Mr
                         </label>
 
                         <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="Mrs">
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="Mrs" />
                             Mrs
                         </label>
                     </div>
@@ -32,7 +32,8 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">First Name</label>
                         <br />
-                        <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                        <input type="text" class="form-control" id="firstName" placeholder="First Name" />
+                        <input type="hidden" class="form-control" id="EventIdentifier" placeholder="EventIdentifier" />
                     </div>
                 </div>
             </div>
@@ -42,7 +43,7 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">Last Name</label>
                         <br />
-                        <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                        <input type="text" class="form-control" id="lastName" placeholder="Last Name" />
                     </div>
                 </div>
             </div>
@@ -53,7 +54,7 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">Phone Number</label>
                         <br />
-                        <input type="text" class="form-control" id="phonenumber" placeholder="Phone Number">
+                        <input type="text" class="form-control" id="phonenumber" placeholder="Phone Number" />
                     </div>
                 </div>
             </div>
@@ -63,7 +64,7 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">Email</label>
                         <br />
-                        <input type="email" class="form-control" id="email" placeholder="Email">
+                        <input type="email" class="form-control" id="email" placeholder="Email" />
                     </div>
                 </div>
             </div>

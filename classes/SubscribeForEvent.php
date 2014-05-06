@@ -14,7 +14,7 @@ class SubscribeForEvent implements JsonSerializable {
 
     //put your code here
     private $ApiToken;
-    private $StartDate;
+    private $EventIdentifier;
     private $BookableItemId;
     private $EventScheduleId;
     private $Courtesy;
@@ -32,12 +32,12 @@ class SubscribeForEvent implements JsonSerializable {
         return $this->ApiToken;
     }
 
-    public function getStartDate() {
-        return $this->ApiToken;
+    public function getEventIdentifier() {
+        return $this->EventIdentifier;
     }
 
-    public function setStartDate($StartDate) {
-        $this->StartDate = $StartDate;
+    public function setEventIdentifier($EventIdentifier) {
+        $this->EventIdentifier = $EventIdentifier;
     }
 
     public function getBookableItemId() {

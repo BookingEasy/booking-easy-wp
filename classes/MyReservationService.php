@@ -37,7 +37,7 @@ class MyReservationService {
         return $results;
     }
 
-    public function getEventsList($authCode, $startDate = "04-14-2014", $endDate = "04-30-2014") {
+    public function getEventsList($authCode, $startDate = "05-05-2014", $endDate = "05-30-2014") {
         $results = false;
         try {
             $json = @file_get_contents($this->apiUrl . 'Events/GetAvailability/' . $authCode . '/' . $startDate . '/' . $endDate);
@@ -48,33 +48,36 @@ class MyReservationService {
         return $results;
     }
 
-    public function subscribeToEvent($startDate, $BookableItemId, $EventScheduleId, $Courtesy, $FirstName, $LastName, $PhoneNumber, $Email, $Description) {
+    public function subscribeToEvent(SubscribeForEvent $SEvent) {
         try {
-            $obeEvent = new SubscribeForEvent();
-            $obeEvent->setStartDate($startDate);
-            $obeEvent->setBookableItemId($BookableItemId);
-            $obeEvent->setEventScheduleId($EventScheduleId);
-            $obeEvent->setCourtesy($Courtesy);
-            $obeEvent->setFirstName($FirstName);
-            $obeEvent->setLastName($LastName);
-            $obeEvent->setPhoneNumber($PhoneNumber);
-            $obeEvent->setEmail($Email);
-            $obeEvent->setDescription($Description);
-            $jsonobj = str_replace('\\u0000', "", json_encode($obeEvent));
-            $jsonobj = str_replace('SubscribeForEvent', "", $jsonobj);
-            $json = file_get_contents($this->apiUrl . 'Events/SetBooking/' . $jsonobj);
-            return $json;
+            $Booking = array("ApiToken" => $SEvent->getApiToken(), "EventIdentifier" => $SEvent->getEventIdentifier(), "BookableItemId" => $SEvent->getBookableItemId(), "EventScheduleId" => $SEvent->getEventScheduleId(), "Courtesy" => $SEvent->getCourtesy(), "FirstName" => $SEvent->getFirstName(), "LastName" => $SEvent->getLastName(), "PhoneNumber" => $SEvent->getPhoneNumber(), "Email" => $SEvent->getEmail(), "Description" => $SEvent->getDescription());
+            $json_data = json_encode($Booking);
+            $post = file_get_contents($this->apiUrl . 'Events/SetBooking', null, stream_context_create(array(
+                        'http' => array(
+                            'protocol_version' => 1.1,
+                            'user_agent' => 'MRS2',
+                            'method' => 'POST',
+                            'header' => "Content-type: application/json\r\n" .
+                            "Connection: close\r\n" .
+                            "Content-length: " . strlen($json_data) . "\r\n",
+                            'content' => $json_data,
+                        ),
+                    )));
+            $result = json_decode($post);
+            if ($result->Success) {
+                return true;
+            } else {
+                return false;
+            }
         } catch (Exception $exc) {
             echo $exc->getTraceAsString();
         }
     }
 
     public function subscribeForEvent() {
-        $Booking = array("ApiToken" => get_option('mrs1_authentication_code'), "StartDate" => "04-16-2014", "BookableItemId" => "52da20b1850ffb3318550763", "EventScheduleId" => "533e7791c1d27fcdc08642f7", "Courtesy" => "Mr", "FirstName" => "Zohaib", "LastName" => "Zahid", "PhoneNumber" => "0765562992", "Email" => "zohaib.mir@gmail.com", "Description" => "Hello Testing");
-        $json_data = json_encode($Booking);        
-        //$json = file_put_contents($this->apiUrl.'Events/SetBooking/'.$jsonobj); 
-        
-        $post = file_get_contents($this->apiUrl.'Events/SetBooking', null, stream_context_create(array(
+        $Booking = array("ApiToken" => get_option('mrs1_authentication_code'), "EventIdentifier" => "NS82LzIwMTQgMTE6NTkgUE07NTMzZTc3OTFjMWQyN2ZjZGMwODY0MmY3", "BookableItemId" => "52da20b1850ffb3318550763", "EventScheduleId" => "533e7791c1d27fcdc08642f7", "Courtesy" => "Mr", "FirstName" => "Zohaib", "LastName" => "Zahid", "PhoneNumber" => "0765562992", "Email" => "zohaib.mir@gmail.com", "Description" => "Hello Testing");
+        $json_data = json_encode($Booking);
+        $post = file_get_contents($this->apiUrl . 'Events/SetBooking', null, stream_context_create(array(
                     'http' => array(
                         'protocol_version' => 1.1,
                         'user_agent' => 'MRS2',
@@ -84,18 +87,49 @@ class MyReservationService {
                         "Content-length: " . strlen($json_data) . "\r\n",
                         'content' => $json_data,
                     ),
-                )));        
+                )));
         if ($post) {
             echo $post;
         } else {
             echo "POST failed";
         }
-
-
-        print_r($response);
+//        $service_url = $this->apiUrl . 'Events/SetBooking/';
+//
+//        $curl = curl_init($service_url);
+//        $curl_post_data = array("ApiToken" => get_option('mrs1_authentication_code'),
+//            "StartDate" => "04-30-2014",
+//            "BookableItemId" => "52da20b1850ffb3318550763",
+//            "EventScheduleId" => "533e7791c1d27fcdc08642f7",
+//            "Courtesy" => "Mr",
+//            "FirstName" => "Zohaib",
+//            "LastName" => "Zahid",
+//            "PhoneNumber" => "0765562992",
+//            "Email" => "zohaib.mir@gmail.com",
+//            "Description" => "Hello Testing"
+//        );
+//        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+//        curl_setopt($curl, CURLOPT_POST, true);
+//        curl_setopt($curl, CURLOPT_POSTFIELDS, $curl_post_data);
+//
+//        $curl_response = curl_exec($curl);
+//
+//        if (false === $curl_response) {
+//            $info = curl_getinfo($curl);
+//
+//            curl_close($curl);
+//
+//            die(var_export($info));
+//        }
+//
+//        curl_close($curl);
+//
+//        $decoded = json_decode($curl_response);
+//
+//        if (isset($decoded->response->status) && 'ERROR' == $decoded->response->status) {
+//            die($decoded->response->errormessage);
+//        }
     }
 
-    //$json = file_get_contents($this->apiUrl . 'Events/SetBooking/' . $jsonobj);
 }
 
 ?>

@@ -1,8 +1,3 @@
-<?php
-//echo "<br />";
-//print_r($obj->getEventsList($options));
-//$obj->subscribeForEvent();
-?>
 <div id="mrs-<?php echo $tab; ?>" class="wrap mrs-settings">
     <form class="mrs1-reservation-form" action="admin-post.php" method="post">
         <div class="mrs-heading">
@@ -22,12 +17,14 @@
                     <p class="help"><a target="_blank" href="http://mrs2.apphb.com">Click here to get your Authtication code.</a></p>
                 </td>
 
-            </tr>
-
+            </tr>            
         </table>
+        
         <br />                
         <?php submit_button(); ?>
     </form>
+    <p>[mrs_reservation] add this short code either in post or page where you want to display the booking form.</p>
+    <p>If you want to use a shortcode outside of the WordPress post or page editor, you can use this snippet to output from the shortcode’s handler(s): <pre> do_shortcode('[mrs_reservation] ')</pre></p>
 </div>
 <div class="footer">
     <?php include_once 'footer.php'; ?>

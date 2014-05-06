@@ -83,7 +83,7 @@ class ShortCode {
 
 
         foreach ($events as $event) {
-            $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> <input type='radio' name='event-item' value='" . $event->EventScheduleId . "' id='" . $event->EventScheduleId . "'>" . $event->Title . "</label></li>";
+            $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> <input type='radio' name='event-item' value='" . $event->EventScheduleId . "' id='" . $event->EventIdentifier . "'>" . $event->Title . "</label></li>";
         }
         $eventslist .= "</ul>";
         echo $eventslist;
@@ -91,19 +91,18 @@ class ShortCode {
     }
 
     function subscribeForEvent_callback() {
-//         $obeEvent = new SubscribeForEvent();
-//        $obeEvent->setStartDate($_POST["startDate"]);
-//        $obeEvent->setBookableItemId($_POST["BookableItemId"]);
-//        $obeEvent->setEventScheduleId($_POST["EventScheduleId"]);
-//        $obeEvent->setCourtesy($_POST["Courtesy"]);
-//        $obeEvent->setFirstName($_POST["FirstName"]);
-//        $obeEvent->setLastName($_POST["LastName"]);
-//        $obeEvent->setPhoneNumber($_POST["PhoneNumber"]);
-//        $obeEvent->setEmail($_POST["email"]);
-//        $obeEvent->setDescription($_POST["Description"]);
+        $obeEvent = new SubscribeForEvent();
+        $obeEvent->setEventIdentifier($_POST["EventIdentifier"]);
+        $obeEvent->setBookableItemId($_POST["BookableItemId"]);
+        $obeEvent->setEventScheduleId($_POST["EventScheduleId"]);
+        $obeEvent->setCourtesy($_POST["Courtesy"]);
+        $obeEvent->setFirstName($_POST["FirstName"]);
+        $obeEvent->setLastName($_POST["LastName"]);
+        $obeEvent->setPhoneNumber($_POST["PhoneNumber"]);
+        $obeEvent->setEmail($_POST["Email"]);
+        $obeEvent->setDescription($_POST["Description"]);
         $mrsService = new MyReservationService();
-        echo $mrsService->subscribeToEvent($_POST["startDate"], $_POST["BookableItemId"], $_POST["EventScheduleId"], $_POST["Courtesy"], $_POST["FirstName"], $_POST["LastName"], $_POST["PhoneNumber"], $_POST["Email"], $_POST["Description"]);
-
+        echo $mrsService->subscribeToEvent($obeEvent);
         die();
     }
 

@@ -88,6 +88,7 @@ jQuery(document).ready(function($) {
     $("input[name='event-item']").live("click", function() { 
         
         var value = this.value;
+        $("#EventIdentifier").val(this.id);
         $("#form-step1").hide();
         $("#booking-form").show();
     }); 
@@ -104,7 +105,7 @@ jQuery(document).ready(function($) {
             dataType: 'html',
             data: {
                 action: 'subscribeForEvent',
-                startDate: formatDate(checkin.date),
+                EventIdentifier: $('#EventIdentifier').val(),
                 endDate:formatDate(checkout.date),
                 BookableItemId: $('#bookableitems :selected').val(),
                 EventScheduleId: $("input:radio[name=event-item]:checked").val(),
@@ -116,13 +117,16 @@ jQuery(document).ready(function($) {
                 Description:$('#description').val()
             },
             success: function(data) {
-                //jQuery("#events-list").html('');
-                //jQuery("#events-list").append(data);
+                $('#subscribe_event').trigger("reset");
+                $("#booking-form").hide();
+                $("#form-step1").show();
+                jQuery("#events-list").html('');
+                $(".alert-success").css("display","block");
                 console.log(data);
             
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("Error");
+                console.log(errorThrown);
             }
         });
         
