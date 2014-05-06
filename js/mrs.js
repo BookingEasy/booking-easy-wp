@@ -51,8 +51,7 @@ jQuery(document).ready(function($) {
         if(this.value == 0) {
             alert("Please Select a Bookable Item to see the Events");            
         }       
-        else {
-            
+        else {            
             jQuery.ajax({
                 type: 'POST',    
                 url: ajaxurl,
@@ -60,7 +59,8 @@ jQuery(document).ready(function($) {
                 data: {
                     action: 'getEventsList',
                     startDate: formatDate(checkin.date),
-                    endDate:formatDate(checkout.date)
+                    endDate:formatDate(checkout.date),
+                    bookableItemId:$('#bookableitems :selected').val()
                 },
                 success: function(data) {
                     jQuery("#events-list").html('');
@@ -117,10 +117,10 @@ jQuery(document).ready(function($) {
                 Description:$('#description').val()
             },
             success: function(data) {
-                $('#subscribe_event').trigger("reset");
+                //$('#subscribe_event').trigger("reset");
                 $("#booking-form").hide();
                 $("#form-step1").show();
-                jQuery("#events-list").html('');
+                //jQuery("#events-list").html('');
                 $(".alert-success").css("display","block");
                 console.log(data);
             

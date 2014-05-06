@@ -77,8 +77,9 @@ class ShortCode {
         $mrsService = new MyReservationService();
         $startDate = $_POST["startDate"];
         $endDate = $_POST["endDate"];
+        $bookableItemId = $_POST["bookableItemId"];
         $authCode = get_option('mrs1_authentication_code');
-        $events = $mrsService->getEventsList($authCode, $startDate, $endDate);
+        $events = $mrsService->getEventsList($authCode, $startDate, $endDate, $bookableItemId);
         $eventslist = "<ul class='events'>";
 
 

@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <?php wp_nonce_field('add_reservation_form', 'br_user_form'); ?>
-                            <div class="alert alert-success" style="margin-left: 0;display: none"><strong>Well done!</strong> You successfully Subscribe for the Event.
+                            <div class="alert alert-success" style="margin-left: 0;display: none">You successfully subscribe for the event.
                             </div>
                         </div>
                     </div>
