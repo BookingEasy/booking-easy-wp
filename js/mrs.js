@@ -98,37 +98,67 @@ jQuery(document).ready(function($) {
         $("#form-step1").show();
     });
     
-    $("#submit-reservation").live("click",function(){        
-        jQuery.ajax({
-            type: 'POST',    
-            url: ajaxurl,
-            dataType: 'html',
-            data: {
-                action: 'subscribeForEvent',
-                EventIdentifier: $('#EventIdentifier').val(),
-                endDate:formatDate(checkout.date),
-                BookableItemId: $('#bookableitems :selected').val(),
-                EventScheduleId: $("input:radio[name=event-item]:checked").val(),
-                Courtesy:$("input:radio[name=optionsRadios]:checked").val(),
-                FirstName:$('#firstName').val(),
-                LastName :$('#lastName').val(),
-                PhoneNumber:$('#phonenumber').val(),
-                Email:$('#email').val(),
-                Description:$('#description').val()
-            },
-            success: function(data) {
-                //$('#subscribe_event').trigger("reset");
-                $("#booking-form").hide();
-                $("#form-step1").show();
-                //jQuery("#events-list").html('');
-                $(".alert-success").css("display","block");
-                console.log(data);
-            
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                console.log(errorThrown);
-            }
-        });
+    function validateStep1() {
+        is_error = true;
+        if($("#firstName").val().length == 0) {
+            $("#firstName").css("background" , "#FFAAAA");        
+            is_error = false;
+        }
+        else {
+            $("#firstName").css("background" , "#FFFFFF");        
+        }
+        if($("#lastName").val().length == 0) {
+            $("#lastName").css("background" , "#FFAAAA");        
+            is_error = false;
+        }
+        if($("#phonenumber").val().length == 0) {
+            $("#phonenumber").css("background" , "#FFAAAA");        
+            is_error = false;
+        }
+        if($("#email").val().length == 0) {
+            $("#email").css("background" , "#FFAAAA");        
+            is_error = false;
+        }
         
+        if($("#description").val().length == 0) {
+            $("#description").css("background" , "#FFAAAA");        
+            is_error = false;
+        }
+        return is_error;
+    }
+    
+    $("#submit-reservation").live("click",function(){        
+        if(validateStep1()) {
+            jQuery.ajax({
+                type: 'POST',    
+                url: ajaxurl,
+                dataType: 'html',
+                data: {
+                    action: 'subscribeForEvent',
+                    EventIdentifier: $('#EventIdentifier').val(),
+                    endDate:formatDate(checkout.date),
+                    BookableItemId: $('#bookableitems :selected').val(),
+                    EventScheduleId: $("input:radio[name=event-item]:checked").val(),
+                    Courtesy:$("input:radio[name=optionsRadios]:checked").val(),
+                    FirstName:$('#firstName').val(),
+                    LastName :$('#lastName').val(),
+                    PhoneNumber:$('#phonenumber').val(),
+                    Email:$('#email').val(),
+                    Description:$('#description').val()
+                },
+                success: function(data) {
+                    //$('#subscribe_event').trigger("reset");
+                    $("#booking-form").hide();
+                    $("#form-step1").show();
+                    //jQuery("#events-list").html('');
+                    $(".alert-success").css("display","block");
+                    console.log(data);
+            
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    console.log(errorThrown);
+                }
+            });
+        }
     });
 });    
