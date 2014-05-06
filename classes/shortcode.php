@@ -83,7 +83,7 @@ class ShortCode {
 
 
         foreach ($events as $event) {
-            $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> <input type='radio' name='event-item' value='" . $event->EventScheduleId . "' id='" . $event->EventIdentifier . "'>" . $event->Title . "</label></li>";
+            $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> <input type='radio' name='event-item' value='" . $event->EventScheduleId . "' id='" . $event->EventIdentifier . "'> " . $event->Title . "</label></li>";
         }
         $eventslist .= "</ul>";
         echo $eventslist;
