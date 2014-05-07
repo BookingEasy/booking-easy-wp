@@ -9,7 +9,8 @@ include_once( ABSPATH . 'wp-content/plugins/mrs-wp/classes/SubscribeForEvent.php
 
 class MyReservationService {
 
-    protected $apiUrl = 'https://mrs2.apphb.com/api/';
+    //protected $apiUrl = 'https://mrs2.apphb.com/api/'; //Demo Server
+    protected $apiUrl = 'https://mrs2-test.apphb.com/api/'; //Test Server
 
     public function __construct() {
         
@@ -73,6 +74,7 @@ class MyReservationService {
             echo $exc->getTraceAsString();
         }
     }
+
 }
 
 ?>

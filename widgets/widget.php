@@ -39,4 +39,4 @@ function myreservation_register_widgets() {
     register_widget('MyReservation_Widget');
 }
 
-add_action('widgets_init', 'myreservation_register_widgets');
+//add_action('widgets_init', 'myreservation_register_widgets');
