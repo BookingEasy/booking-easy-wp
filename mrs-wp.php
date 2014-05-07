@@ -4,12 +4,12 @@
  * @package MyReservation
  */
 /*
-  Plugin Name: My Reservation System
+  Plugin Name: Booking made easy and free
   Plugin URI: https://github.com/MyRerservationSystem/mrs-wp
   Description: This is an Online Reservation System, which gives customers the opportunity to choose the date and and the time of an appointment according to one's own preferences and the booking can now be done online. Go to your Plugin configuration page, and save your Authntication token.
   Version: 2.0
   Author: Zohaib, David
-  Author URI: http://www.my-reservation-system.com/
+  Author URI: http://www.booking-easy.com/
   License: GPLv2 or later
  */
 
@@ -51,7 +51,7 @@ class MyReservationSystem {
     }
 
     function concent_custom_admin_footer() {
-        echo '<span id="footer-thankyou">Developed by <a href="http://www.ding.se/" target="_blank">IterationCorp</a></span>.';
+        echo '<span id="footer-thankyou">Developed by <a href="http://www.booking-easy.com/" target="_blank">IterationCorp</a></span>.';
     }
 
 }
