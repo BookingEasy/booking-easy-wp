@@ -29,7 +29,7 @@ class ShortCode {
         add_action('wp_enqueue_scripts', array($this, 'mrs_theme_styles'));
         add_action('wp_head', array($this, 'pluginname_ajaxurl'));
         add_action('wp_enqueue_scripts', array($this, 'LoadJqueryandJS'));
-        add_shortcode('mrs_reservation', array($this, 'mrs1_book_event_form'));
+        add_shortcode('booking-easy', array($this, 'mrs1_book_event_form'));
         add_action('wp_ajax_getEventsList', array($this, 'getEventsList_callback'));
         add_action('wp_ajax_nopriv_getEventsList', array($this, 'getEventsList_callback'));
         add_action('wp_ajax_subscribeForEvent', array($this, 'subscribeForEvent_callback'));

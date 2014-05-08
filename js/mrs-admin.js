@@ -6,7 +6,7 @@
 function ValidateToken(token) {
     jQuery.support.cors = true;
     $.ajax({
-        url: 'https://mrs2.apphb.com/api/ValidateAccount/' + token,
+        url: 'https://mrs2-test.apphb.com/api/ValidateAccount/' + token,
         type: 'POST',   
         dataType: 'html',
         success: function (data) {

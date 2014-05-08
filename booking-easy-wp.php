@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @package MyReservation
+ * @package booking easy 
  */
 /*
-  Plugin Name: Booking made easy and free
-  Plugin URI: https://github.com/MyRerservationSystem/mrs-wp
-  Description: This is an Online Reservation System, which gives customers the opportunity to choose the date and and the time of an appointment according to one's own preferences and the booking can now be done online. Go to your Plugin configuration page, and save your Authntication token.
+  Plugin Name: Booking easy
+  Plugin URI: https://github.com/BookingEasy/booking-easy-wp
+  Description: This is an Online Booking System, which gives customers the opportunity to choose the date and and the time of an appointment according to one's own preferences and the booking can now be done online. Go to your Plugin configuration page, and save your Authntication token.
   Version: 2.0
   Author: Zohaib, David
   Author URI: http://www.booking-easy.com/
@@ -33,28 +33,28 @@ define("MRS1_PLUGIN_URL", plugins_url('/', __FILE__));
 if (!function_exists('is_plugin_active')) {
     include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
-include_once( ABSPATH . 'wp-content/plugins/mrs-wp/admin/admin.php' );
-include_once( ABSPATH . 'wp-content/plugins/mrs-wp/classes/PluginInstall.php');
-include_once( ABSPATH . 'wp-content/plugins/mrs-wp/classes/shortcode.php' );
+include_once( ABSPATH . 'wp-content/plugins/booking-easy-wp/admin/admin.php' );
+include_once( ABSPATH . 'wp-content/plugins/booking-easy-wp/classes/PluginInstall.php');
+include_once( ABSPATH . 'wp-content/plugins/booking-easy-wp/classes/shortcode.php' );
 
-class MyReservationSystem {
+class MyBookingEasy {
 
     public function __construct() {
 
         PluginInstall::init();
        // if (is_admin()) {
             Admin::init();
-            add_filter('admin_footer_text', array($this, 'concent_custom_admin_footer'));
+            add_filter('admin_footer_text', array($this, 'bookingeasy_custom_admin_footer'));
         //} else {
             ShortCode::init();
         //}
     }
 
-    function concent_custom_admin_footer() {
+    function bookingeasy_custom_admin_footer() {
         echo '<span id="footer-thankyou">Developed by <a href="http://www.booking-easy.com/" target="_blank">IterationCorp</a></span>.';
     }
 
 }
 
-$objReservation = new MyReservationSystem();
+$objBookingEasy = new MyBookingEasy();
 ?>

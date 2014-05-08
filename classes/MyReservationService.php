@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Description of MyReservationService
+ * Description of Booking Easy
  * This Class is User for interaction with the Web Service
  * @author zohaib
  */
