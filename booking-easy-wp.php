@@ -7,7 +7,7 @@
   Plugin Name: Booking easy
   Plugin URI: https://github.com/BookingEasy/booking-easy-wp
   Description: This is an Online Booking System, which gives customers the opportunity to choose the date and and the time of an appointment according to one's own preferences and the booking can now be done online. Go to your Plugin configuration page, and save your Authntication token.
-  Version: 2.0
+  Version: 
   Author: Zohaib, David
   Author URI: http://www.booking-easy.com/
   License: GPLv2 or later

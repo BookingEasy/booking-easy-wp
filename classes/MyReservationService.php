@@ -5,11 +5,10 @@
  * This Class is User for interaction with the Web Service
  * @author zohaib
  */
-include_once( ABSPATH . 'wp-content/plugins/mrs-wp/classes/SubscribeForEvent.php');
+include_once( ABSPATH . 'wp-content/plugins/booking-easy-wp/classes/SubscribeForEvent.php');
 
 class MyReservationService {
-
-    //protected $apiUrl = 'https://mrs2.apphb.com/api/'; //Demo Server
+    
     protected $apiUrl = 'https://mrs2-test.apphb.com/api/'; //Test Server
 
     public function __construct() {
@@ -56,7 +55,7 @@ class MyReservationService {
             $post = file_get_contents($this->apiUrl . 'Events/SetBooking', null, stream_context_create(array(
                         'http' => array(
                             'protocol_version' => 1.1,
-                            'user_agent' => 'MRS2',
+                            'user_agent' => 'Booking Easy',
                             'method' => 'POST',
                             'header' => "Content-type: application/json\r\n" .
                             "Connection: close\r\n" .

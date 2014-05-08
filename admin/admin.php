@@ -33,7 +33,7 @@ class Admin {
     }
 
     function mrs_wp_settings_menu() {
-        add_options_page('My Reservation System', 'My Reservation System', 'manage_options', 'mrs_set_default_options', array($this, 'show_mrs_settings'));
+        add_options_page('Booking Easy', 'Booking Easy', 'manage_options', 'mrs_set_default_options', array($this, 'show_mrs_settings'));
     }
 
     function mrs_wp_output() {
@@ -42,7 +42,7 @@ class Admin {
 
     function mrs_admin_theme_js() {
 
-        wp_register_script('mrs2', MRS1_PLUGIN_URL . 'js/mrs-admin.js', array('jquery'), true, false);
+        wp_register_script('mrs2', MRS1_PLUGIN_URL . 'js/bookingeasy-admin.js', array('jquery'), true, false);
         wp_register_script('mrs', MRS1_PLUGIN_URL . 'js/jquery.js', array('jquery'), true, false);
         //wp_enqueue_script(array('jquery', 'mrs', 'mrs2'));
         wp_enqueue_script('mrs');
@@ -50,17 +50,17 @@ class Admin {
     }
 
     function mrs_admin_theme_styles() {
-        wp_register_style('style', '/wp-content/plugins/mrs-wp/css/mrs-admin.css');
+        wp_register_style('style', '/wp-content/plugins/booking-easy-wp/css/bookingeasy-admin.css');
         wp_enqueue_style('style');
     }
 
     function show_mrs_settings() {
         $tab = 'mrs-settings';
         $options = get_option('mrs1_authentication_code');
-        include_once( ABSPATH . 'wp-content/plugins/mrs-wp/classes/MyReservationService.php');
+        include_once( ABSPATH . 'wp-content/plugins/booking-easy-wp/classes/MyReservationService.php');
         $obj = new MyReservationService();
         $connected = $obj->ValidateAuthCode($options);
-        include_once( ABSPATH . 'wp-content/plugins/mrs-wp/admin/templates/config.php');
+        include_once( ABSPATH . 'wp-content/plugins/booking-easy-wp/admin/templates/config.php');
     }
 
     function mrs_admin_init() {
