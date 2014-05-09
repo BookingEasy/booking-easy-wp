@@ -22,6 +22,7 @@ Follow this steps to install booking easy
 
 1. Download the plugin into the **/wp-content/plugins/** folder
 2. Activate Booking easy 
+3. Use the shortcode [booking-easy] in page page or article
 
 == Screen shots ==
 1. Verify your account with auth token.
