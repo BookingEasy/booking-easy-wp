@@ -33,4 +33,4 @@ Follow this steps to install booking easy
 * First release
 
 == Frequently Asked Questions ==
-[Reservation System Home](http://www.booking-easy.com/)
+[Booking Easy Home](http://www.booking-easy.com/)
