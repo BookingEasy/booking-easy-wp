@@ -9,7 +9,7 @@ include_once( ABSPATH . 'wp-content/plugins/booking-easy-wp/classes/SubscribeFor
 
 class MyReservationService {
     
-    protected $apiUrl = 'https://mrs2-test.apphb.com/api/'; //Test Server
+    protected $apiUrl = 'https://booking-easy-test.apphb.com/api/'; //Test Server
 
     public function __construct() {
         
