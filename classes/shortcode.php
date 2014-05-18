@@ -40,8 +40,7 @@ class ShortCode {
 
         wp_register_script('mrs', MRS1_PLUGIN_URL . 'js/bookingeasy.js', array('jquery'), false, true);
         wp_register_script('mrs2', MRS1_PLUGIN_URL . 'js/bootstrap.min.js', array('jquery'), true, false);
-        wp_register_script('mrs3', MRS1_PLUGIN_URL . 'js/bootstrap-datepicker.js', array('jquery'), true, false);
-        //wp_enqueue_script('jquery');
+        wp_register_script('mrs3', MRS1_PLUGIN_URL . 'js/bootstrap-datepicker.js', array('jquery'), true, false);        
         wp_enqueue_script('mrs');
         wp_enqueue_script('mrs2');
         wp_enqueue_script('mrs3');
