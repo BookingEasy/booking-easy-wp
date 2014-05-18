@@ -5,11 +5,11 @@
  * This Class is User for interaction with the Web Service
  * @author zohaib
  */
-include_once( ABSPATH . 'wp-content/plugins/booking-easy-wp/classes/SubscribeForEvent.php');
+include_once( MRS1_PLUGIN_DIR . 'classes/SubscribeForEvent.php');
 
 class MyReservationService {
     
-    protected $apiUrl = 'https://booking-easy-test.apphb.com/api/'; //Test Server
+    protected $apiUrl = 'https://www.booking-easy.net/api/'; //Production Server Server
 
     public function __construct() {
         

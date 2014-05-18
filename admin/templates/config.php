@@ -14,7 +14,7 @@
                 <th scope="row"><label for="mrs-auth-code">Booking Easy Authentication Code</label></th>
                 <td>
                     <input type="text" name="mrs1_authentication_code" id="mrs1_authentication_code" value="<?php echo esc_html($options); ?>"/>
-                    <p class="help"><a target="_blank" href="http://mrs2-test.apphb.com">Click here to get your Authtication code.</a></p>
+                    <p class="help"><a target="_blank" href="https://www.booking-easy.net/">Click here to get your Authtication code.</a></p>
                 </td>
 
             </tr>            

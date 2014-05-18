@@ -50,17 +50,17 @@ class Admin {
     }
 
     function mrs_admin_theme_styles() {
-        wp_register_style('style', '/wp-content/plugins/booking-easy-wp/css/bookingeasy-admin.css');
+        wp_register_style('style', MRS1_PLUGIN_URL .'css/bookingeasy-admin.css');
         wp_enqueue_style('style');
     }
 
     function show_mrs_settings() {
         $tab = 'mrs-settings';
         $options = get_option('mrs1_authentication_code');
-        include_once( ABSPATH . 'wp-content/plugins/booking-easy-wp/classes/MyReservationService.php');
+        include_once( MRS1_PLUGIN_DIR. 'classes/MyReservationService.php');
         $obj = new MyReservationService();
         $connected = $obj->ValidateAuthCode($options);
-        include_once( ABSPATH . 'wp-content/plugins/booking-easy-wp/admin/templates/config.php');
+        include_once( MRS1_PLUGIN_DIR . 'admin/templates/config.php');
     }
 
     function mrs_admin_init() {

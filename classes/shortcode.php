@@ -9,8 +9,8 @@
  *
  * @author zohaib
  */
-include_once( ABSPATH . 'wp-content/plugins/booking-easy-wp/classes/MyReservationService.php');
-include_once( ABSPATH . 'wp-content/plugins/booking-easy-wp/classes/SubscribeForEvent.php');
+include_once( MRS1_PLUGIN_DIR . 'classes/MyReservationService.php');
+include_once( MRS1_PLUGIN_DIR . 'classes/SubscribeForEvent.php');
 
 class ShortCode {
 
@@ -41,7 +41,7 @@ class ShortCode {
         wp_register_script('mrs', MRS1_PLUGIN_URL . 'js/bookingeasy.js', array('jquery'), false, true);
         wp_register_script('mrs2', MRS1_PLUGIN_URL . 'js/bootstrap.min.js', array('jquery'), true, false);
         wp_register_script('mrs3', MRS1_PLUGIN_URL . 'js/bootstrap-datepicker.js', array('jquery'), true, false);
-        wp_enqueue_script('jquery');
+        //wp_enqueue_script('jquery');
         wp_enqueue_script('mrs');
         wp_enqueue_script('mrs2');
         wp_enqueue_script('mrs3');
@@ -56,7 +56,7 @@ class ShortCode {
     }
 
     function mrs_theme_styles() {
-        wp_register_style('style', '/wp-content/plugins/booking-easy-wp/css/bookingeasy.css');
+        wp_register_style('style', MRS1_PLUGIN_URL.'css/bookingeasy.css');
         wp_enqueue_style('style');
     }
 
@@ -64,7 +64,7 @@ class ShortCode {
         $bookableItems = $this->getBookableItems();
         $mrsService = new MyReservationService();
         
-        include_once( ABSPATH . 'wp-content/plugins/booking-easy-wp/templates/reservation.php');
+        include_once( MRS1_PLUGIN_DIR . 'templates/reservation.php');
     }
 
     function getBookableItems() {

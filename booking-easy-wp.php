@@ -28,14 +28,15 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-define("DirPath", plugins_url('', __FILE__));
 define("MRS1_PLUGIN_URL", plugins_url('/', __FILE__));
+define( 'MRS1_PLUGIN_DIR', plugin_dir_path(__FILE__));
+
 if (!function_exists('is_plugin_active')) {
-    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+    //include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
-include_once( ABSPATH . 'wp-content/plugins/booking-easy-wp/admin/admin.php' );
-include_once( ABSPATH . 'wp-content/plugins/booking-easy-wp/classes/PluginInstall.php');
-include_once( ABSPATH . 'wp-content/plugins/booking-easy-wp/classes/shortcode.php' );
+include_once( MRS1_PLUGIN_DIR . 'admin/admin.php' );
+include_once( MRS1_PLUGIN_DIR . 'classes/PluginInstall.php');
+include_once( MRS1_PLUGIN_DIR . 'classes/shortcode.php' );
 
 class MyBookingEasy {
 
