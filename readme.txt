@@ -13,7 +13,7 @@ This is an Online Booking System, which gives customers the opportunity to choos
 
 The Booking easy system can be added to any website, it is not necessary to make a new one. It can be added as a new page or in a new space. 
 
-To learn more about our booking service please visit : booking easy 
+To learn more about our booking service please visit : http://www.booking-easy.com/
 
 **NOTE: You need to register a account on booking easy site and then you will get a authentication token which you will use to validate this booking easy plugin. **
 
