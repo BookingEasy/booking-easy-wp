@@ -7,7 +7,7 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 
 Description:  
-This is an Online Booking System, which gives customers the opportunity to choose the date and the time of an appointment according to one's own preferences and the booking can now be done online. Go to your booking easy Plugin configuration page, and save your authentication token.
+This is a Free Online Booking System, which gives customers the opportunity to choose the date and the time of an appointment according to one's own preferences and the booking can now be done online. Go to your booking easy Plugin configuration page, and save your authentication token.
 == Description ==
 This is an Online Booking System, which gives customers the opportunity to choose the date and the time of an appointment according to one's own preferences and the booking can now be done online.
 
@@ -22,7 +22,7 @@ Follow this steps to install booking easy
 
 1. Download the plugin into the **/wp-content/plugins/** folder
 2. Activate Booking easy 
-3. Use the shortcode [booking-easy] in page page or article
+3. Use the shortcode [booking-easy] in a page or an article
 
 == Screen shots ==
 1. Verify your account with authentication token.
