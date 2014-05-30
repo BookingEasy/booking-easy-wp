@@ -50,8 +50,8 @@ class Admin {
     }
 
     function mrs_admin_theme_styles() {
-        wp_register_style('style', MRS1_PLUGIN_URL .'css/bookingeasy-admin.css');
-        wp_enqueue_style('style');
+        wp_register_style('bookingeasyadmin', MRS1_PLUGIN_URL .'css/bookingeasy-admin.css');
+        wp_enqueue_style('bookingeasyadmin');
     }
 
     function show_mrs_settings() {

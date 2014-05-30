@@ -55,8 +55,8 @@ class ShortCode {
     }
 
     function mrs_theme_styles() {
-        wp_register_style('style', MRS1_PLUGIN_URL.'css/bookingeasy.css');
-        wp_enqueue_style('style');
+        wp_register_style('bookingeasy', MRS1_PLUGIN_URL.'css/bookingeasy.css');
+        wp_enqueue_style('bookingeasy');
     }
 
     function mrs1_book_event_form() {
