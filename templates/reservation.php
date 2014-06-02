@@ -26,7 +26,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Please select a date</label>
+                                <label for="exampleInputEmail1">Start date</label>
                                 <div class="input-append date" id="dp1" data-date="12-02-2012" data-date-format="dd-mm-yyyy">                                
                                     <input type="text" class="form-control span2" data-val="true" value="" id="dpd1">
                                 </div>
@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Please select a date</label>
+                                <label for="exampleInputEmail1">End Date</label>
                                 <div class="input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
                                     <input type="text" class="form-control" value="" id="dpd2">
                                 </div>
