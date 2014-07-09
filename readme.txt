@@ -1,6 +1,6 @@
 === Booking Easy  ===
-Contributors: Zohaib, David
-Tags: cms,booking easy,booking, reservation, reservation system, online reservation system, booking system, events,Booking made easy and free
+Contributors: Zohaib, www.iteration.info
+Tags: sagenda, agenda, booking, booking wordpress, reservation, reservation system, online reservation system, booking system, events,Booking made easy and free
 Requires at least: 3.0
 Tested up to: 3.9
 Stable tag: 1.0.0
@@ -13,7 +13,7 @@ This is an Online Booking System, which gives customers the opportunity to choos
 
 The Booking easy system can be added to any website, it is not necessary to make a new one. It can be added as a new page or in a new space. 
 
-To learn more about our booking service please visit : http://www.booking-easy.com/
+To learn more about our booking service please visit : http://www.sagenda.com/
 
 **NOTE: You need to register a account on booking easy site and then you will get a authentication token which you will use to validate this booking easy plugin. **
 
@@ -34,4 +34,4 @@ Follow this steps to install booking easy
 * First release
 
 == Frequently Asked Questions ==
-[Booking Easy Home](http://www.booking-easy.com/)
+[Booking Easy Home](http://www.sagenda.com/)
