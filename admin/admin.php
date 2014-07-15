@@ -33,7 +33,7 @@ class Admin {
     }
 
     function mrs_wp_settings_menu() {
-        add_options_page('Booking Easy', 'Booking Easy', 'manage_options', 'mrs_set_default_options', array($this, 'show_mrs_settings'));
+        add_options_page('Sagenda', 'Sagenda', 'manage_options', 'mrs_set_default_options', array($this, 'show_mrs_settings'));
     }
 
     function mrs_wp_output() {
@@ -42,25 +42,25 @@ class Admin {
 
     function mrs_admin_theme_js() {
 
-        wp_register_script('mrs2', MRS1_PLUGIN_URL . 'js/bookingeasy-admin.js', array('jquery'), true, false);
-        wp_register_script('mrs', MRS1_PLUGIN_URL . 'js/jquery.js', array('jquery'), true, false);
+        wp_register_script('mrs2', SAGENDA_PLUGIN_URL . 'js/sagenda-admin.js', array('jquery'), true, false);
+        wp_register_script('mrs', SAGENDA_PLUGIN_URL . 'js/jquery.js', array('jquery'), true, false);
         //wp_enqueue_script(array('jquery', 'mrs', 'mrs2'));
         wp_enqueue_script('mrs');
         wp_enqueue_script('mrs2');
     }
 
     function mrs_admin_theme_styles() {
-        wp_register_style('bookingeasyadmin', MRS1_PLUGIN_URL .'css/bookingeasy-admin.css');
-        wp_enqueue_style('bookingeasyadmin');
+        wp_register_style('sagendaadmin', SAGENDA_PLUGIN_URL .'css/sagenda-admin.css');
+        wp_enqueue_style('sagendaadmin');
     }
 
     function show_mrs_settings() {
         $tab = 'mrs-settings';
         $options = get_option('mrs1_authentication_code');
-        include_once( MRS1_PLUGIN_DIR. 'classes/MyReservationService.php');
+        include_once( SAGENDA_PLUGIN_DIR. 'classes/MyReservationService.php');
         $obj = new MyReservationService();
         $connected = $obj->ValidateAuthCode($options);
-        include_once( MRS1_PLUGIN_DIR . 'admin/templates/config.php');
+        include_once( SAGENDA_PLUGIN_DIR . 'admin/templates/config.php');
     }
 
     function mrs_admin_init() {

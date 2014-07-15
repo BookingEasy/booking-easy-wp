@@ -5,7 +5,7 @@
  * Developer Zohaib
  * Date 2014-02-19
  */
-class MyReservation_Widget extends WP_Widget {
+class SAGENDA_Widget extends WP_Widget {
 
     function __construct() {
         parent::__construct(
@@ -17,7 +17,7 @@ class MyReservation_Widget extends WP_Widget {
         if ($instance) {
             $title = esc_attr($instance['title']);
         } else {
-            $title = __('My Reservation System');
+            $title = __('SAGENDA');
         }
     }
 

@@ -23,9 +23,9 @@ class PluginInstall {
     }
 
     //put your code here
-    //Constructor to Call Uninstall Plugin
+    //Constructor to Call install Plugin
     private function __construct() {
-        register_activation_hook('booking-easy-wp/booking-easy-wp.php', array($this, 'mrs_set_default_options'));
+        register_activation_hook('sagenda-wp/sagenda-wp.php', array($this, 'mrs_set_default_options'));
     }
 
     function mrs_set_default_options() {

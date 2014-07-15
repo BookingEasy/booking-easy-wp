@@ -5,11 +5,11 @@
  * This Class is User for interaction with the Web Service
  * @author zohaib
  */
-include_once( MRS1_PLUGIN_DIR . 'classes/SubscribeForEvent.php');
+include_once( SAGENDA_PLUGIN_DIR . 'classes/SubscribeForEvent.php');
 
 class MyReservationService {
     
-    protected $apiUrl = 'https://www.booking-easy.net/api/'; //Production Server Server
+    protected $apiUrl = 'https://www.sagenda.net/api/'; //Live Server
 
     public function __construct() {
         
@@ -37,7 +37,7 @@ class MyReservationService {
         return $results;
     }
 
-    public function getEventsList($authCode, $startDate = "05-05-2014", $endDate = "05-30-2014", $bookableItemId = 0) {
+    public function getEventsList($authCode, $startDate = "07-13-2014", $endDate = "07-30-2014", $bookableItemId = 0) {
         $results = false;
         try {
             $json = @file_get_contents($this->apiUrl . 'Events/GetAvailability/' . $authCode . '/' . $startDate . '/' . $endDate . '/?bookableItemId=' . $bookableItemId);

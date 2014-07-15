@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @package booking easy 
+ * @package Sagenda
  */
 /*
-  Plugin Name: Booking easy
-  Plugin URI: https://github.com/BookingEasy/booking-easy-wp
-  Description: This is an Online Booking System, which gives customers the opportunity to choose the date and the time of an appointment according to one's own preferences and the booking can now be done online. Go to your Plugin configuration page, and save your Authentication token.
+  Plugin Name: Sagenda
+  Plugin URI: https://github.com/Sagenda/sagenda-wp
+  Description: Sagenda is an Online Booking System, which gives customers the opportunity to choose the date and the time of an appointment according to one's own preferences and the booking can now be done online. Go to your Plugin configuration page, and save your Authentication token.
   Version: 
   Author: Zohaib, David
-  Author URI: http://www.booking-easy.com/
+  Author URI: http://www.sagenda.com/
   License: GPLv2 or later
  */
 
@@ -28,34 +28,34 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-define("MRS1_PLUGIN_URL", plugins_url('/', __FILE__));
-define( 'MRS1_PLUGIN_DIR', plugin_dir_path(__FILE__));
+define("SAGENDA_PLUGIN_URL", plugins_url('/', __FILE__));
+define( 'SAGENDA_PLUGIN_DIR', plugin_dir_path(__FILE__));
 
 if (!function_exists('is_plugin_active')) {
     //include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
-include_once( MRS1_PLUGIN_DIR . 'admin/admin.php' );
-include_once( MRS1_PLUGIN_DIR . 'classes/PluginInstall.php');
-include_once( MRS1_PLUGIN_DIR . 'classes/shortcode.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'admin/admin.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'classes/PluginInstall.php');
+include_once( SAGENDA_PLUGIN_DIR . 'classes/shortcode.php' );
 
-class MyBookingEasy {
+class Sagenda {
 
     public function __construct() {
 
         PluginInstall::init();
        // if (is_admin()) {
             Admin::init();
-            add_filter('admin_footer_text', array($this, 'bookingeasy_custom_admin_footer'));
+            add_filter('admin_footer_text', array($this, 'sagenda_custom_admin_footer'));
         //} else {
             ShortCode::init();
         //}
     }
 
-    function bookingeasy_custom_admin_footer() {
-        echo '<span id="footer-thankyou">Developed by <a href="http://www.booking-easy.com/" target="_blank">IterationCorp</a></span>.';
+    function sagenda_custom_admin_footer() {
+        echo '<span id="footer-thankyou">Developed by <a href="http://www.sagenda.com/" target="_blank">IterationCorp</a></span>.';
     }
 
 }
 
-$objBookingEasy = new MyBookingEasy();
+$objSagenda = new Sagenda();
 ?>
