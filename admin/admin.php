@@ -42,10 +42,7 @@ class Admin {
 
     function mrs_admin_theme_js() {
 
-        wp_register_script('mrs2', SAGENDA_PLUGIN_URL . 'js/sagenda-admin.js', array('jquery'), true, false);
-        wp_register_script('mrs', SAGENDA_PLUGIN_URL . 'js/jquery.js', array('jquery'), true, false);
-        //wp_enqueue_script(array('jquery', 'mrs', 'mrs2'));
-        wp_enqueue_script('mrs');
+        wp_register_script('mrs2', SAGENDA_PLUGIN_URL . 'js/sagenda-admin.js', array('jquery'), true, false);        
         wp_enqueue_script('mrs2');
     }
 
