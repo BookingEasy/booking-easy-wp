@@ -7,8 +7,8 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 
 Description:  
-Sagenda is an online software that helps your clients fix appointments and meetings with you online and which is available at absolutely NO COST!.
-This is a Free Online Booking System, which gives customers the opportunity to choose the date and the time of an appointment according to one's own preferences and the booking can now be done online. Go to your Sagenda plugin configuration page, and save your authentication token.
+Sagenda is an online software that helps your clients fix appointments available at absolutely NO COST!.
+
 == Description ==
 Sagenda is an online software that helps your clients fix appointments and meetings with you online and which is available at absolutely NO COST!
 
@@ -33,7 +33,7 @@ Follow this steps to install booking easy
 
 == Changelog ==
 
-= 2.0 =
+= 1.0 =
 * First release
 
 == Frequently Asked Questions ==
