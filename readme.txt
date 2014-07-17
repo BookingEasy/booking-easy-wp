@@ -33,7 +33,7 @@ Follow this steps to install booking easy
 
 == Changelog ==
 
-= 2.0 =
+= 1.0 =
 * First release
 
 == Frequently Asked Questions ==
