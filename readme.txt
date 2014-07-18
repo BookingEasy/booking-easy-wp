@@ -1,4 +1,4 @@
-=== Booking Easy  ===
+=== Sagenda - Free booking system  ===
 Contributors: Zohaib, www.iteration.info
 Tags: sagenda, agenda, booking, booking wordpress, reservation, reservation system, online reservation system, booking system, events,Booking made easy and free
 Requires at least: 3.0
