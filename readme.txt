@@ -6,7 +6,7 @@ Tested up to: 3.9.1
 Stable tag: 1.0.0
 License: GPLv2 or later
  
-Sagenda is an online software that helps your clients fix appointments available at absolutely NO COST!.
+Sagenda is an online software that helps your clients fix appointments available at absolutely NO COST!
 
 == Description ==
 Sagenda is an online software that helps your clients fix appointments and meetings with you online and which is available at absolutely NO COST!
