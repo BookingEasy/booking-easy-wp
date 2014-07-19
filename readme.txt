@@ -27,9 +27,8 @@ Follow this steps to install booking easy
 3. Copy your token (from the backend of sagenda.net Settings / account settings) to your Wordpress installation (backend of wp / Settings / Sagenda).
 4. Use the shortcode [sagenda-wp] in a page or an article.
 
-== Screen shots ==
-1. Verify your account with authentication token.
-2. List of Event Types
+== Screenshots ==
+1. Identify your account by copying your token.
 
 == Upgrade Notice ==
 
