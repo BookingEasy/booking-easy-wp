@@ -26,30 +26,15 @@
                     </div>
                     <div class="sagenda_row">
                         <div class="sagenda_col">
+                            <div class="sagenda_alert sagenda_alert-error" id="alert">
 
-                            <div class="well">
-            
-            
-			<div class="alert alert-error" id="alert">
-				<strong>Oh snap!</strong>
-			  </div>
-			<table class="table">
-				
-				<tbody>
-					<tr>
-						<td id="startDate">2012-02-20</td>
-						<td id="endDate">2012-02-25</td>
-					</tr>
-				</tbody>
-			</table>
-          </div>
-                            
+                            </div>
                             <div class="sagenda_form-group">
                                 <label for="exampleInputEmail1">Start date</label>
-                                <div class="sagenda_input-append date" id="dp1" data-date="12-02-2012" data-date-format="dd-mm-yyyy">                                
+                                <div class="sagenda_input-append date" id="startDate" data-date="12-02-2012" data-date-format="dd-mm-yyyy">                                
                                     <input type="text" class="sagenda_form-control"  readonly value="" id="dpd1">
                                     <a href="#" class="sagenda_add-on" id="dp4" data-date-format="dd-mm-yyyy" data-val="true" data-date=""><i class="sagenda_icon-th"></i></a>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -58,10 +43,10 @@
                         <div class="sagenda_col">
                             <div class="sagenda_form-group">
                                 <label for="exampleInputEmail1">End Date</label>
-                                <div class="sagenda_input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                <div class="sagenda_input-append date" id="endDate" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
                                     <input type="text" class="sagenda_form-control" value="" readonly id="dpd2">
                                     <a href="#" class="sagenda_add-on" id="dp5" data-date-format="dd-mm-yyyy" data-val="true" data-date=""><i class="sagenda_icon-th"></i></a>
-                                    
+
                                 </div>
                             </div>
                         </div>

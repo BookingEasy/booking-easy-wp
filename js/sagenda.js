@@ -61,27 +61,30 @@ jQuery(document).ready(function($) {
             newDate.setDate(newDate.getDate() + 1);
             checkout.setValue(newDate);
             $("#bookableitems option[value='0']").attr('selected', 'selected');  
+            $('#alert').show().find('strong').text('The start date can not be greater then the end date');
         }
         else {         
             startDate = new Date(ev.date);
+            $('#alert').hide();
             $('#dpd1').val($('#dp4').data('date'));
         }
         $('#dp4').datepicker('hide');
     $('#dp5')[0].focus();
     });
-    $('#dp5').datepicker({
+   checkout = $('#dp5').datepicker({
         format: 'mm-dd-yyyy',
         onRender: function(date) {
-            return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+            return date.valueOf() <= startDate.valueOf() ? 'disabled' : '';
         }
     })
     .on('changeDate', function(ev){
         
         if (ev.date.valueOf() < startDate.valueOf()){
-            
+            $('#alert').show().find('strong').text('The end date can not be less then the start date');
         } else {
             $("#bookableitems option[value='0']").attr('selected', 'selected');
             endDate = new Date(ev.date);
+            $('#alert').hide();
             $('#dpd2').val($('#dp5').data('date'));
         }
         $('#dp5').datepicker('hide');
