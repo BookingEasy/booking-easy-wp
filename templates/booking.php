@@ -1,17 +1,17 @@
 <div id="booking-form" style="display: none">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="row">
-                <div class="col-xs-12">
+    <div class="sagenda_row">
+        <div class="sagenda_col">
+            <div class="sagenda_row">
+                <div class="sagenda_col">
                     <div class="reservation-form-heading">
                                
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="form-group">
+            <div class="sagenda_row">
+                <div class="sagenda_col">
+                    <div class="sagenda_form-group">
                         <label for="exampleInputEmail1">Courtesy</label>
                         <label>
                             <input type="radio" name="optionsRadios" id="optionsRadios1" value="Mr" checked />
@@ -27,54 +27,54 @@
             </div>
 
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="form-group">
+            <div class="sagenda_row">
+                <div class="sagenda_col">
+                    <div class="sagenda_form-group">
                         <label for="exampleInputPassword1">First Name</label>
                         <br />
-                        <input type="text" class="form-control" id="firstName" required placeholder="First Name" />
-                        <input type="hidden" class="form-control" id="EventIdentifier" placeholder="EventIdentifier" />
+                        <input type="text" class="sagenda_form-control" id="firstName" required placeholder="First Name" />
+                        <input type="hidden" class="sagenda_form-control" id="EventIdentifier" placeholder="EventIdentifier" />
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="form-group">
+            <div class="sagenda_row">
+                <div class="sagenda_col">
+                    <div class="sagenda_form-group">
                         <label for="exampleInputPassword1">Last Name</label>
                         <br />
-                        <input type="text" class="form-control" id="lastName" required placeholder="Last Name" />
+                        <input type="text" class="sagenda_form-control" id="lastName" required placeholder="Last Name" />
                     </div>
                 </div>
             </div>
 
 
-            <div class="row">
-                <div class="col-xs-12">
+            <div class="sagenda_row">
+                <div class="sagenda_col">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Phone Number</label>
                         <br />
-                        <input type="text" class="form-control" id="phonenumber" required placeholder="Phone Number" />
+                        <input type="text" class="sagenda_form-control" id="phonenumber" required placeholder="Phone Number" />
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-xs-12">
+            <div class="sagenda_row">
+                <div class="sagenda_col">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Email</label>
                         <br />
-                        <input type="email" class="form-control" id="email" required placeholder="Email" />
+                        <input type="email" class="sagenda_form-control" id="email" required placeholder="Email" />
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-xs-12">
+            <div class="sagenda_row">
+                <div class="sagenda_col">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Description</label>
                         <br />
-                        <textarea class="form-control" id="description" name="description" required rows="5"></textarea>
+                        <textarea class="sagenda_form-control" id="description" name="description" required rows="5"></textarea>
                     </div>
                 </div>
             </div>           
