@@ -15,41 +15,43 @@ jQuery(document).ready(function($) {
     }
     
     
-//    //Date Pickers  
-//    var nowTemp = new Date();
-//    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-//    
-//    var checkin = $('#dpd1').datepicker({
-//        format: 'mm-dd-yyyy',
-//        onRender: function(date) {
-//            return date.valueOf() < now.valueOf() ? 'disabled' : '';
-//        }
-//    }).on('changeDate', function(ev) {
-//        $("#bookableitems option[value='0']").attr('selected', 'selected');
-//        if (ev.date.valueOf() > checkout.date.valueOf()) {
-//            var newDate = new Date(ev.date)
-//            newDate.setDate(newDate.getDate() + 1);
-//            checkout.setValue(newDate);
-//            $("#bookableitems option[value='0']").attr('selected', 'selected');            
-//        }
-//        checkin.hide();
-//        $('#dpd2')[0].focus();
-//    }).data('datepicker');
-//    var checkout = $('#dpd2').datepicker({
-//        format: 'mm-dd-yyyy',
-//        onRender: function(date) {
-//            return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
-//        }
-//    }).on('changeDate', function(ev) {
-//        $("#bookableitems option[value='0']").attr('selected', 'selected');
-//        checkout.hide();
-//    }).data('datepicker');
-//    
+    //    //Date Pickers  
+    //    var nowTemp = new Date();
+    //    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+    //    
+    //    var checkin = $('#dpd1').datepicker({
+    //        format: 'mm-dd-yyyy',
+    //        onRender: function(date) {
+    //            return date.valueOf() < now.valueOf() ? 'disabled' : '';
+    //        }
+    //    }).on('changeDate', function(ev) {
+    //        $("#bookableitems option[value='0']").attr('selected', 'selected');
+    //        if (ev.date.valueOf() > checkout.date.valueOf()) {
+    //            var newDate = new Date(ev.date)
+    //            newDate.setDate(newDate.getDate() + 1);
+    //            checkout.setValue(newDate);
+    //            $("#bookableitems option[value='0']").attr('selected', 'selected');            
+    //        }
+    //        checkin.hide();
+    //        $('#dpd2')[0].focus();
+    //    }).data('datepicker');
+    //    var checkout = $('#dpd2').datepicker({
+    //        format: 'mm-dd-yyyy',
+    //        onRender: function(date) {
+    //            return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+    //        }
+    //    }).on('changeDate', function(ev) {
+    //        $("#bookableitems option[value='0']").attr('selected', 'selected');
+    //        checkout.hide();
+    //    }).data('datepicker');
+    //    
     
     // New Code
+  //  var startDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+ //   var endDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
     var nowTemp = new Date();
     var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-     var checkin = $('#dp4').datepicker({
+    $('#dp4').datepicker({
         format: 'mm-dd-yyyy',
         onRender: function(date) {
             return date.valueOf() < now.valueOf() ? 'disabled' : '';
@@ -59,19 +61,20 @@ jQuery(document).ready(function($) {
         if (ev.date.valueOf() > endDate.valueOf()){            
             var newDate = new Date(ev.date)
             newDate.setDate(newDate.getDate() + 1);
-            checkout.setValue(newDate);
+            endDate.setValue(newDate);
             $("#bookableitems option[value='0']").attr('selected', 'selected');  
             $('#alert').show().find('strong').text('The start date can not be greater then the end date');
         }
         else {         
             startDate = new Date(ev.date);
+            endDate = new Date(ev.date);
             $('#alert').hide();
             $('#dpd1').val($('#dp4').data('date'));
         }
         $('#dp4').datepicker('hide');
-    $('#dp5')[0].focus();
+        $('#dp5')[0].focus();
     });
-   checkout = $('#dp5').datepicker({
+   $('#dp5').datepicker({
         format: 'mm-dd-yyyy',
         onRender: function(date) {
             return date.valueOf() <= startDate.valueOf() ? 'disabled' : '';
@@ -183,7 +186,7 @@ jQuery(document).ready(function($) {
                 data: {
                     action: 'subscribeForEvent',
                     EventIdentifier: $('#EventIdentifier').val(),
-                    endDate:formatDate(checkout.date),
+                    endDate:$('#dpd2').val(),
                     BookableItemId: $('#bookableitems :selected').val(),
                     EventScheduleId: $("input:radio[name=event-item]:checked").val(),
                     Courtesy:$("input:radio[name=optionsRadios]:checked").val(),
@@ -198,7 +201,7 @@ jQuery(document).ready(function($) {
                     $("#booking-form").hide();
                     $("#form-step1").show();
                     //jQuery("#events-list").html('');
-                    $(".alert-success").css("display","block");
+                    $(".sagenda_alert").css("display","block");
                     console.log(data);
             
                 },

@@ -1,15 +1,15 @@
 <div class="sagenda_container">
     <div class="sagenda_col">
 
-        <p class="sagenda_text-warning">
+        <!--p class="sagenda_text-warning">
             <?php
-            if (!is_user_logged_in()) {
+            /*if (!is_user_logged_in()) {
                 echo '<p>You need to be a site member to be able to ';
                 echo 'Subscribe for events. Sign up to gain access!</p>';
                 return;
-            }
+            }*/
             ?>
-        </p>
+        </p-->
     </div>
 
     <div class="sagenda_row">
