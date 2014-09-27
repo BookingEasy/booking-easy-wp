@@ -39,11 +39,11 @@ class ShortCode {
     function LoadJqueryandJS() {
 
         wp_register_script('mrs', SAGENDA_PLUGIN_URL . 'js/sagenda.js', array('jquery'), false, true);
-        wp_register_script('mrs2', SAGENDA_PLUGIN_URL . 'js/sagenda.min.js', array('jquery'), true, false);
-        wp_register_script('mrs3', SAGENDA_PLUGIN_URL . 'js/sagenda-datepicker.js', array('jquery'), true, false);        
-        wp_enqueue_script('mrs');
+        wp_register_script('mrs2', SAGENDA_PLUGIN_URL . 'js/sagenda.min.js', array('jquery'), false, true);
+        wp_register_script('mrs3', SAGENDA_PLUGIN_URL . 'js/sagenda-datepicker.js', array('jquery'), false, true);        
         wp_enqueue_script('mrs2');
         wp_enqueue_script('mrs3');
+        wp_enqueue_script('mrs');
     }
 
     function pluginname_ajaxurl() {

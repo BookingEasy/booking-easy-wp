@@ -33,7 +33,7 @@
                                 <label for="exampleInputEmail1">Start date</label>
                                 <div class="sagenda_input-append date" id="startDate" data-date="12-02-2012" data-date-format="dd-mm-yyyy">                                
                                     <input type="text" class="sagenda_form-control"  readonly value="" id="dpd1">
-                                    <a href="#" class="sagenda_add-on" id="dp4" data-date-format="dd-mm-yyyy" data-val="true" data-date=""><i class="sagenda_icon-th"></i></a>
+                                    <div class="sagenda_add-on" id="dp4" data-date-format="dd-mm-yyyy" data-val="true" data-date=""><i class="sagenda_icon-th"></i></div>
 
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                                 <label for="exampleInputEmail1">End Date</label>
                                 <div class="sagenda_input-append date" id="endDate" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
                                     <input type="text" class="sagenda_form-control" value="" readonly id="dpd2">
-                                    <a href="#" class="sagenda_add-on" id="dp5" data-date-format="dd-mm-yyyy" data-val="true" data-date=""><i class="sagenda_icon-th"></i></a>
+                                    <div class="sagenda_add-on" id="dp5" data-date-format="dd-mm-yyyy" data-val="true" data-date=""><i class="sagenda_icon-th"></i></div>
 
                                 </div>
                             </div>
