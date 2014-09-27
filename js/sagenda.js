@@ -135,7 +135,7 @@ jQuery(document).ready(function($) {
         });
     
     
-    $("input[name='event-item']").live("click", function() { 
+$("#events-list").delegate("input[name='event-item']", "click", function() {
         
         var value = this.value;
         $("#EventIdentifier").val(this.id);
@@ -143,7 +143,9 @@ jQuery(document).ready(function($) {
         $("#booking-form").show();
     }); 
     
-    $("#backtocalender").live("click", function() {
+
+    $("#booking-form").delegate("#backtocalender", "click", function() {
+
         $("#booking-form").hide();
         $("#form-step1").show();
     });
@@ -177,7 +179,7 @@ jQuery(document).ready(function($) {
         return is_error;
     }
     
-    $("#submit-reservation").live("click",function(){        
+    $("#booking-form").delegate("#submit-reservation", "click", function() {
         if(validateStep1()) {
             jQuery.ajax({
                 type: 'POST',    
