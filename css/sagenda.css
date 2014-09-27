@@ -137,6 +137,7 @@ label {
 
 .sagenda_input-append .sagenda_add-on, .sagenda_input-append .btn, .sagenda_input-append .btn-group {
     margin-left: -30px;
+    cursor: pointer;
 }
 
 /* New Css for Sagenda Specific */
