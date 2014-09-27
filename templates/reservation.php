@@ -1,15 +1,25 @@
 <div class="sagenda_container">
     <div class="sagenda_col">
 
-        <!--p class="sagenda_text-warning">
+        
             <?php
+            if (!$connected) {
+                echo '<div class="sagenda_alert sagenda_alert-faliure">';
+                echo '<p>You didn’t connect your Sagenda account :</p>';
+                echo '<p>1.&nbsp; Create a free account on <a href="https://sagenda.net/Accounts/Register">Sagenda.</a> (setup your “bookable items” and events).</p>';
+                echo '<p>2.&nbsp; Copy your token (from the backend of sagenda.net Settings / account settings) to your WordPress installation (backend of wp / Settings / Sagenda).</p>';
+                echo '</div>';
+            }
             /*if (!is_user_logged_in()) {
                 echo '<p>You need to be a site member to be able to ';
                 echo 'Subscribe for events. Sign up to gain access!</p>';
                 return;
             }*/
+            
+            
             ?>
-        </p-->
+        
+        
     </div>
 
     <div class="sagenda_row">

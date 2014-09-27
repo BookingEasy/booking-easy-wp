@@ -62,7 +62,8 @@ class ShortCode {
     function mrs1_book_event_form() {
         $bookableItems = $this->getBookableItems();
         $mrsService = new MyReservationService();
-        
+        $options = get_option('mrs1_authentication_code');        
+        $connected = $mrsService->ValidateAuthCode($options);
         include_once( SAGENDA_PLUGIN_DIR . 'templates/reservation.php');
     }
 

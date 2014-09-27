@@ -55,6 +55,13 @@
     max-width: 350px;
 }
 
+.sagenda_alert-faliure {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    display: inline-block;
+    max-width: 350px;
+}
 
 .sagenda_form-control {
     display: block;
@@ -141,7 +148,7 @@ label {
 }
 
 .sagenda_input-append .sagenda_add-on, .sagenda_input-append .btn, .sagenda_input-append .btn-group {
-    margin-left: -30px;
+    margin-left: -6px;
     cursor: pointer;
 }
 
