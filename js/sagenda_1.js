@@ -122,8 +122,8 @@ jQuery(document).ready(function($) {
                     $("#booking-form").hide();
                     $("#form-step1").show();
                     //jQuery("#events-list").html('');
-                    $(".sagenda_alert").css("display","block");
-                    console.log(data);
+                    $(".sagenda_alert").css("display","inline-block");
+                    
             
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
