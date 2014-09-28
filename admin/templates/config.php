@@ -3,7 +3,13 @@
         <div class="mrs-heading">
             Sagenda for WordPress: Sagenda Settings           
         </div>
-        <?php settings_errors(); ?>
+        <?php 
+        global $wp_version;
+        $version = $wp_version;
+        if($version >= 3.0) {
+            settings_errors(); 
+        }
+        ?>
         <h3 class="mrs-title">Sagenda Authentication Settings <?php if ($connected) { ?><span class="status positive">CONNECTED</span> <?php } else { ?><span class="status negative">NOT CONNECTED</span><?php } ?></h3>
         <input type="hidden" name="action" value="save_mrs1_options" />
         <?php wp_nonce_field('mrs1'); ?>

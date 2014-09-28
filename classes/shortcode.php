@@ -14,6 +14,7 @@ include_once( SAGENDA_PLUGIN_DIR . 'classes/SubscribeForEvent.php');
 
 class ShortCode {
 
+    public $version;
 //put your code here
     private static $instance = null;
 
@@ -26,6 +27,8 @@ class ShortCode {
     }
 
     private function __construct() {
+        global $wp_version;
+        $this->version = $wp_version;
         add_action('wp_enqueue_scripts', array($this, 'mrs_theme_styles'));
         add_action('wp_head', array($this, 'pluginname_ajaxurl'));
         add_action('wp_enqueue_scripts', array($this, 'LoadJqueryandJS'));
@@ -38,12 +41,20 @@ class ShortCode {
 
     function LoadJqueryandJS() {
 
-        wp_register_script('mrs', SAGENDA_PLUGIN_URL . 'js/sagenda.js', array('jquery'), false, true);
-        wp_register_script('mrs2', SAGENDA_PLUGIN_URL . 'js/sagenda.min.js', array('jquery'), false, true);
-        wp_register_script('mrs3', SAGENDA_PLUGIN_URL . 'js/sagenda-datepicker.js', array('jquery'), false, true);        
-        wp_enqueue_script('mrs2');
-        wp_enqueue_script('mrs3');
-        wp_enqueue_script('mrs');
+        if ($this->version > 3.4) {
+            wp_register_script('mrs', SAGENDA_PLUGIN_URL . 'js/sagenda.js', array('jquery'), false, true);
+            wp_register_script('mrs3', SAGENDA_PLUGIN_URL . 'js/sagenda-datepicker.js', array('jquery'), false, true);
+
+            wp_enqueue_script('mrs3');
+            wp_enqueue_script('mrs');
+        }
+        else {
+            wp_register_script('mrs', SAGENDA_PLUGIN_URL . 'js/sagenda_1.js', array('jquery'), false, true);
+            wp_enqueue_script('mrs');
+        }
+        
+        //     wp_enqueue_script('mrs2');
+        //   wp_register_script('mrs2', SAGENDA_PLUGIN_URL . 'js/sagenda.min.js', array('jquery'), false, true);
     }
 
     function pluginname_ajaxurl() {
@@ -55,14 +66,14 @@ class ShortCode {
     }
 
     function mrs_theme_styles() {
-        wp_register_style('sagenda', SAGENDA_PLUGIN_URL.'css/sagenda.css');
+        wp_register_style('sagenda', SAGENDA_PLUGIN_URL . 'css/sagenda.css');
         wp_enqueue_style('sagenda');
     }
 
     function mrs1_book_event_form() {
         $bookableItems = $this->getBookableItems();
         $mrsService = new MyReservationService();
-        $options = get_option('mrs1_authentication_code');        
+        $options = get_option('mrs1_authentication_code');
         $connected = $mrsService->ValidateAuthCode($options);
         include_once( SAGENDA_PLUGIN_DIR . 'templates/reservation.php');
     }
