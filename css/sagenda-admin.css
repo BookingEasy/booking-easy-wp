@@ -33,17 +33,17 @@
 span.status {
     display: inline-block;
     padding: 3px 6px;
-    
+    color:#fff;
     font-size: 12px;
-    background-color: lightGrey;
+    /*background-color: lightGrey;*/
     font-weight: bold;
 }
 
 .positive {
-    color:green;
+    background-color:green;
 }
 .negative {
-    color:red;
+    background-color:red;
 }
 .mrs1-reservation-form {    
     border-bottom: 1px solid #ddd;
