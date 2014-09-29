@@ -47,8 +47,8 @@ jQuery(document).ready(function($) {
     //    
     
     // New Code
-  //  var startDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
- //   var endDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+    //  var startDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+    //   var endDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
     var nowTemp = new Date();
     var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
     $('#dp4').datepicker({
@@ -74,7 +74,7 @@ jQuery(document).ready(function($) {
         $('#dp4').datepicker('hide');
         $('#dp5')[0].focus();
     });
-   $('#dp5').datepicker({
+    $('#dp5').datepicker({
         format: 'mm-dd-yyyy',
         onRender: function(date) {
             return date.valueOf() <= startDate.valueOf() ? 'disabled' : '';
@@ -97,9 +97,13 @@ jQuery(document).ready(function($) {
     
     $("#bookableitems").change(function() {
         
-       
-        if(this.value == 0) {
-            alert("Please Select a Bookable Item to see the Events");            
+        if($('#dpd1').val().length == 0  || $('#dpd2').val().length == 0) {
+            $("#alert-mesg").css("display","block");
+            $("#alert-mesg").text("Please Select the Start and End date.");
+        }
+        else if(this.value == 0) {
+            $("#alert-mesg").css("display","block");
+            $("#alert-mesg").text("Please Select a Bookable Item to see the Events");          
         }       
         else {            
             jQuery.ajax({
@@ -135,7 +139,7 @@ jQuery(document).ready(function($) {
         });
     
     
-$("#events-list").delegate("input[name='event-item']", "click", function() {
+    $("#events-list").delegate("input[name='event-item']", "click", function() {
         
         var value = this.value;
         $("#EventIdentifier").val(this.id);

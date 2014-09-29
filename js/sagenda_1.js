@@ -24,10 +24,17 @@ jQuery(document).ready(function($) {
     
     $("#bookableitems").change(function() {        
        
-        if(this.value == 0) {
-            alert("Please Select a Bookable Item to see the Events");            
+        if(startDate == ""  || endDate == "") {
+            $("#alert-mesg").css("display","block");
+            $("#alert-mesg").text("Please Select the Start and End date.");
+        }
+        else if(this.value == 0) {
+            $("#alert-mesg").css("display","block");
+            $("#alert-mesg").text("Please Select a Bookable Item to see the Events.");            
         }       
-        else {            
+      
+        else {
+            $("#alert-mesg").css("display","none");
             jQuery.ajax({
                 type: 'POST',    
                 url: ajaxurl,
@@ -94,6 +101,7 @@ jQuery(document).ready(function($) {
             $("#description").css("background" , "#FFAAAA");        
             is_error = false;
         }
+        
         return is_error;
     }
     

@@ -21,6 +21,8 @@
                 <div id="form-step1">
                     <div class="sagenda_row">
                         <div class="sagenda_col">
+                            <div class="sagenda_alert-faliure" id="alert-mesg">
+                            </div>
                             <?php wp_nonce_field('add_reservation_form', 'br_user_form'); ?>
                             <div class="sagenda_alert sagenda_alert-success" style="margin-left: 0;display: none">
                                 You successfully subscribe for the event.

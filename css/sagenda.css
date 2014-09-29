@@ -259,6 +259,13 @@ hr {
 .sagenda_show {
     display: block !important;
 }
+#alert-mesg {
+    display:none;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
 
 /*!
  * Datepicker for Bootstrap
