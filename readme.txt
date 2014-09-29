@@ -33,7 +33,7 @@ Follow these steps to install Sagenda:
 == Upgrade Notice ==
 
 = 1.0.1 =
-* ...
+* FIXED :  Compatibility issues with serveral themes and plugins.
 
 = 1.0.0 =
 First release published in the WordPress repository.
@@ -41,7 +41,7 @@ First release published in the WordPress repository.
 == Changelog ==
 
 = 1.0.1 =
-* ...
+* FIXED :  Compatibility issues with serveral themes and plugins.
 
 = 1.0.0 =
 * First release
