@@ -52,7 +52,7 @@ jQuery(document).ready(function($) {
     var nowTemp = new Date();
     var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
     $('#dp4').datepicker({
-        format: 'dd-mm-yyyy',
+        format: 'mm-dd-yyyy',
         onRender: function(date) {
             return date.valueOf() < now.valueOf() ? 'disabled' : '';
         }
@@ -75,7 +75,7 @@ jQuery(document).ready(function($) {
         $('#dp5')[0].focus();
     });
     $('#dp5').datepicker({
-        format: 'dd-mm-yyyy',
+        format: 'mm-dd-yyyy',
         onRender: function(date) {
             return date.valueOf() <= startDate.valueOf() ? 'disabled' : '';
         }
