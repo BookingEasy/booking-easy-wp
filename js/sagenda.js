@@ -52,7 +52,7 @@ jQuery(document).ready(function($) {
     var nowTemp = new Date();
     var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
     $('#dp4').datepicker({
-        format: 'mm-dd-yyyy',
+        format: 'dd-mm-yyyy',
         onRender: function(date) {
             return date.valueOf() < now.valueOf() ? 'disabled' : '';
         }
@@ -75,7 +75,7 @@ jQuery(document).ready(function($) {
         $('#dp5')[0].focus();
     });
     $('#dp5').datepicker({
-        format: 'mm-dd-yyyy',
+        format: 'dd-mm-yyyy',
         onRender: function(date) {
             return date.valueOf() <= startDate.valueOf() ? 'disabled' : '';
         }
@@ -106,6 +106,7 @@ jQuery(document).ready(function($) {
             $("#alert-mesg").text("Please Select a Bookable Item to see the Events");          
         }       
         else {            
+            $("#alert-mesg").css("display","none");
             jQuery.ajax({
                 type: 'POST',    
                 url: ajaxurl,
