@@ -130,6 +130,7 @@ jQuery(document).ready(function($) {
                     $("#booking-form").hide();
                     $("#form-step1").show();
                     //jQuery("#events-list").html('');
+                    $("input:radio[name=event-item]:checked").prop('checked', false);
                     $(".sagenda_alert").css("display","inline-block");
                     
             
