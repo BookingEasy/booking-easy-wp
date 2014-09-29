@@ -711,7 +711,7 @@ table th[class*="col-"] {
 
 ::-webkit-datetime-edit { padding: 1em; }
 ::-webkit-datetime-edit-fields-wrapper { background: silver; }
-::-webkit-datetime-edit-text {  padding: 0 0.3em; }
+::-webkit-datetime-edit-text {  padding: 0 0.2em; }
 ::-webkit-datetime-edit-month-field {  }
 ::-webkit-datetime-edit-day-field {  }
 ::-webkit-datetime-edit-year-field {  }
