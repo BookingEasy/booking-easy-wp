@@ -8,7 +8,7 @@
 include_once( SAGENDA_PLUGIN_DIR . 'classes/SubscribeForEvent.php');
 
 class MyReservationService {
-    
+
     protected $apiUrl = 'https://www.sagenda.net/api/'; //Live Server
 
     public function __construct() {
@@ -16,18 +16,19 @@ class MyReservationService {
     }
 
     public function ValidateAuthCode($authCode) {
-        $results = false;
         try {
             $json = @file_get_contents($this->apiUrl . 'ValidateAccount/' . $authCode);
             $results = json_decode($json);
         } catch (Exception $exc) {
-            
+            //echo $exc->getTraceAsString();
         }
-        return $results->Success;
+        if($results != FALSE)
+            return $results->Success;
+        else
+            return 0;
     }
 
     public function getBookableItems($authCode) {
-        $results = false;
         try {
             $json = @file_get_contents($this->apiUrl . 'Events/GetBookableItemList/' . $authCode);
             $results = json_decode($json);
@@ -38,7 +39,6 @@ class MyReservationService {
     }
 
     public function getEventsList($authCode, $startDate = "07-13-2014", $endDate = "07-30-2014", $bookableItemId = 0) {
-        $results = false;
         try {
             $json = @file_get_contents($this->apiUrl . 'Events/GetAvailability/' . $authCode . '/' . $startDate . '/' . $endDate . '/?bookableItemId=' . $bookableItemId);
             $results = json_decode($json);
