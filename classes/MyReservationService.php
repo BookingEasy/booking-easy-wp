@@ -9,7 +9,7 @@ include_once( SAGENDA_PLUGIN_DIR . 'classes/SubscribeForEvent.php');
 
 class MyReservationService {
 
-    protected $apiUrl = 'https://www.sagenda.net/api/'; //Live Server
+    protected $apiUrl = 'http://www.sagenda.net/api/'; //Live Server
 
     public function __construct() {
         
