@@ -1,3 +1,8 @@
+<?php
+    if (!ini_get('allow_url_fopen')) {
+    ini_set('allow_url_fopen', '1');
+}
+?>
 <div id="mrs-<?php echo $tab; ?>" class="wrap mrs-settings">
     <form class="mrs1-reservation-form" action="admin-post.php" method="post">
         <div class="mrs-heading">

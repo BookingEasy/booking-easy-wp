@@ -20,7 +20,7 @@ class MyReservationService {
             $json = @file_get_contents($this->apiUrl . 'ValidateAccount/' . $authCode);
             $results = json_decode($json);
         } catch (Exception $exc) {
-            //echo $exc->getTraceAsString();
+            
         }
         if($results != FALSE)
             return $results->Success;
