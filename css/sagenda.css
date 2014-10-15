@@ -717,3 +717,7 @@ table th[class*="col-"] {
 ::-webkit-datetime-edit-year-field {  }
 ::-webkit-inner-spin-button { display: none; }
 ::-webkit-calendar-picker-indicator { background: orange; }
+.sagenda-ref-link {
+    font-size: 10px;
+    text-decoration: none;    
+}

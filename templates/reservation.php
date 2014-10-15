@@ -114,4 +114,9 @@
         </div>
     </div>
 
+     <div class="sagenda_row">
+                        <div class="sagenda_col">
+                            <a href="http://www.sagenda.net" class="sagenda-ref-link">Create a free Booking Account on Sagenda!</a>
+                        </div>
+                    </div>
 </div>
