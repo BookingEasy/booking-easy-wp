@@ -47,12 +47,11 @@ class ShortCode {
 
             wp_enqueue_script('mrs3');
             wp_enqueue_script('mrs');
-        }
-        else {
+        } else {
             wp_register_script('mrs', SAGENDA_PLUGIN_URL . 'js/sagenda_1.js', array('jquery'), false, true);
             wp_enqueue_script('mrs');
         }
-        
+
         //     wp_enqueue_script('mrs2');
         //   wp_register_script('mrs2', SAGENDA_PLUGIN_URL . 'js/sagenda.min.js', array('jquery'), false, true);
     }
@@ -90,10 +89,14 @@ class ShortCode {
         $endDate = $_POST["endDate"];
         $bookableItemId = $_POST["bookableItemId"];
         $authCode = get_option('mrs1_authentication_code');
-        $events = $mrsService->getEventsList($authCode, $startDate, $endDate, $bookableItemId);
+        $events = $mrsService->getEventsList($authCode, $startDate, $endDate, $bookableItemId);        
         $eventslist = "<ul class='events'>";
-        foreach ($events as $event) {
-            $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> <input type='radio' name='event-item' value='" . $event->EventScheduleId . "' id='" . $event->EventIdentifier . "'> " . $event->Title . "</label></li>";
+        if (count($events) > 0) {
+            foreach ($events as $event) {
+                $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> <input type='radio' name='event-item' value='" . $event->EventScheduleId . "' id='" . $event->EventIdentifier . "'> " . $event->Title . "</label></li>";
+            }
+        } else {
+            $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> No events found for the bookable item within the selected date range. </label></li>";
         }
         $eventslist .= "</ul>";
         echo $eventslist;

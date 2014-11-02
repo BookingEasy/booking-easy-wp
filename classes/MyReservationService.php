@@ -43,7 +43,7 @@ class MyReservationService {
             $json = @file_get_contents($this->apiUrl . 'Events/GetAvailability/' . $authCode . '/' . $startDate . '/' . $endDate . '/?bookableItemId=' . $bookableItemId);
             $results = json_decode($json);
         } catch (Exception $exc) {
-            
+            echo $exc->getMessage();
         }
         return $results;
     }

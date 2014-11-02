@@ -9,6 +9,8 @@
             Sagenda for WordPress: Sagenda Settings           
         </div>
         <?php 
+        
+        
         global $wp_version;
         $version = $wp_version;
         if($version >= 3.0) {
