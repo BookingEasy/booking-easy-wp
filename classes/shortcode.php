@@ -88,12 +88,13 @@ class ShortCode {
         $startDate = $_POST["startDate"];
         $endDate = $_POST["endDate"];
         $bookableItemId = $_POST["bookableItemId"];
+        $bookableItem = $_POST["bookableItem"];
         $authCode = get_option('mrs1_authentication_code');
         $events = $mrsService->getEventsList($authCode, $startDate, $endDate, $bookableItemId);        
         $eventslist = "<ul class='events'>";
         if (count($events) > 0) {
             foreach ($events as $event) {
-                $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> <input type='radio' name='event-item' value='" . $event->EventScheduleId . "' id='" . $event->EventIdentifier . "'> " . $event->Title . "</label></li>";
+                $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> <input type='radio' name='event-item' value='" . $event->EventScheduleId . "' id='" . $event->EventIdentifier . "'> " . $event->From.' - '.$event->To." : ".$bookableItem. "</label></li>";
             }
         } else {
             $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> No events found for the bookable item within the selected date range. </label></li>";

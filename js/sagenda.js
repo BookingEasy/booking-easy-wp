@@ -115,7 +115,8 @@ jQuery(document).ready(function($) {
                     action: 'getEventsList',
                     startDate: $('#dpd1').val(),
                     endDate:$('#dpd2').val(),
-                    bookableItemId:$('#bookableitems :selected').val()
+                    bookableItemId:$('#bookableitems :selected').val(),
+                    bookableItem:$("#bookableitems :selected").text()
                 },
                 success: function(data) {
                     jQuery("#events-list").html('');
