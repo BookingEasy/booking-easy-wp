@@ -52,7 +52,7 @@ class Sagenda {
     }
 
     function sagenda_custom_admin_footer() {
-        echo '<span id="footer-thankyou">Developed by <a href="http://www.sagenda.com/" target="_blank">IterationCorp</a></span>.';
+       // echo '<span id="footer-thankyou">Developed by <a href="http://www.sagenda.com/" target="_blank">IterationCorp</a></span>.';
     }
 
 }
