@@ -719,6 +719,6 @@ table th[class*="col-"] {
 ::-webkit-inner-spin-button { display: none; }
 ::-webkit-calendar-picker-indicator { background: orange; }
 .sagenda-ref-link {
-    font-size: 10px;
+    font-size: 12px;
     text-decoration: none;    
 }
