@@ -45,14 +45,14 @@ class Sagenda {
         PluginInstall::init();
        // if (is_admin()) {
             Admin::init();
-            add_filter('admin_footer_text', array($this, 'sagenda_custom_admin_footer'));
+            //add_filter('admin_footer_text', array($this, 'sagenda_custom_admin_footer'));
         //} else {
             ShortCode::init();
         //}
     }
 
     function sagenda_custom_admin_footer() {
-       // echo '<span id="footer-thankyou">Developed by <a href="http://www.sagenda.com/" target="_blank">IterationCorp</a></span>.';
+        echo '<span id="footer-thankyou">Developed by <a href="http://www.sagenda.com/" target="_blank">IterationCorp</a></span>.';
     }
 
 }
