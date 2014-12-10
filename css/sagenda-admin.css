@@ -56,3 +56,11 @@ span.status {
 .footer {
     padding: 15px;
 }
+.sagenda-errormesg {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    display: block;
+    padding:15px;
+   
+}

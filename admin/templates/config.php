@@ -16,8 +16,25 @@
         if($version >= 3.0) {
             settings_errors(); 
         }
+      
+       
         ?>
-        <h3 class="mrs-title">Sagenda Authentication Settings <?php if ($connected) { ?><span class="status positive">CONNECTED</span> <?php } else { ?><span class="status negative">NOT CONNECTED</span><?php } ?></h3>
+        <?php  if($connected === 2) {   ?>
+        <div class="sagenda-errormesg">
+            It look like that the Sagenda’s WebServices can’t reach internet and blocked by the FireWall on the server.
+            Please contact your hosting provider support and ask them to unblock Sagenda’s WebServices. you can give them our WP link as references : <a href="https://wordpress.org/plugins/sagenda" target="_blank">https://wordpress.org/plugins/sagenda</a>
+        </div>
+        <?php } 
+        else if($connected == 0) {
+            ?>
+        <div class="sagenda-errormesg">
+            Your token is wrong, please try it again or generate another ticket in Sagenda’s backend.
+        </div>
+        
+        <?php
+        }
+        ?>
+        <h3 class="mrs-title">Sagenda Authentication Settings <?php if ($connected == '1') { ?><span class="status positive">CONNECTED</span> <?php } else { ?><span class="status negative">NOT CONNECTED</span><?php } ?></h3>
         <input type="hidden" name="action" value="save_mrs1_options" />
         <?php wp_nonce_field('mrs1'); ?>
 

@@ -17,12 +17,15 @@ class MyReservationService {
 
     public function ValidateAuthCode($authCode) {
         try {
-            $json = @file_get_contents($this->apiUrl . 'ValidateAccount/' . $authCode);
+
+            if (false === ( $json = @file_get_contents($this->apiUrl . 'ValidateAccount/' . $authCode))) {
+                return 2;
+            }
             $results = json_decode($json);
         } catch (Exception $exc) {
             
         }
-        if($results != FALSE)
+        if ($results != FALSE)
             return $results->Success;
         else
             return 0;
@@ -53,16 +56,16 @@ class MyReservationService {
             $Booking = array("ApiToken" => $SEvent->getApiToken(), "EventIdentifier" => $SEvent->getEventIdentifier(), "BookableItemId" => $SEvent->getBookableItemId(), "EventScheduleId" => $SEvent->getEventScheduleId(), "Courtesy" => $SEvent->getCourtesy(), "FirstName" => $SEvent->getFirstName(), "LastName" => $SEvent->getLastName(), "PhoneNumber" => $SEvent->getPhoneNumber(), "Email" => $SEvent->getEmail(), "Description" => $SEvent->getDescription());
             $json_data = json_encode($Booking);
             $post = file_get_contents($this->apiUrl . 'Events/SetBooking', null, stream_context_create(array(
-                        'http' => array(
-                            'protocol_version' => 1.1,
-                            'user_agent' => 'Booking Easy',
-                            'method' => 'POST',
-                            'header' => "Content-type: application/json\r\n" .
-                            "Connection: close\r\n" .
-                            "Content-length: " . strlen($json_data) . "\r\n",
-                            'content' => $json_data,
-                        ),
-                    )));
+                'http' => array(
+                    'protocol_version' => 1.1,
+                    'user_agent' => 'Booking Easy',
+                    'method' => 'POST',
+                    'header' => "Content-type: application/json\r\n" .
+                    "Connection: close\r\n" .
+                    "Content-length: " . strlen($json_data) . "\r\n",
+                    'content' => $json_data,
+                ),
+            )));
             $result = json_decode($post);
             if ($result->Success) {
                 return true;
