@@ -17,7 +17,7 @@
             settings_errors(); 
         }
       
-       
+      
         ?>
         <?php  if($connected === 2) {   ?>
         <div class="sagenda-errormesg">
