@@ -217,13 +217,22 @@ jQuery(document).ready(function ($) {
                 },
                 success: function (data) {
                     //$('#subscribe_event').trigger("reset");
+                    obj = JSON.parse(data);
                     $("#booking-form").hide();
                     $("#form-step1").show();
                     //jQuery("#events-list").html('');
-                    $("input:radio[name=event-item]:checked").prop('checked', false);
-                    $(".sagenda_alert").css("display", "inline-block");
-                    getEventList();
+                    if (obj.Success == true) {
+                        $("input:radio[name=event-item]:checked").prop('checked', false);
+                        $(".sagenda_alert").css("display", "inline-block");
+                         $(".sagenda_alert-faliure").css("display", "none");
+                        getEventList();
+                    }
+                    else {
+                        $(".sagenda_alert-faliure").text(obj.Message);
+                        $(".sagenda_alert-faliure").css("display", "inline-block");
 
+                    }
+                    console.log(obj.Message);
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     console.log(errorThrown);
