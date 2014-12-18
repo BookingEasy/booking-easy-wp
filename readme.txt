@@ -9,7 +9,7 @@ License: GPLv2 or later
 Sagenda is a free online software that helps your clients fix appointments at absolutely NO COST!
 
 == Description ==
-Sagenda is an online booking software that helps your clients fix appointments and meetings with you online. Sagenda is available at absolutely NO COST for you or your clients! Moreover there is no limitation on nb of Bookings or on nb of customers. Sagenda don’t display any advertisement!
+Sagenda is an online booking software that helps your clients fix appointments and meetings with you online. Sagenda is available at absolutely NO COST for you or your clients! And the best thing about it is that you may have an unlimited number of bookings and/or customers. Our users always come first; that’s why Sagenda doesn’t display ads!
 
 This is an “Online Booking System” which gives customers the opportunity to choose the date and the time of an appointment according to one's own preferences and the booking can now be done online.
 
