@@ -32,7 +32,7 @@ class ShortCode {
         add_action('wp_enqueue_scripts', array($this, 'mrs_theme_styles'));
         add_action('wp_head', array($this, 'pluginname_ajaxurl'));
         add_action('wp_enqueue_scripts', array($this, 'LoadJqueryandJS'));
-        add_shortcode('sagenda-wp', array($this, 'mrs1_book_event_form'));
+        add_shortcode('sagenda-wp', array($this, 'mrs1_book_event_shortcode_form'));
         add_action('wp_ajax_getEventsList', array($this, 'getEventsList_callback'));
         add_action('wp_ajax_nopriv_getEventsList', array($this, 'getEventsList_callback'));
         add_action('wp_ajax_subscribeForEvent', array($this, 'subscribeForEvent_callback'));
@@ -77,6 +77,16 @@ class ShortCode {
         include_once( SAGENDA_PLUGIN_DIR . 'templates/reservation.php');
     }
 
+    function mrs1_book_event_shortcode_form() {
+        ob_start();
+        $this->mrs1_book_event_form();
+        
+        $output_string = ob_get_contents();       
+        ob_end_clean();
+
+        return $output_string;
+    }
+
     function getBookableItems() {
         $mrsService = new MyReservationService();
         $authCode = get_option('mrs1_authentication_code');
@@ -90,11 +100,11 @@ class ShortCode {
         $bookableItemId = $_POST["bookableItemId"];
         $bookableItem = $_POST["bookableItem"];
         $authCode = get_option('mrs1_authentication_code');
-        $events = $mrsService->getEventsList($authCode, $startDate, $endDate, $bookableItemId);        
+        $events = $mrsService->getEventsList($authCode, $startDate, $endDate, $bookableItemId);
         $eventslist = "<ul class='events'>";
         if (count($events) > 0) {
             foreach ($events as $event) {
-                $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> <input type='radio' name='event-item' value='" . $event->EventScheduleId . "' id='" . $event->EventIdentifier . "'> " . $event->From.' - '.$event->To." : ".$bookableItem. "</label></li>";
+                $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> <input type='radio' name='event-item' value='" . $event->EventScheduleId . "' id='" . $event->EventIdentifier . "'> " . $event->From . ' - ' . $event->To . " : " . $bookableItem . "</label></li>";
             }
         } else {
             $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> No events found for the bookable item within the selected date range. </label></li>";
