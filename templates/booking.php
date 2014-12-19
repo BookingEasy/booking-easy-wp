@@ -86,7 +86,7 @@
             </div>
         </div>
     </div>           
-  
+    <div style="clear: both">&nbsp;</div>
 
     <div class="sagenda_form-group">
         <div class="col-sm-offset-2 col-sm-10">
