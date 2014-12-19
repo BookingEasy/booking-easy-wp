@@ -112,9 +112,9 @@ class MyReservationService {
             $contents = curl_exec($this->curl);
             curl_close($this->curl);
 
-            if (curl_errno($c)) {
-                return 2;
-            }
+//            if (curl_error($this->curl)) {
+//                return 2;
+//            }
             // Decode json object
             $results = json_decode($contents);
         } catch (Exception $exc) {
