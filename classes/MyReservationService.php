@@ -110,11 +110,13 @@ class MyReservationService {
             //The maximum number of seconds to allow cURL functions to execute.	
             curl_setopt($this->curl, CURLOPT_TIMEOUT, 10);
             $contents = curl_exec($this->curl);
-            curl_close($this->curl);
+        
 
-//            if (curl_error($this->curl)) {
-//                return 2;
-//            }
+            if (curl_error($this->curl)) {
+                return 2;
+            }
+            
+                curl_close($this->curl);
             // Decode json object
             $results = json_decode($contents);
         } catch (Exception $exc) {
