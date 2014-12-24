@@ -15,6 +15,10 @@ class MyReservationService {
         
     }
 
+    protected function curlRequest($url) {
+        
+    }
+
     public function ValidateAuthCode($authCode) {
         try {
             $curl = curl_init();
@@ -99,7 +103,15 @@ class MyReservationService {
             //The maximum number of seconds to allow cURL functions to execute.	
             curl_setopt($curl, CURLOPT_TIMEOUT, 10);
             $contents = curl_exec($curl);
-            curl_close($curl);
+
+            // Check if any error occurred
+
+            if (curl_errno($this->curl)) {
+                echo 'error:' . curl_error($this->curl);
+                return 2;
+            }
+            // Decode json object
+            curl_close($this->curl);
             $results = json_decode($contents);
         } catch (Exception $exc) {
             echo $exc->getMessage();
