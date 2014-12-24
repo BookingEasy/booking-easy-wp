@@ -51,6 +51,8 @@ jQuery(document).ready(function ($) {
     //   var endDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
     var nowTemp = new Date();
     var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+    var endDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+    ;
     $('#dp4').datepicker({
         format: 'mm-dd-yyyy',
         onRender: function (date) {
@@ -58,6 +60,8 @@ jQuery(document).ready(function ($) {
         }
     })
             .on('changeDate', function (ev) {
+                startDate = new Date(ev.date);
+                endDate = new Date(ev.date);
                 if (ev.date.valueOf() > endDate.valueOf()) {
                     var newDate = new Date(ev.date)
                     newDate.setDate(newDate.getDate() + 1);
@@ -66,20 +70,23 @@ jQuery(document).ready(function ($) {
                     $('#alert').show().find('strong').text('The start date can not be greater then the end date');
                 }
                 else {
-                    startDate = new Date(ev.date);
-                    endDate = new Date(ev.date);
                     $('#alert').hide();
                     $('#dpd1').val($('#dp4').data('date'));
                 }
                 $('#dp4').datepicker('hide');
                 $('#dp5')[0].focus();
+                console.log(endDate.valueOf());
             });
     $('#dp5').datepicker({
         format: 'mm-dd-yyyy',
         onRender: function (date) {
-            return date.valueOf() <= startDate.valueOf() ? 'disabled' : '';
+            console.log(endDate.valueOf());
+            return date.valueOf() <= endDate.valueOf() ? 'disabled' : '';
         }
     })
+            .on("show", function (date) {
+                $(this).datepicker('update');
+            })
             .on('changeDate', function (ev) {
 
                 if (ev.date.valueOf() < startDate.valueOf()) {
@@ -224,7 +231,7 @@ jQuery(document).ready(function ($) {
                     if (obj.Success == true) {
                         $("input:radio[name=event-item]:checked").prop('checked', false);
                         $(".sagenda_alert").css("display", "inline-block");
-                         $(".sagenda_alert-faliure").css("display", "none");
+                        $(".sagenda_alert-faliure").css("display", "none");
                         getEventList();
                     }
                     else {
