@@ -280,7 +280,7 @@ hr {
 */
 
 
-.dropdown-menu {
+.sagenda-datepicker {
     position: absolute;
     top: 100%;
     left: 0;
@@ -300,14 +300,14 @@ hr {
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
-.dropdown-menu.pull-right {
+.sagenda-datepicker.pull-right {
     right: 0;
     left: auto;
 }
 
 
 
-table {
+.sagenda-datepicker table {
     max-width: 100%;
     background-color: transparent;
 }
