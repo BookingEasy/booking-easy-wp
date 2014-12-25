@@ -205,6 +205,7 @@ jQuery(document).ready(function ($) {
 
     $("#booking-form").delegate("#submit-reservation", "click", function () {
         if (validateStep1()) {
+            $("#sagenda-fields").hide();
             jQuery.ajax({
                 type: 'POST',
                 url: ajaxurl,
@@ -245,6 +246,9 @@ jQuery(document).ready(function ($) {
                     console.log(errorThrown);
                 }
             });
+        }
+        else {
+            $("#sagenda-fields").show();
         }
     });
 });    

@@ -4,7 +4,10 @@
             <div class="sagenda_row">
                 <div class="sagenda_col">
                     <div class="reservation-form-heading">
-
+                        
+                    </div>
+                    <div class="sagenda_alert sagenda_alert-faliure" id="sagenda-fields">
+                        Please fill out all the required fields
                     </div>
                 </div>
             </div>
