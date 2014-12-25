@@ -31,6 +31,9 @@ Follow these steps to install Sagenda:
 1. How to identify my Sagenda account in WordPress? Copy the token from your Sagenda account and paste it into your WordPress installation
 
 == Upgrade Notice ==
+= 1.0.5 =
+* IMPROVED : ...
+
 = 1.0.4 =
 * IMPROVED : Better way to call WebServices and give more input to the user in case of WebServices blocked by the hosting provider.
 
@@ -48,6 +51,10 @@ Follow these steps to install Sagenda:
 First release published in the WordPress repository.
 
 == Changelog ==
+
+= 1.0.5 =
+* IMPROVED : ...
+
 = 1.0.4 =
 * IMPROVED : Better way to call WebServices and give more input to the user in case of WebServices blocked by the hosting provider.
 
