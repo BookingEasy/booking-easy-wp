@@ -51,7 +51,7 @@ jQuery(document).ready(function ($) {
     //   var endDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
     var nowTemp = new Date();
     var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-    var endDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+    var startDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
     ;
     $('#dp4').datepicker({
         format: 'mm-dd-yyyy',
@@ -81,7 +81,7 @@ jQuery(document).ready(function ($) {
         format: 'mm-dd-yyyy',
         onRender: function (date) {
             console.log(endDate.valueOf());
-            return date.valueOf() <= endDate.valueOf() ? 'disabled' : '';
+            return date.valueOf() <= startDate.valueOf() ? 'disabled' : '';
         }
     })
             .on("show", function (date) {
