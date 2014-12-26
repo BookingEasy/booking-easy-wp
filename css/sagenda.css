@@ -143,7 +143,7 @@ label {
     padding: 4px 5px;
     font-size: 14px;
     font-weight: normal;
-    line-height: 25px;
+    line-height: 24px;
     text-align: center;
     text-shadow: 0 1px 0 #ffffff;
     background-color: #eeeeee;
@@ -308,7 +308,7 @@ hr {
 
 
 .sagenda-datepicker table {
-    max-width: 100%;
+    max-width:auto;
     background-color: transparent;
 }
 th {
@@ -575,7 +575,7 @@ table th[class*="col-"] {
     display: none;
 }
 .datepicker table {
-    width: 100%;
+    width: auto;
     margin: 0;
 }
 .datepicker td,
