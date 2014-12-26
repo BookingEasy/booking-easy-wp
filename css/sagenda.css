@@ -727,3 +727,8 @@ table th[class*="col-"] {
 #sagenda-fields {
     display: none;
 }
+
+#subscribe_event {
+    position: relative;
+    z-index: 1;
+}
