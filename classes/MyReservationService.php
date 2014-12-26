@@ -24,6 +24,8 @@ class MyReservationService {
             $results = $this->curlGetData($serviceUrl);
             if ($results == 2)
                 return 2;
+            elseif ($results == 3)
+                return 3;
             else
                 return $results->Success;
         } catch (Exception $exc) {
@@ -109,6 +111,13 @@ class MyReservationService {
             //The maximum number of seconds to allow cURL functions to execute.	
             curl_setopt($this->curl, CURLOPT_TIMEOUT, 10);
             $contents = curl_exec($this->curl);
+            if (curl_errno($this->curl)) {
+                if (curl_errno($this->curl) == 60) {
+                    return 3;
+                } else {
+                    return 2;
+                }
+            }
 
 
             if (curl_error($this->curl)) {
