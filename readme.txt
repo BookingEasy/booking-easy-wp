@@ -15,10 +15,11 @@ This is an “Online Booking System” which gives customers the opportunity to 
 
 The Sagenda system can be added to any type of website, so it is not necessary to make a new one. It can be added as a new page or in a new space. 
 
-To learn more about our Sagenda’s booking service please visit: http://www.sagenda.com/
+To learn more about our Sagenda’s booking service please visit: [http://www.sagenda.com/](http://www.sagenda.com/)
 
-**NOTE: You need to register an account on the Sagenda site and then you will get an authentication token which you will use to validate your Sagenda plugin. **
+To **create an account** please visit: [https://sagenda.net/Accounts/Register](https://sagenda.net/Accounts/Register)
 
+**NOTE: You need to register an account on the Sagenda site and then you will get an authentication token which you will use to validate your Sagenda plugin.**
 == Installation ==
 Follow these steps to install Sagenda: 
 
