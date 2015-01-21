@@ -16,6 +16,10 @@ class MyReservationService {
         $this->curl = curl_init();
     }
 
+    public function _isCurl() {
+        return function_exists('curl_version');
+    }
+
     public function ValidateAuthCode($authCode) {
         try {
 

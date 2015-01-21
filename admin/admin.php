@@ -50,13 +50,21 @@ class Admin {
         wp_register_style('sagendaadmin', SAGENDA_PLUGIN_URL .'css/sagenda-admin.css');
         wp_enqueue_style('sagendaadmin');
     }
+    public function _isCurl() {
+        return function_exists('curl_version');
+    }
 
     function show_mrs_settings() {
         $tab = 'mrs-settings';
         $options = get_option('mrs1_authentication_code');
+        if($this->_isCurl()) {
         include_once( SAGENDA_PLUGIN_DIR. 'classes/MyReservationService.php');
         $obj = new MyReservationService();
         $connected = $obj->ValidateAuthCode($options);
+        }
+        else {
+            $connected = 3;
+        }
         include_once( SAGENDA_PLUGIN_DIR . 'admin/templates/config.php');
     }
 
