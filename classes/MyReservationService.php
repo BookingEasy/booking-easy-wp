@@ -16,7 +16,7 @@ class MyReservationService {
         $this->curl = curl_init();
     }
 
-    public function _isCurl() {
+    private function _isCurl() {
         return function_exists('curl_version');
     }
 
@@ -135,68 +135,6 @@ class MyReservationService {
             echo $exc->getTraceAsString();
         }
         return $results;
-    }
-
-//Old Methods with File get contents    
-    public function ValidateAuthCodeOld($authCode) {
-        try {
-            if (false === ( $json = @file_get_contents($this->apiUrl . 'ValidateAccount/' . $authCode))) {
-                return 2;
-            }
-            $results = json_decode($json);
-        } catch (Exception $exc) {
-            
-        }
-        if ($results != FALSE)
-            return $results->Success;
-        else
-            return 0;
-    }
-
-    public function getBookableItemsOld($authCode) {
-        try {
-            $json = @file_get_contents($this->apiUrl . 'Events/GetBookableItemList/' . $authCode);
-            $results = json_decode($json);
-        } catch (Exception $exc) {
-            
-        }
-        return $results;
-    }
-
-    public function getEventsListOld($authCode, $startDate = "07-13-2014", $endDate = "07-30-2014", $bookableItemId = 0) {
-        try {
-            $json = @file_get_contents($this->apiUrl . 'Events/GetAvailability/' . $authCode . '/' . $startDate . '/' . $endDate . '/?bookableItemId=' . $bookableItemId);
-            $results = json_decode($json);
-        } catch (Exception $exc) {
-            echo $exc->getMessage();
-        }
-        return $results;
-    }
-
-    public function subscribeToEventOld(SubscribeForEvent $SEvent) {
-        try {
-            $Booking = array("ApiToken" => $SEvent->getApiToken(), "EventIdentifier" => $SEvent->getEventIdentifier(), "BookableItemId" => $SEvent->getBookableItemId(), "EventScheduleId" => $SEvent->getEventScheduleId(), "Courtesy" => $SEvent->getCourtesy(), "FirstName" => $SEvent->getFirstName(), "LastName" => $SEvent->getLastName(), "PhoneNumber" => $SEvent->getPhoneNumber(), "Email" => $SEvent->getEmail(), "Description" => $SEvent->getDescription());
-            $json_data = json_encode($Booking);
-            $post = file_get_contents($this->apiUrl . 'Events/SetBooking', null, stream_context_create(array(
-                'http' => array(
-                    'protocol_version' => 1.1,
-                    'user_agent' => 'Booking Easy',
-                    'method' => 'POST',
-                    'header' => "Content-type: application/json\r\n" .
-                    "Connection: close\r\n" .
-                    "Content-length: " . strlen($json_data) . "\r\n",
-                    'content' => $json_data,
-                ),
-            )));
-            $result = json_decode($post);
-            if ($result->Success) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (Exception $exc) {
-            echo $exc->getTraceAsString();
-        }
     }
 
 }

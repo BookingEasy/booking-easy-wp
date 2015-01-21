@@ -84,7 +84,7 @@
                     <div class="sagenda_form-group">
                         <label for="exampleInputPassword1">Description</label>
                     </div>
-                    <textarea class="sagenda_form-control" id="description" name="description" required rows="5"></textarea>
+                    <textarea class="sagenda_form-control" id="description" name="description"  rows="5"></textarea>
                 </div>
             </div>
         </div>

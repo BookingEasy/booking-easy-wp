@@ -191,14 +191,22 @@ jQuery(document).ready(function ($) {
             $("#phonenumber").css("background", "#FFAAAA");
             is_error = false;
         }
+        var x = $("#email").val();
+        var atpos = x.indexOf("@");
+        var dotpos = x.lastIndexOf(".");
+
         if ($("#email").val().length == 0) {
+            $("#email").css("background", "#FFAAAA");
+            is_error = false;
+        }
+        else if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
             $("#email").css("background", "#FFAAAA");
             is_error = false;
         }
 
         if ($("#description").val().length == 0) {
-            $("#description").css("background", "#FFAAAA");
-            is_error = false;
+            //  $("#description").css("background", "#FFAAAA");
+            //    is_error = false;
         }
         return is_error;
     }
