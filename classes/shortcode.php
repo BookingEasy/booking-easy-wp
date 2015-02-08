@@ -87,6 +87,9 @@ class ShortCode {
         return $output_string;
     }
 
+    function getAvailbleEvents($bookableId) {
+        
+    }
     function getBookableItems() {
         $mrsService = new MyReservationService();
         $authCode = get_option('mrs1_authentication_code');

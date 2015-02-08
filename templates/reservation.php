@@ -91,9 +91,13 @@
                                 <br />
                                 <select class="sagenda_form-control " id="bookableitems" >
                                     <option value="0">Bookable Item</option>
-                                    <?php foreach ($bookableItems as $bookableItem) { ?>
-                                        <option value="<?php echo $bookableItem->Id ?>"><?php echo $bookableItem->Name; ?></option>
-                                    <?php } ?>
+                                    <?php 
+                                    $iteration = 0;
+                                    foreach ($bookableItems as $bookableItem) { ?>
+                                        <option <?php if($iteration === 0)echo "selected"; ?> value="<?php echo $bookableItem->Id ?>"><?php echo $bookableItem->Name; ?></option>
+                                    <?php 
+                                    $iteration++;
+                                    } ?>
                                 </select>
                             </div>
                         </div>

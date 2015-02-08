@@ -52,7 +52,9 @@ jQuery(document).ready(function ($) {
     var nowTemp = new Date();
     var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
     var startDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-    ;
+    var endDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate()+ 7, 0, 0, 0, 0);
+    $('#dpd2').val(formatDate(endDate));
+    $('#dpd1').val(formatDate(now));
     $('#dp4').datepicker({
         format: 'mm-dd-yyyy',
         onRender: function (date) {
@@ -126,7 +128,7 @@ jQuery(document).ready(function ($) {
             }
         });
     }
-
+    getEventList();
 
     //Bookable Item Change
 
@@ -148,7 +150,7 @@ jQuery(document).ready(function ($) {
     });
 
 
-
+        
 
     //Save Button Click
 
