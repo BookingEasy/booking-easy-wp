@@ -5,9 +5,15 @@
         <?php
         if (!$connected) {
             echo '<div class="sagenda_alert sagenda_alert-faliure">';
-            echo '<p>You didn’t connected your Sagenda account :</p>';
-            echo '<p>1.&nbsp; Create a free account on <a href="https://sagenda.net/Accounts/Register">Sagenda.</a> (setup your “bookable items” and events).</p>';
-            echo '<p>2.&nbsp; Copy your token (from the backend of sagenda.net Settings / account settings) to your WordPress installation (backend of wp / Settings / Sagenda).</p>';
+            echo '<p>';
+            _e('You didn’t connected your Sagenda account :', 'sagenda-wp');
+            echo '</p>';
+            echo '<p>';
+            _e("1. Create a free account on <a href='https://sagenda.net/Accounts/Register'>Sagenda.</a> (setup your bookable items and events).", 'sagenda-wp');
+            echo '</p>';
+            echo '<p>';
+            _e('2. Copy your token (from the backend of sagenda.net Settings / account', 'sagenda-wp');
+            echo '</p>';
             echo '</div>';
         }
         ?>
@@ -25,7 +31,9 @@
                             </div>
                             <?php wp_nonce_field('add_reservation_form', 'br_user_form'); ?>
                             <div class="sagenda_alert sagenda_alert-success" style="margin-left: 0;display: none">
-                                You successfully subscribe for the event.
+                                <?php
+                                _e('You successfully subscribe for the event.', 'sagenda-wp');
+                                ?>                                
                             </div>
                         </div>
                     </div>
@@ -36,7 +44,7 @@
 
                                 </div>
                                 <div class="sagenda_form-group">
-                                    <label for="exampleInputEmail1">Start date</label>
+                                    <label for="exampleInputEmail1"><?php _e('Start date', 'sagenda-wp'); ?>   </label>
                                     <div class="sagenda_input-append date" id="startDate" data-date="12-24-2012" data-date-format="dd-mm-yyyy">                                
                                         <input type="text" class="sagenda_form-control"  readonly value="" id="dpd1">
                                         <div class="sagenda_add-on" id="dp4" data-date-format="dd-mm-yyyy" data-val="true" data-date=""><i class="sagenda_icon-th"></i></div>
@@ -48,7 +56,7 @@
                         <div class="sagenda_row">
                             <div class="sagenda_col">
                                 <div class="sagenda_form-group">
-                                    <label for="exampleInputEmail1">End Date</label>
+                                    <label for="exampleInputEmail1"><?php _e('End Date', 'sagenda-wp'); ?></label>
                                     <div class="sagenda_input-append date" id="endDate" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
                                         <input type="text" class="sagenda_form-control" value="" readonly id="dpd2">
                                         <div class="sagenda_add-on" id="dp5" data-date-format="dd-mm-yyyy" data-val="true" data-date=""><i class="sagenda_icon-th"></i></div>
@@ -64,7 +72,7 @@
                         <div class="sagenda_row">
                             <div class="sagenda_col">
                                 <div class="sagenda_form-group">
-                                    <label for="exampleInputEmail1">Start Date</label>
+                                    <label for="exampleInputEmail1"><?php _e('Start date', 'sagenda-wp'); ?></label>
                                     <div>
                                         <input type="date" id="startDate"  name="startDate" class="sagenda_form-control" value="" />
                                     </div>
@@ -75,7 +83,7 @@
                         <div class="sagenda_row">
                             <div class="sagenda_col">
                                 <div class="sagenda_form-group">
-                                    <label for="exampleInputEmail1">End Date</label>
+                                    <label for="exampleInputEmail1"><?php _e('End Date', 'sagenda-wp'); ?></label>
                                     <div>
                                         <input type="date" id="endDate"  name="endDate" class="sagenda_form-control" value="" />
                                     </div>
@@ -87,17 +95,19 @@
                     <div class="sagenda_row">
                         <div class="sagenda_col">
                             <div class="sagenda_form-group">
-                                <label for="exampleInputPassword1">Bookable Items</label>
+                                <label for="exampleInputPassword1"><?php _e('Bookable Items', 'sagenda-wp'); ?></label>
                                 <br />
                                 <select class="sagenda_form-control " id="bookableitems" >
-                                    <option value="0">Bookable Item</option>
-                                    <?php 
+                                    <option value="0"><?php _e('Bookable Item', 'sagenda-wp'); ?></option>
+                                    <?php
                                     $iteration = 0;
-                                    foreach ($bookableItems as $bookableItem) { ?>
-                                        <option <?php if($iteration === 0)echo "selected"; ?> value="<?php echo $bookableItem->Id ?>"><?php echo $bookableItem->Name; ?></option>
-                                    <?php 
-                                    $iteration++;
-                                    } ?>
+                                    foreach ($bookableItems as $bookableItem) {
+                                        ?>
+                                        <option <?php if ($iteration === 0) echo "selected"; ?> value="<?php echo $bookableItem->Id ?>"><?php echo $bookableItem->Name; ?></option>
+                                        <?php
+                                        $iteration++;
+                                    }
+                                    ?>
                                 </select>
                             </div>
                         </div>
@@ -105,7 +115,7 @@
                     <div class="sagenda_row">
                         <div class="sagenda_col">
                             <div class="sagenda_form-group">
-                                <label for="exampleInputPassword1">Click an event to book It:</label>
+                                <label for="exampleInputPassword1"><?php _e('Click an event to book It:', 'sagenda-wp'); ?></label>
                                 <br />
                                 <div id="events-list">
                                 </div>
@@ -117,7 +127,7 @@
 
                 <div class="sagenda_row">
                     <div class="sagenda_col">
-                        <a href="http://www.sagenda.net" target="_blank" class="sagenda-ref-link">Create a free Booking Account on Sagenda!</a>
+                        <a href="http://www.sagenda.net" target="_blank" class="sagenda-ref-link"><?php _e('Create a free Booking Account on Sagenda!', 'sagenda-wp'); ?></a>
                     </div>
                 </div>
             </form>
