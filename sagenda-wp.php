@@ -29,7 +29,7 @@
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 define("SAGENDA_PLUGIN_URL", plugins_url('/', __FILE__));
-define( 'SAGENDA_PLUGIN_DIR', plugin_dir_path(__FILE__));
+define('SAGENDA_PLUGIN_DIR', plugin_dir_path(__FILE__));
 
 if (!function_exists('is_plugin_active')) {
     //include_once( ABSPATH . 'wp-admin/includes/plugin.php' );;
@@ -43,11 +43,12 @@ class Sagenda {
     public function __construct() {
 
         PluginInstall::init();
-       // if (is_admin()) {
-            Admin::init();
-            //add_filter('admin_footer_text', array($this, 'sagenda_custom_admin_footer'));
+        // if (is_admin()) {
+        Admin::init();
+        //add_filter('admin_footer_text', array($this, 'sagenda_custom_admin_footer'));
         //} else {
-            ShortCode::init();
+        ShortCode::init();
+
         //}
     }
 
@@ -58,4 +59,11 @@ class Sagenda {
 }
 
 $objSagenda = new Sagenda();
+
+function sagenda_load_textdomain() {
+    load_plugin_textdomain('sagenda-wp', false, dirname(plugin_basename( __FILE__ )).'/languages/' );
+}
+
+add_action('wp_footer', 'sagenda_load_textdomain');
+add_action('plugins_loaded', 'sagenda_load_textdomain');
 ?>
