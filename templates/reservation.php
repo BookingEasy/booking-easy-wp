@@ -52,7 +52,7 @@
 
                                 </div>
                                 <div class="sagenda_form-group">
-                                    <label for="exampleInputEmail1"><?php _e('Start date', 'sagenda-wp'); ?>   </label>
+                                    <label for="exampleInputStartDate"><?php _e('Start date', 'sagenda-wp'); ?>   </label>
                                     <div class="sagenda_input-append date" id="startDate" data-date="12-24-2012" data-date-format="dd-mm-yyyy">                                
                                         <input type="text" class="sagenda_form-control"  readonly value="" id="dpd1">
                                         <div class="sagenda_add-on" id="dp4" data-date-format="dd-mm-yyyy" data-val="true" data-date=""><i class="sagenda_icon-th"></i></div>
@@ -64,7 +64,7 @@
                         <div class="sagenda_row">
                             <div class="sagenda_col">
                                 <div class="sagenda_form-group">
-                                    <label for="exampleInputEmail1"><?php _e('End Date', 'sagenda-wp'); ?></label>
+                                    <label for="exampleInputEndDate"><?php _e('End Date', 'sagenda-wp'); ?></label>
                                     <div class="sagenda_input-append date" id="endDate" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
                                         <input type="text" class="sagenda_form-control" value="" readonly id="dpd2">
                                         <div class="sagenda_add-on" id="dp5" data-date-format="dd-mm-yyyy" data-val="true" data-date=""><i class="sagenda_icon-th"></i></div>
@@ -80,7 +80,7 @@
                         <div class="sagenda_row">
                             <div class="sagenda_col">
                                 <div class="sagenda_form-group">
-                                    <label for="exampleInputEmail1"><?php _e('Start date', 'sagenda-wp'); ?></label>
+                                    <label for="exampleInputStartDate"><?php _e('Start date', 'sagenda-wp'); ?></label>
                                     <div>
                                         <input type="date" id="startDate"  name="startDate" class="sagenda_form-control" value="" />
                                     </div>
@@ -91,7 +91,7 @@
                         <div class="sagenda_row">
                             <div class="sagenda_col">
                                 <div class="sagenda_form-group">
-                                    <label for="exampleInputEmail1"><?php _e('End Date', 'sagenda-wp'); ?></label>
+                                    <label for="exampleInputEndDate"><?php _e('End Date', 'sagenda-wp'); ?></label>
                                     <div>
                                         <input type="date" id="endDate"  name="endDate" class="sagenda_form-control" value="" />
                                     </div>
@@ -103,7 +103,7 @@
                     <div class="sagenda_row">
                         <div class="sagenda_col">
                             <div class="sagenda_form-group">
-                                <label for="exampleInputPassword1"><?php _e('Bookable Items', 'sagenda-wp'); ?></label>
+                                <label for="exampleInputBookableItems"><?php _e('Bookable Items', 'sagenda-wp'); ?></label>
                                 <br />
                                 <select class="sagenda_form-control " id="bookableitems" >
                                     <option value="0"><?php _e('Bookable Item', 'sagenda-wp'); ?></option>
@@ -123,7 +123,7 @@
                     <div class="sagenda_row">
                         <div class="sagenda_col">
                             <div class="sagenda_form-group">
-                                <label for="exampleInputPassword1"><?php _e('Click an event to book It:', 'sagenda-wp'); ?></label>
+                                <label for="exampleInputEvents"><?php _e('Click an event to book It:', 'sagenda-wp'); ?></label>
                                 <br />
                                 <div id="events-list">
                                 </div>

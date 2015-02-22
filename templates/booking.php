@@ -18,7 +18,7 @@
             <div class="sagenda_row">
                 <div class="sagenda_col">
                     <div class="sagenda_form-group">
-                        <label for="exampleInputEmail1"><?php _e('Courtesy', 'sagenda-wp'); ?> </label>
+                        <label for="exampleInputCourtesy"><?php _e('Courtesy', 'sagenda-wp'); ?> </label>
                         <label>
                             <input type="radio" name="optionsRadios" id="optionsRadios1" value="Mr" checked />
                             <?php _e('Mr', 'sagenda-wp'); ?>
@@ -36,7 +36,7 @@
             <div class="sagenda_row">
                 <div class="sagenda_col">
                     <div class="sagenda_form-group">
-                        <label for="exampleInputPassword1"><?php _e('First Name', 'sagenda-wp'); ?></label>
+                        <label for="exampleInputFirstName"><?php _e('First Name', 'sagenda-wp'); ?></label>
                         <div>
                             <input type="text" class="sagenda_form-control" id="firstName" required placeholder="First Name" />
                             <input type="hidden" class="sagenda_form-control" id="EventIdentifier" placeholder="EventIdentifier" />
@@ -48,7 +48,7 @@
             <div class="sagenda_row">
                 <div class="sagenda_col">
                     <div class="sagenda_form-group">
-                        <label for="exampleInputPassword1"><?php _e('Last Name', 'sagenda-wp'); ?></label>
+                        <label for="exampleInputLastName"><?php _e('Last Name', 'sagenda-wp'); ?></label>
                         <div>
                             <input type="text" class="sagenda_form-control" id="lastName" required placeholder="Last Name" />
                         </div>
@@ -60,7 +60,7 @@
             <div class="sagenda_row">
                 <div class="sagenda_col">
                     <div class="sagenda_form-group">
-                        <label for="exampleInputPassword1"><?php _e('Phone Number', 'sagenda-wp'); ?></label>
+                        <label for="exampleInputPhone"><?php _e('Phone Number', 'sagenda-wp'); ?></label>
                         <div>
                             <input type="text" class="sagenda_form-control" id="phonenumber" required placeholder="Phone Number" />
                         </div>
@@ -71,7 +71,7 @@
             <div class="sagenda_row">
                 <div class="sagenda_col">
                     <div class="sagenda_form-group">
-                        <label for="exampleInputPassword1"><?php _e('Email', 'sagenda-wp'); ?></label>
+                        <label for="exampleInputEmail"><?php _e('Email', 'sagenda-wp'); ?></label>
                         <div>
                             <input type="email" class="sagenda_form-control" id="email" required placeholder="Email" />
                         </div>
@@ -82,7 +82,7 @@
             <div class="sagenda_row">
                 <div class="sagenda_col">
                     <div class="sagenda_form-group">
-                        <label for="exampleInputPassword1"><?php _e('Description', 'sagenda-wp'); ?></label>
+                        <label for="exampleInputDescription"><?php _e('Description', 'sagenda-wp'); ?></label>
                     </div>
                     <textarea class="sagenda_form-control" id="description" name="description"  rows="5"></textarea>
                 </div>
