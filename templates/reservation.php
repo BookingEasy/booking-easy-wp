@@ -1,8 +1,8 @@
 <div class="sagenda_container">
     <div class="sagenda_col">
 
-
-        <?php
+        
+        <?php        
         if (!$connected) {
             echo '<div class="sagenda_alert sagenda_alert-faliure">';
             echo '<p>';
@@ -15,6 +15,14 @@
             _e('2. Copy your token (from the backend of sagenda.net Settings / account', 'sagenda-wp');
             echo '</p>';
             echo '</div>';
+        }
+        if ($connected === 3) {
+            echo '<div class="sagenda_alert sagenda_alert-faliure">';
+            echo '<p>';
+            _e('You should enable curl service in your PHP/Apache configuration.', 'sagenda-wp');
+            echo '</p>';
+            echo '</div>';
+            return;
         }
         ?>
 
