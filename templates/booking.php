@@ -21,7 +21,7 @@
                         <label for="exampleInputEmail1"><?php _e('Courtesy', 'sagenda-wp'); ?> </label>
                         <label>
                             <input type="radio" name="optionsRadios" id="optionsRadios1" value="Mr" checked />
-                            <?php _e('Mr', 'sagenda-wp'); ?>Mr
+                            <?php _e('Mr', 'sagenda-wp'); ?>
                         </label>
 
                         <label>
