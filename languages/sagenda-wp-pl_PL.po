@@ -1,26 +1,31 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: sagenda-wp\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 09:46+0100\n"
-"PO-Revision-Date: 2015-02-20 09:46+0100\n"
-"Last-Translator: Zohaib Mir <zohaib@ding.se>\n"
-"Language-Team: Zohaib Mir <zohaib@ding.se>\n"
+"Project-Id-Version: Sagenda\n"
+"POT-Creation-Date: 2015-02-20 09:06+0100\n"
+"PO-Revision-Date: 2015-02-25 17:27+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"Language: pl_PL\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: admin/templates/config.php:9
 msgid "Sagenda for WordPress: Sagenda Settings"
-msgstr ""
+msgstr "Sagenda dla WordPress: Sagenda ustawienia"
 
 #: admin/templates/config.php:20
 msgid "You should enable curl service in your PHP/Apache configuration."
-msgstr ""
+msgstr "Należy włączyć usługę curl, w konfiguracji PHP/Apache."
 
 #: admin/templates/config.php:25
 msgid ""
@@ -29,42 +34,50 @@ msgid ""
 "and ask them to unblock Sagenda’s WebServices. you can give them our WP link "
 "as references :"
 msgstr ""
+"Wygląda na to, że Sagenda WebServices nie może uzyskać połączenia z "
+"Internetem i jest zablokowany przez zaporę na serwerze. Prosimy o kontakt ze "
+"wsparciem dostawcy hostingu i poprosić ich, aby odblokowali Sagenda "
+"WebServices. Możesz podać im nasz link WP jako odniesienie:"
 
 #: admin/templates/config.php:31
 msgid ""
 "Your token is wrong, please try it again or generate another ticket in "
 "Sagenda’s backend."
 msgstr ""
+"Twój token jest niepoprawny, proszę spróbować ponownie lub wygeneruj inny "
+"kod w back-endzie Sagendy "
 
 #: admin/templates/config.php:37
 msgid "Sagenda Authentication Settings"
-msgstr ""
+msgstr "Ustawienia weryfikacji Sagenda"
 
 #: admin/templates/config.php:37
 msgid "CONNECTED"
-msgstr ""
+msgstr "POŁĄCZONO"
 
 #: admin/templates/config.php:37
 msgid "NOT CONNECTED"
-msgstr ""
+msgstr "NIE POŁĄCZONO"
 
 #: admin/templates/config.php:44
 msgid "Sagenda Authentication Code"
-msgstr ""
+msgstr "Kod weryfikacyjny Sagenda"
 
 #: admin/templates/config.php:47
 msgid "Click here to get your Authentication code."
-msgstr ""
+msgstr "Kliknij tutaj aby otrzymać swój kod weryfikacyjny"
 
 #: admin/templates/config.php:54
 msgid "Save Changes"
-msgstr ""
+msgstr "Zapisz zmiany"
 
 #: admin/templates/config.php:56
 msgid ""
 "[sagenda-wp] add this short code either in post or page where you want to "
 "display the Sagenda form."
 msgstr ""
+"[sagenda-wp] dodaj ten krótki kod albo w poście lub stronie, na której "
+"chcesz wyświetlić formularz Sagenda."
 
 #: admin/templates/config.php:57
 msgid ""
@@ -72,101 +85,108 @@ msgid ""
 "you can use this snippet to output from the shortcode’s handler(s):  <pre> "
 "echo do_shortcode([sagenda-wp])</pre>"
 msgstr ""
+"Jeśli chcesz użyć krótkiego kodu na zewnątrz WordPressa dla wpisów lub "
+"edytora stron, możesz użyć ten fragment handlera: <pre>echo "
+"do_shortcode([sagenda-wp])</pre>"
 
 #: templates/booking.php:10
 msgid "Please fill out all the required fields"
-msgstr ""
+msgstr "Proszę uzupełnić wymagane pola"
 
 #: templates/booking.php:21
 msgid "Courtesy"
-msgstr ""
+msgstr "Zgłaszający"
 
 #: templates/booking.php:24
 msgid "Mr"
-msgstr ""
+msgstr "Pan"
 
 #: templates/booking.php:29
 msgid "Mrs"
-msgstr ""
+msgstr "Pani"
 
 #: templates/booking.php:39
 msgid "First Name"
-msgstr ""
+msgstr "Imię"
 
 #: templates/booking.php:51
 msgid "Last Name"
-msgstr ""
+msgstr "Nazwisko"
 
 #: templates/booking.php:63
 msgid "Phone Number"
-msgstr ""
+msgstr "Numer telefonu"
 
 #: templates/booking.php:74
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: templates/booking.php:85
 msgid "Description"
-msgstr ""
+msgstr "Dodatkowe informacje"
 
 #: templates/booking.php:97
 msgid "Back to Calender"
-msgstr ""
+msgstr "Powrót do kalendarza"
 
 #: templates/booking.php:98
 msgid "Submit"
-msgstr ""
+msgstr "Wyślij"
 
 #: templates/reservation.php:9
 msgid "You didn’t connected your Sagenda account :"
-msgstr ""
+msgstr "Nie połączyłeś się jeszcze ze swoim kontem Sagenda"
 
 #: templates/reservation.php:12
 msgid ""
 "1. Create a free account on <a href='https://sagenda.net/Accounts/"
 "Register'>Sagenda.</a> (setup your bookable items and events)."
 msgstr ""
+"1. Utwórz darmowe konto <a href='https://sagenda.net/Accounts/"
+"Register'>Sagenda.</a> (ustawienia Twoich rezerwacji oraz wydarzeń)"
 
 #: templates/reservation.php:15
 msgid "2. Copy your token (from the backend of sagenda.net Settings / account"
 msgstr ""
+"2. Skopiuj Twój token ( z ustawień backend-u sagenda.net Settings / account )"
 
 #: templates/reservation.php:35
 msgid "You successfully subscribe for the event."
-msgstr ""
+msgstr "Twoja rezerwacja przebiegła pomyślnie"
 
 #: templates/reservation.php:47 templates/reservation.php:75
 msgid "Start date"
-msgstr "FirstDate"
+msgstr "Data początkowa"
 
 #: templates/reservation.php:59 templates/reservation.php:86
 msgid "End Date"
-msgstr ""
+msgstr "Data końcowa"
 
 #: templates/reservation.php:98
 msgid "Bookable Items"
-msgstr ""
+msgstr "Rezerwacje"
 
 #: templates/reservation.php:101
 msgid "Bookable Item"
-msgstr ""
+msgstr "Rezerwacja"
 
 #: templates/reservation.php:118
 msgid "Click an event to book It:"
-msgstr ""
+msgstr "Kliknij poniżej aby zarezerwować:"
 
 #: templates/reservation.php:130
 msgid "Create a free Booking Account on Sagenda!"
-msgstr ""
+msgstr "Stwórz darmowe konto na Sagenda!"
 
 #: widgets/widget.php:12
 msgid "Reservation Widget"
-msgstr ""
+msgstr "Wtyczka Rezerwacji"
 
 #: widgets/widget.php:12
 msgid "Display the Reservation Form"
-msgstr ""
+msgstr "Wyświetl formularz rezerwacji"
 
+# polish
 #: widgets/widget.php:20
 msgid "SAGENDA"
-msgstr ""
+msgstr "SAGENDA"
