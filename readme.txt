@@ -37,6 +37,16 @@ Follow these steps to install Sagenda:
 
 
 == Changelog ==
+
+= 1.0.5 =
+* IMPROVED : By default the frontend module will already pre-select the next week.
+* FIXED : Issue in highlighted dates in Sagenda booking module calendar. 
+* FIXED :
+* FIXED :
+* FIXED :
+* FIXED :
+* FIXED :
+
 = 1.0.4 =
 * IMPROVED : Better way to call WebServices and give more input to the user in case of WebServices blocked by the hosting provider.
 
