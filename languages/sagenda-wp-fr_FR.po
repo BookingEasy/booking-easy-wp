@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: sagenda-wp\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-17 09:46+0100\n"
-"PO-Revision-Date: 2015-02-20 09:38+0100\n"
-"Last-Translator: Zohaib Zahid <zohaib.mir@gmail.com>\n"
+"PO-Revision-Date: 2015-03-03 23:37+0100\n"
+"Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -12,104 +12,111 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 1.6.7\n"
+"X-Generator: Poedit 1.7.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: sagenda-wp/templates/reservation.php:9
 msgid "You didn’t connected your Sagenda account :"
-msgstr ""
+msgstr "Vous n'avez pas connecté votre compte Sagenda :"
 
 #: sagenda-wp/templates/reservation.php:12
 msgid ""
 "1. Create a free account on <a href='https://sagenda.net/Accounts/"
 "Register'>Sagenda.</a> (setup your bookable items and events)."
 msgstr ""
+"1. Créez un compte gratuit sur <a href='https://sagenda.net/Accounts/"
+"Register'>Sagenda.</a> (paramétrez vos éléments réservables et vos "
+"évènements)."
 
 #: sagenda-wp/templates/reservation.php:15
 msgid "2. Copy your token (from the backend of sagenda.net Settings / account"
 msgstr ""
+"2. Copiez votre code d'authentification depuis votre backoffice de sagenda."
+"net (sous Dashboard ou Settings / Account)"
 
 #: sagenda-wp/templates/reservation.php:35
 msgid "You successfully subscribe for the event."
-msgstr ""
+msgstr "Vous vous êtes inscrit à l'évènement avec succès."
 
 #: sagenda-wp/templates/reservation.php:47
 #: sagenda-wp/templates/reservation.php:75
 msgid "Start date"
-msgstr ""
+msgstr "Date de début"
 
 #: sagenda-wp/templates/reservation.php:59
 #: sagenda-wp/templates/reservation.php:86
 msgid "End Date"
-msgstr ""
+msgstr "Date de fin"
 
 #: sagenda-wp/templates/reservation.php:98
 msgid "Bookable Items"
-msgstr ""
+msgstr "Elements réservables"
 
 #: sagenda-wp/templates/reservation.php:101
 msgid "Bookable Item"
-msgstr ""
+msgstr "Element réservable"
 
 #: sagenda-wp/templates/reservation.php:118
 msgid "Click an event to book It:"
-msgstr ""
+msgstr "Cliquez un évènement pour le réserver:"
 
 #: sagenda-wp/templates/reservation.php:130
 msgid "Create a free Booking Account on Sagenda!"
-msgstr ""
+msgstr "Créez un compte gratuit sur Sagenda!"
 
 #: sagenda-wp/templates/booking.php:10
 msgid "Please fill out all the required fields."
-msgstr ""
+msgstr "Merci de remplir tous les champs demandés."
 
 #: sagenda-wp/templates/booking.php:21
 msgid "Courtesy"
-msgstr ""
+msgstr "Titre"
 
 #: sagenda-wp/templates/booking.php:24
 msgid "Mr"
-msgstr ""
+msgstr "M."
 
 #: sagenda-wp/templates/booking.php:29
 msgid "Mrs"
-msgstr ""
+msgstr "Mme"
 
 #: sagenda-wp/templates/booking.php:39
 msgid "First Name"
-msgstr ""
+msgstr "Prénom"
 
 #: sagenda-wp/templates/booking.php:51
 msgid "Last Name"
-msgstr ""
+msgstr "Nom"
 
 #: sagenda-wp/templates/booking.php:63
 msgid "Phone Number"
-msgstr ""
+msgstr "Numéro de téléphone"
 
 #: sagenda-wp/templates/booking.php:74
 msgid "Email"
-msgstr ""
+msgstr "Courriel"
 
 #: sagenda-wp/templates/booking.php:85
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: sagenda-wp/templates/booking.php:97
 msgid "Back to Calender"
-msgstr ""
+msgstr "Retour au calendrier"
 
 #: sagenda-wp/templates/booking.php:98
 msgid "Submit"
-msgstr ""
+msgstr "Envoyer"
 
 #: sagenda-wp/admin/templates/config.php:9
 msgid "Sagenda for WordPress: Sagenda Settings"
-msgstr ""
+msgstr "Sagenda pour WordPress: Paramètres Sagenda "
 
 #: sagenda-wp/admin/templates/config.php:20
 msgid "You should enable curl service in your PHP/Apache configuration."
 msgstr ""
+"Vous devez activer le service CURL dans votre configuration PHP/Apache. "
+"Contactez votre hébergeur ou administrateur. "
 
 #: sagenda-wp/admin/templates/config.php:25
 msgid ""
@@ -127,27 +134,27 @@ msgstr ""
 
 #: sagenda-wp/admin/templates/config.php:37
 msgid "Sagenda Authentication Settings"
-msgstr ""
+msgstr "Paramètres d'authentification de Sagenda"
 
 #: sagenda-wp/admin/templates/config.php:37
 msgid "CONNECTED"
-msgstr ""
+msgstr "CONNECTÉ"
 
 #: sagenda-wp/admin/templates/config.php:37
 msgid "NOT CONNECTED"
-msgstr ""
+msgstr "NON CONNECTÉ"
 
 #: sagenda-wp/admin/templates/config.php:44
 msgid "Sagenda Authentication Code"
-msgstr ""
+msgstr "Code d'authentification de Sagenda"
 
 #: sagenda-wp/admin/templates/config.php:26
 msgid "Click here to get your Authentication code."
-msgstr ""
+msgstr "Cliquez ici pour obtenir votre code d'authentification."
 
 #: sagenda-wp/admin/templates/config.php:26
 msgid "Save Changes"
-msgstr ""
+msgstr "Sauver les changements"
 
 #: sagenda-wp/admin/templates/config.php:26
 msgid ""
@@ -165,13 +172,19 @@ msgstr ""
 #: sagenda-wp/admin/templates/config.php:26
 msgid "Add this tag [sagenda-wp] in your pages, posts or in template."
 msgstr ""
+"Ajouter le tag [sagenda-wp] dans sur une page, un article ou dans le "
+"template."
 
 #: sagenda-wp/admin/templates/config.php:26
 msgid ""
 "**NOTE: You first need to register on Sagenda and then you will get a "
 "Authentication token which you will use to validate this Sagenda Plugin. **"
 msgstr ""
+"**REMARQUE: Vous devez premièrement vous enregistrer sur Sagenda.net pour "
+"obtenir un code d'authentification que vous utiliserez dans le plugin "
+"WordPress pour vous identifier. **"
 
 #: sagenda-wp/admin/templates/config.php:26
 msgid "To learn more about our booking easy service please visit :"
 msgstr ""
+"Pour apprendre plus sur notre service de réservation merci de visiter :"
