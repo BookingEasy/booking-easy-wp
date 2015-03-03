@@ -32,20 +32,19 @@ Follow these steps to install Sagenda:
 1. How to identify my Sagenda account in WordPress? Copy the token from your Sagenda account and paste it into your WordPress installation
 
 == Upgrade Notice ==
-= 1.0.4 =
-* IMPROVED : Better way to call WebServices and give more input to the user in case of WebServices blocked by the hosting provider.
-
+= 1.0.5 =
+* IMPROVED : By default the frontend module will already pre-select the next week.
+* FIXED : Issue in highlighted dates in Sagenda booking module calendar. 
+* FIXED : Correct a bug happening with in case of recursive event in the same date range.
+* FIXED : Improved message displayed to user in case of error.
 
 == Changelog ==
 
 = 1.0.5 =
 * IMPROVED : By default the frontend module will already pre-select the next week.
 * FIXED : Issue in highlighted dates in Sagenda booking module calendar. 
-* FIXED :
-* FIXED :
-* FIXED :
-* FIXED :
-* FIXED :
+* FIXED : Correct a bug happening with in case of recursive event in the same date range.
+* FIXED : Improved message displayed to user in case of error.
 
 = 1.0.4 =
 * IMPROVED : Better way to call WebServices and give more input to the user in case of WebServices blocked by the hosting provider.
