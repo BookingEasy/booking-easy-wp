@@ -33,6 +33,7 @@ Follow these steps to install Sagenda:
 
 == Upgrade Notice ==
 = 1.0.5 =
+* ADDED : Add language support for polish (thanks to mraf).
 * IMPROVED : By default the frontend module will already pre-select the next week.
 * FIXED : Issue in highlighted dates in Sagenda booking module calendar. 
 * FIXED : Correct a bug happening with in case of recursive event in the same date range.
@@ -41,6 +42,7 @@ Follow these steps to install Sagenda:
 == Changelog ==
 
 = 1.0.5 =
+* ADDED : Add language support for polish (thanks to mraf).
 * IMPROVED : By default the frontend module will already pre-select the next week.
 * FIXED : Issue in highlighted dates in Sagenda booking module calendar. 
 * FIXED : Correct a bug happening with in case of recursive event in the same date range.
