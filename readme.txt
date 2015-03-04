@@ -9,6 +9,9 @@ License: GPLv2 or later
 Sagenda is a free online booking / scheduling / reservation module that helps your clients fix appointments at absolutely NO COST!
 
 == Description ==
+
+**NOW WP plugin in : English, Swedish, Polish.**
+
 Sagenda is an online booking software that helps your clients fix appointments and meetings with you online. Sagenda is available at absolutely NO COST for you or your clients! And the best thing about it is that you may have an unlimited number of bookings and/or customers. Our users always come first; that’s why Sagenda doesn’t display ads!
 
 This is an “Online Booking System” which gives customers the opportunity to choose the date and the time of an appointment according to one's own preferences and the booking can now be done online.
@@ -19,7 +22,7 @@ To learn more about our Sagenda’s booking service please visit: [http://www.sa
 
 To **create an account** please visit: [https://sagenda.net/Accounts/Register](https://sagenda.net/Accounts/Register)
 
-**NOTE: You need to register an account on the Sagenda site and then you will get an authentication token which you will use to validate your Sagenda plugin.**
+**NOTE: You need to register an account on the Sagenda site and then you will get an authentication code which you will use to validate your Sagenda plugin.**
 == Installation ==
 Follow these steps to install Sagenda: 
 
@@ -34,19 +37,20 @@ Follow these steps to install Sagenda:
 == Upgrade Notice ==
 = 1.0.5 =
 * ADDED : Add language support for polish (thanks to mraf).
-* IMPROVED : By default the frontend module will already pre-select the next week.
+* IMPROVED : By default the booking frontend module will already pre-select the next week.
 * FIXED : Issue in highlighted dates in Sagenda booking module calendar. 
-* FIXED : Correct a bug happening with in case of recursive event in the same date range.
-* FIXED : Improved message displayed to user in case of error.
+* FIXED : Correct a bug happening in case of recursive booking event in the same date range.
+* FIXED : Improved message displayed to user in case of error during the reservation.
 
 == Changelog ==
 
 = 1.0.5 =
 * ADDED : Add language support for polish (thanks to mraf).
-* IMPROVED : By default the frontend module will already pre-select the next week.
+* IMPROVED : By default the booking frontend module will already pre-select the next week.
 * FIXED : Issue in highlighted dates in Sagenda booking module calendar. 
-* FIXED : Correct a bug happening with in case of recursive event in the same date range.
-* FIXED : Improved message displayed to user in case of error.
+* FIXED : Correct a bug happening in case of recursive booking event in the same date range.
+* FIXED : Improved message displayed to user in case of error during the reservation.
+
 
 = 1.0.4 =
 * IMPROVED : Better way to call WebServices and give more input to the user in case of WebServices blocked by the hosting provider.
@@ -56,7 +60,7 @@ Follow these steps to install Sagenda:
 
 = 1.0.2 =
 * FIXED : Fixed exception if WebServices can’t be reached.
-* FIXED : Fixed several compatibility and layout problem with several themes. -> Sagenda is working fine but can’t test by ourself all hosting provider, theme, plugin compatibility… If you find an issue we will be happy to help you, please contact us via : http://www.sagenda.com/#contact-us
+* FIXED : Fixed several compatibility and layout problem with several themes. -> Sagenda is working fine but can’t test by ourself all hosting provider, theme, plugin compatibility… If you find an issue we will be happy to help you, please contact us via : http://www.sagenda.com/#contact
 
 = 1.0.1 =
 * FIXED :  Compatibility issues with several themes and plugins.
