@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sagenda\n"
 "POT-Creation-Date: 2015-02-20 09:06+0100\n"
-"PO-Revision-Date: 2015-02-25 17:27+0100\n"
+"PO-Revision-Date: 2015-03-08 15:22+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: admin/templates/config.php:9
 msgid "Sagenda for WordPress: Sagenda Settings"
-msgstr "Sagenda dla WordPress: Sagenda ustawienia"
+msgstr "Sagenda dla WordPressa: ustawienia Sagenda"
 
 #: admin/templates/config.php:20
 msgid "You should enable curl service in your PHP/Apache configuration."
@@ -34,8 +34,8 @@ msgid ""
 "and ask them to unblock Sagenda’s WebServices. you can give them our WP link "
 "as references :"
 msgstr ""
-"Wygląda na to, że Sagenda WebServices nie może uzyskać połączenia z "
-"Internetem i jest zablokowany przez zaporę na serwerze. Prosimy o kontakt ze "
+"Wygląda na to, że Sagenda WebServices nie mogą uzyskać połączenia z "
+"Internetem i są zablokowane przez zaporę na serwerze. Prosimy o kontakt ze "
 "wsparciem dostawcy hostingu i poprosić ich, aby odblokowali Sagenda "
 "WebServices. Możesz podać im nasz link WP jako odniesienie:"
 
@@ -44,12 +44,12 @@ msgid ""
 "Your token is wrong, please try it again or generate another ticket in "
 "Sagenda’s backend."
 msgstr ""
-"Twój token jest niepoprawny, proszę spróbować ponownie lub wygeneruj inny "
-"kod w back-endzie Sagendy "
+"Twój token jest niepoprawny, proszę spróbuj ponownie lub wygeneruj inny kod "
+"w backendzie Sagendy "
 
 #: admin/templates/config.php:37
 msgid "Sagenda Authentication Settings"
-msgstr "Ustawienia weryfikacji Sagenda"
+msgstr "Ustawienia uwierzytelniania Sagenda"
 
 #: admin/templates/config.php:37
 msgid "CONNECTED"
@@ -61,11 +61,11 @@ msgstr "NIE POŁĄCZONO"
 
 #: admin/templates/config.php:44
 msgid "Sagenda Authentication Code"
-msgstr "Kod weryfikacyjny Sagenda"
+msgstr "Kod uwierzytelniający Sagenda"
 
 #: admin/templates/config.php:47
 msgid "Click here to get your Authentication code."
-msgstr "Kliknij tutaj aby otrzymać swój kod weryfikacyjny"
+msgstr "Kliknij tutaj aby otrzymać swój kod uwierzytelniający"
 
 #: admin/templates/config.php:54
 msgid "Save Changes"
@@ -76,8 +76,8 @@ msgid ""
 "[sagenda-wp] add this short code either in post or page where you want to "
 "display the Sagenda form."
 msgstr ""
-"[sagenda-wp] dodaj ten krótki kod albo w poście lub stronie, na której "
-"chcesz wyświetlić formularz Sagenda."
+"[sagenda-wp] dodaj ten krótki kod w poście lub stronie, na której chcesz "
+"wyświetlić formularz Sagenda."
 
 #: admin/templates/config.php:57
 msgid ""
@@ -119,7 +119,7 @@ msgstr "Numer telefonu"
 
 #: templates/booking.php:74
 msgid "Email"
-msgstr "Email"
+msgstr "E-mail"
 
 #: templates/booking.php:85
 msgid "Description"
@@ -148,7 +148,7 @@ msgstr ""
 #: templates/reservation.php:15
 msgid "2. Copy your token (from the backend of sagenda.net Settings / account"
 msgstr ""
-"2. Skopiuj Twój token ( z ustawień backend-u sagenda.net Settings / account )"
+"2. Skopiuj Twój token ( z ustawień backendu sagenda.net Settings / account )"
 
 #: templates/reservation.php:35
 msgid "You successfully subscribe for the event."
@@ -164,11 +164,11 @@ msgstr "Data końcowa"
 
 #: templates/reservation.php:98
 msgid "Bookable Items"
-msgstr "Rezerwacje"
+msgstr "Przedmioty rezerwacji"
 
 #: templates/reservation.php:101
 msgid "Bookable Item"
-msgstr "Rezerwacja"
+msgstr "Przedmiot rezerwacji"
 
 #: templates/reservation.php:118
 msgid "Click an event to book It:"
@@ -176,7 +176,7 @@ msgstr "Kliknij poniżej aby zarezerwować:"
 
 #: templates/reservation.php:130
 msgid "Create a free Booking Account on Sagenda!"
-msgstr "Stwórz darmowe konto na Sagenda!"
+msgstr "Stwórz darmowe konto Sagenda!"
 
 #: widgets/widget.php:12
 msgid "Reservation Widget"
