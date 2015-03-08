@@ -10,7 +10,7 @@ Sagenda is a free online booking / scheduling / reservation module that helps yo
 
 == Description ==
 
-**NOW WP plugin in : English, Swedish, Polish.**
+**NOW WP plugin in : English, Swedish, Polish, French.**
 
 Sagenda is an online booking software that helps your clients fix appointments and meetings with you online. Sagenda is available at absolutely NO COST for you or your clients! And the best thing about it is that you may have an unlimited number of bookings and/or customers. Our users always come first; that’s why Sagenda doesn’t display ads!
 
@@ -35,22 +35,22 @@ Follow these steps to install Sagenda:
 1. How to identify my Sagenda account in WordPress? Copy the token from your Sagenda account and paste it into your WordPress installation
 
 == Upgrade Notice ==
-= 1.0.5 =
-* ADDED : Add language support for polish (thanks to mraf).
-* IMPROVED : By default the booking frontend module will already pre-select the next week.
-* FIXED : Issue in highlighted dates in Sagenda booking module calendar. 
-* FIXED : Correct a bug happening in case of recursive booking event in the same date range.
-* FIXED : Improved message displayed to user in case of error during the reservation.
+= 1.0.6 =
+* ADDED : Add language support for French.
+* IMPROVED : Polish translation.
 
 == Changelog ==
 
+= 1.0.6 =
+* ADDED : Add language support for French.
+* IMPROVED : Polish translation.
+
 = 1.0.5 =
 * ADDED : Add language support for polish (thanks to mraf).
 * IMPROVED : By default the booking frontend module will already pre-select the next week.
 * FIXED : Issue in highlighted dates in Sagenda booking module calendar. 
 * FIXED : Correct a bug happening in case of recursive booking event in the same date range.
 * FIXED : Improved message displayed to user in case of error during the reservation.
-
 
 = 1.0.4 =
 * IMPROVED : Better way to call WebServices and give more input to the user in case of WebServices blocked by the hosting provider.
