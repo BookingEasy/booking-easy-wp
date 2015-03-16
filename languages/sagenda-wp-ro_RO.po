@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sagenda\n"
-"POT-Creation-Date: 2015-03-16 23:12+0100\n"
-"PO-Revision-Date: 2015-03-16 23:17+0100\n"
+"POT-Creation-Date: 2015-03-16 22:57+0100\n"
+"PO-Revision-Date: 2015-03-16 23:11+0100\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: Sagenda <send us a message from sagenda.com>\n"
-"Language: sv\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,11 +20,11 @@ msgstr ""
 
 #: admin/templates/config.php:9
 msgid "Sagenda for WordPress: Sagenda Settings"
-msgstr "Sagenda för Wordpress: Sagenda Inställningar"
+msgstr "Sagenda pentru WordPress: Setări Sagenda"
 
 #: admin/templates/config.php:20 templates/reservation.php:22
 msgid "You should enable curl service in your PHP/Apache configuration."
-msgstr "Du bör göra det möjligt curl service i din PHP / Apache-konfiguration."
+msgstr "Activaţi serviciul cURL în setările PHP/Apache."
 
 #: admin/templates/config.php:25
 msgid ""
@@ -33,50 +33,51 @@ msgid ""
 "support service and ask them to unblock Sagenda’s WebServices. You can give "
 "them our WP link as reference:"
 msgstr ""
-"Det ser ut som att Sagenda Web Services inte kan nå internet och blockeras "
-"av brandväggen på servern. Vänligen kontakta ditt webbhotell support och be "
-"dem att häva blockeringen Sagenda Web Services. du kan ge dem vår WP länk "
-"som referenser:"
+"Este posibil ca firewall-ul serverului să restricţioneze conexiunea Internet "
+"pentru Sagenda WebServices. Vă rugăm să contactaţi furnizorul dvs. de "
+"servicii de stocare solicitând deblocarea accesului pentru Sagenda "
+"WebServices. Linkul nostru WP poate fi folosit pentru informaţii "
+"suplimentare:"
 
 #: admin/templates/config.php:31
 msgid ""
 "Your token is wrong; please try again or generate another one in Sagenda’s "
 "backend."
 msgstr ""
-"Din token är fel, försök igen eller generera en annan biljett i Sagenda s "
-"backend."
+"Codul dvs. este greşit; încercaţi din nou sau generaţi alt cod din backend-"
+"ul Sagenda."
 
 #: admin/templates/config.php:37
 msgid "Sagenda Authentication Settings"
-msgstr "Sagenda Autentiseringsinställningar"
+msgstr "Sagenda. Setări de autentificare"
 
 #: admin/templates/config.php:37
 msgid "CONNECTED"
-msgstr "ANSLUTEN"
+msgstr "CONECTAT"
 
 #: admin/templates/config.php:37
 msgid "NOT CONNECTED"
-msgstr "EJ ANSLUTEN"
+msgstr "DECONECTAT"
 
 #: admin/templates/config.php:44
 msgid "Sagenda Authentication Code"
-msgstr "Sagenda autentisering kod"
+msgstr "Codul de autentificare Sagenda"
 
 #: admin/templates/config.php:47
 msgid "Click here to get your Authentication code."
-msgstr "Klicka här för att få din Authentication koden."
+msgstr "Click aici pentru a obţine codul de autentificare "
 
 #: admin/templates/config.php:54
 msgid "Save Changes"
-msgstr "Spara ändringar"
+msgstr "Salvează modificările"
 
 #: admin/templates/config.php:56
 msgid ""
 "[sagenda-wp] add this shortcode either in a post or page where you want to "
 "display the Sagenda form."
 msgstr ""
-"[sagenda-wp] lägga till denna kort kod antingen i inlägg eller sida där du "
-"vill visa Sagenda formuläret."
+"[sagenda-wp] Adăugaţi acest shortcode într-o postare sau în pagina în care "
+"doriţi să afişaţi formularul Sagenda."
 
 #: admin/templates/config.php:57
 msgid ""
@@ -84,118 +85,116 @@ msgid ""
 "you can use this snippet to output it from the shortcode’s handler(s): "
 "<pre>echo do_shortcode([sagenda-wp])</pre>"
 msgstr ""
-"Om du vill använda en kortkod utanför Wordpress post eller sida editor, kan "
-"du använda denna snutt till utdata från kortkod s handler (er): <pre> echo "
-"do_shortcode ([sagenda-wp]) </ pre>"
+"Dacă doriţi utilizarea unui shortcode în afara postării de pe WordPress sau "
+"a editorului de pagină, puteţi utiliza acest snippet pentru a genera un "
+"altul cu ajutorul handler-ului pentru shortcode: <pre>echo "
+"do_shortcode([sagenda-wp])</pre> "
 
 #: templates/booking.php:10
 msgid "Please fill out all the required fields"
-msgstr "Fyll i alla obligatoriska fält"
+msgstr "Vă rugăm să completaţi toate câmpurile obligatorii"
 
 #: templates/booking.php:21
 msgid "Title"
-msgstr "Med tillstånd"
+msgstr "Formulă de adresare"
 
 #: templates/booking.php:24
 msgid "Mr."
-msgstr "Mr."
+msgstr "Domnule "
 
 #: templates/booking.php:29
 msgid "Mrs."
-msgstr "Mrs."
+msgstr "Doamna"
 
 #: templates/booking.php:39
 msgid "First Name"
-msgstr "Förnamn"
+msgstr "Prenume "
 
 #: templates/booking.php:51
 msgid "Last Name"
-msgstr "Efternamn"
+msgstr "Nume"
 
 #: templates/booking.php:63
 msgid "Phone Number"
-msgstr "Telefonnummer"
+msgstr "Telefon "
 
 #: templates/booking.php:74
 msgid "Email"
-msgstr "E-post"
+msgstr "Email"
 
 #: templates/booking.php:85
 msgid "Description"
-msgstr "Beskrivning"
+msgstr "Descriere "
 
 #: templates/booking.php:97
 msgid "Back to Calendar"
-msgstr "Tillbaka till kalendern"
+msgstr "Înapoi la Calendar"
 
 #: templates/booking.php:98
 msgid "Submit"
-msgstr "Spara"
+msgstr "Transmite "
 
 #: templates/reservation.php:9
 msgid "Your Sagenda account is not connected:"
-msgstr "Du har inte anslutit Sagenda-konto:"
+msgstr "Contul dvs. Sagenda nu este conectat:"
 
 #: templates/reservation.php:12
 msgid ""
 "1. Create a free account on <a href='https://sagenda.net/Accounts/"
 "Register'>Sagenda.</a> (set up your bookable items and events)."
 msgstr ""
-"1. Skapa ett gratis konto på <a href='https://sagenda.net/Accounts/"
-"Register'> Sagenda. </a> (Installations dina bokningsbara objekt och "
-"händelser)."
+"1. Creaţi-vă un cont gratuit pe <a href='https://sagenda.net/Accounts/"
+"Register'>Sagenda.</a> (definiţi serviciile rezervate şi evenimentele). "
 
 #: templates/reservation.php:15
 msgid "2. Copy your token (from the backend of sagenda.net Settings / account)"
-msgstr ""
-"2. Kopiera din token (från backend av sagenda.net Inställningar / konto"
+msgstr "2. Copiaţi-vă codul (din backend-ul sagenda.net Setări / cont)"
 
 #: templates/reservation.php:43
 msgid "You successfully subscribed to the event."
-msgstr "Du prenumererar för händelsen."
+msgstr "Rezervarea dvs. la acest eveniment a fost înregistrată cu succes. "
 
 #: templates/reservation.php:55 templates/reservation.php:83
 msgid "Start date"
-msgstr "Startdatum"
+msgstr "De la"
 
 #: templates/reservation.php:67 templates/reservation.php:94
 msgid "End Date"
-msgstr "Slutdatum"
+msgstr "Până la"
 
 #: templates/reservation.php:106
 msgid "Bookable Items"
-msgstr "Boknings Items"
+msgstr "Servicii Rezervate"
 
 #: templates/reservation.php:109
 msgid "Bookable Item"
-msgstr "Boknings Item"
+msgstr "Serviciu Rezervat"
 
 #: templates/reservation.php:126
 msgid "Click an event to book It:"
-msgstr "Klicka på en händelse för att boka det:"
+msgstr "Faceţi click pe un eveniment pentru a-l rezerva:"
 
 #: templates/reservation.php:138
 msgid "Create a free Booking Account on Sagenda!"
-msgstr "Skapa en gratis Boknings konto på Sagenda!"
+msgstr "Creaţi-vă un cont de rezervare gratuit pe Sagenda!"
 
 #: widgets/widget.php:12
 msgid "Reservation Widget"
-msgstr "Reservation Widget"
+msgstr "Widget de rezervare "
 
 #: widgets/widget.php:12
 msgid "Display the Reservation Form"
-msgstr "Display the Reservation Form"
+msgstr "Afişează Formularul de Rezervare "
 
-# Swedish
 #: widgets/widget.php:20
 msgid "SAGENDA"
 msgstr "SAGENDA"
 
 #~ msgid "Courtesy"
-#~ msgstr "Med tillstånd"
+#~ msgstr "Courtesy"
 
 #~ msgid "Mrs"
 #~ msgstr "Mrs"
 
 #~ msgid "You didn’t connected your Sagenda account :"
-#~ msgstr "Du har inte anslutit Sagenda-konto:"
+#~ msgstr "You didn’t connected your Sagenda account :"

@@ -6,13 +6,13 @@
         if (!$connected) {
             echo '<div class="sagenda_alert sagenda_alert-faliure">';
             echo '<p>';
-            _e('You didn’t connected your Sagenda account :', 'sagenda-wp');
+            _e('Your Sagenda account is not connected:', 'sagenda-wp');
             echo '</p>';
             echo '<p>';
-            _e("1. Create a free account on <a href='https://sagenda.net/Accounts/Register'>Sagenda.</a> (setup your bookable items and events).", 'sagenda-wp');
+            _e("1. Create a free account on <a href='https://sagenda.net/Accounts/Register'>Sagenda.</a> (set up your bookable items and events).", 'sagenda-wp');
             echo '</p>';
             echo '<p>';
-            _e('2. Copy your token (from the backend of sagenda.net Settings / account', 'sagenda-wp');
+            _e('2. Copy your token (from the backend of sagenda.net Settings / account)', 'sagenda-wp');
             echo '</p>';
             echo '</div>';
         }
@@ -40,7 +40,7 @@
                             <?php wp_nonce_field('add_reservation_form', 'br_user_form'); ?>
                             <div class="sagenda_alert sagenda_alert-success" style="margin-left: 0;display: none">
                                 <?php
-                                _e('You successfully subscribe for the event.', 'sagenda-wp');
+                                _e('You successfully subscribed to the event.', 'sagenda-wp');
                                 ?>                                
                             </div>
                         </div>

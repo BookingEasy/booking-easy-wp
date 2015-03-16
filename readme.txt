@@ -3,14 +3,14 @@ Contributors: Zohaib, www.iteration.info
 Tags: booking, free booking, reservation, free reservation, reservation system, online reservation system, appointment, booking system, events, event, calendar, online reservation, rooms, rooms reservation, accommodation, schedule, scheduling, free scheduling, reservation plugin, free reservation plugin, free booking plugin, B&B booking, rental, sagenda, agenda
 Requires at least: 3.0
 Tested up to: 4.1.1
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv2 or later
  
 Sagenda is a free online booking / scheduling / reservation module that helps your clients fix appointments at absolutely NO COST!
 
 == Description ==
 
-**NOW WP plugin in : English, Swedish, Polish, French, German.**
+**NOW WP plugin in : English, Swedish, Polish, French, German, Romanian.**
 
 Sagenda is an online booking software that helps your clients fix appointments and meetings with you online. Sagenda is available at absolutely NO COST for you or your clients! And the best thing about it is that you may have an unlimited number of bookings and/or customers. Our users always come first; that’s why Sagenda doesn’t display ads!
 
@@ -36,14 +36,15 @@ Follow these steps to install Sagenda:
 
 == Upgrade Notice ==
 
-= 1.0.7 =
-* ADDED : Add language support for German to the reservation system! -> Sagenda ist eine kostenlose Reservierungssystem!
-* IMPROVED : Translations -> Swedish : Sagenda är en fri bokningssystem.
-* IMPROVED : Translations -> Polish : Sagenda to darmowy system rezerwacji!.
-* IMPROVED : Translations -> French : Sagenda est un système gratuit de réservation.
-* IMPROVED : Translations -> English : Sagenda is a free booking system.
+= 1.0.8 =
+* ADDED : Add language support for Romanian to the reservation system! -> Sagenda este un sistem de rezervare gratuită
+* IMPROVED : Translations -> English : improved native text of the frontend online booking system.
 
 == Changelog ==
+
+= 1.0.8 =
+* ADDED : Add language support for Romanian to the reservation system! -> Sagenda este un sistem de rezervare gratuită
+* IMPROVED : Translations -> English : improved native text of the frontend online booking system.
 
 = 1.0.7 =
 * ADDED : Add language support for German to the reservation system! -> Sagenda ist eine kostenlose Reservierungssystem!

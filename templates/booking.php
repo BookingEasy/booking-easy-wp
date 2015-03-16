@@ -18,15 +18,15 @@
             <div class="sagenda_row">
                 <div class="sagenda_col">
                     <div class="sagenda_form-group">
-                        <label for="exampleInputCourtesy"><?php _e('Courtesy', 'sagenda-wp'); ?> </label>
+                        <label for="exampleInputCourtesy"><?php _e('Title', 'sagenda-wp'); ?> </label>
                         <label>
                             <input type="radio" name="optionsRadios" id="optionsRadios1" value="Mr" checked />
-                            <?php _e('Mr', 'sagenda-wp'); ?>
+                            <?php _e('Mr.', 'sagenda-wp'); ?>
                         </label>
 
                         <label>
                             <input type="radio" name="optionsRadios" id="optionsRadios1" value="Mrs" />
-                           <?php _e('Mrs', 'sagenda-wp'); ?> 
+                           <?php _e('Mrs.', 'sagenda-wp'); ?> 
                         </label>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
     <div class="sagenda_form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <div>
-                <button type="button" class="btn btn-default" id="backtocalender"><?php _e('Back to Calender', 'sagenda-wp'); ?></button>
+                <button type="button" class="btn btn-default" id="backtocalender"><?php _e('Back to Calendar', 'sagenda-wp'); ?></button>
                 <button type="button" class="btn btn-primary btn-default" id="submit-reservation"><?php _e('Submit', 'sagenda-wp'); ?></button>
             </div>
         </div>

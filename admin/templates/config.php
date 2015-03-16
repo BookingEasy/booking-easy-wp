@@ -22,13 +22,13 @@ if (!ini_get('allow_url_fopen')) {
         <?php } else if ($connected === 2) {
             ?>
             <div class="sagenda-errormesg">
-                <?php _e('It look like that the Sagenda’s WebServices can’t reach internet and blocked by the FireWall on the server. Please contact your hosting provider support and ask them to unblock Sagenda’s WebServices. you can give them our WP link as references :', 'sagenda-wp'); ?> <a href="https://wordpress.org/plugins/sagenda" target="_blank">https://wordpress.org/plugins/sagenda</a>
+                <?php _e('It looks like Sagenda’s WebServices failed to connect to Internet and is blocked by the server’s firewall. Please contact your hosting provider support service and ask them to unblock Sagenda’s WebServices. You can give them our WP link as reference:', 'sagenda-wp'); ?> <a href="https://wordpress.org/plugins/sagenda" target="_blank">https://wordpress.org/plugins/sagenda</a>
             </div>
             <?php
         } else if ($connected == 0) {
             ?>
             <div class="sagenda-errormesg">
-                <?php _e('Your token is wrong, please try it again or generate another ticket in Sagenda’s backend.', 'sagenda-wp'); ?>
+                <?php _e('Your token is wrong; please try again or generate another one in Sagenda’s backend.', 'sagenda-wp'); ?>
             </div>
 
             <?php
@@ -53,8 +53,8 @@ if (!ini_get('allow_url_fopen')) {
         <br />                
         <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e('Save Changes', 'sagenda-wp'); ?>"  /></p>
     </form>
-    <p><?php _e('[sagenda-wp] add this short code either in post or page where you want to display the Sagenda form.', 'sagenda-wp'); ?></p>
-    <p><?php _e('If you want to use a shortcode outside of the WordPress post or page editor, you can use this snippet to output from the shortcode’s handler(s):  <pre> echo do_shortcode([sagenda-wp])</pre>', 'sagenda-wp'); ?></p>
+    <p><?php _e('[sagenda-wp] add this shortcode either in a post or page where you want to display the Sagenda form.', 'sagenda-wp'); ?></p>
+    <p><?php _e('If you want to use a shortcode outside of the WordPress post or page editor, you can use this snippet to output it from the shortcode’s handler(s): <pre>echo do_shortcode([sagenda-wp])</pre>', 'sagenda-wp'); ?></p>
 </div>
 <div class="footer">
     <?php include_once 'footer.php'; ?>
