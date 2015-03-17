@@ -38,7 +38,7 @@
                     <div class="sagenda_form-group">
                         <label for="exampleInputFirstName"><?php _e('First Name', 'sagenda-wp'); ?></label>
                         <div>
-                            <input type="text" class="sagenda_form-control" id="firstName" required placeholder="First Name" />
+                            <input type="text" class="sagenda_form-control" id="firstName" required placeholder="<?php _e('First Name', 'sagenda-wp'); ?>" />
                             <input type="hidden" class="sagenda_form-control" id="EventIdentifier" placeholder="EventIdentifier" />
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                     <div class="sagenda_form-group">
                         <label for="exampleInputLastName"><?php _e('Last Name', 'sagenda-wp'); ?></label>
                         <div>
-                            <input type="text" class="sagenda_form-control" id="lastName" required placeholder="Last Name" />
+                            <input type="text" class="sagenda_form-control" id="lastName" required placeholder="<?php _e('Last Name', 'sagenda-wp'); ?>" />
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                     <div class="sagenda_form-group">
                         <label for="exampleInputPhone"><?php _e('Phone Number', 'sagenda-wp'); ?></label>
                         <div>
-                            <input type="text" class="sagenda_form-control" id="phonenumber" required placeholder="Phone Number" />
+                            <input type="text" class="sagenda_form-control" id="phonenumber" required placeholder="<?php _e('Phone Number', 'sagenda-wp'); ?>" />
                         </div>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                     <div class="sagenda_form-group">
                         <label for="exampleInputEmail"><?php _e('Email', 'sagenda-wp'); ?></label>
                         <div>
-                            <input type="email" class="sagenda_form-control" id="email" required placeholder="Email" />
+                            <input type="email" class="sagenda_form-control" id="email" required placeholder="<?php _e('Email', 'sagenda-wp'); ?>" />
                         </div>
                     </div>
                 </div>
