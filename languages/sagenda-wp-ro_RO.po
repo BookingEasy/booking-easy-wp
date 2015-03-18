@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sagenda\n"
 "POT-Creation-Date: 2015-03-18 14:02+0100\n"
-"PO-Revision-Date: 2015-03-18 14:04+0100\n"
+"PO-Revision-Date: 2015-03-18 16:05+0100\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: Sagenda <send us a message from sagenda.com>\n"
 "Language: en_US\n"
@@ -91,33 +91,31 @@ msgstr ""
 "do_shortcode([sagenda-wp])</pre> "
 
 #: admin/templates/footer.php:2
-#, fuzzy
 msgid ""
 "**NOTE: You first need to register on Sagenda and then you will get a "
 "Authentication token which you will use to validate this Sagenda Plugin. **"
 msgstr ""
-"**NOTE: You first need to register on Sagenda and then you will get a "
-"Authentication token which you will use to validate this Sagenda Plugin. **"
+"**NOTĂ: În primul rând este nevoie să vă înregistraţi pe Sagenda ca apoi să "
+"obţineţi un Cod de Autentificare ce va fi folosit pentru validarea accesului "
+"la plugin-ul Sagenda. **"
 
 #: admin/templates/footer.php:3
-#, fuzzy
 msgid ""
 "You can read more information about <a href=\"http://www.sagenda.com/add-"
 "booking-system-website/add-booking-plugin-wordpress-website/\">Sagenda "
 "WordPress plugin</a>"
 msgstr ""
-"You can read more information about <a href=\"http://www.sagenda.com/add-"
-"booking-system-website/add-booking-plugin-wordpress-website/\">Sagenda "
-"WordPress plugin</a>"
+"Pentru informaţii suplimentare <a href=\"http://www.sagenda.com/add-booking-"
+"system-website/add-booking-plugin-wordpress-website/\">Sagenda WordPress "
+"plugin</a>"
 
 #: admin/templates/footer.php:4
-#, fuzzy
 msgid ""
 "To create a free account : <a href=\"https://sagenda.net/Accounts/Login"
 "\">https://sagenda.net/Accounts/Login</a>"
 msgstr ""
-"To create a free account : <a href=\"https://sagenda.net/Accounts/Login"
-"\">https://sagenda.net/Accounts/Login</a>"
+"Pentru a deschide un cont gratuit: <a href=\"https://sagenda.net/Accounts/"
+"Login\">https://sagenda.net/Accounts/Login</a>"
 
 #: templates/booking.php:10
 msgid "Please fill out all the required fields"
