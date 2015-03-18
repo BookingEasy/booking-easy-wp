@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sagenda\n"
 "POT-Creation-Date: 2015-03-18 12:53+0100\n"
-"PO-Revision-Date: 2015-03-18 12:53+0100\n"
+"PO-Revision-Date: 2015-03-18 18:24+0100\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: Sagenda <send us a message from sagenda.com>\n"
 "Language: pl_PL\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: admin/templates/config.php:9
 msgid "Sagenda for WordPress: Sagenda Settings"
-msgstr "Sagenda dla WordPressa: ustawienia Sagenda"
+msgstr "Sagenda dla WordPress: ustawienia Sagenda"
 
 #: admin/templates/config.php:20 templates/reservation.php:22
 msgid "You should enable curl service in your PHP/Apache configuration."
@@ -94,6 +94,9 @@ msgid ""
 "**NOTE: You first need to register on Sagenda and then you will get a "
 "Authentication token which you will use to validate this Sagenda Plugin. **"
 msgstr ""
+"** UWAGA: Najpierw trzeba zarejestrować się na Sagenda a następnie otrzymasz "
+"token uwierzytelniania, który będzie używany do zatwierdzenia tej wtyczki "
+"Sagenda. **"
 
 #: admin/templates/footer.php:3
 msgid ""
@@ -101,12 +104,17 @@ msgid ""
 "booking-system-website/add-booking-plugin-wordpress-website/\">Sagenda "
 "WordPress plugin</a>"
 msgstr ""
+"Możesz przeczytać więcej informacji na temat <a href=\"http://www.sagenda."
+"com/add-booking-system-website/add-booking-plugin-wordpress-website/"
+"\">wtyczki Sagenda WordPress </a>"
 
 #: admin/templates/footer.php:4
 msgid ""
 "To create a free account : <a href=\"https://sagenda.net/Accounts/Login"
 "\">https://sagenda.net/Accounts/Login</a>"
 msgstr ""
+"Tutaj możesz utworzyć darmowe konto: <a href=\"https://sagenda.net/Accounts/"
+"Login\">https://sagenda.net/Accounts/Login</a>"
 
 #: templates/booking.php:10
 msgid "Please fill out all the required fields"
