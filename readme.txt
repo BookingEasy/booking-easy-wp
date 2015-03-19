@@ -38,13 +38,13 @@ Follow these steps to install Sagenda:
 
 = 1.0.8 =
 * ADDED : Add language support for Romanian to the reservation system! -> Sagenda este un sistem de rezervare gratuită
-* IMPROVED : Translations -> English : improved native text of the frontend online booking system.
+* IMPROVED : Translations (every language) : improved native text of the frontend online booking system.
 
 == Changelog ==
 
 = 1.0.8 =
 * ADDED : Add language support for Romanian to the reservation system! -> Sagenda este un sistem de rezervare gratuită
-* IMPROVED : Translations -> English : improved native text of the frontend online booking system.
+* IMPROVED : Translations (every language) : improved native text of the frontend online booking system.
 
 = 1.0.7 =
 * ADDED : Add language support for German to the reservation system! -> Sagenda ist eine kostenlose Reservierungssystem!
