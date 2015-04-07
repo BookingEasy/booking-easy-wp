@@ -53,9 +53,9 @@
                                 </div>
                                 <div class="sagenda_form-group">
                                     <label for="exampleInputStartDate"><?php _e('Start date', 'sagenda-wp'); ?>   </label>
-                                    <div class="sagenda_input-append date" id="startDate" data-date="12-24-2012" data-date-format="dd-mm-yyyy">                                
+                                    <div class="sagenda_input-append date" id="startDate" data-date="12-24-2012" data-date-format="dd M yyyy">                                
                                         <input type="text" class="sagenda_form-control"  readonly value="" id="dpd1">
-                                        <div class="sagenda_add-on" id="dp4" data-date-format="dd-mm-yyyy" data-val="true" data-date=""><i class="sagenda_icon-th"></i></div>
+                                        <div class="sagenda_add-on" id="dp4" data-date-format="dd M yyyy" data-val="true" data-date=""><i class="sagenda_icon-th"></i></div>
 
                                     </div>
                                 </div>

@@ -9,50 +9,26 @@ jQuery(document).ready(function ($) {
     }
 
     function formatDate(date) {
+        var monthNames = ["jan", "feb", "mar", "apr", "maj", "jun",
+            "jul", "aug", "sep", "okt", "nov", "dec"
+        ];
+         
+        return padNum(date.getDate() + 1, 2) + ' ' +
+                monthNames[date.getMonth()] + ' ' +
+                padNum(date.getFullYear(), 4);
+    }
+
+    function ReverseFormatDate(date) {
         return padNum(date.getMonth() + 1, 2) + '-' +
                 padNum(date.getDate(), 2) + '-' +
                 padNum(date.getFullYear(), 4);
     }
 
 
-    //    //Date Pickers  
-    //    var nowTemp = new Date();
-    //    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-    //    
-    //    var checkin = $('#dpd1').datepicker({
-    //        format: 'mm-dd-yyyy',
-    //        onRender: function(date) {
-    //            return date.valueOf() < now.valueOf() ? 'disabled' : '';
-    //        }
-    //    }).on('changeDate', function(ev) {
-    //        $("#bookableitems option[value='0']").attr('selected', 'selected');
-    //        if (ev.date.valueOf() > checkout.date.valueOf()) {
-    //            var newDate = new Date(ev.date)
-    //            newDate.setDate(newDate.getDate() + 1);
-    //            checkout.setValue(newDate);
-    //            $("#bookableitems option[value='0']").attr('selected', 'selected');            
-    //        }
-    //        checkin.hide();
-    //        $('#dpd2')[0].focus();
-    //    }).data('datepicker');
-    //    var checkout = $('#dpd2').datepicker({
-    //        format: 'mm-dd-yyyy',
-    //        onRender: function(date) {
-    //            return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
-    //        }
-    //    }).on('changeDate', function(ev) {
-    //        $("#bookableitems option[value='0']").attr('selected', 'selected');
-    //        checkout.hide();
-    //    }).data('datepicker');
-    //    
-
-    // New Code
-    //  var startDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-    //   var endDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
     var nowTemp = new Date();
     var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
     var startDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-    var endDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate()+ 7, 0, 0, 0, 0);
+    var endDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate() + 7, 0, 0, 0, 0);
     $('#dpd2').val(formatDate(endDate));
     $('#dpd1').val(formatDate(now));
     $('#dp4').datepicker({
@@ -73,11 +49,11 @@ jQuery(document).ready(function ($) {
                 }
                 else {
                     $('#alert').hide();
-                    $('#dpd1').val($('#dp4').data('date'));
+                    $('#dpd1').val(formatDate(new Date($('#dp4').data('date'))));
                 }
                 $('#dp4').datepicker('hide');
                 $('#dp5')[0].focus();
-                console.log(endDate.valueOf());
+
             });
     $('#dp5').datepicker({
         format: 'mm-dd-yyyy',
@@ -96,8 +72,9 @@ jQuery(document).ready(function ($) {
                 } else {
                     $("#bookableitems option[value='0']").attr('selected', 'selected');
                     endDate = new Date(ev.date);
-                    $('#alert').hide();
-                    $('#dpd2').val($('#dp5').data('date'));
+                    $('#alert').hide();                    
+                    $('#dpd2').val(formatDate(new Date($('#dp5').data('date'))));
+                    
                 }
                 $('#dp5').datepicker('hide');
             });
@@ -113,8 +90,8 @@ jQuery(document).ready(function ($) {
             dataType: 'html',
             data: {
                 action: 'getEventsList',
-                startDate: $('#dpd1').val(),
-                endDate: $('#dpd2').val(),
+                startDate: ReverseFormatDate(new Date($('#dpd1').val())),
+                endDate: ReverseFormatDate(new Date($('#dpd2').val())),
                 bookableItemId: $('#bookableitems :selected').val(),
                 bookableItem: $("#bookableitems :selected").text()
             },
@@ -150,7 +127,7 @@ jQuery(document).ready(function ($) {
     });
 
 
-        
+
 
     //Save Button Click
 
