@@ -9,16 +9,36 @@ jQuery(document).ready(function ($) {
     }
 
     function formatDate(date) {
-        var monthNames = ["jan", "feb", "mar", "apr", "maj", "jun",
-            "jul", "aug", "sep", "okt", "nov", "dec"
-        ];
-         
-        return padNum(date.getDate() + 1, 2) + ' ' +
+        var language = $("#sagenda_lang").val();
+        if (language == "fr-FR") {
+            var monthNames = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
+        }  
+        else {
+            var monthNames = ["jan", "feb", "mar", "apr", "maj", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
+        }
+
+        return padNum(date.getDate(), 2) + ' ' +
                 monthNames[date.getMonth()] + ' ' +
                 padNum(date.getFullYear(), 4);
     }
 
     function ReverseFormatDate(date) {
+       
+            date = date.replace('janv.', 'jan');
+            date = date.replace('févr.', 'feb');
+            date = date.replace('mars', 'mar');
+            date = date.replace('avr.', 'apr');
+            date = date.replace('mai', 'apr');
+            date = date.replace('juin', 'jun');
+            date = date.replace('juil.', 'jul');
+            date = date.replace('août', 'aug');
+            date = date.replace('sept.', 'sep');
+            date = date.replace('oct.', 'okt');
+            date = date.replace('nov.', 'nov');
+            date = date.replace('déc.', 'dec');
+      
+
+        date = new Date(date);
         return padNum(date.getMonth() + 1, 2) + '-' +
                 padNum(date.getDate(), 2) + '-' +
                 padNum(date.getFullYear(), 4);
@@ -72,9 +92,9 @@ jQuery(document).ready(function ($) {
                 } else {
                     $("#bookableitems option[value='0']").attr('selected', 'selected');
                     endDate = new Date(ev.date);
-                    $('#alert').hide();                    
+                    $('#alert').hide();
                     $('#dpd2').val(formatDate(new Date($('#dp5').data('date'))));
-                    
+
                 }
                 $('#dp5').datepicker('hide');
             });
@@ -90,8 +110,8 @@ jQuery(document).ready(function ($) {
             dataType: 'html',
             data: {
                 action: 'getEventsList',
-                startDate: ReverseFormatDate(new Date($('#dpd1').val())),
-                endDate: ReverseFormatDate(new Date($('#dpd2').val())),
+                startDate: ReverseFormatDate($('#dpd1').val()),
+                endDate: ReverseFormatDate($('#dpd2').val()),
                 bookableItemId: $('#bookableitems :selected').val(),
                 bookableItem: $("#bookableitems :selected").text()
             },

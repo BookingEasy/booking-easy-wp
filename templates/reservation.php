@@ -52,10 +52,11 @@
 
                                 </div>
                                 <div class="sagenda_form-group">
-                                    <label for="exampleInputStartDate"><?php _e('Start date', 'sagenda-wp'); ?>   </label>
+                                    <input type="hidden" id="sagenda_lang" name="sagenda_lang" value="<?php echo get_bloginfo("language") ?>" />
+                                    <label for="exampleInputStartDate"><?php _e('Start date', 'sagenda-wp');  ?>   </label>
                                     <div class="sagenda_input-append date" id="startDate" data-date="12-24-2012" data-date-format="dd M yyyy">                                
                                         <input type="text" class="sagenda_form-control"  readonly value="" id="dpd1">
-                                        <div class="sagenda_add-on" id="dp4" data-date-format="dd M yyyy" data-val="true" data-date=""><i class="sagenda_icon-th"></i></div>
+                                        <span class="sagenda_add-on" id="dp4" data-date-format="dd M yyyy" data-val="true" data-date=""><i class="sagenda_icon-th"></i></span>
 
                                     </div>
                                 </div>
@@ -67,7 +68,7 @@
                                     <label for="exampleInputEndDate"><?php _e('End Date', 'sagenda-wp'); ?></label>
                                     <div class="sagenda_input-append date" id="endDate" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
                                         <input type="text" class="sagenda_form-control" value="" readonly id="dpd2">
-                                        <div class="sagenda_add-on" id="dp5" data-date-format="dd-mm-yyyy" data-val="true" data-date=""><i class="sagenda_icon-th"></i></div>
+                                        <span class="sagenda_add-on" id="dp5" data-date-format="dd-mm-yyyy" data-val="true" data-date=""><i class="sagenda_icon-th"></i></span>
 
                                     </div>
                                 </div>

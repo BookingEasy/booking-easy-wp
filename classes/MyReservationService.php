@@ -109,7 +109,7 @@ class MyReservationService {
             //To fail silently if the HTTP code returned is greater than or equal to 400.
             curl_setopt($this->curl, CURLOPT_FAILONERROR, TRUE);
             //To follow any "Location: " header that the server sends as part of the HTTP header.
-            curl_setopt($this->curl, CURLOPT_FOLLOWLOCATION, TRUE);
+            //curl_setopt($this->curl, CURLOPT_FOLLOWLOCATION, TRUE);
             //To automatically set the Referer: field in requests where it follows a Location: redirect.
             curl_setopt($this->curl, CURLOPT_AUTOREFERER, TRUE);
             //The maximum number of seconds to allow cURL functions to execute.	

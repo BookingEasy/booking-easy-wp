@@ -106,6 +106,7 @@ class ShortCode {
     }
 
     function getEventsList_callback() {
+        setlocale(LC_ALL, 'de_DE');
         $mrsService = new MyReservationService();
         $startDate = $_POST["startDate"];
         $endDate = $_POST["endDate"];
