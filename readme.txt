@@ -37,12 +37,22 @@ Follow these steps to install Sagenda:
 == Upgrade Notice ==
 
 = 1.0.9 =
+* IMPROVED : Compatibility of the booking system in case CURL is not activated.
+* IMPROVED : Design of the date time picker.
 * ADDED : Hindi translation of the WordPress plugin booking system.
 * ADDED : Japanese translation of the WordPress plugin booking system.
 * ADDED : Italian translation of the WordPress plugin booking system.
 * ADDED : Chinese (Simplified) translation of the WordPress plugin booking system.
 
 == Changelog ==
+
+= 1.0.9 =
+* IMPROVED : Compatibility of the booking system in case CURL is not activated.
+* IMPROVED : Design of the date time picker.
+* ADDED : Hindi translation of the WordPress plugin booking system.
+* ADDED : Japanese translation of the WordPress plugin booking system.
+* ADDED : Italian translation of the WordPress plugin booking system.
+* ADDED : Chinese (Simplified) translation of the WordPress plugin booking system.
 
 = 1.0.8 =
 * ADDED : Add language support for Romanian to the reservation system! -> Sagenda este un sistem de rezervare gratuită
