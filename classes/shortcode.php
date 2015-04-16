@@ -115,7 +115,7 @@ class ShortCode {
         $authCode = get_option('mrs1_authentication_code');
         $events = $mrsService->getEventsList($authCode, $startDate, $endDate, $bookableItemId);
         $eventslist = "<ul class='events'>";
-        if (count($events) > 0) {
+        if (count($events) > 0 && $events != 2 && $events != 3) {
             foreach ($events as $event) {
                 $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> <input type='radio' name='event-item' value='" . $event->EventScheduleId . "' id='" . $event->EventIdentifier . "'> " . $event->From . ' - ' . $event->To . " : " . $bookableItem . "</label></li>";
             }
