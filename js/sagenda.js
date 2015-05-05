@@ -14,7 +14,7 @@ jQuery(document).ready(function ($) {
             var monthNames = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
         }  
         else {
-            var monthNames = ["jan", "feb", "mar", "apr", "maj", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
+            var monthNames = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
         }
 
         return padNum(date.getDate(), 2) + ' ' +
