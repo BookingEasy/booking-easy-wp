@@ -12,7 +12,7 @@ jQuery(document).ready(function ($) {
         var language = $("#sagenda_lang").val();
         if (language == "fr-FR") {
             var monthNames = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
-        }  
+        }
         else {
             var monthNames = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
         }
@@ -23,7 +23,7 @@ jQuery(document).ready(function ($) {
     }
 
     function ReverseFormatDate(date) {
-       
+        if (typeof date != 'undefined') {
             date = date.replace('janv.', 'jan');
             date = date.replace('févr.', 'feb');
             date = date.replace('mars', 'mar');
@@ -36,12 +36,13 @@ jQuery(document).ready(function ($) {
             date = date.replace('oct.', 'okt');
             date = date.replace('nov.', 'nov');
             date = date.replace('déc.', 'dec');
-      
 
-        date = new Date(date);
-        return padNum(date.getMonth() + 1, 2) + '-' +
-                padNum(date.getDate(), 2) + '-' +
-                padNum(date.getFullYear(), 4);
+
+            date = new Date(date);
+            return padNum(date.getMonth() + 1, 2) + '-' +
+                    padNum(date.getDate(), 2) + '-' +
+                    padNum(date.getFullYear(), 4);
+        }
     }
 
 
