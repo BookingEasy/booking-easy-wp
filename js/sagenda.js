@@ -10,13 +10,14 @@ jQuery(document).ready(function ($) {
 
     function formatDate(date) {
         var language = $("#sagenda_lang").val();
+       // alert(date);
         if (language == "fr-FR") {
             var monthNames = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
         }
         else {
             var monthNames = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
         }
-
+        
         return padNum(date.getDate(), 2) + ' ' +
                 monthNames[date.getMonth()] + ' ' +
                 padNum(date.getFullYear(), 4);
@@ -53,7 +54,7 @@ jQuery(document).ready(function ($) {
     $('#dpd2').val(formatDate(endDate));
     $('#dpd1').val(formatDate(now));
     $('#dp4').datepicker({
-        format: 'mm-dd-yyyy',
+        format: 'mm dd yyyy',
         onRender: function (date) {
             return date.valueOf() < now.valueOf() ? 'disabled' : '';
         }
@@ -68,8 +69,8 @@ jQuery(document).ready(function ($) {
                     $("#bookableitems option[value='0']").attr('selected', 'selected');
                     $('#alert').show().find('strong').text('The start date can not be greater then the end date');
                 }
-                else {
-                    $('#alert').hide();
+                else {                  
+                   
                     $('#dpd1').val(formatDate(new Date($('#dp4').data('date'))));
                 }
                 $('#dp4').datepicker('hide');
@@ -77,7 +78,7 @@ jQuery(document).ready(function ($) {
 
             });
     $('#dp5').datepicker({
-        format: 'mm-dd-yyyy',
+        format: 'mm dd yyyy',
         onRender: function (date) {
             console.log(endDate.valueOf());
             return date.valueOf() <= startDate.valueOf() ? 'disabled' : '';
