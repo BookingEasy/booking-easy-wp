@@ -37,7 +37,7 @@ Follow these steps to install Sagenda:
 == Upgrade Notice ==
 
 = 1.0.12 =
-* IMPROVED : …
+* FIXED : a bug with reservation date selection on agenda date time picker on mobile devices.
 
 
 == Changelog ==
