@@ -54,7 +54,7 @@ jQuery(document).ready(function ($) {
     $('#dpd2').val(formatDate(endDate));
     $('#dpd1').val(formatDate(now));
     $('#dp4').datepicker({
-        format: 'mm dd yyyy',
+        format: 'yyyy-mm-dd',
         onRender: function (date) {
             return date.valueOf() < now.valueOf() ? 'disabled' : '';
         }
@@ -78,7 +78,7 @@ jQuery(document).ready(function ($) {
 
             });
     $('#dp5').datepicker({
-        format: 'mm dd yyyy',
+        format: 'yyyy-mm-dd',
         onRender: function (date) {
             console.log(endDate.valueOf());
             return date.valueOf() <= startDate.valueOf() ? 'disabled' : '';
