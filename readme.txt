@@ -3,7 +3,7 @@ Contributors: Zohaib, www.iteration.info
 Tags: booking, free booking, reservation, free reservation, reservation system, online reservation system, appointment, booking system, events, event, calendar, online reservation, rooms, rooms reservation, accommodation, schedule, scheduling, free scheduling, reservation plugin, free reservation plugin, free booking plugin, B&B booking, rental, sagenda, agenda
 Requires at least: 3.0
 Tested up to: 4.2.2
-Stable tag: 1.0.12
+Stable tag: 1.0.14
 License: GPLv2 or later
  
 Sagenda is a free online booking / scheduling / reservation module that helps your clients fix appointments at absolutely NO COST!
@@ -36,11 +36,17 @@ Follow these steps to install Sagenda:
 
 == Upgrade Notice ==
 
-= 1.0.12 =
-* FIXED : a bug with reservation date selection on agenda date time picker on iOS devices and Safari navigators.
+= 1.0.14 =
+* …
 
 
 == Changelog ==
+
+= 1.0.13 =
+* FIXED : end date was sometime not set to the correct date on the booking search form.
+
+= 1.0.12 =
+* FIXED : a bug with reservation date selection on agenda date time picker on iOS devices and Safari navigators.
 
 = 1.0.11 =
 * IMPROVED : the rendering of the reservation date time picker.
