@@ -1,7 +1,7 @@
 <div class="sagenda_container">
     <div class="sagenda_col">
 
-        
+        <?php echo($events->startdate); ?>
         <?php        
         if (!$connected) {
             echo '<div class="sagenda_alert sagenda_alert-faliure">';

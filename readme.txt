@@ -2,7 +2,7 @@
 Contributors: Zohaib, www.iteration.info
 Tags: booking, free booking, reservation, free reservation, reservation system, online reservation system, appointment, booking system, events, event, calendar, online reservation, rooms, rooms reservation, accommodation, schedule, scheduling, free scheduling, reservation plugin, free reservation plugin, free booking plugin, B&B booking, rental, sagenda, agenda
 Requires at least: 3.0
-Tested up to: 4.2.2
+Tested up to: 4.2.4
 Stable tag: 1.0.14
 License: GPLv2 or later
  
@@ -24,6 +24,12 @@ To **create an account** please visit: [https://sagenda.net/Accounts/Register](h
 
 **NOTE: You need to register an account on the Sagenda site and then you will get an authentication code which you will use to validate your Sagenda plugin.**
 == Installation ==
+
+How to create a Sagenda’s account in video:
+
+[youtube https://www.youtube.com/watch?v=T-NXXxPSTQs]
+
+
 Follow these steps to install Sagenda: 
 
 1. Download the booking plugin into the **/wp-content/plugins/** folder and activate the plugin.
@@ -36,14 +42,11 @@ Follow these steps to install Sagenda:
 
 == Upgrade Notice ==
 
-= 1.0.14 =
-* …
+= 1.0.13 =
+* FIXED : end date was sometime not set to the correct date on the booking search form.
 
 
 == Changelog ==
-
-= 1.0.13 =
-* FIXED : end date was sometime not set to the correct date on the booking search form.
 
 = 1.0.12 =
 * FIXED : a bug with reservation date selection on agenda date time picker on iOS devices and Safari navigators.
