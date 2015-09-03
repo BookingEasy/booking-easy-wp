@@ -2,8 +2,8 @@
 Contributors: Zohaib, www.iteration.info
 Tags: booking, free booking, reservation, free reservation, reservation system, online reservation system, appointment, booking system, events, event, calendar, online reservation, rooms, rooms reservation, accommodation, schedule, scheduling, free scheduling, reservation plugin, free reservation plugin, free booking plugin, B&B booking, rental, sagenda, agenda
 Requires at least: 3.0
-Tested up to: 4.2.4
-Stable tag: 1.0.14
+Tested up to: 4.3
+Stable tag: 1.0.15
 License: GPLv2 or later
  
 Sagenda is a free online booking / scheduling / reservation module that helps your clients fix appointments at absolutely NO COST!
@@ -42,11 +42,21 @@ Follow these steps to install Sagenda:
 
 == Upgrade Notice ==
 
-= 1.0.13 =
-* FIXED : end date was sometime not set to the correct date on the booking search form.
+= 1.0.15 =
+* TESTED : Compatibility of the reservation plugin with Wordpress 4.3.
 
 
 == Changelog ==
+
+= 1.0.15 =
+* TESTED : Compatibility of the reservation plugin with Wordpress 4.3.
+
+= 1.0.14 =
+* FIXED : a bug with the DIVI2 theme.
+* TESTED : Compatibility of the reservation plugin with Wordpress 4.2.4.
+
+= 1.0.13 =
+* IMPROVED : translations of the booking plugin (frontend).
 
 = 1.0.12 =
 * FIXED : a bug with reservation date selection on agenda date time picker on iOS devices and Safari navigators.

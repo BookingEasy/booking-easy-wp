@@ -15,8 +15,8 @@
             <div class="sagenda_row">
                 <div class="sagenda_col">
                     <div class="sagenda_form-group">
-                        <label for="ChoosenEvent"><?php _e('You are subscribing the following event : ', 'sagenda-wp'); ?> </label>
-                                          <?php echo $event->StartDate; ?>
+                        <label for="ChoosenEvent"><?php // _e('You are subscribing the following event : ', 'sagenda-wp'); ?> </label>
+                                          
                     </div>
                 </div>
             </div>
