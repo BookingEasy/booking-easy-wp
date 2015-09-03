@@ -136,7 +136,7 @@
 
                 <div class="sagenda_row">
                     <div class="sagenda_col">
-                        <a href="http://www.sagenda.net" target="_blank" class="sagenda-ref-link"><?php _e('Create a free Booking Account on Sagenda!', 'sagenda-wp'); ?></a>
+                        <a href="https://sagenda.net/Accounts/Register" target="_blank" class="sagenda-ref-link"><?php _e('Create a free Booking Account on Sagenda!', 'sagenda-wp'); ?></a>
                     </div>
                 </div>
             </form>
