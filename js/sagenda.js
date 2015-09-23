@@ -15,7 +15,7 @@ jQuery(document).ready(function ($) {
             var monthNames = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
         }
         else {
-            var monthNames = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
+            var monthNames = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
         }
         
         return padNum(date.getDate(), 2) + ' ' +
@@ -34,7 +34,7 @@ jQuery(document).ready(function ($) {
             date = date.replace('juil.', 'jul');
             date = date.replace('août', 'aug');
             date = date.replace('sept.', 'sep');
-            date = date.replace('oct.', 'okt');
+            date = date.replace('oct.', 'oct');
             date = date.replace('nov.', 'nov');
             date = date.replace('déc.', 'dec');
 
