@@ -1,5 +1,5 @@
 === Sagenda - Free booking system  ===
-Contributors: Zohaib, www.iteration.info
+Contributors: Riyadh, Zohaib, www.iteration.info
 Tags: booking, free booking, reservation, free reservation, reservation system, online reservation system, appointment, booking system, events, event, calendar, online reservation, rooms, rooms reservation, accommodation, schedule, scheduling, free scheduling, reservation plugin, free reservation plugin, free booking plugin, B&B booking, rental, sagenda, agenda
 Requires at least: 3.0
 Tested up to: 4.3.1
@@ -44,10 +44,14 @@ Follow these steps to install Sagenda:
 
 = 1.0.16 =
 * TESTED : Compatibility of the reservation plugin with Wordpress 4.3.1
-* ... : a bug with datepicker selection of bookings.
+* FIXED : a bug with datepicker selection of bookings.
 
 
 == Changelog ==
+
+= 1.0.16 =
+* TESTED : Compatibility of the reservation plugin with Wordpress 4.3.1
+* FIXED : a bug with datepicker selection of bookings.
 
 = 1.0.15 =
 * TESTED : Compatibility of the reservation plugin with Wordpress 4.3.
