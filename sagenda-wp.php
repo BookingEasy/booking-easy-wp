@@ -4,7 +4,7 @@
  * @package Sagenda
  */
 /*
-  Plugin Name: Sagenda, riyadhulislam
+  Plugin Name: Sagenda
   Plugin URI: https://github.com/Sagenda/sagenda-wp
   Description: Sagenda is an Online Booking System, which gives customers the opportunity to choose the date and the time of an appointment according to one's own preferences and the booking can now be done online. Go to your Plugin configuration page, and save your Authentication token.
   Version: 1.0.16
