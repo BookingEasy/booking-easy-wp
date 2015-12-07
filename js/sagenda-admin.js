@@ -6,7 +6,8 @@
 function ValidateToken(token) {
     jQuery.support.cors = true;
     $.ajax({
-        url: 'https://mrs2-test.apphb.com/api/ValidateAccount/' + token,
+        protected $apiUrl = 'http://www.sagenda.net/api/'; //Live Server
+        //protected $apiUrl = 'http://localhost:49815/api/'; //Live Server
         type: 'POST',   
         dataType: 'html',
         success: function (data) {
@@ -18,8 +19,8 @@ function ValidateToken(token) {
     });
 }
 
-$(document).ready(function() {         
+/*$(document).ready(function() {         
     //ValidateToken(token);
    
        
-});
+});*/
