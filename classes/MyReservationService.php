@@ -9,8 +9,8 @@ include_once( SAGENDA_PLUGIN_DIR . 'classes/SubscribeForEvent.php');
 
 class MyReservationService {
 
-    url: 'https://mrs2-test.apphb.com/api/ValidateAccount/' + token,
-    //url: 'http://localhost:49815/api/ValidateAccount/' + token,
+    //protected $apiUrl = 'http://www.sagenda.net/api/'; //Live Server
+    protected $apiUrl = 'http://localhost:49815/api/'; //Live Server
     protected $curl;
 
     public function __construct() {
