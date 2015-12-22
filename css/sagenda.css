@@ -733,3 +733,9 @@ table th[class*="col-"] {
     position: relative;
     z-index: 1;
 }
+
+div.event-details {
+    vertical-align: middle;
+    /*padding: 10px 10px 10px 9px;*/
+    cursor: pointer;
+}

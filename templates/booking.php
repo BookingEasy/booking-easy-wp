@@ -3,9 +3,7 @@
         <div class="sagenda_col">
             <div class="sagenda_row">
                 <div class="sagenda_col">
-                    <div class="reservation-form-heading">
-
-                    </div>
+                    <div class="reservation-form-heading"></div>
                     <div class="sagenda_alert sagenda_alert-faliure" id="sagenda-fields">
                         <?php _e('Please fill out all the required fields', 'sagenda-wp'); ?> 
                     </div>
@@ -16,7 +14,16 @@
                 <div class="sagenda_col">
                     <div class="sagenda_form-group">
                         <label for="ChoosenEvent"><?php // _e('You are subscribing the following event : ', 'sagenda-wp'); ?> </label>
-                                          
+                    </div>
+                </div>
+            </div>
+
+            <div class="sagenda_row">
+                <div class="sagenda_col">
+                    <div class="sagenda_form-group">
+                        <label>
+                            <div id="paid-event-information-to-display"></div>
+                        </label>
                     </div>
                 </div>
             </div>
@@ -45,6 +52,7 @@
                         <div>
                             <input type="text" class="sagenda_form-control" id="firstName" required placeholder="<?php _e('First Name', 'sagenda-wp'); ?>" />
                             <input type="hidden" class="sagenda_form-control" id="EventIdentifier" placeholder="EventIdentifier" />
+                            <input type="hidden" class="sagenda_form-control" id="HostUrlLocation" name="HostUrlLocation" placeholder="HostUrlLocation" />
                         </div>
                     </div>
                 </div>

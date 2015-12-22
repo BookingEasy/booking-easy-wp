@@ -2,7 +2,7 @@
 
 /**
  * @package MyReservation
- * Developer Zohaib
+ * Developer Riyadh, Zohaib
  * Date 2014-02-19
  */
 class SAGENDA_Widget extends WP_Widget {

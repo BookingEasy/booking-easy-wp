@@ -1,5 +1,19 @@
 jQuery(document).ready(function ($) {
 
+    //this will be paid information data
+    //var isPaidEvent = false;
+    
+    var identifier = "";
+    var paymentCurrency = "";
+    var ispaidevent = "";
+    var paymentamount = "";
+    var eventTitle = "";
+    var bookableItemId = "";
+    var eventScheduleId = "";
+    var bookableItemName = "";
+    var paymentNote = "";
+    var clientPath = window.location.href; 
+
     function padNum(num, padding) {
         num = '' + num;
         while (num.length < padding) {
@@ -51,6 +65,7 @@ jQuery(document).ready(function ($) {
     var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
     var startDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
     var endDate = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate() + 7, 0, 0, 0, 0);
+
     $('#dpd2').val(formatDate(endDate));
     $('#dpd1').val(formatDate(now));
     $('#dp4').datepicker({
@@ -80,7 +95,7 @@ jQuery(document).ready(function ($) {
     $('#dp5').datepicker({
         format: 'yyyy-mm-dd',
         onRender: function (date) {
-            console.log(endDate.valueOf());
+            //console.log(endDate.valueOf());
             return date.valueOf() <= startDate.valueOf() ? 'disabled' : '';
         }
     })
@@ -106,6 +121,7 @@ jQuery(document).ready(function ($) {
 
 
     function getEventList() {
+        //console.log(ajaxurl);
         jQuery.ajax({
             type: 'POST',
             url: ajaxurl,
@@ -118,6 +134,7 @@ jQuery(document).ready(function ($) {
                 bookableItem: $("#bookableitems :selected").text()
             },
             success: function (data) {
+                //console.log(data);
                 jQuery("#events-list").html('');
                 jQuery("#events-list").append(data);
 
@@ -164,9 +181,67 @@ jQuery(document).ready(function ($) {
 
         var value = this.value;
         $("#EventIdentifier").val(this.id);
+        $("#HostUrlLocation").val(clientPath);
+
         $("#form-step1").hide();
         $("#booking-form").show();
     });
+
+    //this will goig to use for new pay dealing
+    $("#events-list").delegate("div[id^='select-']", "click", function () {     
+
+        //set event data with payment information   
+        identifier = $(this).attr('dataMultiple-eventIdentifier');
+        paymentCurrency = $(this).attr('data-multiple-paymentcurrency');
+        ispaidevent = $(this).attr('data-multiple-ispaidevent');
+        paymentamount = $(this).attr('data-multiple-paymentamount');
+        eventTitle = $(this).attr('datamultiple-eventtitle');
+        bookableItemId = $(this).attr('datamultiple-bookableItemId');
+        eventScheduleId = $(this).attr('datamultiple-eventScheduleId');
+        bookableItemName = $(this).attr('datamultiple-bookableItemName');
+        paymentNote = $(this).attr('datamultiple-paymentNote');
+
+        // console.log("eventTitle--> " + eventTitle);
+        // console.log("identifier--> " + identifier);
+        // console.log("paymentCurrency--> " + paymentCurrency);
+        // console.log("paymentamount--> " + paymentamount);
+        // console.log("Ispaid-->" + ispaidevent);
+        // console.log("bookableItemId--> "+ bookableItemId);
+        // console.log("eventScheduleId--> " + eventScheduleId);
+        // console.log("paymentNote--> " + paymentNote);
+        // console.log("clientPath--> " + clientPath);
+
+        if(ispaidevent === "1"){
+            jQuery("#paid-event-information-to-display").html("");
+            var paid_event_information_html = "<strong>Paid Event Information</strong>";
+            paid_event_information_html += "<br> Bookable Item : "+ bookableItemName;
+            paid_event_information_html += "<br> Event Title : "+ eventTitle;
+            paid_event_information_html += "<br> Payment Amount : "+ paymentamount +" "+ paymentCurrency;
+            paid_event_information_html += "<br> Payment Note : "+ paymentNote;
+
+            jQuery("#paid-event-information-to-display").append(paid_event_information_html);
+            $("#EventIdentifier").val(identifier);
+            $("#HostUrlLocation").val(clientPath);
+
+            $("#form-step1").hide();
+            $("#booking-form").show(); 
+        }
+        else{
+            jQuery("#paid-event-information-to-display").html("");
+            //this is free event and it will function as it was
+            // var value = this.value;
+            $("#EventIdentifier").val(identifier);
+            $("#HostUrlLocation").val(clientPath);
+
+            $("#form-step1").hide();
+            $("#booking-form").show();
+        }
+    });
+
+    // $("div[id^='select-']").on("click", function() {
+    //     alert("this is selected");
+    // });
+
 
 
     $("#booking-form").delegate("#backtocalender", "click", function () {
@@ -213,48 +288,115 @@ jQuery(document).ready(function ($) {
     }
 
     $("#booking-form").delegate("#submit-reservation", "click", function () {
+        //alert($('#HostUrlLocation').val());
         if (validateStep1()) {
             $("#sagenda-fields").hide();
-            jQuery.ajax({
-                type: 'POST',
-                url: ajaxurl,
-                dataType: 'html',
-                data: {
-                    action: 'subscribeForEvent',
-                    EventIdentifier: $('#EventIdentifier').val(),
-                    endDate: $('#dpd2').val(),
-                    BookableItemId: $('#bookableitems :selected').val(),
-                    EventScheduleId: $("input:radio[name=event-item]:checked").val(),
-                    Courtesy: $("input:radio[name=optionsRadios]:checked").val(),
-                    FirstName: $('#firstName').val(),
-                    LastName: $('#lastName').val(),
-                    PhoneNumber: $('#phonenumber').val(),
-                    Email: $('#email').val(),
-                    Description: $('#description').val()
-                },
-                success: function (data) {
-                    //$('#subscribe_event').trigger("reset");
-                    obj = JSON.parse(data);
-                    $("#booking-form").hide();
-                    $("#form-step1").show();
-                    //jQuery("#events-list").html('');
-                    if (obj.Success == true) {
-                        $("input:radio[name=event-item]:checked").prop('checked', false);
-                        $(".sagenda_alert").css("display", "inline-block");
-                        $(".sagenda_alert-faliure").css("display", "none");
-                        getEventList();
-                    }
-                    else {
-                        $(".sagenda_alert-faliure").text(obj.Message);
-                        $(".sagenda_alert-faliure").css("display", "inline-block");
+            if(ispaidevent === "1"){
+                //alert("pay will go here");
+                    jQuery.ajax({
+                    type: 'POST',
+                    url: ajaxurl,
+                    dataType: 'html',
+                    data: {
+                        action: 'subscribeForPaidEvent',
+                        EventIdentifier: identifier, //$('#EventIdentifier').val(),
+                        endDate: $('#dpd2').val(),
+                        BookableItemId: bookableItemId, //$('#bookableitems :selected').val(),
+                        EventScheduleId: eventScheduleId,
+                        Courtesy: $("input:radio[name=optionsRadios]:checked").val(),
+                        FirstName: $('#firstName').val(),
+                        LastName: $('#lastName').val(),
+                        PhoneNumber: $('#phonenumber').val(),
+                        Email: $('#email').val(),
+                        Description: $('#description').val(),
+                        HostUrlLocation : clientPath//$('#HostUrlLocation').val()
 
+                    },
+                    success: function (data) {
+                        //$('#subscribe_event').trigger("reset");
+                        obj = JSON.parse(data);
+                        $("#booking-form").hide();
+                        $("#form-step1").show();
+                        //console.log(message);
+                        //console.log("-------------------------");
+                        //console.log(obj);
+                        //console.log("-------------------------");
+                        //console.log(obj.Message);
+                        //console.log(obj.ReturnUrl);
+                        if (obj.Success == true) {
+                            window.location.href = obj.ReturnUrl;
+                        }
+                        else{
+                            $(".sagenda_alert-faliure").text(obj.Message);
+                            $(".sagenda_alert-faliure").css("display", "inline-block");
+                        }
+                        
+                        //jQuery("#events-list").html('');
+                        //work leter
+                        // if (obj.Success == true) {
+                        //     $("input:radio[name=event-item]:checked").prop('checked', false);
+                        //     $(".sagenda_alert").css("display", "inline-block");
+                        //     $(".sagenda_alert-faliure").css("display", "none");
+                        //     getEventList();
+                        // }
+                        // else {
+                        //     $(".sagenda_alert-faliure").text(obj.Message);
+                        //     $(".sagenda_alert-faliure").css("display", "inline-block");
+
+                        // }
+                        
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        console.log(errorThrown);
                     }
-                    console.log(obj.Message);
-                },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    console.log(errorThrown);
-                }
-            });
+                });                
+
+            }
+            else{
+                jQuery.ajax({
+                    type: 'POST',
+                    url: ajaxurl,
+                    dataType: 'html',
+                    data: {
+                        action: 'subscribeForEvent',
+                        EventIdentifier: identifier, //$('#EventIdentifier').val(),
+                        endDate: $('#dpd2').val(),
+                        BookableItemId: bookableItemId, //$('#bookableitems :selected').val(),
+                        EventScheduleId: eventScheduleId,
+                        Courtesy: $("input:radio[name=optionsRadios]:checked").val(),
+                        FirstName: $('#firstName').val(),
+                        LastName: $('#lastName').val(),
+                        PhoneNumber: $('#phonenumber').val(),
+                        Email: $('#email').val(),
+                        Description: $('#description').val(),
+                        HostUrlLocation : clientPath//$('#HostUrlLocation').val()
+
+                    },
+                    success: function (data) {
+                        //$('#subscribe_event').trigger("reset");
+                        obj = JSON.parse(data);
+                        $("#booking-form").hide();
+                        $("#form-step1").show();
+                        //jQuery("#events-list").html('');
+                        if (obj.Success == true) {
+                            $("input:radio[name=event-item]:checked").prop('checked', false);
+                            $(".sagenda_alert").css("display", "inline-block");
+                            $(".sagenda_alert-faliure").css("display", "none");
+                            getEventList();
+                        }
+                        else {
+                            $(".sagenda_alert-faliure").text(obj.Message);
+                            $(".sagenda_alert-faliure").css("display", "inline-block");
+
+                        }
+                        //console.log(obj.Message);
+                        //console.log(obj);
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        console.log(errorThrown);
+                    }
+                });
+            }
         }
         else {
             $("#sagenda-fields").show();

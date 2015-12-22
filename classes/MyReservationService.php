@@ -3,14 +3,18 @@
 /**
  * Description of Booking Easy
  * This Class is User for interaction with the Web Service
- * @author zohaib
+ * @author Riyadh, zohaib
  */
 include_once( SAGENDA_PLUGIN_DIR . 'classes/SubscribeForEvent.php');
 
 class MyReservationService {
 
     //protected $apiUrl = 'http://www.sagenda.net/api/'; //Live Server
-    protected $apiUrl = 'http://localhost:49815/api/'; //Live Server
+    //protected $apiUrl = 'http://localhost:49815/api/'; //local Server
+    
+    protected $apiUrl = 'https://sagenda-dev.apphb.com/api/'; //staging test for payment Server
+    //protected $apiUrl = 'http://1edf02b9.ngrok.io/api/'; //ngrok test for payment Server
+
     protected $curl;
 
     public function __construct() {
@@ -55,14 +59,63 @@ class MyReservationService {
         } catch (Exception $exc) {
             echo $exc->getMessage();
         }
+/*        foreach ($results as $val)
+        {
+            print($val->IsPaidEvent );
+            print($val->PaymentCurrency);
+            print($val->PaymentAmount);
+            print($val->PaymentNote);
+            print("<br>");
+        }*/
         return $results;
     }
 
     public function subscribeToEvent(SubscribeForEvent $SEvent) {
         try {
-            $Booking = array("ApiToken" => $SEvent->getApiToken(), "EventIdentifier" => $SEvent->getEventIdentifier(), "BookableItemId" => $SEvent->getBookableItemId(), "EventScheduleId" => $SEvent->getEventScheduleId(), "Courtesy" => $SEvent->getCourtesy(), "FirstName" => $SEvent->getFirstName(), "LastName" => $SEvent->getLastName(), "PhoneNumber" => $SEvent->getPhoneNumber(), "Email" => $SEvent->getEmail(), "Description" => $SEvent->getDescription());
+            $Booking = array("ApiToken" => $SEvent->getApiToken(), 
+                            "EventIdentifier" => $SEvent->getEventIdentifier(), 
+                            "BookableItemId" => $SEvent->getBookableItemId(), 
+                            "EventScheduleId" => $SEvent->getEventScheduleId(), 
+                            "Courtesy" => $SEvent->getCourtesy(), 
+                            "FirstName" => $SEvent->getFirstName(), 
+                            "LastName" => $SEvent->getLastName(), 
+                            "PhoneNumber" => $SEvent->getPhoneNumber(), 
+                            "Email" => $SEvent->getEmail(), 
+                            "Description" => $SEvent->getDescription(),
+                            "HostUrlLocation" => $SEvent->getHostUrlLocation());
+            
             $json_data = json_encode($Booking);
             $serviceUrl = $this->apiUrl . 'Events/SetBooking';
+            
+            return $this->curlPostData($serviceUrl, $json_data);
+//            if ($result->Success) {
+//                return true;
+//            } else {
+//                return false;
+//            }
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
+    }
+
+    
+    public function subscribeForPaidEvent(SubscribeForEvent $SEvent) {
+        try {
+            $Booking = array("ApiToken" => $SEvent->getApiToken(), 
+                            "EventIdentifier" => $SEvent->getEventIdentifier(), 
+                            "BookableItemId" => $SEvent->getBookableItemId(), 
+                            "EventScheduleId" => $SEvent->getEventScheduleId(), 
+                            "Courtesy" => $SEvent->getCourtesy(), 
+                            "FirstName" => $SEvent->getFirstName(), 
+                            "LastName" => $SEvent->getLastName(), 
+                            "PhoneNumber" => $SEvent->getPhoneNumber(), 
+                            "Email" => $SEvent->getEmail(), 
+                            "Description" => $SEvent->getDescription(),
+                            "HostUrlLocation" => $SEvent->getHostUrlLocation());
+            
+            $json_data = json_encode($Booking);
+            $serviceUrl = $this->apiUrl . 'Events/SetBookingWithPayment';
+            
             return $this->curlPostData($serviceUrl, $json_data);
 //            if ($result->Success) {
 //                return true;
