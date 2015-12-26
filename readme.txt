@@ -10,7 +10,7 @@ Sagenda is a free online booking / scheduling / reservation module that helps yo
 
 == Description ==
 
-**NOW WP plugin in : Chinese (Simplified), English, French, German, Hindi, Italian, Japanese, Polish, Romanian, Swedish.**
+**NOW WP plugin in : Chinese (Simplified), English, French, German, Hindi, Italian, Japanese, Polish, Romanian, Swedish, Spanish.**
 
 Sagenda is an online booking software that helps your clients fix appointments and meetings with you online. Sagenda is available at absolutely NO COST for you or your clients! And the best thing about it is that you may have an unlimited number of bookings and/or customers. Our users always come first; that’s why Sagenda doesn’t display ads!
 
