@@ -9,11 +9,11 @@ include_once( SAGENDA_PLUGIN_DIR . 'classes/SubscribeForEvent.php');
 
 class MyReservationService {
 
-    //protected $apiUrl = 'http://www.sagenda.net/api/'; //Live Server
+    protected $apiUrl = 'http://sagenda-dev.apphb.com/api/'; //Live Server
     //protected $apiUrl = 'http://localhost:49815/api/'; //local Server
     
-    protected $apiUrl = 'https://sagenda-dev.apphb.com/api/'; //staging test for payment Server
-    //protected $apiUrl = 'http://1edf02b9.ngrok.io/api/'; //ngrok test for payment Server
+    //protected $apiUrl = 'https://sagenda-dev.apphb.com/api/'; //staging test for payment Server
+    //protected $apiUrl = 'http://3363a2c1.ngrok.io/api/'; //ngrok test for payment Server
 
     protected $curl;
 
