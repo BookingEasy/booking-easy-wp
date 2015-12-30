@@ -218,6 +218,7 @@ jQuery(document).ready(function ($) {
             paid_event_information_html += "<br> Event Title : "+ eventTitle;
             paid_event_information_html += "<br> Payment Amount : "+ paymentamount +" "+ paymentCurrency;
             paid_event_information_html += "<br> Payment Note : "+ paymentNote;
+            paid_event_information_html += "<br> <strong>You will be redirected to the paypal website to complete your payment and booking</strong>";
 
             jQuery("#paid-event-information-to-display").append(paid_event_information_html);
             $("#EventIdentifier").val(identifier);

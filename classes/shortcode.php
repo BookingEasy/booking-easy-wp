@@ -129,37 +129,40 @@ class ShortCode {
         $events = $mrsService->getEventsList($authCode, $startDate, $endDate, $bookableItemId);
         $eventslist = "<ul class='events'>";
         $isPaidEvent = "0";
-
+        $paidEventText = "Free Event";
         if (count($events) > 0 && $events != 2 && $events != 3) {
             foreach ($events as $event) {
                 if($event->IsPaidEvent == 1){
                     $isPaidEvent = "1";
+                    $paidEventText = $event->PaymentAmount . " " .$event->PaymentCurrency;
                 }
                 else{
                     $isPaidEvent = "0";
+                    $paidEventText = "Free Event";
                 }
                     
                 $eventslist .= "<li class='eventlist-item'>
                 <label class='checkbox-inline'> 
-                <div class='event-details' name='event-item' 
-                value='" . $event->EventScheduleId . "' 
-                id='select-" . $event->EventIdentifier . "'
-                data-multiple-paymentamount='".$event->PaymentAmount."'
-                data-multiple-paymentcurrency='".$event->PaymentCurrency."'
-                data-multiple-ispaidevent='".$isPaidEvent."'
-                datamultiple-eventtitle='".$event->EventTitle."'
-                datamultiple-eventIdentifier='".$event->EventIdentifier."'
-                datamultiple-bookableItemId='".$bookableItemId."'
-                datamultiple-eventScheduleId='".$event->EventScheduleId."'
-                datamultiple-bookableItemName='".$bookableItem."'
-                datamultiple-paymentNote='".$event->PaymentNote."'
-                > " . 
-                "<strong>" .
-                $event->From . ' - ' . $event->To . " : " . 
-                //$bookableItem ." : ". 
-                $event->EventTitle. 
-                "</strong>" .
-                "</div></li>";
+                    <div class='event-details' name='event-item' 
+                        value='" . $event->EventScheduleId . "' 
+                        id='select-" . $event->EventIdentifier . "'
+                        data-multiple-paymentamount='".$event->PaymentAmount."'
+                        data-multiple-paymentcurrency='".$event->PaymentCurrency."'
+                        data-multiple-ispaidevent='".$isPaidEvent."'
+                        datamultiple-eventtitle='".$event->EventTitle."'
+                        datamultiple-eventIdentifier='".$event->EventIdentifier."'
+                        datamultiple-bookableItemId='".$bookableItemId."'
+                        datamultiple-eventScheduleId='".$event->EventScheduleId."'
+                        datamultiple-bookableItemName='".$bookableItem."'
+                        datamultiple-paymentNote='".$event->PaymentNote."'
+                        > " . 
+                        "<span><strong>" .
+                        $event->From . ' - ' . $event->To . " : " . 
+                        //$bookableItem ." : ". 
+                        $event->EventTitle. 
+                        " : ".$paidEventText."</strong></span>" .
+                    "</div>
+                </li>";
             }
             
         } else {
