@@ -2,8 +2,8 @@
 Contributors: sagenda
 Tags: booking, free booking, reservation, free reservation, reservation system, online reservation system, appointment, booking system, events, event, calendar, online reservation, rooms, rooms reservation, accommodation, schedule, scheduling, free scheduling, reservation plugin, free reservation plugin, free booking plugin, B&B booking, rental, sagenda, agenda
 Requires at least: 3.0
-Tested up to: 4.4
-Stable tag: 1.0.19
+Tested up to: 4.4.1
+Stable tag: 1.0.20
 License: GPLv2 or later
  
 Sagenda is a free online booking / scheduling / reservation module that helps your clients fix appointments at absolutely NO COST!
@@ -27,7 +27,11 @@ To **create an account** please visit: [https://sagenda.net/Accounts/Register](h
 **NOTE: You need to register an account on the Sagenda site and then you will get an authentication code which you will use to validate your Sagenda plugin.**
 == Installation ==
 
-How to create a Sagenda’s account in video:
+How to install this booking plugin into my WordPress website?
+
+[youtube https://www.youtube.com/watch?v=wCEmJg2hWgw] 
+
+How to create a Sagenda’s account in video?
 
 [youtube https://www.youtube.com/watch?v=T-NXXxPSTQs]
 
@@ -44,28 +48,33 @@ Follow these steps to install Sagenda:
 
 == Upgrade Notice ==
 
+= 1.0.20 =
+* ADDED : New video "WordPress - How to add a free booking plugin in 2 min" : https://www.youtube.com/watch?v=wCEmJg2hWgw 
+* ADDED : Portuguese translation of the frontend reservation WP plugin.
+* TESTED : Compatibility of the reservation plugin with WordPress 4.4.1
+
+== Changelog ==
+
 = 1.0.19 =
 * ADDED : Dutch translation of the frontend and backend reservation WP plugin. (thanks to Nico!)
 * ADDED : Portuguese translation of the frontend reservation WP plugin.
-
-== Changelog ==
 
 = 1.0.18 =
 * ADDED : Spanish translation of the WordPress free plugin booking system.
 
 = 1.0.17 =
-* TESTED : Compatibility of the reservation plugin with Wordpress 4.4
+* TESTED : Compatibility of the reservation plugin with WordPress 4.4
 
 = 1.0.16 =
-* TESTED : Compatibility of the reservation plugin with Wordpress 4.3.1
+* TESTED : Compatibility of the reservation plugin with WordPress 4.3.1
 * FIXED : a bug with datepicker selection of bookings.
 
 = 1.0.15 =
-* TESTED : Compatibility of the reservation plugin with Wordpress 4.3.
+* TESTED : Compatibility of the reservation plugin with WordPress 4.3.
 
 = 1.0.14 =
 * FIXED : a bug with the DIVI2 theme.
-* TESTED : Compatibility of the reservation plugin with Wordpress 4.2.4.
+* TESTED : Compatibility of the reservation plugin with WordPress 4.2.4.
 
 = 1.0.13 =
 * IMPROVED : translations of the booking plugin (frontend).
@@ -75,12 +84,12 @@ Follow these steps to install Sagenda:
 
 = 1.0.11 =
 * IMPROVED : the rendering of the reservation date time picker.
-* TESTED : Compatibility of the reservation system with Wordpress 4.2.1 and Wordpress 4.2.2.
+* TESTED : Compatibility of the reservation system with WordPress 4.2.1 and WordPress 4.2.2.
 * FIXED : Issue with picture animation of the theme Divi2.
 
 = 1.0.10 =
 * IMPROVED : Key of some translations.
-* TESTED : Compatibility of the reservation system with Wordpress 4.2
+* TESTED : Compatibility of the reservation system with WordPress 4.2
 
 = 1.0.9 =
 * IMPROVED : Compatibility of the booking system in case CURL is not activated.
@@ -135,10 +144,10 @@ Follow these steps to install Sagenda:
 Yes, please read : [Introducing Sagenda](http://www.sagenda.com/introducing-sagenda/)
 
 
-**How can I integrate it in on my Wordpress website?**
+**How can I integrate it in on my WordPress website?**
 
 1. By using iFrame, please read [http://www.sagenda.com/add-booking-system-website/](http://www.sagenda.com/add-booking-system-website/).
-2. By using the native Wordpress plugin, please read : [http://www.sagenda.com/add-booking-system-website/add-booking-plugin-wordpress-website/](http://www.sagenda.com/add-booking-system-website/add-booking-plugin-wordpress-website/)
+2. By using the native WordPress plugin, please read : [http://www.sagenda.com/add-booking-system-website/add-booking-plugin-wordpress-website/](http://www.sagenda.com/add-booking-system-website/add-booking-plugin-wordpress-website/)
 
 
 **Do I need to create a new website for my patients to book online appointments with me?**
