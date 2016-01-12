@@ -214,10 +214,10 @@ jQuery(document).ready(function ($) {
         if(ispaidevent === "1"){
             jQuery("#paid-event-information-to-display").html("");
             var paid_event_information_html = "<strong>Paid Event Information</strong>";
-            paid_event_information_html += "<br> Bookable Item : "+ bookableItemName;
-            paid_event_information_html += "<br> Event Title : "+ eventTitle;
+            paid_event_information_html += "<br> Bookable Item : "+ bookableItemName.replace(/\\"/g, "\"");
+            paid_event_information_html += "<br> Event Title : "+ eventTitle.replace(/\\"/g, "\"");
             paid_event_information_html += "<br> Payment Amount : "+ paymentamount +" "+ paymentCurrency;
-            paid_event_information_html += "<br> Payment Note : "+ paymentNote;
+            paid_event_information_html += "<br> Payment Note : "+ paymentNote.replace(/\\"/g, "\"");
             paid_event_information_html += "<br> <strong>You will be redirected to the paypal website to complete your payment and booking</strong>";
 
             jQuery("#paid-event-information-to-display").append(paid_event_information_html);
@@ -325,7 +325,9 @@ jQuery(document).ready(function ($) {
                         //console.log(obj.Message);
                         //console.log(obj.ReturnUrl);
                         if (obj.Success == true) {
-                            window.location.href = obj.ReturnUrl;
+                            //window.location.href = obj.ReturnUrl;
+
+                            window.location.assign(obj.ReturnUrl);
                         }
                         else{
                             $(".sagenda_alert-faliure").text(obj.Message);
