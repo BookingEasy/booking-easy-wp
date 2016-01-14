@@ -325,9 +325,7 @@ jQuery(document).ready(function ($) {
                         //console.log(obj.Message);
                         //console.log(obj.ReturnUrl);
                         if (obj.Success == true) {
-                            //window.location.href = obj.ReturnUrl;
-
-                            window.location.assign(obj.ReturnUrl);
+                           $(location).attr('href',obj.ReturnUrl);
                         }
                         else{
                             $(".sagenda_alert-faliure").text(obj.Message);
