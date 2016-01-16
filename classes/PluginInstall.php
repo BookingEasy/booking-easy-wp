@@ -8,7 +8,7 @@
 /**
  * Description of PluginInstall
  * This Class is Used for initial initilization of the Plugin when A user Activate the plugin after installation.
- * @author zohaib
+ * @author Riyadh, zohaib
  */
 class PluginInstall {
 

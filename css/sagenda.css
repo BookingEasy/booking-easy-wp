@@ -18,7 +18,8 @@
 }
 
 #events-list {
-    max-width: 450px;
+    max-width: 500px;
+    /*max-width:100%;*/
 }
 .events {
     list-style-type: none;
@@ -32,6 +33,18 @@
     margin-bottom: 5px;
     cursor: pointer;
     font-size: 13px;
+}
+
+.events li:hover {
+    background-color: #E4E5E3;
+}
+
+.checkbox-inline-left {
+    float: left;
+}
+
+.checkbox-inline-right {
+    float: right;
 }
 
 .sagenda_alert {
@@ -732,4 +745,10 @@ table th[class*="col-"] {
 #subscribe_event {
     position: relative;
     z-index: 1;
+}
+
+div.event-details {
+    vertical-align: middle;
+    /*padding: 10px 10px 10px 9px;*/
+    cursor: pointer;
 }

@@ -8,7 +8,7 @@
 /**
  * Description of Admin
  * The purpose of this class is to manage the admin side operations and interface
- * @author zohaib
+ * @author Riyadh, zohaib
  */
 class Admin {
 

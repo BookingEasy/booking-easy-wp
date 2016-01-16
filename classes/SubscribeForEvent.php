@@ -8,7 +8,7 @@
 /**
  * Description of SubscribeForEvent
  *
- * @author zohaib
+ * @author Riyadh, zohaib
  */
 class SubscribeForEvent {
 
@@ -23,6 +23,13 @@ class SubscribeForEvent {
     private $PhoneNumber;
     private $Email;
     private $Description;
+
+    private $IsPaidEvent;
+    private $PaymentAmount;
+    private $PaymentNote;
+    private $EventTitle;
+    private $PaymentCurrency;
+    private $HostUrlLocation;
 
     public function __construct() {
         $this->ApiToken = get_option('mrs1_authentication_code');
@@ -103,6 +110,62 @@ class SubscribeForEvent {
     public function setDescription($Description) {
         $this->Description = $Description;
     }
+
+    //host Url
+    public function getHostUrlLocation() {
+        return $this->HostUrlLocation;
+    }
+
+    public function setHostUrlLocation($HostUrlLocation) {
+        $this->HostUrlLocation = $HostUrlLocation;
+    }    
+
+
+    // //IsPaidEvent
+    // public function getIsPaidEvent() {
+    //     return $this->IsPaidEvent;
+    // }
+
+    // public function setIsPaidEvent($IsPaidEvent) {
+    //     $this->Description = $IsPaidEvent;
+    // }
+
+    // //PaymentAmount
+    // public function getPaymentAmount() {
+    //     return $this->PaymentAmount;
+    // }
+
+    // public function setPaymentAmount($PaymentAmount) {
+    //     $this->PaymentAmount = $PaymentAmount;
+    // }
+
+    // //PaymentNote
+    // public function getPaymentNote() {
+    //     return $this->PaymentNote;
+    // }
+
+    // public function setPaymentNote($PaymentNote) {
+    //     $this->PaymentNote = $PaymentNote;
+    // }
+        
+    // //EventTitle
+    // public function getEventTitle() {
+    //     return $this->EventTitle;
+    // }
+
+    // public function setEventTitle($EventTitle) {
+    //     $this->EventTitle = $EventTitle;
+    // }
+
+    // //PaymentCurrency
+    // public function getPaymentCurrency() {
+    //     return $this->PaymentCurrency;
+    // }
+
+    // public function setPaymentCurrency($PaymentCurrency) {
+    //     $this->PaymentCurrency = $PaymentCurrency;
+    // }    
+        
 
 //    function jsonSerialize() {
 //        $data = (array) $this;

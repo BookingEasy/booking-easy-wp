@@ -3,13 +3,18 @@
 /**
  * Description of Booking Easy
  * This Class is User for interaction with the Web Service
- * @author zohaib
+ * @author Riyadh, zohaib
  */
 include_once( SAGENDA_PLUGIN_DIR . 'classes/SubscribeForEvent.php');
 
 class MyReservationService {
 
-    protected $apiUrl = 'http://www.sagenda.net/api/'; //Live Server
+    protected $apiUrl = 'http://sagenda-dev.apphb.com/api/'; //Live Server
+    //protected $apiUrl = 'http://localhost:49815/api/'; //local Server
+    
+    //protected $apiUrl = 'https://sagenda-dev.apphb.com/api/'; //staging test for payment Server
+    //protected $apiUrl = 'http://3363a2c1.ngrok.io/api/'; //ngrok test for payment Server
+
     protected $curl;
 
     public function __construct() {
@@ -54,14 +59,63 @@ class MyReservationService {
         } catch (Exception $exc) {
             echo $exc->getMessage();
         }
+/*        foreach ($results as $val)
+        {
+            print($val->IsPaidEvent );
+            print($val->PaymentCurrency);
+            print($val->PaymentAmount);
+            print($val->PaymentNote);
+            print("<br>");
+        }*/
         return $results;
     }
 
     public function subscribeToEvent(SubscribeForEvent $SEvent) {
         try {
-            $Booking = array("ApiToken" => $SEvent->getApiToken(), "EventIdentifier" => $SEvent->getEventIdentifier(), "BookableItemId" => $SEvent->getBookableItemId(), "EventScheduleId" => $SEvent->getEventScheduleId(), "Courtesy" => $SEvent->getCourtesy(), "FirstName" => $SEvent->getFirstName(), "LastName" => $SEvent->getLastName(), "PhoneNumber" => $SEvent->getPhoneNumber(), "Email" => $SEvent->getEmail(), "Description" => $SEvent->getDescription());
+            $Booking = array("ApiToken" => $SEvent->getApiToken(), 
+                            "EventIdentifier" => $SEvent->getEventIdentifier(), 
+                            "BookableItemId" => $SEvent->getBookableItemId(), 
+                            "EventScheduleId" => $SEvent->getEventScheduleId(), 
+                            "Courtesy" => $SEvent->getCourtesy(), 
+                            "FirstName" => $SEvent->getFirstName(), 
+                            "LastName" => $SEvent->getLastName(), 
+                            "PhoneNumber" => $SEvent->getPhoneNumber(), 
+                            "Email" => $SEvent->getEmail(), 
+                            "Description" => $SEvent->getDescription(),
+                            "HostUrlLocation" => $SEvent->getHostUrlLocation());
+            
             $json_data = json_encode($Booking);
             $serviceUrl = $this->apiUrl . 'Events/SetBooking';
+            
+            return $this->curlPostData($serviceUrl, $json_data);
+//            if ($result->Success) {
+//                return true;
+//            } else {
+//                return false;
+//            }
+        } catch (Exception $exc) {
+            echo $exc->getTraceAsString();
+        }
+    }
+
+    
+    public function subscribeForPaidEvent(SubscribeForEvent $SEvent) {
+        try {
+            $Booking = array("ApiToken" => $SEvent->getApiToken(), 
+                            "EventIdentifier" => $SEvent->getEventIdentifier(), 
+                            "BookableItemId" => $SEvent->getBookableItemId(), 
+                            "EventScheduleId" => $SEvent->getEventScheduleId(), 
+                            "Courtesy" => $SEvent->getCourtesy(), 
+                            "FirstName" => $SEvent->getFirstName(), 
+                            "LastName" => $SEvent->getLastName(), 
+                            "PhoneNumber" => $SEvent->getPhoneNumber(), 
+                            "Email" => $SEvent->getEmail(), 
+                            "Description" => $SEvent->getDescription(),
+                            "HostUrlLocation" => $SEvent->getHostUrlLocation());
+            
+            $json_data = json_encode($Booking);
+            $serviceUrl = $this->apiUrl . 'Events/SetBookingWithPayment';
+            
             return $this->curlPostData($serviceUrl, $json_data);
 //            if ($result->Success) {
 //                return true;
@@ -86,8 +140,8 @@ class MyReservationService {
             'Content-Length: ' . strlen($json_data))
         );
 
-        curl_setopt($this->curl, CURLOPT_TIMEOUT, 10);
-        curl_setopt($this->curl, CURLOPT_CONNECTTIMEOUT, 10);
+        curl_setopt($this->curl, CURLOPT_TIMEOUT, 20);
+        curl_setopt($this->curl, CURLOPT_CONNECTTIMEOUT, 20);
 
 
         $contents = curl_exec($this->curl);
@@ -103,7 +157,7 @@ class MyReservationService {
             //TRUE to return the transfer as a string of the return value of curl_exec() instead of outputting it out directly.
             curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, TRUE);
             //The number of seconds to wait while trying to connect.	
-            curl_setopt($this->curl, CURLOPT_CONNECTTIMEOUT, 10);
+            curl_setopt($this->curl, CURLOPT_CONNECTTIMEOUT, 20);
             //The contents of the "User-Agent: " header to be used in a HTTP request.
             curl_setopt($this->curl, CURLOPT_USERAGENT, $userAgent);
             //To fail silently if the HTTP code returned is greater than or equal to 400.
@@ -113,10 +167,10 @@ class MyReservationService {
             //To automatically set the Referer: field in requests where it follows a Location: redirect.
             curl_setopt($this->curl, CURLOPT_AUTOREFERER, TRUE);
             //The maximum number of seconds to allow cURL functions to execute.	
-            curl_setopt($this->curl, CURLOPT_TIMEOUT, 10);
+            curl_setopt($this->curl, CURLOPT_TIMEOUT, 20);
             $contents = curl_exec($this->curl);
             if (curl_errno($this->curl)) {
-                if (curl_errno($this->curl) == 60) {
+                if (curl_errno($this->curl) == 120) {
                     return 3;
                 } else {
                     return 2;
