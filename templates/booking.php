@@ -10,6 +10,38 @@
                 </div>
             </div>
 
+            <!-- Paid info -->
+            <div class="sagenda_row">
+                <div class="sagenda_col">
+                    <div id="sagenda-paid-level">
+                        <div id="sagenda-paid-level-title">
+                            <?php _e('Paid Event Information', 'sagenda-wp'); ?>
+                        </div>
+
+                        <div id="sagenda-paid-level-bookable-item">
+                            <?php _e('Bookable Item', 'sagenda-wp'); ?>
+                        </div>
+
+                        <div id="sagenda-paid-level-event-title">
+                            <?php _e('Event Title', 'sagenda-wp'); ?>
+                        </div>
+
+                        <div id="sagenda-paid-level-payment-amount">
+                            <?php _e('Payment Amount', 'sagenda-wp'); ?>
+                        </div>
+
+                        <div id="sagenda-paid-level-payment-note">
+                            <?php _e('Payment Note', 'sagenda-wp'); ?>
+                        </div>
+
+                        <div id="sagenda-paid-level-redirected-msg">
+                            <?php _e('You will be redirected to the paypal website to complete your payment and booking', 'sagenda-wp'); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Paid info -->
+
             <div class="sagenda_row">
                 <div class="sagenda_col">
                     <div class="sagenda_form-group">

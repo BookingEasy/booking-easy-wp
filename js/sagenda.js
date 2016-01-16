@@ -14,6 +14,8 @@ jQuery(document).ready(function ($) {
     var paymentNote = "";
     var clientPath = window.location.href; 
 
+    jQuery("#sagenda-paid-level").hide();
+
     function padNum(num, padding) {
         num = '' + num;
         while (num.length < padding) {
@@ -212,13 +214,14 @@ jQuery(document).ready(function ($) {
         // console.log("clientPath--> " + clientPath);
 
         if(ispaidevent === "1"){
+            //jQuery("#sagenda-paid-level").hide();
             jQuery("#paid-event-information-to-display").html("");
-            var paid_event_information_html = "<strong>Paid Event Information</strong>";
-            paid_event_information_html += "<br> Bookable Item : "+ bookableItemName.replace(/\\"/g, "\"");
-            paid_event_information_html += "<br> Event Title : "+ eventTitle.replace(/\\"/g, "\"");
-            paid_event_information_html += "<br> Payment Amount : "+ paymentamount +" "+ paymentCurrency;
-            paid_event_information_html += "<br> Payment Note : "+ paymentNote.replace(/\\"/g, "\"");
-            paid_event_information_html += "<br> <strong>You will be redirected to the paypal website to complete your payment and booking</strong>";
+            var paid_event_information_html = "<strong>"+ $("#sagenda-paid-level-title").text() +"</strong>";
+            paid_event_information_html += "<br> "+$("#sagenda-paid-level-bookable-item").text()+" : "+ bookableItemName.replace(/\\"/g, "\"");
+            paid_event_information_html += "<br> "+$("#sagenda-paid-level-event-title").text()+" : "+ eventTitle.replace(/\\"/g, "\"");
+            paid_event_information_html += "<br> "+$("#sagenda-paid-level-payment-amount").text()+" : "+ paymentamount +" "+ paymentCurrency;
+            paid_event_information_html += "<br> "+$("#sagenda-paid-level-payment-note").text()+" : "+ paymentNote.replace(/\\"/g, "\"");
+            paid_event_information_html += "<br> <strong>"+$("#sagenda-paid-level-redirected-msg").text()+"</strong>";
 
             jQuery("#paid-event-information-to-display").append(paid_event_information_html);
             $("#EventIdentifier").val(identifier);
@@ -229,6 +232,8 @@ jQuery(document).ready(function ($) {
         }
         else{
             jQuery("#paid-event-information-to-display").html("");
+
+            //jQuery("#sagenda-paid-level").hide();
             //this is free event and it will function as it was
             // var value = this.value;
             $("#EventIdentifier").val(identifier);
