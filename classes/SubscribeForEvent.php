@@ -8,7 +8,7 @@
 /**
  * Description of SubscribeForEvent
  *
- * @author Riyadh, zohaib
+ * @author Riyadh
  */
 class SubscribeForEvent {
 

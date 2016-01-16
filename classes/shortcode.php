@@ -7,7 +7,7 @@
 /**
  * Description of shortcode
  *
- * @author Riyadh, zohaib
+ * @author Riyadh
  */
 include_once( SAGENDA_PLUGIN_DIR . 'classes/MyReservationService.php');
 include_once( SAGENDA_PLUGIN_DIR . 'classes/SubscribeForEvent.php');

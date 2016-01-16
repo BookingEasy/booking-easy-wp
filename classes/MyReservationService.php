@@ -3,7 +3,7 @@
 /**
  * Description of Booking Easy
  * This Class is User for interaction with the Web Service
- * @author Riyadh, zohaib
+ * @author Riyadh
  */
 include_once( SAGENDA_PLUGIN_DIR . 'classes/SubscribeForEvent.php');
 

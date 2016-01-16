@@ -9,7 +9,7 @@
  * Description of UnInstallPlugin
  * This Class is Used when a User wants to Uninstall the plugin.
  * It deletes all the plugin information from the Database
- * @author Riyadh, zohaib
+ * @author Riyadh
  * Date 03-20-2014
  */
 class UnInstallPlugin {
