@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sagenda\n"
-"POT-Creation-Date: 2015-08-09 13:51+0200\n"
-"PO-Revision-Date: 2015-08-09 13:51+0200\n"
+"POT-Creation-Date: 2016-01-18 11:21+0100\n"
+"PO-Revision-Date: 2016-01-18 11:21+0100\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: Sagenda <send us a message from sagenda.com>\n"
 "Language: pl_PL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.3\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -116,47 +116,73 @@ msgstr ""
 "Tutaj możesz utworzyć darmowe konto: <a href=\"https://sagenda.net/Accounts/"
 "Login\" target=\"_blank\">https://sagenda.net/Accounts/Login</a>"
 
-#: templates/booking.php:10
+#: templates/booking.php:8
 msgid "Please fill out all the required fields"
 msgstr "Proszę uzupełnić wymagane pola"
 
-#: templates/booking.php:21
+#: templates/booking.php:18
+msgid "Paid Event Information"
+msgstr ""
+
+#: templates/booking.php:22 templates/reservation.php:110
+msgid "Bookable Item"
+msgstr "Przedmiot rezerwacji"
+
+#: templates/booking.php:26
+msgid "Event Title"
+msgstr ""
+
+#: templates/booking.php:30
+msgid "Payment Amount"
+msgstr ""
+
+#: templates/booking.php:34
+msgid "Payment Note"
+msgstr ""
+
+#: templates/booking.php:38
+msgid ""
+"You will be redirected to the paypal website to complete your payment and "
+"booking"
+msgstr ""
+
+#: templates/booking.php:66
 msgid "Title"
 msgstr "Zgłaszający"
 
-#: templates/booking.php:24
+#: templates/booking.php:69
 msgid "Mr."
 msgstr "Pan"
 
-#: templates/booking.php:29
+#: templates/booking.php:74
 msgid "Mrs."
 msgstr "Pani"
 
-#: templates/booking.php:39 templates/booking.php:41
+#: templates/booking.php:83 templates/booking.php:85
 msgid "First Name"
 msgstr "Imię"
 
-#: templates/booking.php:51 templates/booking.php:53
+#: templates/booking.php:96 templates/booking.php:98
 msgid "Last Name"
 msgstr "Nazwisko"
 
-#: templates/booking.php:63 templates/booking.php:65
+#: templates/booking.php:108 templates/booking.php:110
 msgid "Phone Number"
 msgstr "Numer telefonu"
 
-#: templates/booking.php:74 templates/booking.php:76
+#: templates/booking.php:119 templates/booking.php:121
 msgid "Email"
 msgstr "E-mail"
 
-#: templates/booking.php:85
+#: templates/booking.php:130
 msgid "Description"
 msgstr "Dodatkowe informacje"
 
-#: templates/booking.php:97
+#: templates/booking.php:142
 msgid "Back to Calendar"
 msgstr "Powrót do kalendarza"
 
-#: templates/booking.php:98
+#: templates/booking.php:143
 msgid "Submit"
 msgstr "Wyślij"
 
@@ -192,10 +218,6 @@ msgstr "Data końcowa"
 #: templates/reservation.php:107
 msgid "Bookable Items"
 msgstr "Przedmioty rezerwacji"
-
-#: templates/reservation.php:110
-msgid "Bookable Item"
-msgstr "Przedmiot rezerwacji"
 
 #: templates/reservation.php:127
 msgid "Click an event to book It:"

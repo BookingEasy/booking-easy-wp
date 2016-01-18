@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
 "POT-Creation-Date: 2016-01-04 21:05+0000\n"
-"PO-Revision-Date: 2016-01-04 22:10+0100\n"
+"PO-Revision-Date: 2016-01-18 11:30+0100\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: pt_PT\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr "NÃO CONECTADO"
 
 #: admin/templates/config.php:54
 msgid "Save Changes"
-msgstr "Salvar Alterações"
+msgstr "Salver Alterações"
 
 #: templates/booking.php:24
 msgid "Mr."
