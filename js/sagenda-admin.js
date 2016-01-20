@@ -9,7 +9,7 @@ function ValidateToken(token) {
         //url: 'https://mrs2-test.apphb.com/api/ValidateAccount/' + token,
          //url: 'http://3363a2c1.ngrok.io/api/ValidateAccount/' + token,
         //url: 'https://sagenda-dev.apphb.com/api/ValidateAccount/' + token,
-        url: 'http://sagenda-dev.apphb.com/api/ValidateAccount/' + token,
+        url: 'http://sagenda.net/api/ValidateAccount/' + token,
         type: 'POST',   
         dataType: 'html',
         success: function (data) {
