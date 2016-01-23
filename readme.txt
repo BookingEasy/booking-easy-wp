@@ -3,16 +3,16 @@ Contributors: sagenda
 Tags: booking, free booking, reservation, free reservation, reservation system, online reservation system, appointment, booking system, events, event, calendar, online reservation, rooms, rooms reservation, accommodation, schedule, scheduling, free scheduling, reservation plugin, free reservation plugin, free booking plugin, B&B booking, rental, sagenda, agenda
 Requires at least: 3.0
 Tested up to: 4.4.1
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
  
 Sagenda is a free online booking / scheduling / reservation module that helps your clients fix appointments at absolutely NO COST!
 
 == Description ==
 
-**NOW WP plugin in : Chinese (Simplified), English, French, German, Hindi, Italian, Japanese, Polish, Romanian, Swedish, Spanish, Dutch and Portuguese (only frontend).**
+**NOW WP plugin in : Chinese (Simplified), English, French, German, Hindi, Italian, Japanese, Polish, Romanian, Swedish, Spanish, Dutch, Korean and Portuguese (only frontend).**
 
-Whant more languages? Help us : http://osp7icw.oneskyapp.com/collaboration/project/53247
+Want more languages? Help us : http://osp7icw.oneskyapp.com/collaboration/project/53247
 
 Sagenda is an online booking software that helps your clients fix appointments and meetings with you online. Sagenda is available at absolutely NO COST for you or your clients! And the best thing about it is that you may have an unlimited number of bookings and/or customers. Our users always come first; that’s why Sagenda doesn’t display ads!
 
@@ -48,12 +48,17 @@ Follow these steps to install Sagenda:
 
 == Upgrade Notice ==
 
-= 1.1.0 =
-* ADDED : The booking plugin is now able to manage payment with PayPal.
+= 1.1.1 =
+* ADDED : Korean translation of the wp booking plugin frontend and backend, thanks to 김현철!
+* IMPROVED : Dutch translations of new payment part of the frontend booking plugin, thanks to Nico.
 
 
 
 == Changelog ==
+
+= 1.1.0 =
+* ADDED : The booking plugin is now able to manage payment with PayPal.
+
 
 = 1.0.20 =
 * ADDED : New video "WordPress - How to add a free booking plugin in 2 min" : https://www.youtube.com/watch?v=wCEmJg2hWgw 
