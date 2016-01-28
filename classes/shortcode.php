@@ -134,11 +134,11 @@ class ShortCode {
             foreach ($events as $event) {
                 if($event->IsPaidEvent == 1){
                     $isPaidEvent = "1";
-                    $paidEventText = $event->PaymentAmount . " " .$event->PaymentCurrency;
+                    $paidEventText = " : ". $event->PaymentAmount . " " .$event->PaymentCurrency;
                 }
                 else{
                     $isPaidEvent = "0";
-                    $paidEventText = "Free Event";
+                    $paidEventText = "";
                 }
                     
                 $eventslist .= "<li class='eventlist-item'>
@@ -160,7 +160,7 @@ class ShortCode {
                         $event->From . ' - ' . $event->To . " : " . 
                         //$bookableItem ." : ". 
                         $event->EventTitle. 
-                        " : ".$paidEventText."</strong></span>" .
+                        " ".$paidEventText."</strong></span>" .
                     "</div>
                 </li>";
             }
