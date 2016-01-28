@@ -53,8 +53,7 @@ Follow these steps to install Sagenda:
 
 = 1.1.2 =
 * ADDED : Russian translation of the wp booking plugin frontend and backend, thanks to Дмитрий Воробьев!
-
-
+* REMOVED : Events that should not be paid online are no more displayed as "Free events".
 
 
 == Changelog ==
