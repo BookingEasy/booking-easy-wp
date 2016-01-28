@@ -3,9 +3,9 @@ Contributors: sagenda
 Tags: booking, free booking, reservation, free reservation, reservation system, online reservation system, appointment, booking system, events, event, calendar, online reservation, rooms, rooms reservation, accommodation, schedule, scheduling, free scheduling, reservation plugin, free reservation plugin, free booking plugin, B&B booking, rental, sagenda, agenda
 Requires at least: 3.0
 Tested up to: 4.4.1
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
- 
+
 Sagenda is a free online booking / scheduling / reservation module that helps your clients fix appointments at absolutely NO COST!
 
 == Description ==
@@ -18,25 +18,28 @@ Sagenda is an online booking software that helps your clients fix appointments a
 
 This is an “Online Booking System” which gives customers the opportunity to choose the date and the time of an appointment according to one's own preferences and the booking can now be done online.
 
-The Sagenda system can be added to any type of website, so it is not necessary to make a new one. It can be added as a new page or in a new space. 
+The Sagenda system can be added to any type of website, so it is not necessary to make a new one. It can be added as a new page or in a new space.
 
 To learn more about our Sagenda’s booking service please visit: [http://www.sagenda.com/](http://www.sagenda.com/)
 
 To **create an account** please visit: [https://sagenda.net/Accounts/Register](https://sagenda.net/Accounts/Register)
 
 **NOTE: You need to register an account on the Sagenda site and then you will get an authentication code which you will use to validate your Sagenda plugin.**
+
+Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sagenda-wp
+
 == Installation ==
 
 How to install this booking plugin into my WordPress website?
 
-[youtube https://www.youtube.com/watch?v=wCEmJg2hWgw] 
+[youtube https://www.youtube.com/watch?v=wCEmJg2hWgw]
 
 How to create a Sagenda’s account in video?
 
 [youtube https://www.youtube.com/watch?v=T-NXXxPSTQs]
 
 
-Follow these steps to install Sagenda: 
+Follow these steps to install Sagenda:
 
 1. Download the booking plugin into the **/wp-content/plugins/** folder and activate the plugin.
 2. Create a free account on https://sagenda.net/Accounts/Register (setup your “bookable items” and events).
@@ -48,20 +51,25 @@ Follow these steps to install Sagenda:
 
 == Upgrade Notice ==
 
-= 1.1.1 =
-* ADDED : Korean translation of the wp booking plugin frontend and backend, thanks to 김현철!
-* IMPROVED : Dutch translations of new payment part of the frontend booking plugin, thanks to Nico.
+= 1.1.2 =
+* ADDED : Russian translation of the wp booking plugin frontend and backend, thanks to Дмитрий Воробьев!
+
 
 
 
 == Changelog ==
+
+= 1.1.1 =
+* ADDED : Korean translation of the wp booking plugin frontend and backend, thanks to 김현철!
+* IMPROVED : Dutch translations of new payment part of the frontend booking plugin, thanks to Nico.
+
 
 = 1.1.0 =
 * ADDED : The booking plugin is now able to manage payment with PayPal.
 
 
 = 1.0.20 =
-* ADDED : New video "WordPress - How to add a free booking plugin in 2 min" : https://www.youtube.com/watch?v=wCEmJg2hWgw 
+* ADDED : New video "WordPress - How to add a free booking plugin in 2 min" : https://www.youtube.com/watch?v=wCEmJg2hWgw
 * ADDED : Portuguese translation of the frontend reservation WP plugin.
 * TESTED : Compatibility of the reservation plugin with WordPress 4.4.1
 
@@ -128,7 +136,7 @@ Follow these steps to install Sagenda:
 = 1.0.5 =
 * ADDED : Add language support for polish (thanks to mraf).
 * IMPROVED : By default the booking frontend module will already pre-select the next week.
-* FIXED : Issue in highlighted dates in Sagenda booking module calendar. 
+* FIXED : Issue in highlighted dates in Sagenda booking module calendar.
 * FIXED : Correct a bug happening in case of recursive booking event in the same date range.
 * FIXED : Improved message displayed to user in case of error during the reservation.
 
@@ -162,7 +170,7 @@ Yes, please read : [Introducing Sagenda](http://www.sagenda.com/introducing-sage
 
 
 **Do I need to create a new website for my patients to book online appointments with me?**
-No. You don’t need a separate, new website; "Sagenda" can be integrated into any website, as a new page or in a new space. This online appointment scheduler fits very well into any kind of website using iframe or specific modules for CMS. 
+No. You don’t need a separate, new website; "Sagenda" can be integrated into any website, as a new page or in a new space. This online appointment scheduler fits very well into any kind of website using iframe or specific modules for CMS.
 Please read : [How to add a booking system to my website?](http://www.sagenda.com/add-booking-system-website/)
 
 
@@ -171,15 +179,15 @@ The online appointment scheduler sends personalized emails to all people concern
 
 
 **But the services I offer are very different from those offered by other businesses.**
-Whatever your services are, our online appointment scheduler can be configured in a manner that they can be easily displayed to your customers as a list of items. Try it, it's free! 
+Whatever your services are, our online appointment scheduler can be configured in a manner that they can be easily displayed to your customers as a list of items. Try it, it's free!
 
 
 **What if I have some feedback to improve your system?**
-[Write to us NOW!](http://www.sagenda.com/#contact-us) Our online appointment scheduler is continually evolving, and your feedback is taken into account during every update. 
+[Write to us NOW!](http://www.sagenda.com/#contact-us) Our online appointment scheduler is continually evolving, and your feedback is taken into account during every update.
 
 
 **What about its compatibility of the booking system with my device?**
-This brilliant online appointment scheduler works on PC, Mac, iPhone and Android. Whether your favorite browser is Firefox, Safari, Opera, Chrome or Internet Explorer, you will get optimum performance from the tool. 
+This brilliant online appointment scheduler works on PC, Mac, iPhone and Android. Whether your favorite browser is Firefox, Safari, Opera, Chrome or Internet Explorer, you will get optimum performance from the tool.
 
 
 **Is that really free? And if yes, how are you making money then?**
