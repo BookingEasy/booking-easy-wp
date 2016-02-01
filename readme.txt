@@ -3,7 +3,7 @@ Contributors: sagenda
 Tags: booking, free booking, reservation, free reservation, reservation system, online reservation system, appointment, booking system, events, event, calendar, online reservation, rooms, rooms reservation, accommodation, schedule, scheduling, free scheduling, reservation plugin, free reservation plugin, free booking plugin, B&B booking, rental, sagenda, agenda
 Requires at least: 3.0
 Tested up to: 4.4.1
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv2 or later
 
 Sagenda is a free online booking / scheduling / reservation module that helps your clients fix appointments at absolutely NO COST!
@@ -51,12 +51,16 @@ Follow these steps to install Sagenda:
 
 == Upgrade Notice ==
 
+= 1.1.3 =
+* ADDED : Updated Swedish translation of the frontend PayPal payment of the booking system. Thanks to Patric!
+
+
+== Changelog ==
+
 = 1.1.2 =
 * ADDED : Russian translation of the wp booking plugin frontend and backend, thanks to Дмитрий Воробьев!
 * REMOVED : Events that should not be paid online are no more displayed as "Free events".
 
-
-== Changelog ==
 
 = 1.1.1 =
 * ADDED : Korean translation of the wp booking plugin frontend and backend, thanks to 김현철!
