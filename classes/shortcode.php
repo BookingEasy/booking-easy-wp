@@ -38,10 +38,10 @@ class ShortCode {
         add_action('wp_ajax_nopriv_getEventsList', array($this, 'getEventsList_callback'));
         add_action('wp_ajax_subscribeForEvent', array($this, 'subscribeForEvent_callback'));
         add_action('wp_ajax_nopriv_subscribeForEvent', array($this, 'subscribeForEvent_callback'));
-        
+
         //for paid event
         add_action('wp_ajax_subscribeForPaidEvent', array($this, 'subscribeForPaidEvent_callback'));
-        add_action('wp_ajax_nopriv_subscribeForPaidEvent', array($this, 'subscribeForPaidEvent_callback'));        
+        add_action('wp_ajax_nopriv_subscribeForPaidEvent', array($this, 'subscribeForPaidEvent_callback'));
         //add_action('init','register_session');
     }
 
@@ -91,7 +91,7 @@ class ShortCode {
             $bookableItems = $this->getBookableItems();
             $mrsService = new MyReservationService();
             $options = get_option('mrs1_authentication_code');
-            $connected = $mrsService->ValidateAuthCode($options);            
+            $connected = $mrsService->ValidateAuthCode($options);
         } else {
             $connected = 3;
         }
@@ -109,7 +109,7 @@ class ShortCode {
     }
 
     function getAvailbleEvents($bookableId) {
-        
+
     }
 
     function getBookableItems() {
@@ -140,11 +140,11 @@ class ShortCode {
                     $isPaidEvent = "0";
                     $paidEventText = "";
                 }
-                    
+
                 $eventslist .= "<li class='eventlist-item'>
-                <label class='checkbox-inline'> 
-                    <div class='event-details' name='event-item' 
-                        value='" . $event->EventScheduleId . "' 
+                <label class='checkbox-inline'>
+                    <div class='event-details' name='event-item'
+                        value='" . $event->EventScheduleId . "'
                         id='select-" . $event->EventIdentifier . "'
                         data-multiple-paymentamount='".$event->PaymentAmount."'
                         data-multiple-paymentcurrency='".$event->PaymentCurrency."'
@@ -155,18 +155,18 @@ class ShortCode {
                         datamultiple-eventScheduleId='".$event->EventScheduleId."'
                         datamultiple-bookableItemName='".$bookableItem."'
                         datamultiple-paymentNote='".$event->PaymentNote."'
-                        > " . 
+                        > " .
                         "<span><strong>" .
-                        $event->From . ' - ' . $event->To . " : " . 
-                        //$bookableItem ." : ". 
-                        $event->EventTitle. 
+                        $event->From . ' - ' . $event->To . " : " .
+                        //$bookableItem ." : ".
+                        $event->EventTitle.
                         " ".$paidEventText."</strong></span>" .
                     "</div>
                 </li>";
             }
-            
+
         } else {
-            $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> No events found for the bookable item within the selected date range. </label></li>";
+            $eventslist .= "<li class='eventlist-item'><label class='checkbox-inline'> "._e('No events found for the bookable item within the selected date range.', 'sagenda-wp')." </label></li>";
         }
         $eventslist .= "</ul>";
         echo $eventslist;
@@ -184,7 +184,7 @@ class ShortCode {
         $obeEvent->setPhoneNumber($_POST["PhoneNumber"]);
         $obeEvent->setEmail($_POST["Email"]);
         $obeEvent->setDescription($_POST["Description"]);
-        
+
         $obeEvent->setHostUrlLocation($_POST["HostUrlLocation"]);
 
         $mrsService = new MyReservationService();
@@ -205,14 +205,14 @@ class ShortCode {
         $obeEvent->setPhoneNumber($_POST["PhoneNumber"]);
         $obeEvent->setEmail($_POST["Email"]);
         $obeEvent->setDescription($_POST["Description"]);
-        
+
         $obeEvent->setHostUrlLocation($_POST["HostUrlLocation"]);
 
         $mrsService = new MyReservationService();
 
         echo $mrsService->subscribeForPaidEvent($obeEvent);
         die();
-    }        
+    }
 
 }
 ?>
