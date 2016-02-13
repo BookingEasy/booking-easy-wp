@@ -10,7 +10,7 @@ Sagenda is a free online booking / scheduling / reservation module that helps yo
 
 == Description ==
 
-**NOW WP plugin in : Chinese (Simplified), English, French, German, Hindi, Italian, Japanese, Polish, Romanian, Swedish, Spanish, Dutch, Korean and Portuguese (only frontend).**
+**NOW WP plugin in : Chinese (Simplified), English, French, German, Hindi, Italian, Japanese, Polish, Romanian, Swedish, Spanish, Dutch, Korean, Portuguese (Brazil) and Portuguese.**
 
 Want more languages? Help us : http://osp7icw.oneskyapp.com/collaboration/project/53247
 
@@ -53,7 +53,7 @@ Follow these steps to install Sagenda:
 
 = 1.1.4 =
 * FIXED : Informative message when there is no event to display, was not translated. This is now fixed.
-
+* ADDED : Added new complete Portuguese (Brazil) translations of Sagenda booking system. Thanks to Patric!
 
 == Changelog ==
 
