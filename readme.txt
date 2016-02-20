@@ -52,7 +52,8 @@ Follow these steps to install Sagenda:
 == Upgrade Notice ==
 
 = 1.1.5 =
-* IMPROVED : Several URL and translations linked to sagenda’s account creation. 
+* IMPROVED : Several URL and translations linked to sagenda’s account creation.
+* ADDED : translation of the reservation datepicker to Polish.
 
 == Changelog ==
 

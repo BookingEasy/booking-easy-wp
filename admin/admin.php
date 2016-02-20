@@ -12,7 +12,6 @@
  */
 class Admin {
 
-//put your code here
     private static $instance = null;
 
     public static function init() {
@@ -36,13 +35,9 @@ class Admin {
         add_options_page('Sagenda', 'Sagenda', 'manage_options', 'mrs_set_default_options', array($this, 'show_mrs_settings'));
     }
 
-    function mrs_wp_output() {
-        
-    }
-
     function mrs_admin_theme_js() {
 
-        wp_register_script('mrs2', SAGENDA_PLUGIN_URL . 'js/sagenda-admin.js', array('jquery'), true, false);        
+        wp_register_script('mrs2', SAGENDA_PLUGIN_URL . 'js/sagenda-admin.js', array('jquery'), true, false);
         wp_enqueue_script('mrs2');
     }
 
@@ -88,7 +83,5 @@ class Admin {
         wp_redirect(add_query_arg('page', 'mrs_set_default_options', admin_url('options-general.php')));
         exit;
     }
-
 }
-
 ?>

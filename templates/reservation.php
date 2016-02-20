@@ -2,7 +2,7 @@
     <div class="sagenda_col">
 
         <?php echo($events->startdate); ?>
-        <?php        
+        <?php
         if (!$connected) {
             echo '<div class="sagenda_alert sagenda_alert-faliure">';
             echo '<p>';
@@ -31,7 +31,7 @@
 
     <div class="sagenda_row">
         <div class="sagenda_col">
-            <form method="post" id="subscribe_event" action="" role="form">                
+            <form method="post" id="subscribe_event" action="" role="form">
                 <div id="form-step1">
                     <div class="sagenda_row">
                         <div class="sagenda_col">
@@ -41,7 +41,7 @@
                             <div class="sagenda_alert sagenda_alert-success" style="margin-left: 0;display: none">
                                 <?php
                                 _e('You successfully subscribed to the event.', 'sagenda-wp');
-                                ?>                                
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                                 <div class="sagenda_form-group">
                                     <input type="hidden" id="sagenda_lang" name="sagenda_lang" value="<?php echo get_bloginfo("language") ?>" />
                                     <label for="exampleInputStartDate"><?php _e('Start date', 'sagenda-wp');  ?>   </label>
-                                    <div class="sagenda_input-append date" id="startDate" data-date="12-24-2012" data-date-format="dd M yyyy">                                
+                                    <div class="sagenda_input-append date" id="startDate" data-date="12-24-2012" data-date-format="dd M yyyy">
                                         <input type="text" class="sagenda_form-control"  readonly value="" id="dpd1">
                                         <span class="sagenda_add-on" id="dp4" data-date-format="dd M yyyy" data-val="true" data-date=""><i class="sagenda_icon-th"></i></span>
 
@@ -62,13 +62,16 @@
                                 </div>
                             </div>
                         </div>
+
+                            <?php //TODO : date format should be replaced with standard WP method -> echo date_i18n(get_option('date_format')); ?>
+
                         <div class="sagenda_row">
                             <div class="sagenda_col">
                                 <div class="sagenda_form-group">
                                     <label for="exampleInputEndDate"><?php _e('End Date', 'sagenda-wp'); ?></label>
-                                    <div class="sagenda_input-append date" id="endDate" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                    <div class="sagenda_input-append date" id="endDate" data-date="12-02-2012" data-date-format="<?php echo get_option('date_format'); ?>">
                                         <input type="text" class="sagenda_form-control" value="" readonly id="dpd2">
-                                        <span class="sagenda_add-on" id="dp5" data-date-format="dd-mm-yyyy" data-val="true" data-date=""><i class="sagenda_icon-th"></i></span>
+                                        <span class="sagenda_add-on" id="dp5" data-date-format="<?php echo get_option('date_format'); ?>" data-val="true" data-date=""><i class="sagenda_icon-th"></i></span>
 
                                     </div>
                                 </div>
@@ -142,6 +145,4 @@
             </form>
         </div>
     </div>
-
-
 </div>
