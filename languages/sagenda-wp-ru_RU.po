@@ -1,16 +1,21 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2016-01-28 08:15+0000\n"
-"PO-Revision-Date: 2016-01-28 09:16+0100\n"
+"Project-Id-Version: sagenda-wp\n"
+"POT-Creation-Date: 2016-02-20 17:37+0100\n"
+"PO-Revision-Date: 2016-02-20 17:37+0100\n"
+"Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"Last-Translator: David Imboden <info<this is at>iteration.info>\n"
-"X-Generator: Poedit 1.8.6\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: admin/templates/config.php:9
 msgid "Sagenda for WordPress: Sagenda Settings"
@@ -21,12 +26,24 @@ msgid "You should enable curl service in your PHP/Apache configuration."
 msgstr "Вы должны активировать Curl в вашей PHP/Apache конфигурации."
 
 #: admin/templates/config.php:25
-msgid "It looks like Sagenda’s WebServices failed to connect to Internet and is blocked by the server’s firewall. Please contact your hosting provider support service and ask them to unblock Sagenda’s WebServices. You can give them our WP link as reference:"
-msgstr "Похоже, Sagenda WebServices не удалось подключиться к интернету из за брандмауэра сервера. Пожалуйста, свяжитесь с службой поддержки хостинг-провайдера и попросите их, чтобы разблокировали WebServices Sagenda. Вы можете дать им нашу ссылку для справки:"
+msgid ""
+"It looks like Sagenda’s WebServices failed to connect to Internet and is "
+"blocked by the server’s firewall. Please contact your hosting provider "
+"support service and ask them to unblock Sagenda’s WebServices. You can give "
+"them our WP link as reference:"
+msgstr ""
+"Похоже, Sagenda WebServices не удалось подключиться к интернету из за "
+"брандмауэра сервера. Пожалуйста, свяжитесь с службой поддержки хостинг-"
+"провайдера и попросите их, чтобы разблокировали WebServices Sagenda. Вы "
+"можете дать им нашу ссылку для справки:"
 
 #: admin/templates/config.php:31
-msgid "Your token is wrong; please try again or generate another one in Sagenda’s backend."
-msgstr "Ваш ключ неверный; попробуйте еще раз или сгенерируйте другой в интерфейсе Sagenda."
+msgid ""
+"Your token is wrong; please try again or generate another one in Sagenda’s "
+"backend."
+msgstr ""
+"Ваш ключ неверный; попробуйте еще раз или сгенерируйте другой в интерфейсе "
+"Sagenda."
 
 #: admin/templates/config.php:37
 msgid "Sagenda Authentication Settings"
@@ -53,24 +70,54 @@ msgid "Save Changes"
 msgstr "Сохранить настройки"
 
 #: admin/templates/config.php:56
-msgid "[sagenda-wp] add this shortcode either in a post or page where you want to display the Sagenda form."
-msgstr "[sagenda-wp] добавьте этот шорткод в любой пост или страницу где вы хотите отобразить Sagenda форму."
+msgid ""
+"[sagenda-wp] add this shortcode either in a post or page where you want to "
+"display the Sagenda form."
+msgstr ""
+"[sagenda-wp] добавьте этот шорткод в любой пост или страницу где вы хотите "
+"отобразить Sagenda форму."
 
 #: admin/templates/config.php:57
-msgid "If you want to use a shortcode outside of the WordPress post or page editor, you can use this snippet to output it from the shortcode’s handler(s): <pre>echo do_shortcode([sagenda-wp])</pre>"
-msgstr "Если вы хотите использовать шорткод за пределами WordPress постов или редактора страницы, вы можете использовать этот фрагмент кода:  <pre>echo do_shortcode([sagenda-wp])</pre>"
+msgid ""
+"If you want to use a shortcode outside of the WordPress post or page editor, "
+"you can use this snippet to output it from the shortcode’s handler(s): "
+"<pre>echo do_shortcode([sagenda-wp])</pre>"
+msgstr ""
+"Если вы хотите использовать шорткод за пределами WordPress постов или "
+"редактора страницы, вы можете использовать этот фрагмент кода:  <pre>echo "
+"do_shortcode([sagenda-wp])</pre>"
 
 #: admin/templates/footer.php:2
-msgid "**NOTE: You first need to register on Sagenda and then you will get a Authentication token which you will use to validate this Sagenda Plugin. **"
-msgstr "** Примечание: Сначала нужно зарегистрироваться в Sagenda и тогда вы получите ключ авторизации, который будет использоваться для проверки этого плагина Sagenda. **"
+msgid ""
+"**NOTE: You first need to register on Sagenda and then you will get a "
+"Authentication token which you will use to validate this Sagenda Plugin. **"
+msgstr ""
+"** Примечание: Сначала нужно зарегистрироваться в Sagenda и тогда вы "
+"получите ключ авторизации, который будет использоваться для проверки этого "
+"плагина Sagenda. **"
 
 #: admin/templates/footer.php:3
-msgid "You can read more information about <a href=\"http://www.sagenda.com/add-booking-system-website/add-booking-plugin-wordpress-website/\">Sagenda WordPress plugin</a>"
-msgstr "Вы можете прочитать более подробную информацию о <a href=\"http://www.sagenda.com/add-booking-system-website/add-booking-plugin-wordpress-website/\" target=\"_blank\">Sagenda WordPress плагине</а>"
+msgid ""
+"You can read more information about <a href=\"http://www.sagenda.com/add-"
+"booking-system-website/add-booking-plugin-wordpress-website/\">Sagenda "
+"WordPress plugin</a>"
+msgstr ""
+"Вы можете прочитать более подробную информацию о <a href=\"http://www."
+"sagenda.com/add-booking-system-website/add-booking-plugin-wordpress-website/"
+"\" target=\"_blank\">Sagenda WordPress плагине</а>"
 
 #: admin/templates/footer.php:4
-msgid "To create a free account : <a href=\"https://sagenda.net/Accounts/Login\">https://sagenda.net/Accounts/Login</a>"
-msgstr "Чтобы создать бесплатную учетную запись: <a href=\"https://sagenda.net/Accounts/Login\" target=\"_blank\">https://sagenda.net/Accounts/Login </a>"
+msgid ""
+"To create a free account : <a href=\"https://sagenda.net/Accounts/Register"
+"\">https://sagenda.net/Accounts/Register</a>"
+msgstr ""
+"Чтобы создать бесплатную учетную запись: <a href=\"https://sagenda.net/"
+"Accounts/Register\" target=\"_blank\">https://sagenda.net/Accounts/Register</"
+"a>"
+
+#: classes/shortcode.php:169
+msgid "No events found for the bookable item within the selected date range."
+msgstr ""
 
 #: templates/booking.php:8
 msgid "Please fill out all the required fields"
@@ -97,8 +144,12 @@ msgid "Payment Note"
 msgstr "Примечание об оплате"
 
 #: templates/booking.php:38
-msgid "You will be redirected to the paypal website to complete your payment and booking"
-msgstr "Вы будете перенаправлены на сайт PayPal, чтобы завершить вашу оплату и бронирование"
+msgid ""
+"You will be redirected to the paypal website to complete your payment and "
+"booking"
+msgstr ""
+"Вы будете перенаправлены на сайт PayPal, чтобы завершить вашу оплату и "
+"бронирование"
 
 #: templates/booking.php:66
 msgid "Title"
@@ -145,8 +196,13 @@ msgid "Your Sagenda account is not connected:"
 msgstr "Ваш Sagenda аккаунт не подключен:"
 
 #: templates/reservation.php:12
-msgid "1. Create a free account on <a href='https://sagenda.net/Accounts/Register'>Sagenda.</a> (set up your bookable items and events)."
-msgstr "1. Создать бесплатный аккаунт на <a href='https://sagenda.net/Accounts/Register' target=\"_blank\"> Sagenda.</a> (Настроить ваши события и бронирования)."
+msgid ""
+"1. Create a free account on <a href='https://sagenda.net/Accounts/"
+"Register'>Sagenda.</a> (set up your bookable items and events)."
+msgstr ""
+"1. Создать бесплатный аккаунт на <a href='https://sagenda.net/Accounts/"
+"Register' target=\"_blank\"> Sagenda.</a> (Настроить ваши события и "
+"бронирования)."
 
 #: templates/reservation.php:15
 msgid "2. Copy your token (from the backend of sagenda.net Settings / account)"
@@ -176,14 +232,11 @@ msgstr "Нажмите на событие, чтобы забронироват�
 msgid "Create a free Booking Account on Sagenda!"
 msgstr "Создайте бесплатный аккаунт на Sagenda!"
 
-#: widgets/widget.php:12
-msgid "Reservation Widget"
-msgstr "Виджет бронирования"
+#~ msgid "Reservation Widget"
+#~ msgstr "Виджет бронирования"
 
-#: widgets/widget.php:12
-msgid "Display the Reservation Form"
-msgstr "Отобразить форму бронирования"
+#~ msgid "Display the Reservation Form"
+#~ msgstr "Отобразить форму бронирования"
 
-#: widgets/widget.php:20
-msgid "SAGENDA"
-msgstr "SAGENDA"
+#~ msgid "SAGENDA"
+#~ msgstr "SAGENDA"

@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sagenda-wp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-09 13:58+0200\n"
-"PO-Revision-Date: 2015-08-09 13:58+0200\n"
+"POT-Creation-Date: 2016-02-20 17:26+0100\n"
+"PO-Revision-Date: 2016-02-20 17:26+0100\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: sagenda <send us a message from sagenda.com>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.3\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -113,53 +113,85 @@ msgstr ""
 
 #: admin/templates/footer.php:4
 msgid ""
-"To create a free account : <a href=\"https://sagenda.net/Accounts/Login"
-"\">https://sagenda.net/Accounts/Login</a>"
+"To create a free account : <a href=\"https://sagenda.net/Accounts/Register"
+"\">https://sagenda.net/Accounts/Register</a>"
 msgstr ""
 "Erstellen Sie einen kostenlosen Account bei  <a href=\"https://sagenda.net/"
-"Accounts/Login\" target=\"_blank\">https://sagenda.net/Accounts/Login</a>"
+"Accounts/Register\" target=\"_blank\">https://sagenda.net/Accounts/Register "
+"</a>"
 
-#: templates/booking.php:10
+#: classes/shortcode.php:169
+msgid "No events found for the bookable item within the selected date range."
+msgstr ""
+
+#: templates/booking.php:8
 msgid "Please fill out all the required fields"
 msgstr "Bitte füllen Sie alle Pflichtfelder aus"
 
-#: templates/booking.php:21
+#: templates/booking.php:18
+msgid "Paid Event Information"
+msgstr ""
+
+#: templates/booking.php:22 templates/reservation.php:110
+msgid "Bookable Item"
+msgstr "Buchbarer Termin"
+
+#: templates/booking.php:26
+#, fuzzy
+msgid "Event Title"
+msgstr "Anrede"
+
+#: templates/booking.php:30
+msgid "Payment Amount"
+msgstr ""
+
+#: templates/booking.php:34
+msgid "Payment Note"
+msgstr ""
+
+#: templates/booking.php:38
+msgid ""
+"You will be redirected to the paypal website to complete your payment and "
+"booking"
+msgstr ""
+
+#: templates/booking.php:66
 msgid "Title"
 msgstr "Anrede"
 
-#: templates/booking.php:24
+#: templates/booking.php:69
 msgid "Mr."
 msgstr "Herr"
 
-#: templates/booking.php:29
+#: templates/booking.php:74
 msgid "Mrs."
 msgstr "Frau"
 
-#: templates/booking.php:39 templates/booking.php:41
+#: templates/booking.php:83 templates/booking.php:85
 msgid "First Name"
 msgstr "Vorname"
 
-#: templates/booking.php:51 templates/booking.php:53
+#: templates/booking.php:96 templates/booking.php:98
 msgid "Last Name"
 msgstr "Nachname"
 
-#: templates/booking.php:63 templates/booking.php:65
+#: templates/booking.php:108 templates/booking.php:110
 msgid "Phone Number"
 msgstr "Telefonnummer"
 
-#: templates/booking.php:74 templates/booking.php:76
+#: templates/booking.php:119 templates/booking.php:121
 msgid "Email"
 msgstr "Email"
 
-#: templates/booking.php:85
+#: templates/booking.php:130
 msgid "Description"
 msgstr "Beschreibung"
 
-#: templates/booking.php:97
+#: templates/booking.php:142
 msgid "Back to Calendar"
 msgstr "Zurück zum Kalender"
 
-#: templates/booking.php:98
+#: templates/booking.php:143
 msgid "Submit"
 msgstr "Abschicken"
 
@@ -197,10 +229,6 @@ msgstr "Datum des Endes"
 #: templates/reservation.php:107
 msgid "Bookable Items"
 msgstr "Buchbare Termine"
-
-#: templates/reservation.php:110
-msgid "Bookable Item"
-msgstr "Buchbarer Termin"
 
 #: templates/reservation.php:127
 msgid "Click an event to book It:"
