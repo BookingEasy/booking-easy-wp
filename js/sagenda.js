@@ -51,6 +51,9 @@ jQuery(document).ready(function ($) {
   }
 
   function ReverseFormatDate(date) {
+
+    // TODO : replace this with a correct WP i18n format
+
     if (typeof date != 'undefined') {
       date = date.replace('janv.', 'jan');
       date = date.replace('févr.', 'feb');
@@ -64,6 +67,18 @@ jQuery(document).ready(function ($) {
       date = date.replace('oct.', 'oct');
       date = date.replace('nov.', 'nov');
       date = date.replace('déc.', 'dec');
+
+      date = date.replace('sty', 'jan');
+      date = date.replace('lut', 'feb');
+      date = date.replace('kwi', 'apr');
+      date = date.replace('maj', 'apr');
+      date = date.replace('cze', 'jun');
+      date = date.replace('lip', 'jul');
+      date = date.replace('sie', 'aug');
+      date = date.replace('wrz', 'sep');
+      date = date.replace('paź', 'oct');
+      date = date.replace('lis', 'nov');
+      date = date.replace('gru', 'dec');
 
 
       date = new Date(date);
@@ -128,10 +143,6 @@ jQuery(document).ready(function ($) {
     }
     $('#dp5').datepicker('hide');
   });
-
-
-  // Get Events List
-
 
   function getEventList() {
     //console.log(ajaxurl);

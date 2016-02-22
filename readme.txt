@@ -3,7 +3,7 @@ Contributors: sagenda
 Tags: booking, free booking, reservation, free reservation, reservation system, online reservation system, appointment, booking system, events, event, calendar, online reservation, rooms, rooms reservation, accommodation, schedule, scheduling, free scheduling, reservation plugin, free reservation plugin, free booking plugin, B&B booking, rental, sagenda, agenda
 Requires at least: 3.0
 Tested up to: 4.4.2
-Stable tag: 1.1.5
+Stable tag: 1.1.6
 License: GPLv2 or later
 
 Sagenda is a free online booking / scheduling / reservation module that helps your clients fix appointments at absolutely NO COST!
@@ -51,11 +51,14 @@ Follow these steps to install Sagenda:
 
 == Upgrade Notice ==
 
+= 1.1.6 =
+* FIXED : bug making the Polish date format not able to get free reservations.
+
+== Changelog ==
+
 = 1.1.5 =
 * IMPROVED : Several URL and translations linked to sagenda’s account creation.
 * ADDED : translation of the reservation datepicker to Polish.
-
-== Changelog ==
 
 = 1.1.4 =
 * FIXED : Informative message when there is no event to display, was not translated. This is now fixed.
