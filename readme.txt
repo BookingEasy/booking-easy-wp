@@ -3,12 +3,15 @@ Contributors: sagenda
 Tags: booking, free booking, reservation, free reservation, reservation system, online reservation system, appointment, booking system, events, event, calendar, online reservation, rooms, rooms reservation, accommodation, schedule, scheduling, free scheduling, reservation plugin, free reservation plugin, free booking plugin, B&B booking, rental, sagenda, agenda
 Requires at least: 3.0
 Tested up to: 4.4.2
-Stable tag: 1.1.6
+Stable tag: 1.2.0 - alpha dev (not for production USE)
 License: GPLv2 or later
 
 Sagenda is a free online booking / scheduling / reservation module that helps your clients fix appointments at absolutely NO COST!
 
 == Description ==
+
+** PAY ATTENTION SINCE VERSION 1.2 YOU ARE REQUIRED TO USE THE SHORTCODE : [piklist_form form="search-form" add_on="sagenda-wp"] AND NO MORE [sagenda-wp]
+**
 
 **NOW WP plugin in : Chinese (Simplified), English, French, German, Hindi, Italian, Japanese, Polish, Romanian, Swedish, Spanish, Dutch, Korean, Portuguese (Brazil) and Portuguese.**
 
@@ -44,7 +47,7 @@ Follow these steps to install Sagenda:
 1. Download the booking plugin into the **/wp-content/plugins/** folder and activate the plugin.
 2. Create a free account on https://sagenda.net/Accounts/Register (setup your “bookable items” and events).
 3. Copy your token (from the backend of sagenda.net Settings / account settings) to your WordPress installation (backend of wp / Settings / Sagenda).
-4. Use the shortcode [sagenda-wp] in a page or an article.
+4. Use the shortcode [piklist_form form="search-form" add_on="sagenda-wp"] in a page or an article.
 
 == Screenshots ==
 1. How to identify my Sagenda account in WordPress? Copy the authentication code (token) from your Sagenda account and paste it into your WordPress installation
