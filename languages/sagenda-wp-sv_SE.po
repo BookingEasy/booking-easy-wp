@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sagenda-wp\n"
-"POT-Creation-Date: 2016-02-20 17:36+0100\n"
-"PO-Revision-Date: 2016-02-20 17:36+0100\n"
+"POT-Creation-Date: 2016-03-01 15:25+0100\n"
+"PO-Revision-Date: 2016-03-01 20:00+0100\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -114,7 +114,7 @@ msgstr ""
 
 #: classes/shortcode.php:169
 msgid "No events found for the bookable item within the selected date range."
-msgstr ""
+msgstr "Valt datum går inte att boka."
 
 #: templates/booking.php:8
 msgid "Please fill out all the required fields"
@@ -124,7 +124,7 @@ msgstr "Fyll i alla obligatoriska fält"
 msgid "Paid Event Information"
 msgstr "Betald eventinformation"
 
-#: templates/booking.php:22 templates/reservation.php:110
+#: templates/booking.php:22 templates/reservation.php:113
 msgid "Bookable Item"
 msgstr "Boknings Item"
 
@@ -186,7 +186,7 @@ msgstr "Tillbaka till kalendern"
 
 #: templates/booking.php:143
 msgid "Submit"
-msgstr "Spara"
+msgstr "Boka"
 
 #: templates/reservation.php:9
 msgid "Your Sagenda account is not connected:"
@@ -210,23 +210,23 @@ msgstr ""
 msgid "You successfully subscribed to the event."
 msgstr "Din bokning är registrerad"
 
-#: templates/reservation.php:56 templates/reservation.php:84
+#: templates/reservation.php:56 templates/reservation.php:87
 msgid "Start date"
 msgstr "Startdatum"
 
-#: templates/reservation.php:68 templates/reservation.php:95
+#: templates/reservation.php:71 templates/reservation.php:98
 msgid "End Date"
 msgstr "Slutdatum"
 
-#: templates/reservation.php:107
+#: templates/reservation.php:110
 msgid "Bookable Items"
 msgstr "Bokningsbara objekt"
 
-#: templates/reservation.php:127
+#: templates/reservation.php:130
 msgid "Click an event to book It:"
 msgstr "Klicka på en händelse för att boka det:"
 
-#: templates/reservation.php:139
+#: templates/reservation.php:142
 msgid "Create a free Booking Account on Sagenda!"
 msgstr "Skapa ett gratis Boknings konto på Sagenda!"
 
