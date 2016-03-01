@@ -4,5 +4,5 @@
 
 $shortcode->add(
     'sagenda-wp',
-    'Sagenda::showSearchView'
+    'Sagenda::showSearch'
 );

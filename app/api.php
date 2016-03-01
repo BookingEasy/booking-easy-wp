@@ -13,3 +13,11 @@ $api->add('helper', function ()
 
     return forward_static_call_array(__NAMESPACE__ . '\\Helper::' . $method, $args);
 });
+
+use Sagenda\Controllers\SearchController;
+
+$api->add('showSearch', function()
+{
+    return (new SearchController)->showSearch();
+    //return "hello world";
+});
