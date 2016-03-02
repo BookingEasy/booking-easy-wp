@@ -38,6 +38,9 @@ How to create a Sagenda’s account in video?
 
 [youtube https://www.youtube.com/watch?v=T-NXXxPSTQs]
 
+How to create a event pattern for your bookings in video?
+
+[youtube https://www.youtube.com/watch?v=BvvTOkAAxsY]
 
 Follow these steps to install Sagenda:
 
