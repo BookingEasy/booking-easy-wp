@@ -1,3 +1,26 @@
-<h1>{{ title }}</h1>
-<p>{{ content }}</p>
-<p>This is the sagenda's search form.</p>
+<p>{{ searchForEventsBetween }}</p>
+<form action="" method="post">
+<p>{{ from }} :</p>
+<!-- TODO:datepicker-->
+<p>{{ to }} :</p>
+<!-- TODO:datepicker-->
+
+<p>{{ bookableItems }} :</p>
+<!-- TODO:bookable items dropdownlist-->
+<p>{{ location }} :</p>
+<!-- TODO:location txt-->
+<p>{{ description }} :</p>
+<!-- TODO:description txt-->
+
+
+<input type="submit" name="submit" value="{{ search }}">
+</form>
+
+<p><a href="http://sagenda.net/Accounts/Register">{{ createAFreeBookingAccount }} </a></p>
+
+{% block searchResult %}
+
+{% endblock %}
+<!-- TODO:Booking list-->
+
+<!-- TODO:pagination-->

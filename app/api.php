@@ -19,5 +19,4 @@ use Sagenda\Controllers\SearchController;
 $api->add('showSearch', function()
 {
     return (new SearchController)->showSearch();
-    //return "hello world";
 });
