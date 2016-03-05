@@ -15,8 +15,9 @@ $api->add('helper', function ()
 });
 
 use Sagenda\Controllers\SearchController;
+use Herbert\Framework\Http;
 
 $api->add('showSearch', function()
 {
-    return (new SearchController)->showSearch();
+    return (new SearchController)->showSearch(new Http);
 });

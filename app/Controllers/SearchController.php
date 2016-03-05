@@ -1,7 +1,7 @@
 <?php namespace Sagenda\Controllers;
 
 //use Herbert\Framework\Models\Post;
-
+use Herbert\Framework\Http;
 
 class SearchController {
 
@@ -10,15 +10,19 @@ class SearchController {
    *
    * @return array
    */
-  public function showSearch()
+  public function showSearch(Http $http)
   {
     $view = "search";
 
-    if (true)
+    /*foreach($http->all() as $result) {
+        echo $result, '<br>';
+    }*/
+    // echo "<pre>"; print_r($array);
+
+    if ($http->has('searchClicked'))
       {
         $view = "searchResult";
       }
-
 
     return view('@Sagenda/'.$view.'.twig',
     [
