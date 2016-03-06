@@ -1,9 +1,9 @@
 === Sagenda - Free booking system  ===
 Contributors: sagenda
-Tags: booking, free booking, reservation, free reservation, reservation system, online reservation system, appointment, booking system, events, event, calendar, online reservation, rooms, rooms reservation, accommodation, schedule, scheduling, free scheduling, reservation plugin, free reservation plugin, free booking plugin, B&B booking, rental, sagenda, agenda
+Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, BnB
 Requires at least: 3.0
 Tested up to: 4.4.2
-Stable tag: 0.0.1
+Stable tag: 1.2.0
 License: GPLv2 or later
 
 Sagenda is a free online booking / scheduling / reservation module that helps your clients fix appointments at absolutely NO COST!
@@ -18,15 +18,15 @@ Sagenda is an online booking software that helps your clients fix appointments a
 
 This is an “Online Booking System” which gives customers the opportunity to choose the date and the time of an appointment according to one's own preferences and the booking can now be done online.
 
-The Sagenda system can be added to any type of website, so it is not necessary to make a new one. It can be added as a new page or in a new space.
+Using this WP plugin is a better way to display your booking on your WP fontend than using an iFrame. Using this Plugin will required a free Sagenda's account. To **create an account** please visit: [https://sagenda.net/Accounts/Register](https://sagenda.net/Accounts/Register)
 
 To learn more about our Sagenda’s booking service please visit: [http://www.sagenda.com/](http://www.sagenda.com/)
-
-To **create an account** please visit: [https://sagenda.net/Accounts/Register](https://sagenda.net/Accounts/Register)
 
 **NOTE: You need to register an account on the Sagenda site and then you will get an authentication code which you will use to validate your Sagenda plugin.**
 
 Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sagenda-wp
+
+<> with ♡ for [WordPress](https://wordpress.org) using [Herbert](http://getherbert.com)
 
 == Installation ==
 
@@ -37,7 +37,6 @@ How to install this booking plugin into my WordPress website?
 How to create a Sagenda’s account in video?
 
 [youtube https://www.youtube.com/watch?v=T-NXXxPSTQs]
-
 
 Follow these steps to install Sagenda:
 
@@ -50,11 +49,15 @@ Follow these steps to install Sagenda:
 1. How to identify my Sagenda account in WordPress? Copy the authentication code (token) from your Sagenda account and paste it into your WordPress installation
 
 == Upgrade Notice ==
+= 1.2.0 =
+* IMPROVED : Complete rebuild of the module on Herbert Framework.
+
+== Changelog ==
+= 1.1.7 =
+* IMPROVED : Swedish translations of the booking form.
 
 = 1.1.6 =
 * FIXED : bug making the Polish date format not able to get free reservations.
-
-== Changelog ==
 
 = 1.1.5 =
 * IMPROVED : Several URL and translations linked to sagenda’s account creation.

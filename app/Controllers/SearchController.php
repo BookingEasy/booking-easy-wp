@@ -6,23 +6,23 @@ use Herbert\Framework\Http;
 class SearchController {
 
   /**
-   * Display the choosen search*.twig views.
-   *
-   * @return array
-   */
+  * Display the choosen search*.twig views.
+  *
+  * @return array
+  */
   public function showSearch(Http $http)
   {
     $view = "search";
 
-    /*foreach($http->all() as $result) {
-        echo $result, '<br>';
-    }*/
-    // echo "<pre>"; print_r($array);
-
+    if ($http->has('address'))
+    {
+      $view = "searchResult";
+    }
+    
     if ($http->has('searchClicked'))
-      {
-        $view = "searchResult";
-      }
+    {
+      $view = "searchResult";
+    }
 
     return view('@Sagenda/'.$view.'.twig',
     [
@@ -37,6 +37,6 @@ class SearchController {
       'clickAnEventToBookIt'          => __( 'Click an event to book It:', 'sagenda-wp' ),
     ]
   );
-  }
+}
 
 }
