@@ -1,28 +1,51 @@
 === Sagenda - Free booking system  ===
 Contributors: sagenda
+Donate link: http://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, BnB
 Requires at least: 3.0
 Tested up to: 4.4.2
 Stable tag: 1.2.0
 License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Sagenda is a free online booking / scheduling / reservation module that helps your clients fix appointments at absolutely NO COST!
 
 == Description ==
 
-**NOW WP plugin in : Chinese (Simplified), English, French, German, Hindi, Italian, Japanese, Polish, Romanian, Swedish, Spanish, Dutch, Korean, Portuguese (Brazil) and Portuguese.**
-
-Want more languages? Help us : http://osp7icw.oneskyapp.com/collaboration/project/53247
-
 Sagenda is an online booking software that helps your clients fix appointments and meetings with you online. Sagenda is available at absolutely NO COST for you or your clients! And the best thing about it is that you may have an unlimited number of bookings and/or customers. Our users always come first; that’s why Sagenda doesn’t display ads!
+
+>[Contact & Support](http://www.sagenda.com/#contact "We love hearing from you!") | [YouTube Chanel](http://www.youtube.com/sagenda "Get a look at our tutorials!") | [Open an account](https://sagenda.net/Accounts/Register "Open a free account now!")
 
 This is an “Online Booking System” which gives customers the opportunity to choose the date and the time of an appointment according to one's own preferences and the booking can now be done online.
 
 Using this WP plugin is a better way to display your booking on your WP fontend than using an iFrame. Using this Plugin will required a free Sagenda's account. To **create an account** please visit: [https://sagenda.net/Accounts/Register](https://sagenda.net/Accounts/Register)
 
-To learn more about our Sagenda’s booking service please visit: [http://www.sagenda.com/](http://www.sagenda.com/)
-
 **NOTE: You need to register an account on the Sagenda site and then you will get an authentication code which you will use to validate your Sagenda plugin.**
+
+= LANGUAGE / TRANSLATIONS =
+
+  Chinese Simplified - 简体中文
+  Chinese Traditional - 繁體中文
+  Dutch - Nederlands (Nederland)
+  English
+  French - Français (France)
+  German - Deutsch (Deutschland)
+  Hindi - हिन्दी (भारत)
+  Italian - Italiano (Italia)
+  Japanese - 日本語
+  Korean - 한국어
+  Polish - Polski
+  Portuguese - Português (Brasil)
+  Portuguese - Português (Europeu)
+  Romanian - Română (România)
+  Russian - Русский
+  Russian - Русский (Россия)
+  Spanish - Español (España)
+  Swedish - Svenska (Sverige)
+
+Want more languages? Help us : http://osp7icw.oneskyapp.com/collaboration/project/53247
+
+
 
 Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sagenda-wp
 

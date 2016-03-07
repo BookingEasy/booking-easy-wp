@@ -18,7 +18,7 @@ class SearchController {
     {
       $view = "searchResult";
     }
-    
+
     if ($http->has('searchClicked'))
     {
       $view = "searchResult";
