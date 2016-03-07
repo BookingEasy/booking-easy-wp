@@ -45,11 +45,7 @@ Using this WP plugin is a better way to display your booking on your WP fontend 
 
 Want more languages? Help us : http://osp7icw.oneskyapp.com/collaboration/project/53247
 
-
-
 Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sagenda-wp
-
-<> with ♡ for [WordPress](https://wordpress.org) using [Herbert](http://getherbert.com)
 
 == Installation ==
 
