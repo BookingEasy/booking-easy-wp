@@ -1,31 +1,10 @@
 <?php namespace Sagenda\Controllers;
 
-//use Herbert\Framework\Models\Post;
-use Herbert\Framework\Http;
-
 class SearchController {
 
-  /**
-  * Display the choosen search*.twig views.
-  *
-  * @return array
-  */
-  public function showSearch(Http $http)
+  public function showSearch($twig)
   {
-    $view = "search";
-
-    if ($http->has('address'))
-    {
-      $view = "searchResult";
-    }
-
-    if ($http->has('searchClicked'))
-    {
-      $view = "searchResult";
-    }
-
-    return view('@Sagenda/'.$view.'.twig',
-    [
+    echo $twig->render('search.twig', array(
       'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
       'from'                          => __( 'From', 'sagenda-wp' ),
       'to'                            => __( 'To', 'sagenda-wp' ),
@@ -35,8 +14,7 @@ class SearchController {
       'createAFreeBookingAccount'     => __( 'Create a free Booking Account on Sagenda!', 'sagenda-wp' ),
       'search'                        => __( 'Search', 'sagenda-wp' ),
       'clickAnEventToBookIt'          => __( 'Click an event to book It:', 'sagenda-wp' ),
-    ]
-  );
-}
 
+      ));
+    }
 }
