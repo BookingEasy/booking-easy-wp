@@ -9,7 +9,6 @@ class bootstrapper {
   function initApp()
   {
     $twig = self::initTwig();
-    //$searchController = new Sagenda\Controllers\SearchController();
     $searchController = new SearchController();
     return $searchController->showSearch($twig);
   }
