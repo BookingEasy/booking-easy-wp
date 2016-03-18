@@ -4,6 +4,8 @@ use Sagenda\Controllers\SearchController;
 include_once( SAGENDA_PLUGIN_DIR . 'Controllers/SearchController.php' );
 // TODO : did we need include once if we already use namespace?
 
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+
 class bootstrapper {
 
   function initApp()
