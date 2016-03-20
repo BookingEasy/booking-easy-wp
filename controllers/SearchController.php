@@ -1,6 +1,11 @@
 <?php namespace Sagenda\Controllers;
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
+use Sagenda\Helpers;
+use Sagenda\Helpers\DateTimeHelper;
+include_once( SAGENDA_PLUGIN_DIR . 'Helpers/DateTimeHelper.php' );
+
+
 /**
  * This controller will be responsible for displaying the free events in frontend in order to be searched and booked by the visitor.
  */
@@ -32,6 +37,7 @@ class SearchController {
       'createAFreeBookingAccount'     => __( 'Create a free Booking Account on Sagenda!', 'sagenda-wp' ),
       'search'                        => __( 'Search', 'sagenda-wp' ),
       'clickAnEventToBookIt'          => __( 'Click an event to book It:', 'sagenda-wp' ),
+      'dateFormat' =>  DateTimeHelper::convertWPtoJSDate(get_option( 'date_format' )),
 
     ));
   }
