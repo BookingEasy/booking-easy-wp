@@ -1,6 +1,6 @@
 <?php namespace Sagenda\Helpers;
 
-defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+//defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 class DateTimeHelper{
 
