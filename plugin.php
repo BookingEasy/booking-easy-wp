@@ -43,7 +43,5 @@ function head_code(){
 	//$headcode .= '<script src="'.SAGENDA_PLUGIN_URL.'assets/vendor/pickadate/lib/compressed/picker.time.js"></script>';
 	$headcode .= '<script src="'.SAGENDA_PLUGIN_URL.'assets/vendor/pickadate/lib/legacy.js"></script>';
 
-
-
 	echo $headcode;
 }

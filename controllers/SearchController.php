@@ -26,9 +26,6 @@ class SearchController {
       $view = "searchResult.twig";
     }
 
-    $pickerTranslated = file_get_contents(SAGENDA_PLUGIN_DIR."assets/vendor/pickadate/lib/translations/fr_FR.js");
-
-    //echo $pickerTranslated ;
 
     echo $twig->render($view, array(
       'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
@@ -40,8 +37,8 @@ class SearchController {
       'createAFreeBookingAccount'     => __( 'Create a free Booking Account on Sagenda!', 'sagenda-wp' ),
       'search'                        => __( 'Search', 'sagenda-wp' ),
       'clickAnEventToBookIt'          => __( 'Click an event to book It:', 'sagenda-wp' ),
-      'dateFormat'                    =>  DateTimeHelper::convertWPtoJSDate(get_option( 'date_format' )),
-      'pickerTranslated'              => $pickerTranslated,
+      'dateFormat' =>  DateTimeHelper::convertWPtoJSDate(get_option( 'date_format' )),
+
     ));
   }
 }
