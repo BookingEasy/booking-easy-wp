@@ -1,12 +1,31 @@
 <?php namespace Sagenda\Helpers;
 
 class PickadateHelper{
+  /*
+  @var $dateFormat - input WordPress date format such as : https://codex.wordpress.org/Formatting_Date_and_Time
+  return a converted date format for JS DateTime picker  : http://amsul.ca/pickadate.js/date/
+  */
+  public static function convertWPtoJSDate($dateFormat)
+  {
+    $dateFormat = str_replace("d", "dd", $dateFormat);
+    $dateFormat = str_replace("j", "d", $dateFormat);
+    $dateFormat = str_replace("S", "d", $dateFormat);
+    $dateFormat = str_replace("D", "ddd", $dateFormat);
+    $dateFormat = str_replace("l", "dddd", $dateFormat);
+    $dateFormat = str_replace("m", "mm", $dateFormat);
+    $dateFormat = str_replace("n", "m", $dateFormat);
+    $dateFormat = str_replace("M", "mmm", $dateFormat);
+    $dateFormat = str_replace("F", "mmmm", $dateFormat);
+    $dateFormat = str_replace("y", "yy", $dateFormat);
+    $dateFormat = str_replace("Y", "yyyy", $dateFormat);
+    return $dateFormat;
+  }
 
   /*
   @var $wpCultureCode - input from WordPress as culture short format (WP Locale) : https://make.wordpress.org/polyglots/teams/
   return a converted culture format to get the appropriate JS DateTime picker translations  : http://amsul.ca/pickadate.js/date/
   return -1 if should use the default EN text.
-  no support for now : az, azb, bn_BD, ceb, cy, eo, gd, haz, hy, ka_GE, ka_GE, my_MM, oci, sq, sr_RS, ug-CN
+  no support for : az, azb, bn_BD, ceb, cy, eo, gd, haz, hy, ka_GE, ka_GE, my_MM, oci, sq, sr_RS, ug-CN
   */
   public static function convertWPtoPickadateCultureCode($wpCultureCode)
   {

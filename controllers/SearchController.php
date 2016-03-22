@@ -2,9 +2,7 @@
 //defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 use Sagenda\Helpers;
-use Sagenda\Helpers\DateTimeHelper;
 use Sagenda\Helpers\PickadateHelper;
-include_once( SAGENDA_PLUGIN_DIR . 'Helpers/DateTimeHelper.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'Helpers/PickadateHelper.php' );
 
 /**
@@ -41,10 +39,10 @@ class SearchController {
       'createAFreeBookingAccount'     => __( 'Create a free Booking Account on Sagenda!', 'sagenda-wp' ),
       'search'                        => __( 'Search', 'sagenda-wp' ),
       'clickAnEventToBookIt'          => __( 'Click an event to book It:', 'sagenda-wp' ),
-      'dateFormat' =>  DateTimeHelper::convertWPtoJSDate(get_option( 'date_format' )),
-      'pickerTranslated' => $pickerTranslated,
-      'lang'  => $lang,
-      'langCorrected'  => $langCorrected,
+      'dateFormat'                    =>  PickadateHelper::convertWPtoJSDate(get_option( 'date_format' )),
+      'pickerTranslated'              => $pickerTranslated,
+      'lang'                          => $lang,
+      'langCorrected'                 => $langCorrected,
 
     ));
   }
