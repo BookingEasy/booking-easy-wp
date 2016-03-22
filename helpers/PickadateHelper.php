@@ -1,6 +1,12 @@
 <?php namespace Sagenda\Helpers;
 
 class PickadateHelper{
+
+  public static function getPickadateDateFormat()
+  {
+    return self::convertWPtoJSDate(get_option('date_format'));
+  }
+
   /*
   @var $dateFormat - input WordPress date format such as : https://codex.wordpress.org/Formatting_Date_and_Time
   return a converted date format for JS DateTime picker  : http://amsul.ca/pickadate.js/date/
@@ -19,6 +25,12 @@ class PickadateHelper{
     $dateFormat = str_replace("y", "yy", $dateFormat);
     $dateFormat = str_replace("Y", "yyyy", $dateFormat);
     return $dateFormat;
+  }
+
+
+
+  public static function getPickadateCultureCode(){
+    return file_get_contents(SAGENDA_PLUGIN_DIR."assets/vendor/pickadate/lib/translations/".self::convertWPtoPickadateCultureCode(get_bloginfo('language')).".js");
   }
 
   /*
