@@ -14,12 +14,12 @@
 // Plugin path management
 define('SAGENDA_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('SAGENDA_PLUGIN_URL', plugins_url('/', __FILE__));
-include_once( SAGENDA_PLUGIN_DIR . 'bootstrapper.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'initializer.php' );
 
 // Shortcode management
 function sagenda_main( $atts ){
-	$bootstrapper = new Sagenda\bootstrapper();
-	echo $bootstrapper->initApp();
+	$initializer = new Sagenda\Initializer();
+	echo $initializer->initApp();
 }
 add_shortcode( 'sagenda-wp', 'sagenda_main' );
 

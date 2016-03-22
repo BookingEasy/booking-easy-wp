@@ -6,7 +6,7 @@ include_once( SAGENDA_PLUGIN_DIR . 'Controllers/SearchController.php' );
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-class bootstrapper {
+class initializer {
 
   function initApp()
   {
