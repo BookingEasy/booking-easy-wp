@@ -427,7 +427,7 @@ fieldset[disabled] .btn-danger.active {
 .navbar-fixed-bottom {
   border-radius: 0;
 }
-.bootstrap-wrapper
+
 @media (max-width: 767px) {
   .navbar .navbar-nav .open .dropdown-menu > .active > a, .bootstrap-wrapper
   .navbar .navbar-nav .open .dropdown-menu > .active > a:hover, .bootstrap-wrapper
@@ -440,7 +440,7 @@ fieldset[disabled] .btn-danger.active {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7',  endColorstr='#ff2e6da4',  GradientType=0);
     background-repeat: repeat-x;
   }
-.bootstrap-wrapper
+
 }
 .bootstrap-wrapper
 .alert {
