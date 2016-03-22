@@ -1,5 +1,7 @@
 <div class="bootstrap-wrapper">
-  <p>{{ test }}</p>
+  <p>Lang : {{ lang }}</p>
+  <p>Lang corrected : {{ langCorrected }}</p>
+  <p>Picker: {{ pickerTranslated|raw }}</p>
   <p>{{ searchForEventsBetween }}</p>
 
   <form action="" method="get">
@@ -30,9 +32,14 @@
   </form>
 
   <div id="container"></div>
+
+  <!-- TODO : Check why this made a TypeError: undefined is not an object (evaluating 'jQuery.fn.pickatime.defaults') -->
+  {% if pickerTranslated|length > 0 %}
   <script type="text/javascript">
   {{pickerTranslated|raw }}
   </script>
+  {% endif %}
+
 
   <script type="text/javascript">
   var $input = jQuery('.datepickerFrom').pickadate({

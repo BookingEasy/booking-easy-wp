@@ -18,12 +18,19 @@ class bootstrapper {
   private static function initTwig()
   {
     include_once(SAGENDA_PLUGIN_DIR.'/assets/vendor/twig/lib/Twig/Autoloader.php');
+    //include_once(SAGENDA_PLUGIN_DIR.'/assets/vendor/twig/Twig/Extension/Debug.php');
     \Twig_Autoloader::register();
     $loader = new \Twig_Loader_Filesystem(SAGENDA_PLUGIN_DIR.'/views');
 
     // TODO : should we use caching system?
     //$twig = new Twig_Environment($loader, array('cache' => '/path/to/compilation_cache',));
-    return new \Twig_Environment($loader);
+
+    // TODO : remove debug before production
+    $twig = new \Twig_Environment($loader
+    , array('debug' => true,)
+    );
+    //$twig->addExtension(new Twig_Extension_Debug());
+    return $twig;
   }
 
 }
