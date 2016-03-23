@@ -1,7 +1,9 @@
 <?php
 namespace Sagenda;
 use Sagenda\Controllers\SearchController;
+use Sagenda\Controllers\SubscriptionController;
 include_once( SAGENDA_PLUGIN_DIR . 'Controllers/SearchController.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'Controllers/SubscriptionController.php' );
 // TODO : did we need include once if we already use namespace?
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
@@ -11,15 +13,17 @@ class initializer {
   function initApp()
   {
     $twig = self::initTwig();
-    $searchController = new SearchController();
-    return $searchController->showSearch($twig);
+
+    $subscriptionController = new SubscriptionController();
+    return $subscriptionController->showSubscription($twig);
+    //$searchController = new SearchController();
+    //return $searchController->showSearch($twig);
   }
 
   private static function initTwig()
   {
     include_once(SAGENDA_PLUGIN_DIR.'/assets/vendor/twig/lib/Twig/Autoloader.php');
-    //include_once(SAGENDA_PLUGIN_DIR.'/assets/vendor/twig/Twig/Extension/Debug.php');
-    \Twig_Autoloader::register();
+        \Twig_Autoloader::register();
     $loader = new \Twig_Loader_Filesystem(SAGENDA_PLUGIN_DIR.'/views');
 
     // TODO : should we use caching system?
@@ -32,5 +36,4 @@ class initializer {
     //$twig->addExtension(new Twig_Extension_Debug());
     return $twig;
   }
-
 }

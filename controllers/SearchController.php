@@ -20,13 +20,13 @@ class SearchController {
   */
   public function showSearch($twig)
   {
-    if(true)
+    if(true) // TODO : will be triggered by the search action
     {
-      $view = "searchResult.twig";
-      //$view = "subscription.twig";
+      $this->view = "searchResult.twig";
+      //$this->view = "subscription.twig";
     }
 
-    echo $twig->render($view, array(
+    echo $twig->render($this->view, array(
       'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
       'fromLabel'                     => __( 'From', 'sagenda-wp' ),
       'toLabel'                       => __( 'To', 'sagenda-wp' ),
