@@ -1,15 +1,23 @@
 <?php namespace Sagenda\Helpers;
 
+/**
+* This helper class will make the integration of Pickadate component easier with WordPress.
+*/
 class PickadateHelper{
 
+  /**
+  * Get the date format for Pickadate component according to the WP settings saved
+  * @return a Pickadate compatible date format such as "mm/dd/yyyy"
+  */
   public static function getPickadateDateFormat()
   {
     return self::convertWPtoJSDate(get_option('date_format'));
   }
 
-  /*
-  @var $dateFormat - input WordPress date format such as : https://codex.wordpress.org/Formatting_Date_and_Time
-  return a converted date format for JS DateTime picker  : http://amsul.ca/pickadate.js/date/
+  /**
+  * Convert a WordPress date format into a Pickadate date format
+  * @param  string  $dateFormat   WordPress date format such as : https://codex.wordpress.org/Formatting_Date_and_Time
+  * @return a Pickadate compatible date format such as "mm/dd/yyyy" such as : http://amsul.ca/pickadate.js/date/
   */
   public static function convertWPtoJSDate($dateFormat)
   {
@@ -27,17 +35,19 @@ class PickadateHelper{
     return $dateFormat;
   }
 
-
-
+  /**
+  * Get the translations of a Pickadate component according to the selected WordPress current language.
+  * @return a string including all translations to be included in a js.
+  */
   public static function getPickadateCultureCode(){
     return file_get_contents(SAGENDA_PLUGIN_DIR."assets/vendor/pickadate/lib/translations/".self::convertWPtoPickadateCultureCode(get_bloginfo('language')).".js");
   }
 
-  /*
-  @var $wpCultureCode - input from WordPress as culture short format (WP Locale) : https://make.wordpress.org/polyglots/teams/
-  return a converted culture format to get the appropriate JS DateTime picker translations  : http://amsul.ca/pickadate.js/date/
-  return -1 if should use the default EN text.
-  no support for : az, azb, bn_BD, ceb, cy, eo, gd, haz, hy, ka_GE, ka_GE, my_MM, oci, sq, sr_RS, ug-CN
+  /**
+  * Convert a WP date format to a friendly Pickadate date format
+  * Missing translations : az, azb, bn_BD, ceb, cy, eo, gd, haz, hy, ka_GE, ka_GE, my_MM, oci, sq, sr_RS, ug-CN
+  * @param  string  $wpCultureCode - input from WordPress as culture short format (WP Locale) : https://make.wordpress.org/polyglots/teams/
+  * @return string  Pickadate compatible culture format according to  : http://amsul.ca/pickadate.js/date/
   */
   public static function convertWPtoPickadateCultureCode($wpCultureCode)
   {
@@ -70,5 +80,4 @@ class PickadateHelper{
 
     return str_replace("-", "_", $wpCultureCode);
   }
-
 }

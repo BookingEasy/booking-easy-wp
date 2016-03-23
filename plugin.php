@@ -16,15 +16,20 @@ define('SAGENDA_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('SAGENDA_PLUGIN_URL', plugins_url('/', __FILE__));
 include_once( SAGENDA_PLUGIN_DIR . 'initializer.php' );
 
-// Shortcode management
+/**
+* Shortcode management
+* @param  string  $atts   a list of parameter allowing more options to the shortcode
+*/
 function sagenda_main( $atts ){
 	$initializer = new Sagenda\Initializer();
 	echo $initializer->initApp();
 }
 add_shortcode( 'sagenda-wp', 'sagenda_main' );
 
-// Head reference injection for WP -> Twitter Bootstrap -> pickadate
-add_action('wp_head','head_code');
+
+/**
+* Include CSS, JavaScript in the head section of the plugin.
+*/
 function head_code(){
 	// Twitter bootstrap
 	$headcode = '<link rel="stylesheet" href="'.SAGENDA_PLUGIN_URL.'assets/vendor/bootstrap/bootstrap-wrapper.css" >';
@@ -45,3 +50,4 @@ function head_code(){
 
 	echo $headcode;
 }
+add_action('wp_head','head_code');

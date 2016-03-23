@@ -8,6 +8,9 @@ include_once( SAGENDA_PLUGIN_DIR . 'Controllers/SubscriptionController.php' );
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
+/**
+* This class instanciate most of the needed objects needed to make sagenda's wp plugin run.
+*/
 class initializer {
 
   function initApp()

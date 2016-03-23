@@ -11,12 +11,13 @@ include_once( SAGENDA_PLUGIN_DIR . 'Helpers/PickadateHelper.php' );
 class SearchController {
 
   /**
-  * @var $view - string name of the view to be displayed
+  * @var string - name of the view to be displayed
   */
   private $view = "search.twig" ;
 
   /**
-  * @var $twig - instance of TWIG template renderer
+  * Display the search events form
+  * @param  object  $twig   TWIG template renderer
   */
   public function showSearch($twig)
   {
