@@ -1,10 +1,28 @@
 {% extends "search.twig" %}
+
 {# This view will display result #}
 
 {% block searchResult %}
-<p>{{ clickAnEventToBookIt }}</p>
-<p>It's working!</p>
+<br/>
+<div class="form-group">
+  <label for="description">{{ clickAnEventToBookIt }}</label>
+</div>
 {# TODO:Display message if no booking is found #}
+<div class="alert alert-warning" role="alert">{{ warningNoBookingFound }}</div>
+
 {# TODO:Booking list #}
-{# TODO:pagination #}
+<ul class="list-group">
+  <li class="list-group-item"><span class="badge">book-it!</span>01/01/2016 7am-8am</li>
+  <li class="list-group-item"><span class="badge">book-it!</span>01/01/2016 8am-9am</li>
+  <li class="list-group-item"><span class="badge">book-it!</span>01/01/2016 9am-10am</li>
+  <li class="list-group-item"><span class="badge">book-it!</span>01/01/2016 10am-11am</li>
+  <li class="list-group-item"><span class="badge">book-it!</span>01/01/2016 11am-12am</li>
+</ul>
+{# TODO: implement pagination #}
+<nav>
+  <ul class="pager">
+    <li><a href="#">Previous</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+</nav>
 {% endblock %}
