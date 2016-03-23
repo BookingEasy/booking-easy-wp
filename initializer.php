@@ -13,6 +13,10 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 */
 class initializer {
 
+  /**
+  * Responsible to initialize the correct view
+  * @return the view according to TWIG rendering
+  */
   function initApp()
   {
     $twig = self::initTwig();
@@ -23,6 +27,10 @@ class initializer {
     //return $searchController->showSearch($twig);
   }
 
+  /**
+  * Responsible to initialize the TWIG instance (template rendering)
+  * @return an instanciate TWIG object
+  */
   private static function initTwig()
   {
     include_once(SAGENDA_PLUGIN_DIR.'/assets/vendor/twig/lib/Twig/Autoloader.php');

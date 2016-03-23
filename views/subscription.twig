@@ -1,8 +1,57 @@
 {% extends "wrapper.twig" %}
 {% block content %}
 
-  <h2>{{ title }}</h2>
-  <p>{{ content }}</p>
-  <p>This is the sagenda's subscription form.</p>
+  <h2>{{ subscription }}</h2>
+  <!-- TITLE / first name / last name / phone nb / email / description -->
+  <form>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Your selected booking :</h3>
+      </div>
+      <div class="panel-body">
+        20/01/2016 09:00-10:00
+      </div>
+      <div class="panel-footer">Now, let's book it! Please fill out the form below.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="firstname">{{ title }}</label>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">Mrs.</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">Mr</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">Miss</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">Dr</button>
+      </div>
+    </div>
+    </div>
+    <div class="form-group">
+      <label for="firstname">{{ firstname }}</label>
+      <input type="text" class="form-control" id="firstname" placeholder="{{ firstname }}">
+    </div>
+
+    <div class="form-group">
+      <label for="lastname">{{ lastname }}</label>
+      <input type="text" class="form-control" id="lastname" placeholder="{{ lastname }}">
+    </div>
+
+    <div class="form-group">
+      <label for="email">{{ email }}</label>
+      <input type="email" class="form-control" id="email" placeholder="{{ email }}">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">{{ phone }}</label>
+      <input type="phone" class="form-control" id="phone" placeholder="{{ phone }}">
+    </div>
+
+
 
 {% endblock %}

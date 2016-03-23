@@ -17,8 +17,13 @@ class SubscriptionController
   public function showSubscription($twig)
   {
     echo $twig->render($this->view, array(
-      'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
-      'warningNoBookingFound'         => __('No event found for the bookable item within the selected date range.', 'sagenda-wp'),
+      'subscription'                  => __( 'Subscription', 'sagenda-wp' ),
+      'email'                         => __('Email', 'sagenda-wp'),
+      'firstname'                     => __('First Name', 'sagenda-wp'),
+      'lastname'                      => __('Last Name', 'sagenda-wp'),
+      'title'                         => __('Title', 'sagenda-wp'),
+      'phone'                         => __('Phone Number', 'sagenda-wp'),
+
     ));
   }
 }
