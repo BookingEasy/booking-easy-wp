@@ -22,8 +22,19 @@ class SubscriptionController
       'firstname'                     => __('First Name', 'sagenda-wp'),
       'lastname'                      => __('Last Name', 'sagenda-wp'),
       'title'                         => __('Title', 'sagenda-wp'),
-      'phone'                         => __('Phone Number', 'sagenda-wp'),
+      'titleMr'                       => __('Mr.', 'sagenda-wp'),
+      'titleMrs'                      => __('Mrs.', 'sagenda-wp'),
+      'titleMiss'                     => __('Miss', 'sagenda-wp'),
+      'titleDr'                       => __('Dr', 'sagenda-wp'),
 
+
+      'phone'                         => __('Phone Number', 'sagenda-wp'),
+      'description'                   => __('Description', 'sagenda-wp'),
+      'submit'                        => __('Submit', 'sagenda-wp'),
+      'backToCalendar'                => __('Back to Calendar', 'sagenda-wp'),
+
+      'submit'                   => __('Submit', 'sagenda-wp'),
+      'submit'                   => __('Submit', 'sagenda-wp'),
     ));
   }
 }

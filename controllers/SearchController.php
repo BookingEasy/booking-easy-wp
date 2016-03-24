@@ -1,9 +1,10 @@
 <?php namespace Sagenda\Controllers;
 //defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
-
+use Sagenda\webservices\sagendaAPI;
 use Sagenda\Helpers;
 use Sagenda\Helpers\PickadateHelper;
 include_once( SAGENDA_PLUGIN_DIR . 'Helpers/PickadateHelper.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'webservices/sagendaAPI.php' );
 
 /**
 * This controller will be responsible for displaying the free events in frontend in order to be searched and booked by the visitor.
@@ -16,6 +17,20 @@ class SearchController {
   private $view = "search.twig" ;
 
   /**
+  * @var string - user account token
+  */
+  private $token = "" ;
+
+  /**
+  * Constructor
+  * @param  string  $token
+  */
+  function __construct($token)
+  {
+    $this->token = $token;
+  }
+
+  /**
   * Display the search events form
   * @param  object  $twig   TWIG template renderer
   */
@@ -26,6 +41,9 @@ class SearchController {
       $this->view = "searchResult.twig";
       //$this->view = "subscription.twig";
     }
+
+    $sagendaAPI = new sagendaAPI();
+    $bookableItems = $sagendaAPI->getBookableItemList($this->token);
 
     echo $twig->render($this->view, array(
       'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
@@ -43,6 +61,8 @@ class SearchController {
       'pickerTranslated'              => PickadateHelper::getPickadateCultureCode(),
       'help'                          => __( 'Help', 'sagenda-wp' ),
       'warningNoBookingFound'         => __('No event found for the bookable item within the selected date range.', 'sagenda-wp'),
+
+      'bookableItems'  => $bookableItems,
     ));
   }
 }

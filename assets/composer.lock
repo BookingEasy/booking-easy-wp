@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b48ae4bce9ab995b15a7f0772f888882",
-    "content-hash": "11fdc19abccb182bf099da0fb55a2628",
+    "hash": "8ff48371842f95967b7e71be8e1e409e",
+    "content-hash": "5b234a1a8c5134f5b85998c4a81c5567",
     "packages": [
         {
             "name": "twig/extensions",
@@ -61,6 +61,50 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "mashape/unirest-php",
+            "version": "v2.6.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Mashape/unirest-php.git",
+                "reference": "73c2d903232bb5a125396e606b67314a87b8b21c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Mashape/unirest-php/zipball/73c2d903232bb5a125396e606b67314a87b8b21c",
+                "reference": "73c2d903232bb5a125396e606b67314a87b8b21c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "0.1.*",
+                "phpunit/phpunit": "~4.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Unirest": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Unirest PHP",
+            "homepage": "https://github.com/Mashape/unirest-php",
+            "keywords": [
+                "client",
+                "curl",
+                "http",
+                "https",
+                "rest"
+            ],
+            "time": "2016-02-16 16:45:52"
+        },
         {
             "name": "psr/log",
             "version": "1.0.0",
