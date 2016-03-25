@@ -21,9 +21,7 @@ class SagendaAPI
   */
   public function validateAccount($token)
   {
-    $response = Unirest\Request::get($this->apiUrl."ValidateAccount/".$token);
-
-    print_r ( $response);
+    return Unirest\Request::get($this->apiUrl."ValidateAccount/".$token)->body;
   }
 
   /**
@@ -34,5 +32,29 @@ class SagendaAPI
   {
     return Unirest\Request::get($this->apiUrl."Events/GetBookableItemList/".$token)->body;
   }
+
+  /**
+  * Get the bookable items for the given account
+  * @param  string  $token   The token identifing the sagenda's account
+  */
+  public function setBooking($token)
+  {
+    //$post_data = json_encode(array('item' => $post_data), JSON_FORCE_OBJECT);
+
+    return Unirest\Request::post($this->apiUrl."Events/SetBooking",
+    "{\"ApiToken\":\"'.$token.'\",
+      \"BookableItemId\":\"560b6e82ec90a85ec48d99bc\",
+      \"EventScheduleId\":\"56ae391febb599af9ce6fc19\",
+      \"Courtesy\":\"Mr.\",
+      \"FirstName\":\"John\",
+      \"LastName\":\"Smith\",
+      \"PhoneNumber\":\"011021254639696\",
+      \"Email\":\"johnsmith@yopmail.com\",
+      \"Description\":\"This is a test paid event\",
+      \"EventIdentifier\":\"Mi83LzIwMTYgNTowMCBBTTs1NmFlMzkxZmViYjU5OWFmOWNlNmZjMTk==\"
+    }")->body;
+  }
+
+
 
 }

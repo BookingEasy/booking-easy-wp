@@ -2,10 +2,13 @@
 namespace Sagenda;
 use Sagenda\Controllers\SearchController;
 use Sagenda\Controllers\SubscriptionController;
-use Sagenda\webservices\sagendaAPI;
+use Sagenda\webservices\SagendaAPI;
+use Sagenda\Entities\Booking;
 include_once( SAGENDA_PLUGIN_DIR . 'Controllers/SearchController.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'Controllers/SubscriptionController.php' );
-include_once( SAGENDA_PLUGIN_DIR . 'webservices/sagendaAPI.php' );
+//require_once( SAGENDA_PLUGIN_DIR . 'webservices/SagendaAPI.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'models/entities/Booking.php' );
+
 // TODO : did we need include once if we already use namespace?
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
@@ -23,9 +26,24 @@ class initializer {
   {
     $twig = self::initTwig();
 
-    $token = 'c8c49993b8814a99bb494a3f2420d277';
+
+    $booking = new Booking();
+    $booking->ApiToken = "1";
+    $booking->BookableItemId = "2";
+    $booking->EventScheduleId = "3";
+    $booking->Courtesy = "4";
+    $booking->FirstName = "5";
+    $booking->LastName = "6";
+    $booking->PhoneNumber = "7";
+    $booking->Email = "8";
+    $booking->Description = "9";
+    $booking->EventIdentifier = "10";
+
+    echo $booking->toJson();
+
+
     //$sagendaAPI = new sagendaAPI();
-    //$sagendaAPI->validateAccount(c8c49993b8814a99bb494a3f2420d277);
+    //$sagendaAPI->validateAccount($token);
     //$sagendaAPI->getBookableItemList();
 
 
