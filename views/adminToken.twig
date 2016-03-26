@@ -1,0 +1,28 @@
+{% extends "adminWrapper.twig" %}
+{% block content %}
+
+<h2>{{sagendaAuthenticationSettings}} <span class="label label-danger">{{ NotConnected }}</span></h2>
+
+
+<div class="form-group">
+  <label for="sagendaAuthenticationCode">{{ sagendaAuthenticationCode }}</label>
+  <input type="text" class="form-control" placeholder="{{ sagendaAuthenticationCode }}" >
+</div>
+
+<label >Some help :</label>
+
+<div class="row">
+  <div class="col-xs-6 text-left"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> See video about WP plugin installation</button></div>
+  <div class="col-xs-6 text-right"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon glyphicon-new-window" aria-hidden="true"></span>  {{ ClickHereToGetYourAuthenticationCode }}</button></div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6 text-left"><button type="button" class="btn btn-success btn-lg">{{ saveChanges }}</button></div>
+</div>
+<div class="row">
+  <div class="col-xs-12 text-right"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>coded<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> with <span class="glyphicon glyphicon glyphicon-heart" aria-hidden="true"></span> for you!</div>
+</div>
+
+
+
+{% endblock %}

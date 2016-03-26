@@ -22,7 +22,7 @@ include_once( SAGENDA_PLUGIN_DIR . 'initializer.php' );
 */
 function sagenda_main( $atts ){
 	$initializer = new Sagenda\Initializer();
-	echo $initializer->initApp();
+	echo $initializer->initFrontend();
 }
 add_shortcode( 'sagenda-wp', 'sagenda_main' );
 
@@ -50,4 +50,25 @@ function head_code(){
 
 	echo $headcode;
 }
+
+/**
+* Add it in the frontend
+*/
 add_action('wp_head','head_code');
+
+/**
+* Add it in the backend
+*/
+add_action('admin_head', 'head_code');
+
+/**
+* Action hooks for adding admin page
+*/
+function sagenda_admin() {
+	$initializer = new Sagenda\Initializer();
+	echo $initializer->initAdminSettings();
+}
+function sagenda_admin_actions() {
+    add_options_page("Sagenda", "Sagenda", 1, "Sagenda", "sagenda_admin");
+}
+add_action('admin_menu', 'sagenda_admin_actions');

@@ -2,12 +2,14 @@
 namespace Sagenda;
 use Sagenda\Controllers\SearchController;
 use Sagenda\Controllers\SubscriptionController;
+use Sagenda\Controllers\AdminTokenController;
 use Sagenda\webservices\SagendaAPI;
 use Sagenda\Entities\Booking;
 include_once( SAGENDA_PLUGIN_DIR . 'Controllers/SearchController.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'Controllers/SubscriptionController.php' );
 //require_once( SAGENDA_PLUGIN_DIR . 'webservices/SagendaAPI.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'models/entities/Booking.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'controllers/AdminTokenController.php' );
 
 // TODO : did we need include once if we already use namespace?
 
@@ -19,10 +21,10 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 class initializer {
 
   /**
-  * Responsible to initialize the correct view
+  * Responsible to initialize the frontend views
   * @return the view according to TWIG rendering
   */
-  function initApp()
+  function initFrontend()
   {
     $twig = self::initTwig();
 
@@ -54,10 +56,20 @@ class initializer {
   }
 
   /**
+  * Responsible to initialize the backend view
+  * @return the view according to TWIG rendering
+  */
+  function initAdminSettings()
+  {
+    $adminTokenController = new AdminTokenController();
+    return $adminTokenController->showAdminTokenSettingsPage(self::initTwig());
+  }
+
+  /**
   * Responsible to initialize the TWIG instance (template rendering)
   * @return an instanciate TWIG object
   */
-  private static function initTwig()
+  public static function initTwig()
   {
     include_once(SAGENDA_PLUGIN_DIR.'/assets/vendor/twig/lib/Twig/Autoloader.php');
     \Twig_Autoloader::register();
