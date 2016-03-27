@@ -42,9 +42,22 @@ class SearchController {
       //$this->view = "subscription.twig";
     }
 
-    $sagendaAPI = new sagendaAPI();
-    $bookableItems = $sagendaAPI->getBookableItemList($this->token);
+    $pickadateDateFormat = "Y/m/d";
+    $fromDate = date($pickadateDateFormat);
+    $toDate = date($pickadateDateFormat, mktime(0, 0, 0, date("m"), date("d")+7,   date("Y")));
 
+    $sagendaAPI = new sagendaAPI();
+    $bookableItems = $sagendaAPI->getBookableItemList(get_option('mrs1_authentication_code'));
+
+    $selectedId = $bookableItems[0]->Id;
+    if(isset($_POST['bookableItems']))
+    {
+      $selectedId = $_POST['bookableItems'];
+    }
+    $locationValue = $bookableItems[$selectedId]->Location;
+    $descriptionValue = $bookableItems[$selectedId]->Description;
+
+    $test = $selectedId ." ". $locationValue;
     echo $twig->render($this->view, array(
       'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
       'fromLabel'                     => __( 'From', 'sagenda-wp' ),
@@ -61,8 +74,12 @@ class SearchController {
       'pickerTranslated'              => PickadateHelper::getPickadateCultureCode(),
       'help'                          => __( 'Help', 'sagenda-wp' ),
       'warningNoBookingFound'         => __('No event found for the bookable item within the selected date range.', 'sagenda-wp'),
-
-      'bookableItems'  => $bookableItems,
+      'fromDate'                      => $fromDate,
+      'toDate'                        => $toDate,
+      'locationValue'                 => $locationValue,
+      'descriptionValue'              => $descriptionValue,
+      'test'  => $test,
+      'bookableItems'                 => $bookableItems,
     ));
   }
 }

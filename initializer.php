@@ -28,8 +28,7 @@ class initializer {
   {
     $twig = self::initTwig();
 
-
-    $booking = new Booking();
+    /*$booking = new Booking();
     $booking->ApiToken = "1";
     $booking->BookableItemId = "2";
     $booking->EventScheduleId = "3";
@@ -41,7 +40,7 @@ class initializer {
     $booking->Description = "9";
     $booking->EventIdentifier = "10";
 
-    echo $booking->toJson();
+    echo $booking->toJson();*/
 
 
     //$sagendaAPI = new sagendaAPI();
