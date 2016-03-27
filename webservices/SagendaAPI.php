@@ -21,7 +21,17 @@ class SagendaAPI
   */
   public function validateAccount($token)
   {
-    return Unirest\Request::get($this->apiUrl."ValidateAccount/".$token)->body;
+    $result = Unirest\Request::get($this->apiUrl."ValidateAccount/".$token)->body;
+
+    $message = __('Successfully connected','sagenda-wp');
+    $didSucceed = true;
+    //TODO : use a better checking error code system than string comparaison
+    if($result->Message == "Error: API Token is invalid")
+    {
+      $message = __('Your token is wrong; please try again or generate another one in Sagenda’s backend.', 'sagenda-wp');
+      $didSucceed = false;
+    }
+    return array('didSucceed' => $didSucceed, 'Message' => $message);
   }
 
   /**
@@ -54,7 +64,5 @@ class SagendaAPI
       \"EventIdentifier\":\"Mi83LzIwMTYgNTowMCBBTTs1NmFlMzkxZmViYjU5OWFmOWNlNmZjMTk==\"
     }")->body;
   }
-
-
 
 }

@@ -1,28 +1,45 @@
 {% extends "adminWrapper.twig" %}
 {% block content %}
 
-<h2>{{sagendaAuthenticationSettings}} <span class="label label-danger">{{ NotConnected }}</span></h2>
+<h2>{{sagendaAuthenticationSettings}} <span class="label label-{{bootstrapAlertType}}">{{ connectedStatus }}</span></h2>
+<br/>
+{% if result.Message|length > 0 %}
+<div class="alert alert-{{bootstrapAlertType}}" role="alert">{{result.Message}}</div>
+{% endif %}
 
+<form name="form" action="" method="post">
+  <div class="form-group">
+    <label for="sagendaAuthenticationCode">{{ sagendaAuthenticationCode }}</label>
+    <input type="text" id="sagendaAuthenticationCode" name="sagendaAuthenticationCode" class="form-control" placeholder="{{ sagendaAuthenticationCode }}" value="{{tokenValue}}">
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-xs-6 text-left"><button type="submit" class="btn btn-success btn-lg">{{ saveChanges }}</button></div>
+  </div>
+</form>
 
-<div class="form-group">
-  <label for="sagendaAuthenticationCode">{{ sagendaAuthenticationCode }}</label>
-  <input type="text" class="form-control" placeholder="{{ sagendaAuthenticationCode }}" >
-</div>
-
-<label >Some help :</label>
+<h3>How to get the token :</h3>
+<p>{{registeringInfo}}</p>
+<br />
+<h3>About integration in your WP WebSite :</h3>
+<p>{{shortCodeInfo}}</p>
+<p>{{shortCodeInfoInPHP}}</p>
+<br />
+<h3>Useful links :</h3>
 
 <div class="row">
-  <div class="col-xs-6 text-left"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> See video about WP plugin installation</button></div>
-  <div class="col-xs-6 text-right"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon glyphicon-new-window" aria-hidden="true"></span>  {{ ClickHereToGetYourAuthenticationCode }}</button></div>
+  <div class="col-xs-6 text-center"><a href="https://www.youtube.com/watch?v=wCEmJg2hWgw" target="_blank"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> See video about WP plugin installation</button></a></div>
+  <div class="col-xs-6 text-center"><a href="http://www.sagenda.com/integrate-booking-system-website/add-booking-plugin-wordpress-website/" target="_blank"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon glyphicon-new-window" aria-hidden="true"></span>  {{ readMore }}</button></a></div>
 </div>
-
+<br />
 <div class="row">
-  <div class="col-xs-6 text-left"><button type="button" class="btn btn-success btn-lg">{{ saveChanges }}</button></div>
+  <div class="col-xs-6 text-center"><a href="http://sagenda.net/Accounts/Register" target="_blank"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon glyphicon-new-window" aria-hidden="true"></span>  {{ createAccount }}</button></a></div>
+  <div class="col-xs-6 text-center"><a href="http://sagenda.net/Accounts/Login" target="_blank"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon glyphicon-new-window" aria-hidden="true"></span>  {{ clickHereToGetYourAuthenticationCode }}</button></a></div>
 </div>
+<br />
+
 <div class="row">
   <div class="col-xs-12 text-right"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>coded<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> with <span class="glyphicon glyphicon glyphicon-heart" aria-hidden="true"></span> for you!</div>
 </div>
-
-
 
 {% endblock %}
