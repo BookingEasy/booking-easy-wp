@@ -12,10 +12,12 @@ class SubscriptionController
 
   /**
   * Display the subscription form
-  * @param  object  $twig   TWIG template renderer
+  * @param  object  $twig       TWIG template renderer
+  * @param  object  $booking    Booking object
   */
-  public function showSubscription($twig)
+  public function showSubscription($twig, $booking)
   {
+
     echo $twig->render($this->view, array(
       'subscription'                  => __( 'Subscription', 'sagenda-wp' ),
       'email'                         => __('Email', 'sagenda-wp'),
@@ -26,7 +28,7 @@ class SubscriptionController
       'titleMrs'                      => __('Mrs.', 'sagenda-wp'),
       'titleMiss'                     => __('Miss', 'sagenda-wp'),
       'titleDr'                       => __('Dr', 'sagenda-wp'),
-
+      'booking'                       => $booking,
 
       'phone'                         => __('Phone Number', 'sagenda-wp'),
       'description'                   => __('Description', 'sagenda-wp'),

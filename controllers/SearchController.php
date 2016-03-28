@@ -3,8 +3,11 @@
 use Sagenda\webservices\sagendaAPI;
 use Sagenda\Helpers;
 use Sagenda\Helpers\PickadateHelper;
+use Sagenda\Models\Entities\Booking;
+use Sagenda\Models\Entities;
 include_once( SAGENDA_PLUGIN_DIR . 'Helpers/PickadateHelper.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'webservices/sagendaAPI.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'models/entities/Booking.php' );
 
 /**
 * This controller will be responsible for displaying the free events in frontend in order to be searched and booked by the visitor.
@@ -27,6 +30,19 @@ class SearchController {
   */
   public function showSearch($twig)
   {
+    if(isset($_GET['EventIdentifier']))
+    {
+      $booking = new Booking();
+      $booking->ApiToken = get_option('mrs1_authentication_code');
+      $booking->EventScheduleId = $_GET['EventIdentifier'];
+      $booking->DateDisplay = $_GET['DateDisplay'];
+      // DateDisplay
+      $subscriptionController = new SubscriptionController();
+      $subscriptionController->showSubscription($twig, $booking);
+      exit;
+    }
+
+
     $isError = false ;
     $isWarrning = false;
 

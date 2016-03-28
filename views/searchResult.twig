@@ -14,7 +14,7 @@
   {# Booking list #}
   <ul class="list-group">
   {% for event in availability %}
-  <li class="list-group-item"><span class="badge">book-it!</span>{{event.DateDisplay}}</li>
+  <a href="?EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}"> <li class="list-group-item"><span class="badge">book-it!</span>{{event.DateDisplay}}</li></a>
   {% endfor %}
   </ul>
 {% endif %}

@@ -1,4 +1,4 @@
-<?php  namespace Sagenda\Entities;
+<?php  namespace Sagenda\Models\Entities;
 
 class Booking
 {
