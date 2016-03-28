@@ -2,25 +2,29 @@
 {% block content %}
 
 <div class="row">
-  <div class="col-xs-9 text-left">
-    <h2>{{ searchForEventsBetween }}</h2>
-  </div>
-  <div class="col-xs-3 text-right">
-    <button class="btn btn-lg btn-default" type="submit" name="submit">
-      <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> {{ help }}
-    </button>
-  </div>
+{% if isError %}
+<div class="alert alert-danger" role="alert">{{errorMessage}}</div>
+{% endif %}
+
+<div class="col-xs-9 text-left">
+  <h2>{{ searchForEventsBetween }}</h2>
+</div>
+<div class="col-xs-3 text-right">
+  <button class="btn btn-lg btn-default" type="submit" name="submit">
+    <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> {{ help }}
+  </button>
+</div>
 </div>
 <p>test = {{ test }}</p>
 <form action="" method="post">
 
   <div class="form-group">
-    <label for="from">{{ fromLabel }}</label>
-    <input id="from" data-value="{{fromDate}}" class="datepickerFrom form-control" name="from" type="text">
+    <label for="fromDate">{{ fromLabel }}</label>
+    <input id="fromDate" data-value="{{fromDate}}" class="datepickerFrom form-control" name="fromDate" type="text" onchange="this.form.submit()">
   </div>
   <div class="form-group">
     <label for="to">{{ toLabel }}</label>
-    <input id="to" data-value="{{toDate}}" class="datepickerTo form-control" name="to" type="text">
+    <input id="to" data-value="{{toDate}}" class="datepickerTo form-control" name="to" type="text" onchange="this.form.submit()">
   </div>
 
   <div class="form-group">
@@ -28,8 +32,8 @@
     <select class="form-control" id="bookableItems" name="bookableItems" onchange="this.form.submit()">
       {% set nb = 0 %}
       {% for item in bookableItems %}
-        <option {% if nb == selectedId %}selected{% endif %} value="{{nb}}">{{item.Name}}</option>
-        {% set nb = nb +1 %}
+      <option {% if nb == selectedId %}selected{% endif %} value="{{nb}}">{{item.Name}}</option>
+      {% set nb = nb +1 %}
       {% endfor %}
     </select>
   </div>

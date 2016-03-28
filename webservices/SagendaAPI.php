@@ -18,11 +18,12 @@ class SagendaAPI
   /**
   * Validate the Sagenda's account with the token in order to check if we get access
   * @param  string  $token   The token identifing the sagenda's account
+  * @return array array('didSucceed' => boolean -> true if ok, 'Message' => string -> the detail message);
   */
   public function validateAccount($token)
   {
     $result = Unirest\Request::get($this->apiUrl."ValidateAccount/".$token)->body;
-
+    //print_r($result);
     $message = __('Successfully connected','sagenda-wp');
     $didSucceed = true;
     //TODO : use a better checking error code system than string comparaison
@@ -35,10 +36,22 @@ class SagendaAPI
   }
 
   /**
+  * Check the result of the webservice call and return an array
+  * @param  object  $response   Reponse from the webservices
+  * @return array array('didSucceed' => boolean -> true if ok, 'Message' => string -> the detail message);
+  */
+  private function checkApiResponse($result)
+  {
+    $result ;
+    //Uncaught exception 'Exception' with message 'Couldn't resolve host 'sagenda.net'' in /Applications/MAMP/htdocs/sagenda-wp/assets/vendor/mashape/unirest-php/src/Unirest/Request.php:475
+    //array('didSucceed' => $didSucceed, 'Message' => $message);
+  }
+
+  /**
   * Get the bookable items for the given account
   * @param  string  $token   The token identifing the sagenda's account
   */
-  public function getBookableItemList($token)
+  public function getBookableItems($token)
   {
     return Unirest\Request::get($this->apiUrl."Events/GetBookableItemList/".$token)->body;
   }
@@ -71,7 +84,6 @@ class SagendaAPI
   */
   public function getAvailability($token, $fromDate, $toDate, $bookableItemId)
   {
-    // TODO : check case [Message] => An error has occurred.
     return Unirest\Request::get($this->apiUrl."Events/GetAvailability/".$token."/".$fromDate."/".$toDate."?bookableItemId=".$bookableItemId)->body;
   }
 }

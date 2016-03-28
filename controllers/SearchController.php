@@ -14,7 +14,12 @@ class SearchController {
   /**
   * @var string - name of the view to be displayed
   */
-  private $view = "search.twig" ;
+  private $view = "searchResult.twig" ;
+
+  /**
+  * @var string - Define the date format requested by Pickadate component to inject value to "data-value" parameter.
+  */
+  private $pickadateDateFormat = "Y/m/d";
 
   /**
   * Display the search events form
@@ -22,18 +27,21 @@ class SearchController {
   */
   public function showSearch($twig)
   {
-    if(true) // TODO : will be triggered by the search action
+    $isError = false ;
+    $isWarrning = false;
+
+    $fromDate = date($this->pickadateDateFormat);
+    if(isset($_POST['fromDate']))
     {
-      $this->view = "searchResult.twig";
-      //$this->view = "subscription.twig";
+      // TODO : find a way to convert or to get the "data-value" and not "value"
+      //$fromDate = \DateTime::createFromFormat('dd mmmm yyyy', $_POST['fromDate']);
+      //$fromDate = $fromDate->format($this->pickadateDateFormat);
     }
 
-    $pickadateDateFormat = "Y/m/d";
-    $fromDate = date($pickadateDateFormat);
-    $toDate = date($pickadateDateFormat, mktime(0, 0, 0, date("m"), date("d")+7,   date("Y")));
+    $toDate = date($this->pickadateDateFormat, mktime(0, 0, 0, date("m"), date("d")+7, date("Y")));
 
     $sagendaAPI = new sagendaAPI();
-    $bookableItems = $sagendaAPI->getBookableItemList(get_option('mrs1_authentication_code'));
+    $bookableItems = $sagendaAPI->getBookableItems(get_option('mrs1_authentication_code'));
 
     $selectedId = 0;
     if(isset($_POST['bookableItems']))
@@ -44,13 +52,14 @@ class SearchController {
     $descriptionValue = $bookableItems[$selectedId]->Description;
     $bookableItemId = $bookableItems[$selectedId]->Id;
 
-    $fromDate = "24 Jan 2016";
-    $toDate = "24 Jan 2017";
+    //->format("d M Y")
+    $fromDateWS = "24 Jan 2016";
+    $toDateWS = "24 Jan 2017";
 
-    $bookableItems = $sagendaAPI->getBookableItemList(get_option('mrs1_authentication_code'));
-    $availability = $sagendaAPI->getAvailability(get_option('mrs1_authentication_code'), $fromDate, $toDate, $bookableItemId);
-    print_r($availability);
-    $test = "SelectedID =".$selectedId ." id :". $bookableItemId." token = ". get_option('mrs1_authentication_code');
+
+    $availability = $sagendaAPI->getAvailability(get_option('mrs1_authentication_code'), $fromDateWS, $toDateWS, $bookableItemId);
+
+    $test = "SelectedID =".$selectedId ." bookableItemId =". $bookableItemId." token =". get_option('mrs1_authentication_code') . "_POSTfromDate =". $_POST['fromDate'];
     echo $twig->render($this->view, array(
       'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
       'fromLabel'                     => __( 'From', 'sagenda-wp' ),
@@ -72,6 +81,11 @@ class SearchController {
       'selectedId'                    => $selectedId,
       'test'  => $test,
       'bookableItems'                 => $bookableItems,
+      'availability'                 => $availability,
+      'isError'                       => $isError,
+      'errorMessage'                  => $errorMessage,
     ));
+
+
   }
 }
