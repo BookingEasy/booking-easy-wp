@@ -17,20 +17,6 @@ class SearchController {
   private $view = "search.twig" ;
 
   /**
-  * @var string - user account token
-  */
-  private $token = "" ;
-
-  /**
-  * Constructor
-  * @param  string  $token
-  */
-  function __construct($token)
-  {
-    $this->token = $token;
-  }
-
-  /**
   * Display the search events form
   * @param  object  $twig   TWIG template renderer
   */
@@ -49,7 +35,7 @@ class SearchController {
     $sagendaAPI = new sagendaAPI();
     $bookableItems = $sagendaAPI->getBookableItemList(get_option('mrs1_authentication_code'));
 
-    $selectedId = $bookableItems[0]->Id;
+    $selectedId = 0;
     if(isset($_POST['bookableItems']))
     {
       $selectedId = $_POST['bookableItems'];
@@ -57,16 +43,14 @@ class SearchController {
     $locationValue = $bookableItems[$selectedId]->Location;
     $descriptionValue = $bookableItems[$selectedId]->Description;
 
-    $test = $selectedId ." ". $locationValue;
+    $test = "SelectedID =".$selectedId ." ". $locationValue;
     echo $twig->render($this->view, array(
       'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
       'fromLabel'                     => __( 'From', 'sagenda-wp' ),
       'toLabel'                       => __( 'To', 'sagenda-wp' ),
       'bookableItemsLabel'            => __( 'Please choose a bookable item', 'sagenda-wp' ),
       'locationLabel'                 => __( 'Location', 'sagenda-wp' ),
-      'locationValue'                 => "This is a value",
       'descriptionLabel'              => __( 'Description', 'sagenda-wp' ),
-      'descriptionValue'              => "This is a value",
       'createAFreeBookingAccount'     => __( 'Create a free Booking Account on Sagenda!', 'sagenda-wp' ),
       'search'                        => __( 'Search', 'sagenda-wp' ),
       'clickAnEventToBookIt'          => __( 'Click an event to book It:', 'sagenda-wp' ),
@@ -78,6 +62,7 @@ class SearchController {
       'toDate'                        => $toDate,
       'locationValue'                 => $locationValue,
       'descriptionValue'              => $descriptionValue,
+      'selectedId'                    => $selectedId,
       'test'  => $test,
       'bookableItems'                 => $bookableItems,
     ));
