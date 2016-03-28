@@ -42,8 +42,15 @@ class SearchController {
     }
     $locationValue = $bookableItems[$selectedId]->Location;
     $descriptionValue = $bookableItems[$selectedId]->Description;
+    $bookableItemId = $bookableItems[$selectedId]->Id;
 
-    $test = "SelectedID =".$selectedId ." ". $locationValue;
+    $fromDate = "24 Jan 2016";
+    $toDate = "24 Jan 2017";
+
+    $bookableItems = $sagendaAPI->getBookableItemList(get_option('mrs1_authentication_code'));
+    $availability = $sagendaAPI->getAvailability(get_option('mrs1_authentication_code'), $fromDate, $toDate, $bookableItemId);
+    print_r($availability);
+    $test = "SelectedID =".$selectedId ." id :". $bookableItemId." token = ". get_option('mrs1_authentication_code');
     echo $twig->render($this->view, array(
       'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
       'fromLabel'                     => __( 'From', 'sagenda-wp' ),

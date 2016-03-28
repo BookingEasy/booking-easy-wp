@@ -65,4 +65,13 @@ class SagendaAPI
     }")->body;
   }
 
+  /**
+  * Get the bookable items for the given account
+  * @param  string  $token   The token identifing the sagenda's account
+  */
+  public function getAvailability($token, $fromDate, $toDate, $bookableItemId)
+  {
+    // TODO : check case [Message] => An error has occurred.
+    return Unirest\Request::get($this->apiUrl."Events/GetAvailability/".$token."/".$fromDate."/".$toDate."?bookableItemId=".$bookableItemId)->body;
+  }
 }
