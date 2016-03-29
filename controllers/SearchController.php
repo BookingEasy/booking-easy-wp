@@ -30,16 +30,32 @@ class SearchController {
   */
   public function showSearch($twig)
   {
+    echo "SearchController";
+
+    $sagendaAPI = new sagendaAPI();
+    $bookableItems = $sagendaAPI->getBookableItems(get_option('mrs1_authentication_code'));
+
+    $selectedId = 0;
+    if(isset($_POST['bookableItems']))
+    {
+      $selectedId = $_POST['bookableItems'];
+    }
+    $locationValue = $bookableItems[$selectedId]->Location;
+    $descriptionValue = $bookableItems[$selectedId]->Description;
+    $bookableItemId = $bookableItems[$selectedId]->Id;
+
     if(isset($_GET['EventIdentifier']))
     {
       $booking = new Booking();
       $booking->ApiToken = get_option('mrs1_authentication_code');
-      $booking->EventScheduleId = $_GET['EventIdentifier'];
+      $booking->EventScheduleId = $_GET['EventScheduleId'];
       $booking->DateDisplay = $_GET['DateDisplay'];
+      $booking->BookableItemId = $bookableItemId;
+      $booking->EventIdentifier = $_GET['EventIdentifier'];
       // DateDisplay
       $subscriptionController = new SubscriptionController();
       $subscriptionController->showSubscription($twig, $booking);
-      exit;
+      return;
     }
 
 
@@ -56,17 +72,6 @@ class SearchController {
 
     $toDate = date($this->pickadateDateFormat, mktime(0, 0, 0, date("m"), date("d")+7, date("Y")));
 
-    $sagendaAPI = new sagendaAPI();
-    $bookableItems = $sagendaAPI->getBookableItems(get_option('mrs1_authentication_code'));
-
-    $selectedId = 0;
-    if(isset($_POST['bookableItems']))
-    {
-      $selectedId = $_POST['bookableItems'];
-    }
-    $locationValue = $bookableItems[$selectedId]->Location;
-    $descriptionValue = $bookableItems[$selectedId]->Description;
-    $bookableItemId = $bookableItems[$selectedId]->Id;
 
     //->format("d M Y")
     $fromDateWS = "24 Jan 2016";
@@ -95,9 +100,9 @@ class SearchController {
       'locationValue'                 => $locationValue,
       'descriptionValue'              => $descriptionValue,
       'selectedId'                    => $selectedId,
-      'test'  => $test,
+      'test'                => $test,
       'bookableItems'                 => $bookableItems,
-      'availability'                 => $availability,
+      'availability'                  => $availability,
       'isError'                       => $isError,
       'errorMessage'                  => $errorMessage,
     ));

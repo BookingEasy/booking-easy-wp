@@ -3,7 +3,7 @@
 
 <h2>{{sagendaAuthenticationSettings}} <span class="label label-{{bootstrapAlertType}}">{{ connectedStatus }}</span></h2>
 <br/>
-{% if result.Message|length > 0 %}
+{% if result.Message is not empty %}
 <div class="alert alert-{{bootstrapAlertType}}" role="alert">{{result.Message}}</div>
 {% endif %}
 

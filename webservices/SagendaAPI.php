@@ -36,18 +36,6 @@ class SagendaAPI
   }
 
   /**
-  * Check the result of the webservice call and return an array
-  * @param  object  $response   Reponse from the webservices
-  * @return array array('didSucceed' => boolean -> true if ok, 'Message' => string -> the detail message);
-  */
-  private function checkApiResponse($result)
-  {
-    $result ;
-    //Uncaught exception 'Exception' with message 'Couldn't resolve host 'sagenda.net'' in /Applications/MAMP/htdocs/sagenda-wp/assets/vendor/mashape/unirest-php/src/Unirest/Request.php:475
-    //array('didSucceed' => $didSucceed, 'Message' => $message);
-  }
-
-  /**
   * Get the bookable items for the given account
   * @param  string  $token   The token identifing the sagenda's account
   */
@@ -60,23 +48,24 @@ class SagendaAPI
   * Get the bookable items for the given account
   * @param  string  $token   The token identifing the sagenda's account
   */
-  public function setBooking($token)
+  public function setBooking($booking)
   {
-    //$post_data = json_encode(array('item' => $post_data), JSON_FORCE_OBJECT);
-
     return Unirest\Request::post($this->apiUrl."Events/SetBooking",
-    "{\"ApiToken\":\"'.$token.'\",
-      \"BookableItemId\":\"560b6e82ec90a85ec48d99bc\",
-      \"EventScheduleId\":\"56ae391febb599af9ce6fc19\",
-      \"Courtesy\":\"Mr.\",
-      \"FirstName\":\"John\",
-      \"LastName\":\"Smith\",
-      \"PhoneNumber\":\"011021254639696\",
-      \"Email\":\"johnsmith@yopmail.com\",
-      \"Description\":\"This is a test paid event\",
-      \"EventIdentifier\":\"Mi83LzIwMTYgNTowMCBBTTs1NmFlMzkxZmViYjU5OWFmOWNlNmZjMTk==\"
-    }")->body;
+    $booking->toJson())->body;
   }
+
+  /*
+  "{\"ApiToken\":\"'.$token.'\",
+    \"BookableItemId\":\"560b6e82ec90a85ec48d99bc\",
+    \"EventScheduleId\":\"56ae391febb599af9ce6fc19\",
+    \"Courtesy\":\"Mr.\",
+    \"FirstName\":\"John\",
+    \"LastName\":\"Smith\",
+    \"PhoneNumber\":\"011021254639696\",
+    \"Email\":\"johnsmith@yopmail.com\",
+    \"Description\":\"This is a test paid event\",
+    \"EventIdentifier\":\"Mi83LzIwMTYgNTowMCBBTTs1NmFlMzkxZmViYjU5OWFmOWNlNmZjMTk==\"
+  }"*/
 
   /**
   * Get the bookable items for the given account

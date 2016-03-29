@@ -14,18 +14,17 @@
   {# Booking list #}
   <ul class="list-group">
   {% for event in availability %}
-  <a href="?EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}"> <li class="list-group-item"><span class="badge">book-it!</span>{{event.DateDisplay}}</li></a>
+  <a href="?EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}&EventScheduleId={{event.EventScheduleId}}"> <li class="list-group-item"><span class="badge">book-it!</span>{{event.DateDisplay}}</li></a>
   {% endfor %}
   </ul>
 {% endif %}
 
-
-
-{# TODO: implement pagination #}
+{# TODO: implement pagination
 <nav>
   <ul class="pager">
     <li><a href="#">Previous</a></li>
     <li><a href="#">Next</a></li>
   </ul>
 </nav>
+#}
 {% endblock %}

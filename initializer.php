@@ -28,28 +28,6 @@ class initializer {
   {
     $twig = self::initTwig();
 
-    /*$booking = new Booking();
-    $booking->ApiToken = "1";
-    $booking->BookableItemId = "2";
-    $booking->EventScheduleId = "3";
-    $booking->Courtesy = "4";
-    $booking->FirstName = "5";
-    $booking->LastName = "6";
-    $booking->PhoneNumber = "7";
-    $booking->Email = "8";
-    $booking->Description = "9";
-    $booking->EventIdentifier = "10";
-
-    echo $booking->toJson();*/
-
-
-    //$sagendaAPI = new sagendaAPI();
-    //$sagendaAPI->validateAccount($token);
-    //$sagendaAPI->getBookableItemList();
-
-
-    //$subscriptionController = new SubscriptionController();
-    //return $subscriptionController->showSubscription($twig);
     $searchController = new SearchController($token);
     return $searchController->showSearch($twig);
   }

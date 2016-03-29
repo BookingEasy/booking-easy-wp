@@ -17,4 +17,21 @@ class Booking
   {
     return json_encode($this);
   }
+
+  public function isReadyForSubmission()
+  {
+    if (!empty($ApiToken)
+    &&  !empty($BookableItemId)
+    &&  !empty($EventScheduleId)
+    &&  !empty($Courtesy)
+    &&  !empty($FirstName)
+    &&  !empty($LastName)
+    &&  !empty($PhoneNumber)
+    &&  !empty($Email)
+    &&  !empty($EventIdentifier))
+    {
+      return true;
+    }
+    return false;
+  }
 }
