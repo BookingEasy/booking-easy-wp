@@ -3,6 +3,7 @@ namespace Sagenda;
 use Sagenda\Controllers\SearchController;
 use Sagenda\Controllers\SubscriptionController;
 use Sagenda\Controllers\AdminTokenController;
+use Sagenda\Controllers\InformationMessageController;
 use Sagenda\webservices\SagendaAPI;
 use Sagenda\Entities\Booking;
 include_once( SAGENDA_PLUGIN_DIR . 'Controllers/SearchController.php' );
@@ -10,6 +11,7 @@ include_once( SAGENDA_PLUGIN_DIR . 'Controllers/SubscriptionController.php' );
 //require_once( SAGENDA_PLUGIN_DIR . 'webservices/SagendaAPI.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'models/entities/Booking.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'controllers/AdminTokenController.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'controllers/InformationMessageController.php' );
 
 // TODO : did we need include once if we already use namespace?
 
@@ -28,10 +30,30 @@ class initializer {
   {
     $twig = self::initTwig();
 
-    $searchController = new SearchController($token);
-    return $searchController->showSearch($twig);
+    //switch ($this->currentController) {
+    //  case 'search':
+        $searchController = new SearchController($token);
+        $this->booking = $searchController->showSearch($twig);
+        $this->currentController = "subscription";
+    //    break;
+
+    //  case 'subscription':
+        $subscriptionController = new SubscriptionController();
+        $this->booking = $subscriptionController->showSubscription($twig, $this->booking);
+        $this->currentController = "information";
+
+    //  case 'information':
+        $informationMessageController = new InformationMessageController();
+        $informationMessageController->showSubscription($twig, $this->booking);
+
+    /*  default:
+        # code...
+        break;
+    }*/
   }
 
+  private $currentController = "search" ;
+  private $booking ;
   /**
   * Responsible to initialize the backend view
   * @return the view according to TWIG rendering

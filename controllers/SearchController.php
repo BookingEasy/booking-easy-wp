@@ -30,8 +30,6 @@ class SearchController {
   */
   public function showSearch($twig)
   {
-    echo "SearchController";
-
     $sagendaAPI = new sagendaAPI();
     $bookableItems = $sagendaAPI->getBookableItems(get_option('mrs1_authentication_code'));
 
@@ -53,11 +51,10 @@ class SearchController {
       $booking->BookableItemId = $bookableItemId;
       $booking->EventIdentifier = $_GET['EventIdentifier'];
       // DateDisplay
-      $subscriptionController = new SubscriptionController();
-      $subscriptionController->showSubscription($twig, $booking);
-      return;
+      //$subscriptionController = new SubscriptionController();
+      //$subscriptionController->showSubscription($twig, $booking);
+      return $booking;
     }
-
 
     $isError = false ;
     $isWarrning = false;

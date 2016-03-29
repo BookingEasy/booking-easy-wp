@@ -25,11 +25,10 @@ class SubscriptionController
 
     if($this->setBookingWithSubmissionCheck($booking))
     {
-      $informationMessageController = new InformationMessageController();
-      $informationMessageController->showSubscription($twig, $booking);
-      exit;
+      return $booking;
     }
-    else{
+    else
+    {
       $warning = __('Please fill out all the required fields','sagenda-wp');
     }
 
@@ -75,9 +74,10 @@ class SubscriptionController
   */
   private function fillBookingWithFormValues($booking)
   {
+    //echo "firstname=".$_POST['firstname'];
+
     if(isset($_POST['firstname']))
     {
-      //print_r($booking);
       $booking->FirstName = $_POST['firstname'];
     }
 
@@ -103,7 +103,7 @@ class SubscriptionController
 
     if(isset($_POST['phone']))
     {
-      $booking->$PhoneNumber = $_POST['phone'];
+      $booking->PhoneNumber = $_POST['phone'];
     }
 
     return $booking ;
@@ -118,5 +118,4 @@ class SubscriptionController
     $sagendaAPI = new sagendaAPI();
     return $sagendaAPI->setBooking($booking);
   }
-
 }
