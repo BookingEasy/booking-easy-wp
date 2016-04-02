@@ -62,7 +62,9 @@ class SubscriptionController
   {
     if($booking->isReadyForSubmission())
     {
-      $this->setBooking($booking);
+      echo "booking object =".$booking->toJson();
+      $result = $this->setBooking($booking);
+      print_r($result) ;
       return true;
     }
     return false;

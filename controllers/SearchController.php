@@ -47,12 +47,8 @@ class SearchController {
       $booking = new Booking();
       $booking->ApiToken = get_option('mrs1_authentication_code');
       $booking->EventScheduleId = $_GET['EventScheduleId'];
-      $booking->DateDisplay = $_GET['DateDisplay'];
       $booking->BookableItemId = $bookableItemId;
       $booking->EventIdentifier = $_GET['EventIdentifier'];
-      // DateDisplay
-      //$subscriptionController = new SubscriptionController();
-      //$subscriptionController->showSubscription($twig, $booking);
       return $booking;
     }
 

@@ -3,6 +3,7 @@
 class Booking
 {
   public $ApiToken = "";
+  public $EventIdentifier = "";
   public $BookableItemId = "";
   public $EventScheduleId = "";
   public $Courtesy = "";
@@ -11,7 +12,6 @@ class Booking
   public $PhoneNumber = "";
   public $Email = "";
   public $Description = "";
-  public $EventIdentifier = "";
 
   public function toJson()
   {

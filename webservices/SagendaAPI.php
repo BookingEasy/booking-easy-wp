@@ -50,22 +50,25 @@ class SagendaAPI
   */
   public function setBooking($booking)
   {
-    return Unirest\Request::post($this->apiUrl."Events/SetBooking",
-    $booking->toJson())->body;
-  }
+    $didSucceed = true;
+    //$result = Unirest\Request::post($this->apiUrl."Events/SetBooking", $booking->toJson());
+    //echo "ws result=";print_r($result);
 
-  /*
-  "{\"ApiToken\":\"'.$token.'\",
-    \"BookableItemId\":\"560b6e82ec90a85ec48d99bc\",
-    \"EventScheduleId\":\"56ae391febb599af9ce6fc19\",
-    \"Courtesy\":\"Mr.\",
-    \"FirstName\":\"John\",
-    \"LastName\":\"Smith\",
-    \"PhoneNumber\":\"011021254639696\",
-    \"Email\":\"johnsmith@yopmail.com\",
-    \"Description\":\"This is a test paid event\",
-    \"EventIdentifier\":\"Mi83LzIwMTYgNTowMCBBTTs1NmFlMzkxZmViYjU5OWFmOWNlNmZjMTk==\"
-  }"*/
+    $result = Unirest\Request::post("https://sagenda-sagenda-v1.p.mashape.com/Events/SetBooking",
+      array(
+        "X-Mashape-Key" => "1qj2G3vQg5mshgOPxMAFsmrfleIap1lPGN8jsn8v0qG4AIuFJa",
+        "Content-Type" => "application/json",
+        "Accept" => "application/json"
+      ),
+      $booking->toJson());
+
+    if($result->Message == "An error has occurred.")
+    {
+      $message = __("An error has occurred. Booking wasn't saved.", 'sagenda-wp');
+      $didSucceed = false;
+    }
+    return array('didSucceed' => $didSucceed, 'Message' => $message);
+  }
 
   /**
   * Get the bookable items for the given account

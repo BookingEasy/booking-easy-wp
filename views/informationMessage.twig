@@ -1,9 +1,9 @@
 {% extends "wrapper.twig" %}
-
+{% block informationMessage %}
 {% if message is not empty %}
   <div class="alert alert-{{bootstrapAlertType}}" role="alert">{{message}}</div>
 {% endif %}
 <div class="row">
   <div class="col-xs-6 text-left"><a href="?"><button type="button" class="btn btn-warning">{{ backToCalendar }}</button></a></div>
 </div>
-{% endblock %}
+{% endblock  %}

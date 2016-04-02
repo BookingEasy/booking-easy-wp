@@ -34,13 +34,13 @@ class initializer {
     //  case 'search':
         $searchController = new SearchController($token);
         $this->booking = $searchController->showSearch($twig);
-        $this->currentController = "subscription";
+        //$this->currentController = "subscription";
     //    break;
 
     //  case 'subscription':
         $subscriptionController = new SubscriptionController();
         $this->booking = $subscriptionController->showSubscription($twig, $this->booking);
-        $this->currentController = "information";
+        //$this->currentController = "information";
 
     //  case 'information':
         $informationMessageController = new InformationMessageController();
@@ -52,7 +52,7 @@ class initializer {
     }*/
   }
 
-  private $currentController = "search" ;
+  //private $currentController = "search" ;
   private $booking ;
   /**
   * Responsible to initialize the backend view
