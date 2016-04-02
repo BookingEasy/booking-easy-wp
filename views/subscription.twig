@@ -16,49 +16,42 @@
   </div>
 
   {% if warning is not empty  %}
-    <div class="alert alert-warning" role="alert">{{ warning }}</div>
+  <div class="alert alert-warning" role="alert">{{ warning }}</div>
   {% endif  %}
 
   <div class="form-group">
-    <label for="firstname">{{ title }}</label>
-    <div class="btn-group btn-group-justified" role="group" aria-label="...">
-      <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default" id="courtesy" name="courtesy">{{ titleMrs }}</button>
-      </div>
-      <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default" id="courtesy" name="courtesy">{{ titleMr }}</button>
-      </div>
-      <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default" id="courtesy" name="courtesy">{{ titleMiss }}</button>
-      </div>
-      <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default" id="courtesy" name="courtesy">{{ titleDr }}</button>
-      </div>
-    </div>
+    <label for="courtesy">{{ title }}</label>
+    <select name="courtesy" class="form-control">
+      <option value="{{titleMrs}}">{{titleMrs}}</option>
+      <option value="{{titleMr}}">{{titleMr}}</option>
+      <option value="{{titleMiss}}">{{titleMiss}}</option>
+      <option value="{{titleDr}}">{{titleDr}}</option>
+    </select>
   </div>
+
   <div class="form-group">
     <label for="firstname">{{ firstname }}</label>
-    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="{{ firstname }}">
+    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="{{ firstname }}" value="{{booking.FirstName}}">
   </div>
 
   <div class="form-group">
     <label for="lastname">{{ lastname }}</label>
-    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="{{ lastname }}">
+    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="{{ lastname }}" value="{{booking.LastName}}">
   </div>
 
   <div class="form-group">
     <label for="email">{{ email }}</label>
-    <input type="email" class="form-control" id="email" name="email" placeholder="{{ email }}">
+    <input type="email" class="form-control" id="email" name="email" placeholder="{{ email }}" value="{{booking.Email}}">
   </div>
 
   <div class="form-group">
     <label for="phone">{{ phone }}</label>
-    <input type="phone" class="form-control" id="phone" name="phone" placeholder="{{ phone }}">
+    <input type="phone" class="form-control" id="phone" name="phone" placeholder="{{ phone }}" value="{{booking.PhoneNumber}}">
   </div>
 
   <div class="form-group">
     <label for="description">{{ description }}</label>
-    <textarea class="form-control" rows="3" id="description" name="description" placeholder="{{ description }}"></textarea>
+    <textarea class="form-control" rows="3" id="description" name="description" placeholder="{{ description }}">{{booking.Description}}</textarea>
   </div>
 
   <div class="row">

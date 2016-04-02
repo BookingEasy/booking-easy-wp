@@ -74,8 +74,6 @@ class SubscriptionController
   */
   private function fillBookingWithFormValues($booking)
   {
-    //echo "firstname=".$_POST['firstname'];
-
     if(isset($_POST['firstname']))
     {
       $booking->FirstName = $_POST['firstname'];

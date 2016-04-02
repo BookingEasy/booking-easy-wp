@@ -20,15 +20,15 @@ class Booking
 
   public function isReadyForSubmission()
   {
-    if (!empty($ApiToken)
-    &&  !empty($BookableItemId)
-    &&  !empty($EventScheduleId)
-    &&  !empty($Courtesy)
-    &&  !empty($FirstName)
-    &&  !empty($LastName)
-    &&  !empty($PhoneNumber)
-    &&  !empty($Email)
-    &&  !empty($EventIdentifier))
+    if (!empty($this->ApiToken)
+    &&  !empty($this->BookableItemId)
+    &&  !empty($this->EventScheduleId)
+    &&  !empty($this->Courtesy)
+    &&  !empty($this->FirstName)
+    &&  !empty($this->LastName)
+    &&  !empty($this->PhoneNumber)
+    &&  !empty($this->Email)
+    &&  !empty($this->EventIdentifier))
     {
       return true;
     }
