@@ -17,7 +17,6 @@ class InformationMessageController
   */
   public function showMessage($twig, $booking)
   {
-    echo "showMessage";
     echo $twig->render($this->view, array(
       'booking'                       => $booking,
       'backToCalendar'                => __('Back to Calendar', 'sagenda-wp'),

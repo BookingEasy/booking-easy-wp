@@ -21,33 +21,34 @@ class SubscriptionController
   public function showSubscription($twig, $booking)
   {
     $booking = $this->fillBookingWithFormValues($booking);
-    print_r($booking);
     $result = $this->setBookingWithSubmissionCheck($booking);
-    if($result['didSucceed'])
+    if($result['didSucceed'] == true)
     {
-      return $booking;
+      $informationMessageController = new InformationMessageController();
+      $informationMessageController->showMessage($twig, $booking);
     }
+    else {
+      echo $twig->render($this->view, array(
+        'subscription'                  => __( 'Subscription', 'sagenda-wp' ),
+        'email'                         => __('Email', 'sagenda-wp'),
+        'firstname'                     => __('First Name', 'sagenda-wp'),
+        'lastname'                      => __('Last Name', 'sagenda-wp'),
+        'title'                         => __('Title', 'sagenda-wp'),
+        'titleMr'                       => __('Mr.', 'sagenda-wp'),
+        'titleMrs'                      => __('Mrs.', 'sagenda-wp'),
+        'titleMiss'                     => __('Miss', 'sagenda-wp'),
+        'titleDr'                       => __('Dr', 'sagenda-wp'),
+        'booking'                       => $booking,
+        'warning'                       => $result['Message'],
+        'phone'                         => __('Phone Number', 'sagenda-wp'),
+        'description'                   => __('Description', 'sagenda-wp'),
+        'submit'                        => __('Submit', 'sagenda-wp'),
+        'backToCalendar'                => __('Back to Calendar', 'sagenda-wp'),
 
-    echo $twig->render($this->view, array(
-      'subscription'                  => __( 'Subscription', 'sagenda-wp' ),
-      'email'                         => __('Email', 'sagenda-wp'),
-      'firstname'                     => __('First Name', 'sagenda-wp'),
-      'lastname'                      => __('Last Name', 'sagenda-wp'),
-      'title'                         => __('Title', 'sagenda-wp'),
-      'titleMr'                       => __('Mr.', 'sagenda-wp'),
-      'titleMrs'                      => __('Mrs.', 'sagenda-wp'),
-      'titleMiss'                     => __('Miss', 'sagenda-wp'),
-      'titleDr'                       => __('Dr', 'sagenda-wp'),
-      'booking'                       => $booking,
-      'warning'                       => $result['Message'],
-      'phone'                         => __('Phone Number', 'sagenda-wp'),
-      'description'                   => __('Description', 'sagenda-wp'),
-      'submit'                        => __('Submit', 'sagenda-wp'),
-      'backToCalendar'                => __('Back to Calendar', 'sagenda-wp'),
-
-      ''                   => __('', 'sagenda-wp'),
-      ''                   => __('', 'sagenda-wp'),
-    ));
+        ''                   => __('', 'sagenda-wp'),
+        ''                   => __('', 'sagenda-wp'),
+      ));
+    }
   }
 
   /**
@@ -56,17 +57,18 @@ class SubscriptionController
   */
   private function setBookingWithSubmissionCheck($booking)
   {
-    $didSucceed = true;
-    if($booking->isReadyForSubmission())
+    $didSucceed = false;
+    if(isset($booking))
     {
-      //echo "booking object =".$booking->toJson();
-      $result = $this->setBooking($booking);
+      if($booking->isReadyForSubmission())
+      {
+        $result = $this->setBooking($booking);
+        $didSucceed = true;
+      }
+      else {
+        $message = __('Please fill out all the required fields','sagenda-wp');
+      }
     }
-    else {
-      $message = __('Please fill out all the required fields','sagenda-wp');
-      $didSucceed = false;
-    }
-
     return array('didSucceed' => $didSucceed, 'Message' => $message);
   }
 

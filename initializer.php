@@ -1,15 +1,15 @@
-<?php
-namespace Sagenda;
+<?php namespace Sagenda;
+
 use Sagenda\Controllers\SearchController;
 use Sagenda\Controllers\SubscriptionController;
 use Sagenda\Controllers\AdminTokenController;
 use Sagenda\Controllers\InformationMessageController;
-use Sagenda\webservices\SagendaAPI;
-use Sagenda\Entities\Booking;
+//use Sagenda\webservices\SagendaAPI;
+//use Sagenda\models\Entities\Booking;
 include_once( SAGENDA_PLUGIN_DIR . 'Controllers/SearchController.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'Controllers/SubscriptionController.php' );
 //require_once( SAGENDA_PLUGIN_DIR . 'webservices/SagendaAPI.php' );
-include_once( SAGENDA_PLUGIN_DIR . 'models/entities/Booking.php' );
+//include_once( SAGENDA_PLUGIN_DIR . 'models/entities/Booking.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'controllers/AdminTokenController.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'controllers/InformationMessageController.php' );
 
@@ -30,30 +30,10 @@ class initializer {
   {
     $twig = self::initTwig();
 
-    //switch ($this->currentController) {
-    //  case 'search':
-        $searchController = new SearchController($token);
-        $this->booking = $searchController->showSearch($twig);
-        //$this->currentController = "subscription";
-    //    break;
-
-    //  case 'subscription':
-        $subscriptionController = new SubscriptionController();
-        $this->booking = $subscriptionController->showSubscription($twig, $this->booking);
-        //$this->currentController = "information";
-
-    //  case 'information':
-        $informationMessageController = new InformationMessageController();
-        $informationMessageController->showMessage($twig, $this->booking);
-
-    /*  default:
-        # code...
-        break;
-    }*/
+    $searchController = new SearchController($token);
+    $searchController->showSearch($twig);
   }
 
-  //private $currentController = "search" ;
-  private $booking ;
   /**
   * Responsible to initialize the backend view
   * @return the view according to TWIG rendering
@@ -80,8 +60,8 @@ class initializer {
     // TODO : remove debug before production
     $twig = new \Twig_Environment($loader
     , array('debug' => true,)
-    );
-    //$twig->addExtension(new Twig_Extension_Debug());
-    return $twig;
+  );
+  //$twig->addExtension(new Twig_Extension_Debug());
+  return $twig;
   }
 }
