@@ -45,16 +45,21 @@ class SagendaAPI
   }
 
   /**
-  * Get the bookable items for the given account
-  * @param  string  $token   The token identifing the sagenda's account
+  * Set a booking without payment
+  * @param  string    $token          The token identifing the sagenda's account
+  * @param  boolean   $withPayment    True if should manage payment, false if booking should not be paid online.
   */
-  public function setBooking($booking)
+  public function setBooking($booking, $withPayment)
   {
     $didSucceed = true;
-    //$result = Unirest\Request::post($this->apiUrl."Events/SetBooking", $booking->toJson());
-    //echo "ws result=";print_r($result);
+    $wsName = "SetBooking";
 
-    $result = Unirest\Request::post("https://sagenda-sagenda-v1.p.mashape.com/Events/SetBooking",
+    if($withPayment)
+    {
+      $wsName = "SetBookingWithPayment";
+    }
+
+    $result = Unirest\Request::post("https://sagenda-sagenda-v1.p.mashape.com/Events/".$wsName,
       array(
         "X-Mashape-Key" => "1qj2G3vQg5mshgOPxMAFsmrfleIap1lPGN8jsn8v0qG4AIuFJa",
         "Content-Type" => "application/json",

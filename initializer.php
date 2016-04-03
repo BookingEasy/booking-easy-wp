@@ -44,7 +44,7 @@ class initializer {
 
     //  case 'information':
         $informationMessageController = new InformationMessageController();
-        $informationMessageController->showSubscription($twig, $this->booking);
+        $informationMessageController->showMessage($twig, $this->booking);
 
     /*  default:
         # code...

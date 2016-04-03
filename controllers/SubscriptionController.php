@@ -22,14 +22,10 @@ class SubscriptionController
   {
     $booking = $this->fillBookingWithFormValues($booking);
     print_r($booking);
-
-    if($this->setBookingWithSubmissionCheck($booking))
+    $result = $this->setBookingWithSubmissionCheck($booking);
+    if($result['didSucceed'])
     {
       return $booking;
-    }
-    else
-    {
-      $warning = __('Please fill out all the required fields','sagenda-wp');
     }
 
     echo $twig->render($this->view, array(
@@ -43,7 +39,7 @@ class SubscriptionController
       'titleMiss'                     => __('Miss', 'sagenda-wp'),
       'titleDr'                       => __('Dr', 'sagenda-wp'),
       'booking'                       => $booking,
-      'warning'                       => $warning,
+      'warning'                       => $result['Message'],
       'phone'                         => __('Phone Number', 'sagenda-wp'),
       'description'                   => __('Description', 'sagenda-wp'),
       'submit'                        => __('Submit', 'sagenda-wp'),
@@ -60,14 +56,18 @@ class SubscriptionController
   */
   private function setBookingWithSubmissionCheck($booking)
   {
+    $didSucceed = true;
     if($booking->isReadyForSubmission())
     {
-      echo "booking object =".$booking->toJson();
+      //echo "booking object =".$booking->toJson();
       $result = $this->setBooking($booking);
-      print_r($result) ;
-      return true;
     }
-    return false;
+    else {
+      $message = __('Please fill out all the required fields','sagenda-wp');
+      $didSucceed = false;
+    }
+
+    return array('didSucceed' => $didSucceed, 'Message' => $message);
   }
 
   /**
@@ -116,6 +116,6 @@ class SubscriptionController
   private function setBooking($booking)
   {
     $sagendaAPI = new sagendaAPI();
-    return $sagendaAPI->setBooking($booking);
+    return $sagendaAPI->setBooking($booking, false);
   }
 }

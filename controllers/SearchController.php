@@ -47,6 +47,7 @@ class SearchController {
       $booking = new Booking();
       $booking->ApiToken = get_option('mrs1_authentication_code');
       $booking->EventScheduleId = $_GET['EventScheduleId'];
+      $booking->DateDisplay = $_GET['DateDisplay']; // TODO : replace this by start end date 
       $booking->BookableItemId = $bookableItemId;
       $booking->EventIdentifier = $_GET['EventIdentifier'];
       return $booking;
