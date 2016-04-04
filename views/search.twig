@@ -29,7 +29,7 @@
 
   <div class="form-group">
     <label for="bookableItems">{{ bookableItemsLabel }}</label>
-    <select class="form-control" id="bookableItems" name="bookableItems" onchange="">
+    <select class="form-control" id="bookableItems" name="bookableItems" onchange="this.form.submit()">
       {% set nb = 0 %}
       {% for item in bookableItems %}
       <option {% if nb == selectedId %}selected{% endif %} value="{{nb}}">{{item.Name}}</option>

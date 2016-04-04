@@ -54,17 +54,9 @@ class SearchController {
     //TODO : reduce nesting
     if(isset($_GET['EventIdentifier']))
     {
-      $booking = new Booking();
-      $booking->ApiToken = get_option('mrs1_authentication_code');
-      $booking->EventScheduleId = $_GET['EventScheduleId'];
-      $booking->DateDisplay = $_GET['DateDisplay']; // TODO : replace this by start end date
-      $booking->BookableItemId = $bookableItemId;
-      $booking->EventIdentifier = $_GET['EventIdentifier'];
-      $subscriptionController = new SubscriptionController();
-      $subscriptionController->showSubscription($twig, $booking );
+      $this->startSubscription($twig);
     }
     else {
-
       if($this->needPickerTranslation())
       {
         $pickerTranslated = PickadateHelper::getPickadateCultureCode();
@@ -97,6 +89,21 @@ class SearchController {
         'errorMessage'                  => $errorMessage,
       ));
     }
+  }
+
+  /**
+  * Collect booking information and lauch the Subscription view
+  */
+  private function startSubscription($twig)
+  {
+    $booking = new Booking();
+    $booking->ApiToken = get_option('mrs1_authentication_code');
+    $booking->EventScheduleId = $_GET['EventScheduleId'];
+    $booking->DateDisplay = $_GET['DateDisplay']; // TODO : replace this by start end date
+    $booking->BookableItemId = $bookableItemId;
+    $booking->EventIdentifier = $_GET['EventIdentifier'];
+    $subscriptionController = new SubscriptionController();
+    $subscriptionController->showSubscription($twig, $booking );
   }
 
   /**
