@@ -1,5 +1,5 @@
 <?php namespace Sagenda\Controllers;
-//defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 use Sagenda\webservices\sagendaAPI;
 use Sagenda\Helpers;
 use Sagenda\Helpers\PickadateHelper;
@@ -20,10 +20,9 @@ class SearchController {
   private $view = "searchResult.twig" ;
 
   /**
-  * @var string - Define the date format requested by Pickadate component to inject value to "data-value" parameter.
+  * @var string - Define the date format requested by Pickadate component to inject value to "data-value" parameter such as : April 13, 2016
   */
-  //private $pickadateDateFormat = "Y/m/d";
-  private $pickadateDateFormat = "F j, Y"; // Avril 13, 2016
+  private $pickadateDateFormat = "F j, Y";
 
   /**
   * @var string - Define the date format requested by Sagenda API v1
@@ -40,15 +39,18 @@ class SearchController {
     $sagendaAPI = new sagendaAPI();
     $bookableItems = $sagendaAPI->getBookableItems(get_option('mrs1_authentication_code'));
 
+    //TODO : refactor this using a bookableItem Object in another method
     $selectedId = 0;
     if(isset($_POST['bookableItems']))
     {
       $selectedId = $_POST['bookableItems'];
     }
+
     $locationValue = $bookableItems[$selectedId]->Location;
     $descriptionValue = $bookableItems[$selectedId]->Description;
     $bookableItemId = $bookableItems[$selectedId]->Id;
 
+    //TODO : reduce nesting 
     if(isset($_GET['EventIdentifier']))
     {
       $booking = new Booking();
@@ -57,65 +59,85 @@ class SearchController {
       $booking->DateDisplay = $_GET['DateDisplay']; // TODO : replace this by start end date
       $booking->BookableItemId = $bookableItemId;
       $booking->EventIdentifier = $_GET['EventIdentifier'];
-
       $subscriptionController = new SubscriptionController();
       $subscriptionController->showSubscription($twig, $booking );
     }
     else {
-
-      $isError = false ;
-      $isWarrning = false;
-
-      $fromDate = date($this->pickadateDateFormat);
-      $toDate = date($this->pickadateDateFormat, mktime(0, 0, 0, date("m"), date("d")+7, date("Y")));
-
-      if(isset($_POST['toDate']))
-      {
-        $toDateWS = \DateTime::createFromFormat($this->pickadateDateFormat, $_POST['toDate'])->format($this->sagendaAPIv1DateFormat);
-      }
-
-
-      $fromDateWS = "24 Jan 2016";
-
-
-      $availability = $sagendaAPI->getAvailability(get_option('mrs1_authentication_code'), $fromDateWS, $toDateWS, $bookableItemId);
-
 
       if($this->needPickerTranslation())
       {
         $pickerTranslated = PickadateHelper::getPickadateCultureCode();
       }
 
+      $fromDate = $this->getFromDate();
+      $toDate = $this->getToDate();
+
+      echo $twig->render($this->view, array(
+        'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
+        'fromLabel'                     => __( 'From', 'sagenda-wp' ),
+        'toLabel'                       => __( 'To', 'sagenda-wp' ),
+        'bookableItemsLabel'            => __( 'Please choose a bookable item', 'sagenda-wp' ),
+        'locationLabel'                 => __( 'Location', 'sagenda-wp' ),
+        'descriptionLabel'              => __( 'Description', 'sagenda-wp' ),
+        'createAFreeBookingAccount'     => __( 'Create a free Booking Account on Sagenda!', 'sagenda-wp' ),
+        'search'                        => __( 'Search', 'sagenda-wp' ),
+        'clickAnEventToBookIt'          => __( 'Click an event to book It:', 'sagenda-wp' ),
+        'dateFormat'                    => PickadateHelper::getPickadateDateFormat(),
+        'pickerTranslated'              => $pickerTranslated,
+        'help'                          => __( 'Help', 'sagenda-wp' ),
+        'warningNoBookingFound'         => __('No event found for the bookable item within the selected date range.', 'sagenda-wp'),
+        'fromDate'                      => $fromDate,
+        'toDate'                        => $toDate,
+        'locationValue'                 => $locationValue,
+        'descriptionValue'              => $descriptionValue,
+        'selectedId'                    => $selectedId,
+        'bookableItems'                 => $bookableItems,
+        'availability'                  => $sagendaAPI->getAvailability(get_option('mrs1_authentication_code'), $this->convertPickadateToWebserviceDateFormat($fromDate), $this->convertPickadateToWebserviceDateFormat($toDate), $bookableItemId),
+        'errorMessage'                  => $errorMessage,
+      ));
     }
+  }
 
+  /**
+  * Get the "From" Date accoding to POST form sumit and give a default value if no form has been submitted
+  * @return   date  The "From" date
+  */
+  private function getFromDate()
+  {
+    if(isset($_POST['fromDate']))
+    {
+      return $_POST['fromDate'];
+    }
+    else
+    {
+      return date($this->pickadateDateFormat, mktime(0, 0, 0, date("m"), date("d"), date("Y")));
+    }
+  }
 
-    $test = "SelectedID =".$selectedId ." bookableItemId =". $bookableItemId." token =". get_option('mrs1_authentication_code') . "_POSTfromDate =". $_POST['fromDate'];
-    echo $twig->render($this->view, array(
-      'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
-      'fromLabel'                     => __( 'From', 'sagenda-wp' ),
-      'toLabel'                       => __( 'To', 'sagenda-wp' ),
-      'bookableItemsLabel'            => __( 'Please choose a bookable item', 'sagenda-wp' ),
-      'locationLabel'                 => __( 'Location', 'sagenda-wp' ),
-      'descriptionLabel'              => __( 'Description', 'sagenda-wp' ),
-      'createAFreeBookingAccount'     => __( 'Create a free Booking Account on Sagenda!', 'sagenda-wp' ),
-      'search'                        => __( 'Search', 'sagenda-wp' ),
-      'clickAnEventToBookIt'          => __( 'Click an event to book It:', 'sagenda-wp' ),
-      'dateFormat'                    => PickadateHelper::getPickadateDateFormat(),
-      'pickerTranslated'              => $pickerTranslated,
-      'help'                          => __( 'Help', 'sagenda-wp' ),
-      'warningNoBookingFound'         => __('No event found for the bookable item within the selected date range.', 'sagenda-wp'),
-      'fromDate'                      => $fromDate,
-      'toDate'                        => $toDate,
-      'locationValue'                 => $locationValue,
-      'descriptionValue'              => $descriptionValue,
-      'selectedId'                    => $selectedId,
-      'test'                => $test,
-      'bookableItems'                 => $bookableItems,
-      'availability'                  => $availability,
-      'isError'                       => $isError,
-      'errorMessage'                  => $errorMessage,
-    ));
+  /**
+  * Get the "To" Date accoding to POST form sumit and give a default value if no form has been submitted
+  * @return   date  The "To" date
+  */
+  private function getToDate()
+  {
+    if(isset($_POST['toDate']))
+    {
+      return $_POST['toDate'];
+    }
+    else
+    {
+      return date($this->pickadateDateFormat, mktime(0, 0, 0, date("m"), date("d")+7, date("Y")));
+    }
+  }
 
+  /**
+  * Make a pickadate Dateformat ready to be used by Webserivce
+  * @param    date  Pickadate date
+  * @return   date  Formatted date for WS
+  */
+  private function convertPickadateToWebserviceDateFormat($pickadateDate)
+  {
+    return \DateTime::createFromFormat($this->pickadateDateFormat, $pickadateDate)->format($this->sagendaAPIv1DateFormat);
   }
 
   /**
@@ -124,7 +146,6 @@ class SearchController {
   */
   private function needPickerTranslation()
   {
-    //echo "LANGUAGE".strtolower(substr(get_bloginfo('language'), 0, 2));
     if(strlen(get_bloginfo('language'))>=2)
     {
       if(strcmp(strtolower(substr(get_bloginfo('language'), 0, 2)),"en") <> 0)
