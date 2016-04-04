@@ -32,9 +32,10 @@ class SearchController {
 
   /**
   * Display the search events form
+  * @param    Array   The shortcode parameters
   * @param  object  $twig   TWIG template renderer
   */
-  public function showSearch($twig)
+  public function showSearch($twig, $shorcodeParametersArray)
   {
     $sagendaAPI = new sagendaAPI();
     $bookableItems = $sagendaAPI->getBookableItems(get_option('mrs1_authentication_code'));
@@ -50,7 +51,7 @@ class SearchController {
     $descriptionValue = $bookableItems[$selectedId]->Description;
     $bookableItemId = $bookableItems[$selectedId]->Id;
 
-    //TODO : reduce nesting 
+    //TODO : reduce nesting
     if(isset($_GET['EventIdentifier']))
     {
       $booking = new Booking();

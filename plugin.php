@@ -22,7 +22,7 @@ include_once( SAGENDA_PLUGIN_DIR . 'initializer.php' );
 */
 function sagenda_main( $atts ){
 	$initializer = new Sagenda\Initializer();
-	$initializer->initFrontend();
+	$initializer->initFrontend($atts);
 }
 add_shortcode( 'sagenda-wp', 'sagenda_main' );
 

@@ -24,14 +24,15 @@ class initializer {
 
   /**
   * Responsible to initialize the frontend views
-  * @return the view according to TWIG rendering
+  * @param    Array   The shortcode parameters
+  * @return   the view according to TWIG rendering
   */
-  function initFrontend()
+  function initFrontend($shorcodeParametersArray)
   {
     $twig = self::initTwig();
 
-    $searchController = new SearchController($token);
-    $searchController->showSearch($twig);
+    $searchController = new SearchController();
+    $searchController->showSearch($twig, $shorcodeParametersArray);
   }
 
   /**
