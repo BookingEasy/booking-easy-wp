@@ -24,12 +24,12 @@
   </div>
   <div class="form-group">
     <label for="to">{{ toLabel }}</label>
-    <input id="to" data-value="{{toDate}}" class="datepickerTo form-control" name="to" type="text" onchange="this.form.submit()">
+    <input id="toDate" data-value="{{toDate}}" class="datepickerTo form-control" name="toDate" type="text" onchange="this.form.submit()">
   </div>
 
   <div class="form-group">
     <label for="bookableItems">{{ bookableItemsLabel }}</label>
-    <select class="form-control" id="bookableItems" name="bookableItems" onchange="this.form.submit()">
+    <select class="form-control" id="bookableItems" name="bookableItems" onchange="">
       {% set nb = 0 %}
       {% for item in bookableItems %}
       <option {% if nb == selectedId %}selected{% endif %} value="{{nb}}">{{item.Name}}</option>
@@ -76,6 +76,17 @@ var $input = jQuery('.datepickerTo').pickadate({
 })
 var picker = $input.pickadate('picker')
 </script>
+
+
+<!-- <script type="text/javascript">
+function clickToDate(){
+  jQuery(document).ready(function(){
+    var $ = jQuery;
+    window.location.href = "?toDateStandardized=" + $('#to').attr('data-value');
+  });
+  this.form.submit();
+};
+</script>-->
 
 {% block searchResult %}
 
