@@ -15,7 +15,7 @@
   </button>
 </div>
 </div>
-<!-- <p>test = {{ test }}</p> -->
+
 <form action="" method="post">
 
   <div class="form-group">
@@ -27,6 +27,7 @@
     <input id="toDate" data-value="{{toDate}}" class="datepickerTo form-control" name="toDate" type="text" onchange="this.form.submit()">
   </div>
 
+  {% if bookableItemSelectedByShortcode is null  %}
   <div class="form-group">
     <label for="bookableItems">{{ bookableItemsLabel }}</label>
     <select class="form-control" id="bookableItems" name="bookableItems" onchange="this.form.submit()">
@@ -37,15 +38,16 @@
       {% endfor %}
     </select>
   </div>
+{% endif %}
 
-  <div class="form-group">
-    <label for="location">{{ locationLabel }}</label>
-    <input type="text" class="form-control" placeholder="{{locationValue}}" readonly>
-  </div>
-  <div class="form-group">
-    <label for="description">{{ descriptionLabel }}</label>
-    <input type="text" class="form-control" placeholder="{{ descriptionValue }}" readonly>
-  </div>
+<div class="form-group">
+  <label for="location">{{ locationLabel }}</label>
+  <input type="text" class="form-control" placeholder="{{locationValue}}" readonly>
+</div>
+<div class="form-group">
+  <label for="description">{{ descriptionLabel }}</label>
+  <input type="text" class="form-control" placeholder="{{ descriptionValue }}" readonly>
+</div>
 </form>
 
 <div id="container"></div>
@@ -76,17 +78,6 @@ var $input = jQuery('.datepickerTo').pickadate({
 })
 var picker = $input.pickadate('picker')
 </script>
-
-
-<!-- <script type="text/javascript">
-function clickToDate(){
-  jQuery(document).ready(function(){
-    var $ = jQuery;
-    window.location.href = "?toDateStandardized=" + $('#to').attr('data-value');
-  });
-  this.form.submit();
-};
-</script>-->
 
 {% block searchResult %}
 

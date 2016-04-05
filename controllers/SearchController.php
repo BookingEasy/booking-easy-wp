@@ -37,26 +37,43 @@ class SearchController {
   */
   public function showSearch($twig, $shorcodeParametersArray)
   {
+    if(isset($shorcodeParametersArray))
+    {
+      if(!empty($shorcodeParametersArray))
+        {
+          $bookableItemSelectedByShortcode = $shorcodeParametersArray['bookableitem'];
+        }
+    }
+
     $sagendaAPI = new sagendaAPI();
     $bookableItems = $sagendaAPI->getBookableItems(get_option('mrs1_authentication_code'));
 
     //TODO : refactor this using a bookableItem Object in another method
-    $selectedId = 0;
-    if(isset($_POST['bookableItems']))
+
+    if(isset($bookableItemSelectedByShortcode))
     {
-      $selectedId = $_POST['bookableItems'];
+      $selectedId = $this->findBookableItemElementInList($bookableItems, $bookableItemSelectedByShortcode);
     }
+    else {
+      $selectedId = 0;
+      if(isset($_POST['bookableItems']))
+      {
+        $selectedId = $_POST['bookableItems'];
+      }
+    }
+
 
     $locationValue = $bookableItems[$selectedId]->Location;
     $descriptionValue = $bookableItems[$selectedId]->Description;
     $bookableItemId = $bookableItems[$selectedId]->Id;
 
-    //TODO : reduce nesting
-    if(isset($_GET['EventIdentifier']))
+    if($this->isEventClicked())
     {
-      $this->startSubscription($twig);
+      $this->callSubscription($twig, $bookableItemId);
     }
-    else {
+    else
+    {
+      //$this->renderSearch($twig);
       if($this->needPickerTranslation())
       {
         $pickerTranslated = PickadateHelper::getPickadateCultureCode();
@@ -87,14 +104,51 @@ class SearchController {
         'bookableItems'                 => $bookableItems,
         'availability'                  => $sagendaAPI->getAvailability(get_option('mrs1_authentication_code'), $this->convertPickadateToWebserviceDateFormat($fromDate), $this->convertPickadateToWebserviceDateFormat($toDate), $bookableItemId),
         'errorMessage'                  => $errorMessage,
+        'bookableItemSelectedByShortcode'=> $bookableItemSelectedByShortcode,
       ));
     }
   }
 
   /**
-  * Collect booking information and lauch the Subscription view
+  * Find the index of the given bookable items name in list.
+  * @param    Array   A list of bookable items.
+  * @param    String  The bookable item name searched.
+  * @return   0 to n index of the found element, -1 if not found.
   */
-  private function startSubscription($twig)
+  private function findBookableItemElementInList($bookableItems, $name)
+  {
+    $i = 0;
+    foreach ($bookableItems as $value) {
+      if(strtolower($value->Name) == strtolower($name))
+        return $i;
+        $i = $i+1;
+    }
+    return -1;
+  }
+
+  /**
+  * Inform if the user has clicked an event in order to trigger subscription.
+  * @return   boolean true if event is selected, false if event is not selected by the user.
+  */
+  private function isEventClicked()
+  {
+    return isset($_GET['EventIdentifier']);
+  }
+
+  /**
+  * Render the search view with twig
+  * @param  object  $twig   TWIG template renderer
+  */
+  private function renderSearch($twig)
+  {
+
+  }
+
+  /**
+  * Collect booking information and lauch the Subscription view
+  * @param  object  $twig   TWIG template renderer
+  */
+  private function callSubscription($twig, $bookableItemId)
   {
     $booking = new Booking();
     $booking->ApiToken = get_option('mrs1_authentication_code');
