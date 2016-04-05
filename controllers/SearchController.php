@@ -37,13 +37,7 @@ class SearchController {
   */
   public function showSearch($twig, $shorcodeParametersArray)
   {
-    if(isset($shorcodeParametersArray))
-    {
-      if(!empty($shorcodeParametersArray))
-        {
-          $bookableItemSelectedByShortcode = $shorcodeParametersArray['bookableitem'];
-        }
-    }
+    $bookableItemSelectedByShortcode = $this->getBookableItemShortcodeParameter($shorcodeParametersArray);
 
     $sagendaAPI = new sagendaAPI();
     $bookableItems = $sagendaAPI->getBookableItems(get_option('mrs1_authentication_code'));
@@ -61,7 +55,6 @@ class SearchController {
         $selectedId = $_POST['bookableItems'];
       }
     }
-
 
     $locationValue = $bookableItems[$selectedId]->Location;
     $descriptionValue = $bookableItems[$selectedId]->Description;
@@ -110,6 +103,22 @@ class SearchController {
   }
 
   /**
+  * Find the value of BookableItem shortcode parameter
+  * @return   String  The value of bookable item parameter
+  */
+  private function getBookableItemShortcodeParameter($shorcodeParametersArray)
+  {
+    if(isset($shorcodeParametersArray))
+    {
+      if(!empty($shorcodeParametersArray))
+      {
+        return $shorcodeParametersArray['bookableitem'];
+      }
+    }
+    return;
+  }
+
+  /**
   * Find the index of the given bookable items name in list.
   * @param    Array   A list of bookable items.
   * @param    String  The bookable item name searched.
@@ -120,8 +129,8 @@ class SearchController {
     $i = 0;
     foreach ($bookableItems as $value) {
       if(strtolower($value->Name) == strtolower($name))
-        return $i;
-        $i = $i+1;
+      return $i;
+      $i = $i+1;
     }
     return -1;
   }
