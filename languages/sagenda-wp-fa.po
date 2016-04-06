@@ -1,0 +1,33 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: VERSION\n"
+"POT-Creation-Date: 2016-04-06 14:26+0000\n"
+"PO-Revision-Date: 2016-04-06 14:26+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: classes/shortcode.php:169
+msgid "No events found for the bookable item within the selected date range."
+msgstr "موردی در محدوده تاریخ انتخاب شده پیدا نشد."
+
+#: admin/templates/footer.php:4
+msgid "To create a free account : <a href=\"https://sagenda.net/Accounts/Register\">https://sagenda.net/Accounts/Register</a>"
+msgstr "جهت ساخت یک حساب کاربری رایگان کلیک کنید:  <a href=\"https://sagenda.net/Accounts/Register\" target=\"_blank\">https://sagenda.net/Accounts/Register</a>"
+
+#: admin/templates/config.php:9
+msgid "Sagenda for WordPress: Sagenda Settings"
+msgstr "Sagenda برای وردپرس: تنظیمات Sagenda"
+
+#: admin/templates/config.php:20 templates/reservation.php:22
+msgid "You should enable curl service in your PHP/Apache configuration."
+msgstr "شما باید سرویس پیکربندی PHP / آپاچی خود را فعال کنید."
+
+#: admin/templates/config.php:25
+msgid "It looks like Sagenda’s WebServices failed to connect to Internet and is blocked by the server’s firewall. Please contact your hosting provider support service and ask them to unblock Sagenda’s WebServices. You can give them our WP link as reference:"
+msgstr "به نظر می رسد سیستم سرویس دهی وب Sagenda موفق به اتصال به اینترنت نشده و توسط فایروال سرور مسدود شده است. لطفاً با پشتیبانی فنی هاستینگ خود تماس گرفته و با آنها در مورد رفع مسدودی سیستم سرویس وب  Sagenda صحبت کنید. شما می توانید آدرس اینترنتی ما را بعنوان منبع قابل ارجاع، به آنها ارائه نمائید:"
+

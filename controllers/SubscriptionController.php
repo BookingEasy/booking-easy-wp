@@ -1,7 +1,7 @@
 <?php namespace Sagenda\Controllers;
 
 use Sagenda\webservices\sagendaAPI;
-include_once( SAGENDA_PLUGIN_DIR . 'webservices/sagendaAPI.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'webservices/SagendaAPI.php' );
 
 /**
 * This controller will be responsible for displaying the subscription form in frontend in order to register the visitor's booking.
@@ -44,9 +44,6 @@ class SubscriptionController
         'description'                   => __('Description', 'sagenda-wp'),
         'submit'                        => __('Submit', 'sagenda-wp'),
         'backToCalendar'                => __('Back to Calendar', 'sagenda-wp'),
-
-        ''                   => __('', 'sagenda-wp'),
-        ''                   => __('', 'sagenda-wp'),
       ));
     }
   }

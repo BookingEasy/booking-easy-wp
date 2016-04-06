@@ -5,8 +5,8 @@ use Sagenda\Helpers;
 use Sagenda\Helpers\PickadateHelper;
 use Sagenda\Models\Entities\Booking;
 use Sagenda\Models\Entities;
-include_once( SAGENDA_PLUGIN_DIR . 'Helpers/PickadateHelper.php' );
-include_once( SAGENDA_PLUGIN_DIR . 'webservices/sagendaAPI.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'helpers/PickadateHelper.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'webservices/SagendaAPI.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'models/entities/Booking.php' );
 
 /**

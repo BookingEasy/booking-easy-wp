@@ -22,7 +22,6 @@ class InformationMessageController
       'backToCalendar'                => __('Back to Calendar', 'sagenda-wp'),
       'message'                       => __('You successfully subscribed to the event.', 'sagenda-wp'),
       'bootstrapAlertType'            => "success",
-      ''                   => __('', 'sagenda-wp'),
     ));
   }
 }

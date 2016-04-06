@@ -1,7 +1,7 @@
 <?php namespace Sagenda\Controllers;
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 use Sagenda\webservices\sagendaAPI;
-include_once( SAGENDA_PLUGIN_DIR . 'webservices/sagendaAPI.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'webservices/SagendaAPI.php' );
 
 /**
 * This controller will be responsible for displaying the free events in frontend in order to be searched and booked by the visitor.

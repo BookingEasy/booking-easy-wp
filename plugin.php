@@ -1,20 +1,30 @@
 <?php defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 /**
 * @wordpress-plugin
-* Plugin Name:       Sagenda
+* Plugin Name:       sagenda-wp
 * Plugin URI:        http://www.sagenda.com/
 * Description:       Sagenda is a free Online Booking / Scheduling / Reservation System, which gives customers the opportunity to choose the date and the time of an appointment according to your preferences.
-* Version:           1.2.0 - Test rebuild from scratch
+* Version:           1.2.0
 * Author:            sagenda
 * Author URI:        http://www.sagenda.com/
 * License:           GPLv2
 * Domain Path:       /languages
 */
 
-// Plugin path management
+/**
+* Plugin path management - you can re-use those constants in the plugin
+*/
 define('SAGENDA_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('SAGENDA_PLUGIN_URL', plugins_url('/', __FILE__));
 include_once( SAGENDA_PLUGIN_DIR . 'initializer.php' );
+
+/**
+* Load tranlations of the plugin
+*/
+function sagenda_load_textdomain() {
+	load_plugin_textdomain('sagenda-wp', false, dirname(plugin_basename( __FILE__ )).'/languages/' );
+}
+add_action('plugins_loaded', 'sagenda_load_textdomain');
 
 /**
 * Shortcode management
