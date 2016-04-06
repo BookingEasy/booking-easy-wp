@@ -1,13 +1,14 @@
 <?php namespace Sagenda\Controllers;
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 use Sagenda\webservices\sagendaAPI;
-use Sagenda\Helpers;
 use Sagenda\Helpers\PickadateHelper;
+use Sagenda\Helpers\UrlHelper;
 use Sagenda\Models\Entities\Booking;
 use Sagenda\Models\Entities;
 include_once( SAGENDA_PLUGIN_DIR . 'helpers/PickadateHelper.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'webservices/SagendaAPI.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'models/entities/Booking.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'helpers/UrlHelper.php' );
 
 /**
 * This controller will be responsible for displaying the free events in frontend in order to be searched and booked by the visitor.
@@ -88,6 +89,7 @@ class SearchController {
         'dateFormat'                    => PickadateHelper::getPickadateDateFormat(),
         'pickerTranslated'              => $pickerTranslated,
         'help'                          => __( 'Help', 'sagenda-wp' ),
+        'helpURL'                       => UrlHelper::getHelpUrl(get_bloginfo('language')),
         'warningNoBookingFound'         => __('No event found for the bookable item within the selected date range.', 'sagenda-wp'),
         'fromDate'                      => $fromDate,
         'toDate'                        => $toDate,
