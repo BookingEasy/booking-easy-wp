@@ -1,6 +1,9 @@
 <?php namespace Sagenda\Controllers;
 
 use Sagenda\webservices\sagendaAPI;
+use Sagenda\Helpers\UrlHelper;
+
+include_once( SAGENDA_PLUGIN_DIR . 'helpers/UrlHelper.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'webservices/SagendaAPI.php' );
 
 /**
@@ -43,7 +46,9 @@ class SubscriptionController
         'phone'                         => __('Phone Number', 'sagenda-wp'),
         'description'                   => __('Description', 'sagenda-wp'),
         'submit'                        => __('Submit', 'sagenda-wp'),
-        'backToCalendar'                => __('Back to Calendar', 'sagenda-wp'),
+        'back'                          => __('Back', 'sagenda-wp'),
+        'help'                          => __( 'Help', 'sagenda-wp' ),
+        'helpURL'                       => UrlHelper::getHelpUrl(get_bloginfo('language')),
       ));
     }
   }
@@ -115,6 +120,6 @@ class SubscriptionController
   private function setBooking($booking)
   {
     $sagendaAPI = new sagendaAPI();
-    return $sagendaAPI->setBooking($booking, false);
+    return $sagendaAPI->setBooking($booking, $booking->IsPaidEvent);
   }
 }

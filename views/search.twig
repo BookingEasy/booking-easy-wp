@@ -6,14 +6,15 @@
 <div class="alert alert-danger" role="alert">{{errorMessage}}</div>
 {% endif %}
 
-<div class="col-xs-9 text-left">
-  <h2>{{ searchForEventsBetween }}</h2>
-</div>
-<div class="col-xs-3 text-right">
-  <a href="{{helpURL}}" target="_blank" class="btn btn-lg btn-default" type="submit" name="submit">
-    <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> {{ help }}
-  </a>
-</div>
+<div class="row">
+  <div class="col-xs-9 text-left">
+    <h2>{{ searchForEventsBetween }}</h2>
+  </div>
+  <div class="col-xs-3 text-right">
+    <a href="{{helpURL}}" target="_blank" class="btn btn-lg btn-default" type="submit" name="submit">
+      <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> {{ help }}
+    </a>
+  </div>
 </div>
 
 <form action="" method="post">
@@ -23,7 +24,7 @@
     <input id="fromDate" data-value="{{fromDate}}" class="datepickerFrom form-control" name="fromDate" type="text" onchange="this.form.submit()">
   </div>
   <div class="form-group">
-    <label for="to">{{ toLabel }}</label>
+    <label for="toDate">{{ toLabel }}</label>
     <input id="toDate" data-value="{{toDate}}" class="datepickerTo form-control" name="toDate" type="text" onchange="this.form.submit()">
   </div>
 

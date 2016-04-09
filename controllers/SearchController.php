@@ -4,11 +4,13 @@ use Sagenda\webservices\sagendaAPI;
 use Sagenda\Helpers\PickadateHelper;
 use Sagenda\Helpers\UrlHelper;
 use Sagenda\Models\Entities\Booking;
-use Sagenda\Models\Entities;
+use Sagenda\Models\Entities\BookableItem;
+
 include_once( SAGENDA_PLUGIN_DIR . 'helpers/PickadateHelper.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'helpers/UrlHelper.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'webservices/SagendaAPI.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'models/entities/Booking.php' );
-include_once( SAGENDA_PLUGIN_DIR . 'helpers/UrlHelper.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'models/entities/BookableItem.php' );
 
 /**
 * This controller will be responsible for displaying the free events in frontend in order to be searched and booked by the visitor.
@@ -42,32 +44,14 @@ class SearchController {
 
     $sagendaAPI = new sagendaAPI();
     $bookableItems = $sagendaAPI->getBookableItems(get_option('mrs1_authentication_code'));
-
-    //TODO : refactor this using a bookableItem Object in another method
-
-    if(isset($bookableItemSelectedByShortcode))
-    {
-      $selectedId = $this->findBookableItemElementInList($bookableItems, $bookableItemSelectedByShortcode);
-    }
-    else {
-      $selectedId = 0;
-      if(isset($_POST['bookableItems']))
-      {
-        $selectedId = $_POST['bookableItems'];
-      }
-    }
-
-    $locationValue = $bookableItems[$selectedId]->Location;
-    $descriptionValue = $bookableItems[$selectedId]->Description;
-    $bookableItemId = $bookableItems[$selectedId]->Id;
+    $selectedBookableItem = $this->getSelectedBookableItem($bookableItemSelectedByShortcode, $bookableItems);
 
     if($this->isEventClicked())
     {
-      $this->callSubscription($twig, $bookableItemId);
+      $this->callSubscription($twig, $selectedBookableItem->Id);
     }
     else
     {
-      //$this->renderSearch($twig);
       if($this->needPickerTranslation())
       {
         $pickerTranslated = PickadateHelper::getPickadateCultureCode();
@@ -75,6 +59,8 @@ class SearchController {
 
       $fromDate = $this->getFromDate();
       $toDate = $this->getToDate();
+      echo "get to date=";
+      print_r($toDate);
 
       echo $twig->render($this->view, array(
         'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
@@ -93,15 +79,41 @@ class SearchController {
         'warningNoBookingFound'         => __('No event found for the bookable item within the selected date range.', 'sagenda-wp'),
         'fromDate'                      => $fromDate,
         'toDate'                        => $toDate,
-        'locationValue'                 => $locationValue,
-        'descriptionValue'              => $descriptionValue,
-        'selectedId'                    => $selectedId,
+        'locationValue'                 => $selectedBookableItem->Location,
+        'descriptionValue'              => $selectedBookableItem->Description,
+        'selectedId'                    => $selectedBookableItem->Id,
         'bookableItems'                 => $bookableItems,
-        'availability'                  => $sagendaAPI->getAvailability(get_option('mrs1_authentication_code'), $this->convertPickadateToWebserviceDateFormat($fromDate), $this->convertPickadateToWebserviceDateFormat($toDate), $bookableItemId),
+        'availability'                  => $sagendaAPI->getAvailability(get_option('mrs1_authentication_code'), $this->convertPickadateToWebserviceDateFormat($fromDate), $this->convertPickadateToWebserviceDateFormat($toDate), $selectedBookableItem->Id),
         'errorMessage'                  => $errorMessage,
         'bookableItemSelectedByShortcode'=> $bookableItemSelectedByShortcode,
       ));
     }
+  }
+
+  /**
+  * Get the selected bookable item, priority is selected by shortcode (if any), if not then selected by dropdownlist.
+  * @param    String    The name of the bookable item selected by shortcode such as [sagenda-wp bookableitem="name"]
+  * @param    Array     List of bookableitems
+  * @return   Object    The selected bookable item
+  */
+  private function getSelectedBookableItem($bookableItemSelectedByShortcode, $bookableItems)
+  {
+    if(isset($bookableItemSelectedByShortcode))
+    {
+      $selectedId = $this->findBookableItemElementInList($bookableItems, $bookableItemSelectedByShortcode);
+    }
+    else {
+      $selectedId = 0;
+      if(isset($_POST['bookableItems']))
+      {
+        $selectedId = $_POST['bookableItems'];
+      }
+    }
+    $bookableItem = new BookableItem();
+    $bookableItem->Location = $bookableItems[$selectedId]->Location;
+    $bookableItem->Description = $bookableItems[$selectedId]->Description;
+    $bookableItem->Id = $bookableItems[$selectedId]->Id;
+    return $bookableItem;
   }
 
   /**
@@ -147,15 +159,6 @@ class SearchController {
   }
 
   /**
-  * Render the search view with twig
-  * @param  object  $twig   TWIG template renderer
-  */
-  private function renderSearch($twig)
-  {
-
-  }
-
-  /**
   * Collect booking information and lauch the Subscription view
   * @param  object  $twig   TWIG template renderer
   */
@@ -164,9 +167,11 @@ class SearchController {
     $booking = new Booking();
     $booking->ApiToken = get_option('mrs1_authentication_code');
     $booking->EventScheduleId = $_GET['EventScheduleId'];
-    $booking->DateDisplay = $_GET['DateDisplay']; // TODO : replace this by start end date
+    $booking->DateDisplay = $_GET['DateDisplay']; // TODO : replace this by start end date with API v2.0
     $booking->BookableItemId = $bookableItemId;
     $booking->EventIdentifier = $_GET['EventIdentifier'];
+    //$booking->IsPaidEvent =
+    //TODO : add payment info
     $subscriptionController = new SubscriptionController();
     $subscriptionController->showSubscription($twig, $booking );
   }
@@ -177,8 +182,10 @@ class SearchController {
   */
   private function getFromDate()
   {
+    echo "get from date =";
     if(isset($_POST['fromDate']))
     {
+      echo $_POST['fromDate'];
       return $_POST['fromDate'];
     }
     else
@@ -193,12 +200,15 @@ class SearchController {
   */
   private function getToDate()
   {
+    echo "get to date =";
     if(isset($_POST['toDate']))
     {
+      echo $_POST['toDate'];
       return $_POST['toDate'];
     }
     else
     {
+      print_r(date($this->pickadateDateFormat, mktime(0, 0, 0, date("m"), date("d")+7, date("Y"))));
       return date($this->pickadateDateFormat, mktime(0, 0, 0, date("m"), date("d")+7, date("Y")));
     }
   }
@@ -210,6 +220,8 @@ class SearchController {
   */
   private function convertPickadateToWebserviceDateFormat($pickadateDate)
   {
+    echo "convert pickadate=";
+    print_r($pickadateDate);
     return \DateTime::createFromFormat($this->pickadateDateFormat, $pickadateDate)->format($this->sagendaAPIv1DateFormat);
   }
 

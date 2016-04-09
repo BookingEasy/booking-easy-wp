@@ -19,7 +19,7 @@ class InformationMessageController
   {
     echo $twig->render($this->view, array(
       'booking'                       => $booking,
-      'backToCalendar'                => __('Back to Calendar', 'sagenda-wp'),
+      'back'                          => __('Back', 'sagenda-wp'),
       'message'                       => __('You successfully subscribed to the event.', 'sagenda-wp'),
       'bootstrapAlertType'            => "success",
     ));
