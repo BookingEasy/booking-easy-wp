@@ -3,7 +3,7 @@ Contributors: sagenda
 Donate link: http://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, BnB
 Requires at least: 3.0
-Tested up to: 4.5
+Tested up to: 4.5.2
 Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -18,7 +18,7 @@ Sagenda is an online booking software that helps your clients fix appointments a
 
 This is an “Online Booking System” which gives customers the opportunity to choose the date and the time of an appointment according to one's own preferences and the booking can now be done online.
 
-Using this WP plugin is a better way to display your booking on your WP fontend than using an iFrame. Using this Plugin will required a free Sagenda's account. To **create an account** please visit: [https://sagenda.net/Accounts/Register](https://sagenda.net/Accounts/Register)
+Using this WP plugin is a better way to display your booking on your WP frontend than using an iFrame. Using this Plugin will required a free Sagenda's account. To **create an account** please visit: [https://sagenda.net/Accounts/Register](https://sagenda.net/Accounts/Register)
 
 **NOTE: You need to register an account on the Sagenda site and then you will get an authentication code which you will use to validate your Sagenda plugin.**
 
@@ -62,7 +62,7 @@ Follow these steps to install Sagenda:
 1. Download the booking plugin into the **/wp-content/plugins/** folder and activate the plugin.
 2. Create a free account on https://sagenda.net/Accounts/Register (setup your “bookable items” and events).
 3. Copy your token (from the backend of sagenda.net Settings / account settings) to your WordPress installation (backend of wp / Settings / Sagenda).
-4. Use the shortcode [sagenda-wp] in a page or an article.
+4. Use the shortcode [sagenda-wp] in a page or an article or ( you can also display only one "bookable item" : [sagenda-wp bookableitem="my bookable item name"]).
 
 == Screenshots ==
 1. How to identify my Sagenda account in WordPress? Copy the authentication code (token) from your Sagenda account and paste it into your WordPress installation
@@ -74,6 +74,10 @@ Follow these steps to install Sagenda:
 * ADDED : Shortcode management to display only one bookable item, please just use it so : [sagenda-wp bookableitem="my bookable item name"]
 
 == Changelog ==
+
+= 1.1.9 =
+* ADDED : Finnish translations
+* TESTED : Compatibility of the reservation plugin with WordPress 4.5.2
 
 = 1.1.8 =
 * Improved : overall translations updated.
