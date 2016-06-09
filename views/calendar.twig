@@ -8,17 +8,26 @@
 <div id="calendar"></div>
 
 
-    <script type="text/javascript" src="{{SAGENDA_PLUGIN_URL}}assets/vendor/bootstrap-calendar-0.2.5/components/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="{{SAGENDA_PLUGIN_URL}}assets/vendor/underscore/underscore-min.js"></script>
-    <!-- <script type="text/javascript" src="js/language/xx-XX.js"></script> -->
-    <script type="text/javascript" src="{{SAGENDA_PLUGIN_URL}}assets/vendor/bootstrap-calendar-0.2.5/js/calendar.js"></script>
-    <script type="text/javascript">
-        var calendar = $("#calendar").calendar(
-            {
-                tmpl_path: "{{SAGENDA_PLUGIN_URL}}assets/vendor/bootstrap-calendar-0.2.5/tmpls/",
-                events_source: function () { return []; }
-            });
-    </script>
+<script type="text/javascript" src="{{SAGENDA_PLUGIN_URL}}assets/vendor/bootstrap-calendar-0.2.5/components/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="{{SAGENDA_PLUGIN_URL}}assets/vendor/underscore/underscore-min.js"></script>
+<!-- <script type="text/javascript" src="js/language/xx-XX.js"></script> -->
+<script type="text/javascript" src="{{SAGENDA_PLUGIN_URL}}assets/vendor/bootstrap-calendar-0.2.5/js/calendar.js"></script>
+<script type="text/javascript">
+var calendar = $("#calendar").calendar(
+  {
+    tmpl_path: "{{SAGENDA_PLUGIN_URL}}assets/vendor/bootstrap-calendar-0.2.5/tmpls/",
+    events_source: [
+      {
+        "id": 293,
+        "title": "Event 1",
+        "url": "https://www.sagenda.com",
+        "class": "event-important",
+        "start": 1465509499000, // Milliseconds
+        "end": 1465509699000 // Milliseconds
+      },
+    ]
+  });
+  </script>
 
 
 {% endblock %}
