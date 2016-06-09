@@ -2,12 +2,14 @@
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 use Sagenda\webservices\sagendaAPI;
 use Sagenda\Helpers\PickadateHelper;
+use Sagenda\Helpers\ArrayHelper;
 use Sagenda\Helpers\UrlHelper;
 use Sagenda\Models\Entities\Booking;
 use Sagenda\Models\Entities\BookableItem;
 
 include_once( SAGENDA_PLUGIN_DIR . 'helpers/PickadateHelper.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'helpers/UrlHelper.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'helpers/ArrayHelper.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'webservices/SagendaAPI.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'models/entities/Booking.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'models/entities/BookableItem.php' );
@@ -40,7 +42,7 @@ class SearchController {
   */
   public function showSearch($twig, $shorcodeParametersArray)
   {
-    $bookableItemSelectedByShortcode = $this->getBookableItemShortcodeParameter($shorcodeParametersArray);
+    $bookableItemSelectedByShortcode = ArrayHelper::getElementIfSetAndNotEmpty($shorcodeParametersArray, 'bookableitem');
 
     $sagendaAPI = new sagendaAPI();
     $bookableItems = $sagendaAPI->getBookableItems(get_option('mrs1_authentication_code'));
@@ -109,27 +111,12 @@ class SearchController {
         $selectedId = $_POST['bookableItems'];
       }
     }
+
     $bookableItem = new BookableItem();
     $bookableItem->Location = $bookableItems[$selectedId]->Location;
     $bookableItem->Description = $bookableItems[$selectedId]->Description;
     $bookableItem->Id = $bookableItems[$selectedId]->Id;
     return $bookableItem;
-  }
-
-  /**
-  * Find the value of BookableItem shortcode parameter
-  * @return   String  The value of bookable item parameter
-  */
-  private function getBookableItemShortcodeParameter($shorcodeParametersArray)
-  {
-    if(isset($shorcodeParametersArray))
-    {
-      if(!empty($shorcodeParametersArray))
-      {
-        return $shorcodeParametersArray['bookableitem'];
-      }
-    }
-    return;
   }
 
   /**

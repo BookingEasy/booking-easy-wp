@@ -4,14 +4,18 @@ use Sagenda\Controllers\SearchController;
 use Sagenda\Controllers\SubscriptionController;
 use Sagenda\Controllers\AdminTokenController;
 use Sagenda\Controllers\InformationMessageController;
+use Sagenda\Controllers\CalendarController;
+use Sagenda\Helpers\ArrayHelper;
 //use Sagenda\webservices\SagendaAPI;
 //use Sagenda\models\Entities\Booking;
 include_once( SAGENDA_PLUGIN_DIR . 'controllers/SearchController.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'controllers/SubscriptionController.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'controllers/CalendarController.php' );
 //require_once( SAGENDA_PLUGIN_DIR . 'webservices/SagendaAPI.php' );
 //include_once( SAGENDA_PLUGIN_DIR . 'models/entities/Booking.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'controllers/AdminTokenController.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'controllers/InformationMessageController.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'helpers/ArrayHelper.php' );
 
 // TODO : did we need include once if we already use namespace?
 
@@ -31,8 +35,17 @@ class initializer {
   {
     $twig = self::initTwig();
 
-    $searchController = new SearchController();
-    $searchController->showSearch($twig, $shorcodeParametersArray);
+    $shortcode = ArrayHelper::getElementIfSetAndNotEmpty($shorcodeParametersArray, 'view');
+
+    if(strcasecmp($shortcode, "calendar") == 0)
+    {
+      $calendarController = new CalendarController();
+      $calendarController->showCalendar($twig, $shorcodeParametersArray);
+    }
+    else {
+      $searchController = new SearchController();
+      $searchController->showSearch($twig, $shorcodeParametersArray);
+    }
   }
 
   /**
