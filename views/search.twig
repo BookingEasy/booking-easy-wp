@@ -17,15 +17,15 @@
   </div>
 </div>
 
-<form action="" method="post">
+<form action="" method="post" id="submitDateSearch">
 
   <div class="form-group">
     <label for="fromDate">{{ fromLabel }}</label>
-    <input id="fromDate" data-value="{{fromDate}}" class="datepickerFrom form-control" name="fromDate" type="text" onchange="this.form.submit()">
+    <input id="fromDate" data-value="{{fromDate}}" class="datepickerFrom form-control" name="fromDate" type="text" >
   </div>
   <div class="form-group">
     <label for="toDate">{{ toLabel }}</label>
-    <input id="toDate" data-value="{{toDate}}" class="datepickerTo form-control" name="toDate" type="text" onchange="this.form.submit()">
+    <input id="toDate" data-value="{{toDate}}" class="datepickerTo form-control" name="toDate" type="text"  >
   </div>
 
   {% if bookableItemSelectedByShortcode is null  %}
@@ -63,9 +63,10 @@
 <script type="text/javascript">
 var $input = jQuery('.datepickerFrom').pickadate({
   format: '{{dateFormat}}',
+  formatSubmit: 'd m yyyy',
   container: '#container',
   closeOnSelect: true,
-  closeOnClear: false,
+  closeOnClear: false
 })
 var picker = $input.pickadate('picker')
 </script>
@@ -73,12 +74,27 @@ var picker = $input.pickadate('picker')
 <script type="text/javascript">
 var $input = jQuery('.datepickerTo').pickadate({
   format: '{{dateFormat}}',
+  formatSubmit: 'd m yyyy',
   container: '#container',
   closeOnSelect: true,
-  closeOnClear: false,
+  closeOnClear: false
 })
 var picker = $input.pickadate('picker')
 </script>
+
+<script type="text/javascript">
+  jQuery(document).ready(function ($) {
+
+  $("#fromDate").change(function() {
+   $("#submitDateSearch").submit();
+  });
+
+  $("#toDate").change(function() {
+   $("#submitDateSearch").submit();
+  });
+});
+</script>
+
 
 {% block searchResult %}
 

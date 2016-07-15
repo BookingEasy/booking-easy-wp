@@ -33,6 +33,7 @@ class SearchController {
   * @var string - Define the date format requested by Sagenda API v1
   */
   private $sagendaAPIv1DateFormat = "d M Y";
+    private $numaricDateFormat = "d m Y";
 
 
   /**
@@ -61,8 +62,13 @@ class SearchController {
 
       $fromDate = $this->getFromDate();
       $toDate = $this->getToDate();
-      echo "get to date=";
-      print_r($toDate);
+      // echo "get to date=";
+      // print_r($toDate);
+      
+      // echo "<br>------------<br>";
+      // echo "<br>Bookable Item =";
+      // print_r($selectedBookableItem);
+      // echo "<br>------------<br>";
 
       echo $twig->render($this->view, array(
         'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
@@ -100,6 +106,12 @@ class SearchController {
   */
   private function getSelectedBookableItem($bookableItemSelectedByShortcode, $bookableItems)
   {
+    // echo"<br>---<br>";
+    // print_r($_POST['bookableItems']);
+    // echo"<br>---<br>";
+    // print_r($bookableItems);
+    // echo"<br>---================<br>";
+
     if(isset($bookableItemSelectedByShortcode))
     {
       $selectedId = $this->findBookableItemElementInList($bookableItems, $bookableItemSelectedByShortcode);
@@ -169,15 +181,18 @@ class SearchController {
   */
   private function getFromDate()
   {
-    echo "get from date =";
-    if(isset($_POST['fromDate']))
+    //echo "<br>-->>>>>get from date = ";
+    if(isset($_POST['fromDate_submit']))
     {
-      echo $_POST['fromDate'];
-      return $_POST['fromDate'];
+      //echo $_POST['fromDate_submit'];
+      //echo "<br>";
+      return $_POST['fromDate_submit'];
     }
     else
     {
-      return date($this->pickadateDateFormat, mktime(0, 0, 0, date("m"), date("d"), date("Y")));
+      //echo "<br>";
+      //print_r(date($this->numaricDateFormat, mktime(0, 0, 0, date("m"), date("d"), date("Y"))));
+      return date($this->numaricDateFormat, mktime(0, 0, 0, date("m"), date("d"), date("Y")));
     }
   }
 
@@ -187,16 +202,18 @@ class SearchController {
   */
   private function getToDate()
   {
-    echo "get to date =";
-    if(isset($_POST['toDate']))
+    //echo "<br>-->>>>>get to date = ";
+    if(isset($_POST['toDate_submit']))
     {
-      echo $_POST['toDate'];
-      return $_POST['toDate'];
+      //echo $_POST['toDate_submit'];
+      //echo "<br>";
+      return $_POST['toDate_submit'];
     }
     else
     {
-      print_r(date($this->pickadateDateFormat, mktime(0, 0, 0, date("m"), date("d")+7, date("Y"))));
-      return date($this->pickadateDateFormat, mktime(0, 0, 0, date("m"), date("d")+7, date("Y")));
+      //echo "<br>";
+      //print_r(date($this->numaricDateFormat, mktime(0, 0, 0, date("m"), date("d") + 7, date("Y"))));
+      return date($this->numaricDateFormat, mktime(0, 0, 0, date("m"), date("d") + 7, date("Y")));
     }
   }
 
@@ -207,9 +224,21 @@ class SearchController {
   */
   private function convertPickadateToWebserviceDateFormat($pickadateDate)
   {
-    echo "convert pickadate=";
-    print_r($pickadateDate);
-    return \DateTime::createFromFormat($this->pickadateDateFormat, $pickadateDate)->format($this->sagendaAPIv1DateFormat);
+    // echo " <br>======= --->>>>>>>>> convert pickadate=";  
+    // echo"<br>----------------Format--------------------------<br>";
+    // print_r($this->sagendaAPIv1DateFormat);
+    // echo"<br>--pickadateDate---------------------------------<br>";
+    // print_r($pickadateDate);
+    // echo"<br>-pickadateDateFormat----------------------------<br>";
+    // print_r($pickadateDateFormat);
+    // echo"<br>------------------Call date converter-----------<br>";
+     $convDate = $this->GetConvertedDateToEng($pickadateDate);
+    // print_r($convDate);
+    //echo"<br>------------------Call date converter-----------<br>";
+    //print_r(\DateTime::createFromFormat($this->pickadateDateFormat, $pickadateDate)->format($this->sagendaAPIv1DateFormat));
+
+
+    return \DateTime::createFromFormat($this->pickadateDateFormat, $convDate)->format($this->sagendaAPIv1DateFormat);
   }
 
   /**
@@ -226,5 +255,59 @@ class SearchController {
       }
     }
     return false;
+  }
+
+  private function GetConvertedDateToEng($inputDate){
+    print_r($inputDate);
+    $token = explode(" ", $inputDate);
+    print_r($token);
+    
+    $month = "Jan";
+
+    switch ($token[1]) 
+    {
+      case 1:
+          $month = "Jan";
+          break;
+      case 2:
+          $month = "Feb";
+          break;
+      case 3:
+          $month = "Mar";
+          break;
+      case 4:
+          $month = "Apr";
+          break;          
+      case 5:
+          $month = "May";
+          break;
+      case 6:
+          $month = "June";
+          break;
+      case 7:
+          $month = "July";
+          break;
+      case 8:
+          $month = "Aug";
+          break;
+      case 9:
+          $month = "Sept";
+          break;
+      case 10:
+          $month = "Oct";
+          break;
+      case 11:
+          $month = "Nov";
+          break;
+      case 12:
+          $month = "Dec";
+          break;
+      default:
+          $month = "Jan";
+    }
+
+    $dateBuild = $month." ".$token[0].", ".$token[2];
+
+    return $dateBuild;
   }
 }
