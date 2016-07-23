@@ -14,7 +14,7 @@
 </div>
 
 <br />
-<form action="" method="post" data-toggle="validator">
+<form action="" method="post" data-toggle="validator" id="form-subscription-submit">
 
   <div class="panel panel-primary">
     <div class="panel-heading">
@@ -23,6 +23,14 @@
     <div class="panel-body">
       {{booking.DateDisplay}}
     </div>
+
+    {% if booking.IsPaidEvent == "1" %}
+    <div class="panel-footer" style="font-style:italic">
+      Event Name : {{booking.EventTitle}} <br>
+      Payment Amount : {{booking.PaymentAmount}} {{booking.PaymentCurrency}}
+    </div>
+    {% endif  %}
+
     <div class="panel-footer" style="font-style:italic">Now, let's book it! Please fill out the form below.</div>
   </div>
 
@@ -67,7 +75,56 @@
 
   <div class="row">
     <div class="col-xs-6 text-left"><a href="?"><button type="button" class="btn btn-warning btn-lg">{{ back }}</button></a></div>
-    <div class="col-xs-6 text-right"><button type="submit" class="btn btn-success btn-lg">{{ submit }}</button></div>
+    <div class="col-xs-6 text-right"><button type="button" id="submit-subscription-button" class="btn btn-success btn-lg">{{ submit }}</button></div>
   </div>
 </form>
+
+<script type="text/javascript">
+  jQuery(document).ready(function ($) {
+  $("#submit-subscription-button").click(function() {
+    if({{booking.IsPaidEvent}} == "1"){
+      debugger;
+      console.log("paid");
+      $("#form-subscription-submit").submit();   
+      // jQuery.ajax({
+      //     type: 'POST',
+      //     url: 'subscribeForPaidEvent',
+      //     dataType: 'html',
+      //     data: {
+      //       action: 'subscribeForPaidEvent',
+      //       EventIdentifier: '{{booking.EventIdentifier}}'
+
+      //     },
+      //     success: function (data) {
+      //       //$('#subscribe_event').trigger("reset");
+      //       console.log(data);
+      //       obj = JSON.parse(data);
+      //       // $("#booking-form").hide();
+      //       // $("#form-step1").show();
+
+      //       // if (obj.Success == true) {
+      //       //   $(location).attr('href',obj.ReturnUrl);
+      //       // }
+      //       // else{
+      //       //   $(".sagenda_alert-faliure").text(obj.Message);
+      //       //   $(".sagenda_alert-faliure").css("display", "inline-block");
+      //       // }
+      //     },
+      //     error: function (XMLHttpRequest, textStatus, errorThrown) {
+      //       console.log(errorThrown);
+      //     }
+      // });
+    }
+    else{
+
+      console.log("free");
+      $("#form-subscription-submit").submit();
+    }
+    //debugger;
+    var clientPath = window.location.href;
+    console.log(clientPath);
+    return false;
+  });
+});
+</script>
 {% endblock %}

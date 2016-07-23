@@ -12,10 +12,13 @@ class Booking
   public $PhoneNumber = "";
   public $Email = "";
   public $Description = "";
+
   public $IsPaidEvent = "";
   public $PaymentAmount = "0.00";
   public $PaymentNote = "";
   public $PaymentCurrency = "";
+  public $EventTitle = "";
+  public $HostUrlLocation = "";
 
   public function toJson()
   {

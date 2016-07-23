@@ -94,6 +94,7 @@ class SearchController {
         'availability'                  => $sagendaAPI->getAvailability(get_option('mrs1_authentication_code'), $this->convertPickadateToWebserviceDateFormat($fromDate), $this->convertPickadateToWebserviceDateFormat($toDate), $selectedBookableItem->Id),
         'errorMessage'                  => $errorMessage,
         'bookableItemSelectedByShortcode'=> $bookableItemSelectedByShortcode,
+        'currentUrl'                      =>home_url()
       ));
     }
   }
@@ -169,7 +170,13 @@ class SearchController {
     $booking->DateDisplay = $_GET['DateDisplay']; // TODO : replace this by start end date with API v2.0
     $booking->BookableItemId = $bookableItemId;
     $booking->EventIdentifier = $_GET['EventIdentifier'];
-    //$booking->IsPaidEvent =
+    
+    $booking->EventTitle = $_GET['eventTitle'];
+    //payment Related
+    $booking->IsPaidEvent = $_GET['isPadEvent'];
+    $booking->PaymentAmount = $_GET['paymentAmount'];
+    $booking->PaymentCurrency = $_GET['paymentCurrency'];
+    $booking->HostUrlLocation = $_GET['currentUrl'];
     //TODO : add payment info
     $subscriptionController = new SubscriptionController();
     $subscriptionController->showSubscription($twig, $booking );

@@ -13,7 +13,7 @@ class SagendaAPI
   protected $apiUrl = 'http://sagenda.net/api/'; //Live Server
   //protected $apiUrl = 'http://localhost:49815/api/'; //local Server
   //protected $apiUrl = 'https://sagenda-dev.apphb.com/api/'; //staging test for payment Server
-  //protected $apiUrl = 'http://3363a2c1.ngrok.io/api/'; //ngrok test for payment Server
+  //protected $apiUrl = 'http://e35a3822.ngrok.io/api/'; //ngrok test for payment Server
 
   /**
   * Validate the Sagenda's account with the token in order to check if we get access
@@ -41,6 +41,7 @@ class SagendaAPI
   */
   public function getBookableItems($token)
   {
+    //echo $this->apiUrl."<br>";
     return Unirest\Request::get($this->apiUrl."Events/GetBookableItemList/".$token)->body;
   }
 
@@ -54,12 +55,24 @@ class SagendaAPI
     $didSucceed = true;
     $wsName = "SetBooking";
 
-    if($withPayment)
+    // echo "this is booking part <br>";
+    // print_r($booking);
+    // echo "<br>";
+    // echo"<br>--is paid event-------<br>";
+    // print_r($booking->IsPaidEvent);
+    // echo"<br>---------------------<br>";
+
+    if($withPayment == "1")
     {
       $wsName = "SetBookingWithPayment";
     }
+    // echo "<br>";
+    // echo"<br>--is paid event -- withPayment-------<br>";
+    // print_r($withPayment);
+    // echo"<br>---------------------<br>";
 
-    $result = Unirest\Request::post("https://sagenda-sagenda-v1.p.mashape.com/Events/".$wsName,
+      //$result = Unirest\Request::post($this->apiUrl."Events/".$wsName,
+      $result = Unirest\Request::post("https://sagenda-sagenda-v1.p.mashape.com/Events/".$wsName,
       array(
         "X-Mashape-Key" => "1qj2G3vQg5mshgOPxMAFsmrfleIap1lPGN8jsn8v0qG4AIuFJa",
         "Content-Type" => "application/json",
@@ -72,7 +85,29 @@ class SagendaAPI
       $message = __("An error has occurred. Booking wasn't saved.", 'sagenda-wp');
       $didSucceed = false;
     }
-    return array('didSucceed' => $didSucceed, 'Message' => $message);
+
+    $apiOutput = json_decode($result->raw_body);
+
+
+    // echo "<br>";
+    // echo"<br>--withPayment output result-------<br>";
+    // print_r($result);
+    // echo"<br>---Redirect------------------<br>";
+    // print_r($apiOutput->ReturnUrl);
+    // echo"<br>-----------------------------<br>";
+    
+    if($apiOutput->ReturnUrl != ""){
+      //header('Location: ' .$apiOutput->ReturnUrl, true, 301);
+     // die();
+
+      //redirect($apiOutput->ReturnUrl);
+      // wp_redirect( $apiOutput->ReturnUrl );
+      // exit;
+
+      return array('didSucceed' => $didSucceed, 'Message' => $message, 'ReturnUrl' => $apiOutput->ReturnUrl);
+    }
+
+    return array('didSucceed' => $didSucceed, 'Message' => $message, 'ReturnUrl' => "");
   }
 
   /**
@@ -81,6 +116,15 @@ class SagendaAPI
   */
   public function getAvailability($token, $fromDate, $toDate, $bookableItemId)
   {
+
+    // $availableData = Unirest\Request::get($this->apiUrl."Events/GetAvailability/".$token."/".$fromDate."/".$toDate."?bookableItemId=".$bookableItemId)->body;
+    
+    // echo"<br>------------get availability----------<br>";
+    // print_r($this->apiUrl."Events/GetAvailability/".$token."/".$fromDate."/".$toDate."?bookableItemId=".$bookableItemId);
+    // echo "<br>";
+    // print_r($availableData);
+    // echo"<br>------------END get availability----------<br>";
+
     return Unirest\Request::get($this->apiUrl."Events/GetAvailability/".$token."/".$fromDate."/".$toDate."?bookableItemId=".$bookableItemId)->body;
   }
 }

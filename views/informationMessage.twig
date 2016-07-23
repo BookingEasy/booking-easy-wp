@@ -1,9 +1,14 @@
 {% extends "wrapper.twig" %}
 {% block content %}
-{% if message is not empty %}
-  <div class="alert alert-{{bootstrapAlertType}}" role="alert">{{message}}</div>
-{% endif %}
-<div class="row">
-  <div class="col-xs-6 text-left"><a href="?"><button type="button" class="btn btn-warning">{{ back }}</button></a></div>
-</div>
+	{% if result is not empty %}
+	  <div class="alert alert-{{bootstrapAlertType}}" role="alert">Please pay for your event</div>
+	  <div class="col-xs-6 text-left"><a href="{{result}}"><button type="button" class="btn btn-warning">Pay</button></a></div>
+	{% else %}
+		{% if message is not empty %}
+		  <div class="alert alert-{{bootstrapAlertType}}" role="alert">{{message}}</div>
+		{% endif %}
+		<div class="row">
+		  <div class="col-xs-6 text-left"><a href="?"><button type="button" class="btn btn-warning">{{ back }}</button></a></div>
+		</div>
+	{% endif %}
 {% endblock  %}

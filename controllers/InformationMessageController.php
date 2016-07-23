@@ -15,10 +15,11 @@ class InformationMessageController
   * @param  object  $twig       TWIG template renderer
   * @param  object  $booking    Booking object
   */
-  public function showMessage($twig, $booking)
+  public function showMessage($twig, $booking, $result)
   {
     echo $twig->render($this->view, array(
       'booking'                       => $booking,
+      'result'                       => $result,
       'back'                          => __('Back', 'sagenda-wp'),
       'message'                       => __('You successfully subscribed to the event.', 'sagenda-wp'),
       'bootstrapAlertType'            => "success",

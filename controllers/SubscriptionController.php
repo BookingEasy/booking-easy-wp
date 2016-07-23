@@ -28,7 +28,7 @@ class SubscriptionController
     if($result['didSucceed'] == true)
     {
       $informationMessageController = new InformationMessageController();
-      $informationMessageController->showMessage($twig, $booking);
+      $informationMessageController->showMessage($twig, $booking, $result[ReturnUrl]);
     }
     else {
       echo $twig->render($this->view, array(
@@ -60,18 +60,22 @@ class SubscriptionController
   private function setBookingWithSubmissionCheck($booking)
   {
     $didSucceed = false;
+    $result = "";
+    $redirectUrl = "";
     if(isset($booking))
     {
       if($booking->isReadyForSubmission())
       {
         $result = $this->setBooking($booking);
+        $redirectUrl = $result[ReturnUrl];
+        //print_r($result[ReturnUrl]);
         $didSucceed = true;
       }
       else {
         $message = __('Please fill out all the required fields','sagenda-wp');
       }
     }
-    return array('didSucceed' => $didSucceed, 'Message' => $message);
+    return array('didSucceed' => $didSucceed, 'Message' => $message, 'ReturnUrl'=>$redirectUrl );
   }
 
   /**
