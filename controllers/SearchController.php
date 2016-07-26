@@ -64,7 +64,7 @@ class SearchController {
       $toDate = $this->getToDate();
       // echo "get to date=";
       // print_r($toDate);
-      
+
       // echo "<br>------------<br>";
       // echo "<br>Bookable Item =";
       // print_r($selectedBookableItem);
@@ -170,7 +170,7 @@ class SearchController {
     $booking->DateDisplay = $_GET['DateDisplay']; // TODO : replace this by start end date with API v2.0
     $booking->BookableItemId = $bookableItemId;
     $booking->EventIdentifier = $_GET['EventIdentifier'];
-    
+
     $booking->EventTitle = $_GET['eventTitle'];
     //payment Related
     $booking->IsPaidEvent = $_GET['isPadEvent'];
@@ -231,7 +231,7 @@ class SearchController {
   */
   private function convertPickadateToWebserviceDateFormat($pickadateDate)
   {
-    // echo " <br>======= --->>>>>>>>> convert pickadate=";  
+    // echo " <br>======= --->>>>>>>>> convert pickadate=";
     // echo"<br>----------------Format--------------------------<br>";
     // print_r($this->sagendaAPIv1DateFormat);
     // echo"<br>--pickadateDate---------------------------------<br>";
@@ -265,13 +265,13 @@ class SearchController {
   }
 
   private function GetConvertedDateToEng($inputDate){
-    print_r($inputDate);
+    //print_r($inputDate);
     $token = explode(" ", $inputDate);
-    print_r($token);
-    
+    //print_r($token);
+
     $month = "Jan";
 
-    switch ($token[1]) 
+    switch ($token[1])
     {
       case 1:
           $month = "Jan";
@@ -284,7 +284,7 @@ class SearchController {
           break;
       case 4:
           $month = "Apr";
-          break;          
+          break;
       case 5:
           $month = "May";
           break;
