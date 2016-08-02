@@ -28,7 +28,7 @@
     <input id="toDate" data-value="{{toDate}}" class="datepickerTo form-control" name="toDate" type="text"  >
   </div>
 
-  {% if bookableItemSelectedByShortcode is null  %}
+{% if bookableItemSelectedByShortcode is null  %}
   <div class="form-group">
     <label for="bookableItems">{{ bookableItemsLabel }}</label>
     <select class="form-control" id="bookableItems" name="bookableItems" onchange="this.form.submit()">

@@ -6,6 +6,7 @@ class BookableItem
   public $Name = "";
   public $Location = "";
   public $Description = "";
+  public $SelectedId = "";
 
   public function toJson()
   {
