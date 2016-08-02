@@ -24,11 +24,11 @@ class AdminTokenController
 
     $sagendaAPI = new sagendaAPI();
     $result = $sagendaAPI->validateAccount($tokenValue);
-
+    print_r ($result);
     $bootstrapAlertType = "danger";
     $connectedStatus = __( 'NOT CONNECTED', 'sagenda-wp' );
 
-    if($result['didSucceed'])
+    if($result['didSucceed'] && $tokenValue != null )
     {
       $bootstrapAlertType = "success";
       $connectedStatus  = __( 'CONNECTED', 'sagenda-wp' );
