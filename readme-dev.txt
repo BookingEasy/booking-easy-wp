@@ -12,3 +12,18 @@ Responsiveness is manage with Twitter bootstrap (http://getbootstrap.com/) and i
 You can contribute to text file there : http://osp7icw.oneskyapp.com/admin/projects
 The datepicker is a separate project, you can add translations in assets/vendor/pickadate/lib/translations.
 Don't hesitate to send us your new translations, we will add it in the next release and this will avoid update conflict for your later on.
+
+== Special changes on vendors package ==
+
+UNIREST
+--> Many developer using PHP environment on Windows (such as WAMP) reported problem :
+Fatal error: Uncaught exception 'Exception' with message 'SSL certificate problem: unable to get local issuer certificate' in \Unirest\Request.php on line 475
+
+Some dev environment can't manage SSL verfication, so we turned off the SSL verifier of Unirest.
+
+File modified is : assets\vendor\mashape\unirest-php\src\Unirest\Request.php
+Around line 442 :
+changed :
+//CURLOPT_SSL_VERIFYPEER => self::$verifyPeer,
+by:
+CURLOPT_SSL_VERIFYPEER => false,

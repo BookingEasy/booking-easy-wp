@@ -22,7 +22,7 @@ class SagendaAPI
   */
   public function validateAccount($token)
   {
-    $result = Unirest\Request::get($this->apiUrl."ValidateAccount/".$token)->body;
+    $result = \Unirest\Request::get($this->apiUrl."ValidateAccount/".$token)->body;
     //print_r($result);
     $message = __('Successfully connected','sagenda-wp');
     $didSucceed = true;
@@ -42,7 +42,7 @@ class SagendaAPI
   public function getBookableItems($token)
   {
     //echo $this->apiUrl."<br>";
-    return Unirest\Request::get($this->apiUrl."Events/GetBookableItemList/".$token)->body;
+    return \Unirest\Request::get($this->apiUrl."Events/GetBookableItemList/".$token)->body;
   }
 
   /**
@@ -72,7 +72,7 @@ class SagendaAPI
     // echo"<br>---------------------<br>";
 
       //$result = Unirest\Request::post($this->apiUrl."Events/".$wsName,
-      $result = Unirest\Request::post("https://sagenda-sagenda-v1.p.mashape.com/Events/".$wsName,
+      $result = \Unirest\Request::post("https://sagenda-sagenda-v1.p.mashape.com/Events/".$wsName,
       array(
         "X-Mashape-Key" => "1qj2G3vQg5mshgOPxMAFsmrfleIap1lPGN8jsn8v0qG4AIuFJa",
         "Content-Type" => "application/json",
@@ -95,7 +95,7 @@ class SagendaAPI
     // echo"<br>---Redirect------------------<br>";
     // print_r($apiOutput->ReturnUrl);
     // echo"<br>-----------------------------<br>";
-    
+
     if($apiOutput->ReturnUrl != ""){
       //header('Location: ' .$apiOutput->ReturnUrl, true, 301);
      // die();
@@ -118,13 +118,13 @@ class SagendaAPI
   {
 
     // $availableData = Unirest\Request::get($this->apiUrl."Events/GetAvailability/".$token."/".$fromDate."/".$toDate."?bookableItemId=".$bookableItemId)->body;
-    
+
     // echo"<br>------------get availability----------<br>";
     // print_r($this->apiUrl."Events/GetAvailability/".$token."/".$fromDate."/".$toDate."?bookableItemId=".$bookableItemId);
     // echo "<br>";
     // print_r($availableData);
     // echo"<br>------------END get availability----------<br>";
 
-    return Unirest\Request::get($this->apiUrl."Events/GetAvailability/".$token."/".$fromDate."/".$toDate."?bookableItemId=".$bookableItemId)->body;
+    return \Unirest\Request::get($this->apiUrl."Events/GetAvailability/".$token."/".$fromDate."/".$toDate."?bookableItemId=".$bookableItemId)->body;
   }
 }
