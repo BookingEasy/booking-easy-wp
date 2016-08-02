@@ -43,10 +43,21 @@ class SearchController {
   */
   public function showSearch($twig, $shorcodeParametersArray)
   {
+      if (get_option('mrs1_authentication_code') == null)
+      {
+        echo $twig->render($this->view, array(
+          'isError'                  => true,
+          'hideSearchForm'           => true,
+          'errorMessage'             => "You didn't configure Sagenda properly please enter your authentication code in Settings",
+        ));
+        return;
+      }
+
     $bookableItemSelectedByShortcode = ArrayHelper::getElementIfSetAndNotEmpty($shorcodeParametersArray, 'bookableitem');
 
     $sagendaAPI = new sagendaAPI();
     $bookableItems = $sagendaAPI->getBookableItems(get_option('mrs1_authentication_code'));
+
     $selectedBookableItem = $this->getSelectedBookableItem($bookableItemSelectedByShortcode, $bookableItems);
 
     if($this->isEventClicked())
@@ -107,12 +118,6 @@ class SearchController {
   */
   private function getSelectedBookableItem($bookableItemSelectedByShortcode, $bookableItems)
   {
-    // echo"<br>---<br>";
-    // print_r($_POST['bookableItems']);
-    // echo"<br>---<br>";
-    // print_r($bookableItems);
-    // echo"<br>---================<br>";
-
     if(isset($bookableItemSelectedByShortcode))
     {
       $selectedId = $this->findBookableItemElementInList($bookableItems, $bookableItemSelectedByShortcode);
