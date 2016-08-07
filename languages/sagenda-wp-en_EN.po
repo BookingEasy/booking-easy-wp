@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sagenda\n"
-"POT-Creation-Date: 2016-06-06 21:48+0200\n"
-"PO-Revision-Date: 2016-06-16 18:43+0200\n"
+"POT-Creation-Date: 2016-08-07 22:18+0200\n"
+"PO-Revision-Date: 2016-08-07 22:18+0200\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: Sagenda <send us a message from sagenda.com>\n"
 "Language: en_US\n"
@@ -107,58 +107,64 @@ msgstr "How to get the token :"
 msgid "Useful links :"
 msgstr "Useful links :"
 
-#: controllers/InformationMessageController.php:22
+#: controllers/InformationMessageController.php:23
 #: controllers/SubscriptionController.php:49
 msgid "Back"
 msgstr "Back"
 
-#: controllers/InformationMessageController.php:23
+#: controllers/InformationMessageController.php:24
 msgid "You successfully subscribed to the event."
 msgstr "You successfully subscribed to the event."
 
-#: controllers/SearchController.php:66
+#: controllers/SearchController.php:51
+msgid ""
+"You didn't configure Sagenda properly please enter your authentication code "
+"in Settings"
+msgstr ""
+
+#: controllers/SearchController.php:78
 msgid "Search for all the events between"
 msgstr "Search for all the events between"
 
-#: controllers/SearchController.php:67
+#: controllers/SearchController.php:79
 msgid "From"
 msgstr "From"
 
-#: controllers/SearchController.php:68
+#: controllers/SearchController.php:80
 msgid "To"
 msgstr "To"
 
-#: controllers/SearchController.php:69
+#: controllers/SearchController.php:81
 msgid "Please choose a bookable item"
 msgstr "Please choose a bookable item"
 
-#: controllers/SearchController.php:70
+#: controllers/SearchController.php:82
 msgid "Location"
 msgstr "Location"
 
-#: controllers/SearchController.php:71
+#: controllers/SearchController.php:83
 #: controllers/SubscriptionController.php:47
 msgid "Description"
 msgstr "Description"
 
-#: controllers/SearchController.php:72
+#: controllers/SearchController.php:84
 msgid "Create a free Booking Account on Sagenda!"
 msgstr "Create a free Booking Account on Sagenda!"
 
-#: controllers/SearchController.php:73
+#: controllers/SearchController.php:85
 msgid "Search"
 msgstr "Search"
 
-#: controllers/SearchController.php:74
+#: controllers/SearchController.php:86
 msgid "Click an event to book It:"
 msgstr "Click an event to book It:"
 
-#: controllers/SearchController.php:77
+#: controllers/SearchController.php:89
 #: controllers/SubscriptionController.php:50
 msgid "Help"
 msgstr "Help"
 
-#: controllers/SearchController.php:79
+#: controllers/SearchController.php:91
 msgid "No event found for the bookable item within the selected date range."
 msgstr "No event found for the bookable item within the selected date range."
 
@@ -206,7 +212,7 @@ msgstr "Phone Number"
 msgid "Submit"
 msgstr "Submit"
 
-#: controllers/SubscriptionController.php:71
+#: controllers/SubscriptionController.php:75
 msgid "Please fill out all the required fields"
 msgstr "Please fill out all the required fields"
 
@@ -222,7 +228,7 @@ msgstr ""
 "Your token is wrong; please try again or generate another one in Sagenda’s "
 "backend."
 
-#: webservices/SagendaAPI.php:72
+#: webservices/SagendaAPI.php:85
 msgid "An error has occurred. Booking wasn't saved."
 msgstr "An error has occurred. Booking wasn't saved."
 
