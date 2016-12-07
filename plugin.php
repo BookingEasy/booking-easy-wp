@@ -1,7 +1,7 @@
 <?php defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 /**
 * @wordpress-plugin
-* Plugin Name:       sagenda-wp
+* Plugin Name:       Sagenda
 * Plugin URI:        http://www.sagenda.com/
 * Description:       Sagenda is a free Online Booking / Scheduling / Reservation System, which gives customers the opportunity to choose the date and the time of an appointment according to your preferences.
 * Version:           1.2.0
@@ -39,7 +39,7 @@ add_shortcode( 'sagenda-wp', 'sagenda_main' );
 /**
 * Include CSS, JavaScript in the head section of the plugin.
 */
-function head_code(){
+function head_code_sagenda(){
 	// TODO : call the reference only when needed
 
 	// bootstrap
@@ -66,12 +66,12 @@ function head_code(){
 /**
 * Add it in the frontend
 */
-add_action('wp_head','head_code');
+add_action('wp_head','head_code_sagenda');
 
 /**
 * Add it in the backend
 */
-add_action('admin_head', 'head_code');
+add_action('admin_head', 'head_code_sagenda');
 
 /**
 * Action hooks for adding admin page
