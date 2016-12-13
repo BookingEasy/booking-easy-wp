@@ -34,7 +34,7 @@ class AdminTokenController
       $connectedStatus  = __( 'CONNECTED', 'sagenda-wp' );
     }
 
-    echo $twig->render($this->view, array(
+    return $twig->render($this->view, array(
       'sagendaAuthenticationSettings'         => __( 'Sagenda Authentication Settings', 'sagenda-wp' ),
       'sagendaAuthenticationCode'             => __( 'Sagenda Authentication Code', 'sagenda-wp' ),
       'saveChanges'                           => __( 'Save Changes', 'sagenda-wp' ),

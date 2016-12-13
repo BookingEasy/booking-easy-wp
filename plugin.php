@@ -32,7 +32,7 @@ add_action('plugins_loaded', 'sagenda_load_textdomain');
 */
 function sagenda_main( $atts ){
 	$initializer = new Sagenda\Initializer();
-	$initializer->initFrontend($atts);
+	return $initializer->initFrontend($atts);
 }
 add_shortcode( 'sagenda-wp', 'sagenda_main' );
 
@@ -78,7 +78,7 @@ add_action('admin_head', 'head_code_sagenda');
 */
 function sagenda_admin() {
 	$initializer = new Sagenda\Initializer();
-	echo $initializer->initAdminSettings();
+	return $initializer->initAdminSettings();
 }
 function sagenda_admin_actions() {
     add_options_page("Sagenda", "Sagenda", 1, "Sagenda", "sagenda_admin");

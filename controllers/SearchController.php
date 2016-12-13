@@ -45,7 +45,7 @@ class SearchController {
   {
     if (get_option('mrs1_authentication_code') == null)
     {
-      echo $twig->render($this->view, array(
+      return $twig->render($this->view, array(
         'isError'                  => true,
         'hideSearchForm'           => true,
         'errorMessage'             => __( "You didn't configure Sagenda properly please enter your authentication code in Settings", 'sagenda-wp' ),
@@ -74,7 +74,7 @@ class SearchController {
       $fromDate = $this->getFromDate();
       $toDate = $this->getToDate();
 
-      echo $twig->render($this->view, array(
+      return $twig->render($this->view, array(
         'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
         'fromLabel'                     => __( 'From', 'sagenda-wp' ),
         'toLabel'                       => __( 'To', 'sagenda-wp' ),

@@ -40,11 +40,11 @@ class initializer {
     if(strcasecmp($shortcode, "calendar") == 0)
     {
       $calendarController = new CalendarController();
-      $calendarController->showCalendar($twig, $shorcodeParametersArray);
+      return $calendarController->showCalendar($twig, $shorcodeParametersArray);
     }
     else {
       $searchController = new SearchController();
-      $searchController->showSearch($twig, $shorcodeParametersArray);
+      return $searchController->showSearch($twig, $shorcodeParametersArray);
     }
   }
 
