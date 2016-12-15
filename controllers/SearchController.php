@@ -62,7 +62,7 @@ class SearchController {
 
     if($this->isEventClicked())
     {
-      $this->callSubscription($twig, $selectedBookableItem->Id);
+      return $this->callSubscription($twig, $selectedBookableItem->Id);
     }
     else
     {
@@ -178,7 +178,7 @@ class SearchController {
     $booking->HostUrlLocation = $_GET['currentUrl'];
     //TODO : add payment info
     $subscriptionController = new SubscriptionController();
-    $subscriptionController->showSubscription($twig, $booking );
+    return $subscriptionController->showSubscription($twig, $booking );
   }
 
   /**

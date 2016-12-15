@@ -23,14 +23,17 @@ class SubscriptionController
   */
   public function showSubscription($twig, $booking)
   {
+    echo "showSubscription called";
+
     $booking = $this->fillBookingWithFormValues($booking);
     $result = $this->setBookingWithSubmissionCheck($booking);
     if($result['didSucceed'] == true)
     {
       $informationMessageController = new InformationMessageController();
-      $informationMessageController->showMessage($twig, $booking, $result[ReturnUrl]);
+      return $informationMessageController->showMessage($twig, $booking, $result[ReturnUrl]);
     }
     else {
+      echo "twig->render called";
       return $twig->render($this->view, array(
         'subscription'                  => __( 'Subscription', 'sagenda-wp' ),
         'email'                         => __('Email', 'sagenda-wp'),
