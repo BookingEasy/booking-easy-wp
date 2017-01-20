@@ -23,8 +23,6 @@ class SubscriptionController
   */
   public function showSubscription($twig, $booking)
   {
-    echo "showSubscription called";
-
     $booking = $this->fillBookingWithFormValues($booking);
     $result = $this->setBookingWithSubmissionCheck($booking);
     if($result['didSucceed'] == true)
