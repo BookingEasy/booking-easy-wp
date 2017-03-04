@@ -79,6 +79,8 @@ class AdminTokenController
   {
     if(isset($_POST['sagendaAuthenticationCode']))
     {
+      // add option does nothing if already exist. So try to create, if exist update the value.
+      add_option( 'mrs1_authentication_code', $_POST['sagendaAuthenticationCode'], '', 'yes' );
       update_option('mrs1_authentication_code', $_POST['sagendaAuthenticationCode']);
     }
   }
