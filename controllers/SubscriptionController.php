@@ -31,7 +31,6 @@ class SubscriptionController
       return $informationMessageController->showMessage($twig, $booking, $result[ReturnUrl]);
     }
     else {
-      echo "twig->render called";
       return $twig->render($this->view, array(
         'subscription'                  => __( 'Subscription', 'sagenda-wp' ),
         'email'                         => __('Email', 'sagenda-wp'),

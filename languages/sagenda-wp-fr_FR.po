@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sagenda-wp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-07 00:49+0200\n"
-"PO-Revision-Date: 2016-04-07 00:51+0200\n"
+"POT-Creation-Date: 2017-01-20 16:51+0100\n"
+"PO-Revision-Date: 2017-01-20 17:02+0100\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.11\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: tests\n"
@@ -51,14 +51,23 @@ msgid "Click here to get your Authentication code."
 msgstr "Cliquez ici pour obtenir votre code d'authentification."
 
 #: controllers/AdminTokenController.php:43
+#, fuzzy
 msgid ""
-"[sagenda-wp] add this shortcode either in a post or page where you want to "
-"display the Sagenda form."
+"<strong>[sagenda-wp]</strong> add this shortcode either in a post or page "
+"where you want to display the Sagenda form."
 msgstr ""
 "[sagenda-wp] ajoutez ce shortcode dans un article ou une page pour afficher "
 "Sagenda."
 
 #: controllers/AdminTokenController.php:44
+msgid ""
+"<strong>[sagenda-wp bookableitem=\"my bookable item name\"]</strong> if you "
+"want to display only one bookable item on that page. Pay attention : if your "
+"bookable item is name \"My Item\", bookableitem=\"my item\" or bookableitem="
+"\"My Item\" will be correct, but \"bookableitem=\"myitem\" not!"
+msgstr ""
+
+#: controllers/AdminTokenController.php:45
 msgid ""
 "If you want to use a shortcode outside of the WordPress post or page editor, "
 "you can use this snippet to output it from the shortcode’s handler(s): "
@@ -67,7 +76,7 @@ msgstr ""
 "Si vous souhaitez afficher Sagenda en dehors d'une page ou d'un article vous "
 "pouvez utiliser le snippet : <pre>echo do_shortcode('[sagenda-wp]')</pre>"
 
-#: controllers/AdminTokenController.php:45
+#: controllers/AdminTokenController.php:46
 msgid ""
 "NOTE: You first need to register on Sagenda and then you will get a "
 "Authentication token which you will use to validate this Sagenda Plugin."
@@ -76,128 +85,135 @@ msgstr ""
 "obtenir un code d'authentification que vous utiliserez dans le plugin "
 "WordPress pour vous identifier. "
 
-#: controllers/AdminTokenController.php:46
-msgid "Read more"
-msgstr ""
-
 #: controllers/AdminTokenController.php:47
+msgid "Read more"
+msgstr "En savoir plus"
+
+#: controllers/AdminTokenController.php:48
 msgid "Create a free account "
 msgstr "Créez un compte gratuit sur Sagenda"
 
-#: controllers/AdminTokenController.php:48
-msgid "About integration in your WP WebSite :"
-msgstr ""
-
 #: controllers/AdminTokenController.php:49
-msgid "How to get the token :"
-msgstr ""
+msgid "About integration in your WP WebSite :"
+msgstr "A propos de l’intégration dans votre site WordPress :"
 
 #: controllers/AdminTokenController.php:50
-msgid "Useful links :"
-msgstr ""
+msgid "How to get the token :"
+msgstr "Comment obtenir le code d’authentification?"
 
-#: controllers/InformationMessageController.php:22
-#: controllers/SubscriptionController.php:46
+#: controllers/AdminTokenController.php:51
+msgid "Useful links :"
+msgstr "Liens utiles :"
+
+#: controllers/InformationMessageController.php:23
+#: controllers/SubscriptionController.php:50
 msgid "Back"
 msgstr "Retour"
 
-#: controllers/InformationMessageController.php:23
+#: controllers/InformationMessageController.php:24
 msgid "You successfully subscribed to the event."
 msgstr "Vous vous êtes inscrit à l'évènement avec succès."
 
-#: controllers/SearchController.php:66
-msgid "Search for all the events between"
+#: controllers/SearchController.php:51
+msgid ""
+"You didn't configure Sagenda properly please enter your authentication code "
+"in Settings"
 msgstr ""
 
-#: controllers/SearchController.php:67
-msgid "From"
-msgstr "A"
+#: controllers/SearchController.php:78
+msgid "Search for all the events between"
+msgstr "Rechercher tous les évènements entre :"
 
-#: controllers/SearchController.php:68
-msgid "To"
+#: controllers/SearchController.php:79
+msgid "From"
 msgstr "De"
 
-#: controllers/SearchController.php:69
-msgid "Please choose a bookable item"
-msgstr ""
+#: controllers/SearchController.php:80
+msgid "To"
+msgstr "A"
 
-#: controllers/SearchController.php:70
+#: controllers/SearchController.php:81
+msgid "Please choose a bookable item"
+msgstr "Merci de choisir un élément réservable"
+
+#: controllers/SearchController.php:82
 msgid "Location"
 msgstr "Emplacement"
 
-#: controllers/SearchController.php:71
-#: controllers/SubscriptionController.php:44
+#: controllers/SearchController.php:83
+#: controllers/SubscriptionController.php:48
 msgid "Description"
 msgstr "Description"
 
-#: controllers/SearchController.php:72
+#: controllers/SearchController.php:84
 msgid "Create a free Booking Account on Sagenda!"
 msgstr "Créez un compte gratuit sur Sagenda!"
 
-#: controllers/SearchController.php:73
+#: controllers/SearchController.php:85
 msgid "Search"
-msgstr ""
+msgstr "Recherche"
 
-#: controllers/SearchController.php:74
+#: controllers/SearchController.php:86
 msgid "Click an event to book It:"
 msgstr "Cliquez un évènement pour le réserver:"
 
-#: controllers/SearchController.php:77
+#: controllers/SearchController.php:89
+#: controllers/SubscriptionController.php:51
 msgid "Help"
-msgstr ""
+msgstr "Aide"
 
-#: controllers/SearchController.php:79
+#: controllers/SearchController.php:91
 #, fuzzy
 msgid "No event found for the bookable item within the selected date range."
 msgstr ""
 "Pas d’évènement trouvé pour l’élément réservable sélectioné dans la plage de "
 "temps sélectionné."
 
-#: controllers/SubscriptionController.php:32
+#: controllers/SubscriptionController.php:36
 msgid "Subscription"
 msgstr "Description"
 
-#: controllers/SubscriptionController.php:33
+#: controllers/SubscriptionController.php:37
 msgid "Email"
 msgstr "Courriel"
 
-#: controllers/SubscriptionController.php:34
+#: controllers/SubscriptionController.php:38
 msgid "First Name"
 msgstr "Prénom"
 
-#: controllers/SubscriptionController.php:35
+#: controllers/SubscriptionController.php:39
 msgid "Last Name"
 msgstr "Nom"
 
-#: controllers/SubscriptionController.php:36
+#: controllers/SubscriptionController.php:40
 msgid "Title"
 msgstr "Titre"
 
-#: controllers/SubscriptionController.php:37
+#: controllers/SubscriptionController.php:41
 msgid "Mr."
 msgstr "M"
 
-#: controllers/SubscriptionController.php:38
+#: controllers/SubscriptionController.php:42
 msgid "Mrs."
 msgstr "Mme"
 
-#: controllers/SubscriptionController.php:39
-msgid "Miss"
-msgstr ""
-
-#: controllers/SubscriptionController.php:40
-msgid "Dr"
-msgstr ""
-
 #: controllers/SubscriptionController.php:43
+msgid "Miss"
+msgstr "Mlle"
+
+#: controllers/SubscriptionController.php:44
+msgid "Dr"
+msgstr "Dr"
+
+#: controllers/SubscriptionController.php:47
 msgid "Phone Number"
 msgstr "Numéro de télephone"
 
-#: controllers/SubscriptionController.php:45
+#: controllers/SubscriptionController.php:49
 msgid "Submit"
 msgstr "Envoyer"
 
-#: controllers/SubscriptionController.php:66
+#: controllers/SubscriptionController.php:76
 msgid "Please fill out all the required fields"
 msgstr "Merci de remplir tous les champs demandés."
 
@@ -213,9 +229,9 @@ msgstr ""
 "Votre code d'authentification est faux, veuillez re-essayer ou en générer un "
 "nouveau dans le backoffice de Sagenda."
 
-#: webservices/SagendaAPI.php:72
+#: webservices/SagendaAPI.php:85
 msgid "An error has occurred. Booking wasn't saved."
-msgstr ""
+msgstr "Une erreur est survenue. La réservation n’a pas été sauvée."
 
 #~ msgid "Sagenda for WordPress: Sagenda Settings"
 #~ msgstr "Sagenda pour WordPress: Paramètres Sagenda "
