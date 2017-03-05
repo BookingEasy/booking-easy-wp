@@ -54,8 +54,10 @@ class initializer {
   */
   function initAdminSettings()
   {
+      $twig = self::initTwig();
+
     $adminTokenController = new AdminTokenController();
-    return $adminTokenController->showAdminTokenSettingsPage(self::initTwig());
+    return $adminTokenController->showAdminTokenSettingsPage($twig);
   }
 
   /**

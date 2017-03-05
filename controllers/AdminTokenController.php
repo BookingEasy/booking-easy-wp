@@ -24,7 +24,6 @@ class AdminTokenController
 
     $sagendaAPI = new sagendaAPI();
     $result = $sagendaAPI->validateAccount($tokenValue);
-    print_r ($result);
     $bootstrapAlertType = "danger";
     $connectedStatus = __( 'NOT CONNECTED', 'sagenda-wp' );
 

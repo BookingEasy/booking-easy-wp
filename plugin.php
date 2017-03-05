@@ -78,7 +78,7 @@ add_action('admin_head', 'head_code_sagenda');
 */
 function sagenda_admin() {
 	$initializer = new Sagenda\Initializer();
-	return $initializer->initAdminSettings();
+	echo $initializer->initAdminSettings();
 }
 function sagenda_admin_actions() {
     add_options_page("Sagenda", "Sagenda", 1, "Sagenda", "sagenda_admin");
