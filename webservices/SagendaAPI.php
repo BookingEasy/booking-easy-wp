@@ -10,9 +10,9 @@ class SagendaAPI
   /**
   * @var string - url of the API
   */
-  protected $apiUrl = 'http://sagenda.net/api/'; //Live Server
+  //protected $apiUrl = 'http://sagenda.net/api/'; //Live Server
   //protected $apiUrl = 'http://localhost:49815/api/'; //local Server
-  //protected $apiUrl = 'https://sagenda-dev.apphb.com/api/'; //staging test for payment Server
+  protected $apiUrl = 'http://sagenda-dev.apphb.com/api/'; //staging test for payment Server
   //protected $apiUrl = 'http://e35a3822.ngrok.io/api/'; //ngrok test for payment Server
 
   /**
@@ -71,8 +71,8 @@ class SagendaAPI
     // print_r($withPayment);
     // echo"<br>---------------------<br>";
 
-      //$result = Unirest\Request::post($this->apiUrl."Events/".$wsName,
-      $result = \Unirest\Request::post("https://sagenda-sagenda-v1.p.mashape.com/Events/".$wsName,
+      $result = Unirest\Request::post($this->apiUrl."Events/".$wsName,
+      //$result = \Unirest\Request::post("https://sagenda-sagenda-v1.p.mashape.com/Events/".$wsName,
       array(
         "X-Mashape-Key" => "1qj2G3vQg5mshgOPxMAFsmrfleIap1lPGN8jsn8v0qG4AIuFJa",
         "Content-Type" => "application/json",
