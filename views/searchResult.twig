@@ -18,7 +18,7 @@
 
       <a href="?EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}&EventScheduleId={{event.EventScheduleId}}&isPadEvent={{event.IsPaidEvent}}&paymentAmount={{event.PaymentAmount}}&paymentCurrency={{event.PaymentCurrency}}&eventTitle={{event.EventTitle}}&currentUrl={{currentUrl}}"> <li class="list-group-item"><span class="badge">book-it!</span>{{event.DateDisplay}} : {{event.PaymentAmount}} {{event.PaymentCurrency}} : Paid Event : {{event.EventTitle}}</li></a>
     {% else %}
-      <a href="?EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}&EventScheduleId={{event.EventScheduleId}}&isPadEvent=0&eventTitle={{event.EventTitle}}&currentUrl={{currentUrl}}"> <li class="list-group-item"><span class="badge">book-it!</span>{{event.DateDisplay}}</li></a>
+      <a href="?EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}&EventScheduleId={{event.EventScheduleId}}&isPadEvent=0&eventTitle={{event.EventTitle}}&currentUrl={{currentUrl}}"> <li class="list-group-item"><span class="badge">book-it!</span>{{event.DateDisplay}} : {{event.EventTitle}}</li></a>
     {% endif %}
   {% endfor %}
   </ul>
