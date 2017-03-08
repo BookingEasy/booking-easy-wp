@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sagenda\n"
-"POT-Creation-Date: 2017-03-06 10:03+0100\n"
-"PO-Revision-Date: 2017-03-06 10:03+0100\n"
+"POT-Creation-Date: 2017-03-08 15:35+0100\n"
+"PO-Revision-Date: 2017-03-08 15:35+0100\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: Sagenda <send us a message from sagenda.com>\n"
 "Language: en_US\n"
@@ -161,12 +161,16 @@ msgstr "Search"
 msgid "Click an event to book It:"
 msgstr "Click an event to book It:"
 
-#: controllers/SearchController.php:89
+#: controllers/SearchController.php:89 controllers/SearchController.php:113
+msgid "book-it!"
+msgstr "book-it!"
+
+#: controllers/SearchController.php:90
 #: controllers/SubscriptionController.php:50
 msgid "Help"
 msgstr "Help"
 
-#: controllers/SearchController.php:91
+#: controllers/SearchController.php:92
 msgid "No event found for the bookable item within the selected date range."
 msgstr "No event found for the bookable item within the selected date range."
 

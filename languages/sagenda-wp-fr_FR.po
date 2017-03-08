@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sagenda-wp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-08 15:04+0100\n"
-"PO-Revision-Date: 2017-03-08 15:05+0100\n"
+"POT-Creation-Date: 2017-03-08 15:35+0100\n"
+"PO-Revision-Date: 2017-03-08 15:42+0100\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -157,12 +157,16 @@ msgstr "Recherche"
 msgid "Click an event to book It:"
 msgstr "Cliquez un évènement pour le réserver:"
 
-#: controllers/SearchController.php:89
+#: controllers/SearchController.php:89 controllers/SearchController.php:113
+msgid "book-it!"
+msgstr "réservez!"
+
+#: controllers/SearchController.php:90
 #: controllers/SubscriptionController.php:50
 msgid "Help"
 msgstr "Aide"
 
-#: controllers/SearchController.php:91
+#: controllers/SearchController.php:92
 #, fuzzy
 msgid "No event found for the bookable item within the selected date range."
 msgstr ""
