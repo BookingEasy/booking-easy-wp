@@ -3,7 +3,7 @@ Contributors: sagenda
 Donate link: http://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, BnB
 Requires at least: 3.0
-Tested up to: 4.7
+Tested up to: 4.7.3
 Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -72,7 +72,7 @@ Follow these steps to install Sagenda:
 * NOTICE : As we rebuilded everything from scratch you will have some translations missing, don't hesitate to add them on OneSky, we will push a new version every 2 weeks : http://osp7icw.oneskyapp.com/collaboration/project/53247
 * IMPROVED : Frontend layout using Twitter bootstrap.
 * ADDED : Shortcode management to display only one bookable item, please just use it so : [sagenda-wp bookableitem="my bookable item name"]
-* TESTED : Compatibility of the reservation plugin with WordPress 4.7
+* TESTED : Compatibility of the reservation plugin with WordPress 4.7.3
 
 == Changelog ==
 
