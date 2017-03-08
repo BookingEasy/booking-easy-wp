@@ -1,169 +1,191 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-03-06 12:43+0000\n"
+"POT-Creation-Date: 2017-03-06 12:44+0000\n"
 "PO-Revision-Date: 2017-03-06 15:57+0100\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
-"Language: sv_SE\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "X-Generator: Poedit 1.8.12\n"
 
 #: admin/templates/config.php:37
 msgid "NOT CONNECTED"
-msgstr "INTE ANSLUTEN"
+msgstr "Tidak Terhubung"
 
 #: admin/templates/config.php:37
 msgid "CONNECTED"
-msgstr "ANSLUTEN"
+msgstr "Terhubung"
 
 #: admin/templates/config.php:37
 msgid "Sagenda Authentication Settings"
-msgstr "Sagenda inställningar för Autentisering"
+msgstr ""
+"\n"
+" Pengaturan Sagenda Authentication "
 
 #: admin/templates/config.php:44
 msgid "Sagenda Authentication Code"
-msgstr "Sagenda Autentiseringskod"
+msgstr "Sagenda Authentication Code"
 
 #: admin/templates/config.php:54
 msgid "Save Changes"
-msgstr "Spara ändringar"
+msgstr "Simpan perubahan"
 
 msgid "Current Status"
-msgstr "Nuvarande status"
+msgstr ""
+"\n"
+"Status saat ini"
 
 #: admin/templates/config.php:47
 msgid "Click here to get your Authentication code."
-msgstr "Klicka här för att få din Autentiseringskod."
+msgstr ""
+"\n"
+"Klik di sini untuk mendapatkan kode otentikasi Anda."
 
 msgid "<strong>[sagenda-wp]</strong> add this shortcode either in a post or page where you want to display the Sagenda form."
-msgstr "<strong>[sagenda-wp]</strong> add this shortcode either in a post or page where you want to display the Sagenda form."
+msgstr ""
+"\n"
+"<Strong> [sagenda-wp] </ strong> tambahkan shortcode ini baik dalam posting atau halaman di mana Anda ingin menampilkan bentuk Sagenda."
 
 msgid "<strong>[sagenda-wp bookableitem=\"my bookable item name\"]</strong> if you want to display only one bookable item on that page. Pay attention : if your bookable item is name \"My Item\", bookableitem=\"my item\" or bookableitem=\"My Item\" will be correct, but \"bookableitem=\"myitem\" not!"
-msgstr "<strong>[sagenda-wp bookableitem=\"my bookable item name\"]</strong> if you want to display only one bookable item on that page. Pay attention : if your bookable item is name \"My Item\", bookableitem=\"my item\" or bookableitem=\"My Item\" will be correct, but \"bookableitem=\"myitem\" not!"
+msgstr ""
+"\n"
+"<Strong> [sagenda-wp bookableitem = \"saya dapat dipesan nama item\"] </ strong> jika Anda ingin menampilkan hanya satu item dipesan di halaman tersebut. Perhatikan: jika item kartu kuning Anda adalah nama \"My Item\", bookableitem = \"item saya\" atau bookableitem = \"Barang saya\" akan benar, tetapi \"bookableitem =\" myitem \"tidak!"
 
 #: admin/templates/config.php:57
 msgid "If you want to use a shortcode outside of the WordPress post or page editor, you can use this snippet to output it from the shortcode’s handler(s): <pre>echo do_shortcode([sagenda-wp])</pre>"
-msgstr "Om du vill använda en kortkod utanför Wordpress post eller sida editor, kan du använda denna snutt till utdata från kortkod s handler (er): <pre> echo do_shortcode ([sagenda-wp]) </ pre>"
+msgstr ""
+"\n"
+"Jika Anda ingin menggunakan shortcode di luar pos WordPress atau editor halaman, Anda dapat menggunakan potongan ini output dari pawang shortcode (s): <pre> gema do_shortcode ([sagenda-wp]) </ pre>"
 
 msgid "NOTE: You first need to register on Sagenda and then you will get a Authentication token which you will use to validate this Sagenda Plugin."
-msgstr "OBS : Du måste först registrera sig på Sagenda och sedan får du ett Autentiseringstoken som du använder för att validera detta Sagenda Plugin"
+msgstr ""
+"\n"
+"CATATAN: Anda harus terlebih dahulu mendaftar di Sagenda dan kemudian Anda akan mendapatkan token otentikasi yang akan Anda gunakan untuk memvalidasi Sagenda Plugin ini."
 
 msgid "Read more"
-msgstr "Läs mer"
+msgstr "Selanjutnya"
 
 msgid "Create a free account "
-msgstr "Skapa ett gratis konto "
+msgstr ""
+"\n"
+"Buat Akun gratis"
 
 msgid "About integration in your WP WebSite :"
-msgstr "Om integrering till din WP webbsida:"
+msgstr ""
+"\n"
+"Tentang integrasi di WebSite WP Anda:"
 
 msgid "How to get the token :"
-msgstr "Hur du får ett token:"
+msgstr "Cara mendapatkan Token"
 
 msgid "Useful links :"
-msgstr "Användbara länkar:"
+msgstr "Links yang berguna"
 
 msgid "Back"
-msgstr "Tillbaka"
+msgstr "Kembali"
 
 #: templates/reservation.php:43
 msgid "You successfully subscribed to the event."
-msgstr "Din bokning är registrerad"
+msgstr "Anda berhasil berlangganan ke acara tersebut."
 
 msgid "You didn't configure Sagenda properly please enter your authentication code in Settings"
-msgstr "Sagenda är inte rätt konfigurerat, skriv in din autentiseringskod under inställningar"
+msgstr "Anda tidak mengkonfigurasi Sagenda dengan benar masukkan kode otentikasi Anda di Settings"
 
 msgid "Search for all the events between"
-msgstr "Sök efter alla event inom"
+msgstr "Cari semua di semua kegiatan"
 
 msgid "From"
-msgstr "Från"
+msgstr "Dari"
 
 msgid "To"
-msgstr "Till"
+msgstr "Untuk"
 
 msgid "Please choose a bookable item"
-msgstr "Var god välj ett bokningsbart objekt"
+msgstr "Silakan pilih item dipesan"
 
 msgid "Location"
-msgstr "Plats"
+msgstr "Lokasi"
 
 #: templates/booking.php:130
 msgid "Description"
-msgstr "Beskrivning"
+msgstr "Keterangan"
 
 #: templates/reservation.php:139
 msgid "Create a free Booking Account on Sagenda!"
-msgstr "Skapa ett gratis Boknings konto hos Sagenda!"
+msgstr "Buat akun gratis di sagenda"
 
 msgid "Search"
-msgstr "Sök"
+msgstr "Cari"
 
 #: templates/reservation.php:127
 msgid "Click an event to book It:"
-msgstr "Klicka på ett event för att boka det:"
+msgstr "Klik sebuah acara untuk Booking:"
 
 msgid "Help"
-msgstr "Hjälp"
+msgstr "Bantuan"
 
 msgid "No event found for the bookable item within the selected date range."
-msgstr "Inga event funna för det bokningsbara objektet inom spannet för valda datum."
+msgstr ""
+"\n"
+"Tidak ada acara ditemukan untuk item kartu kuning dalam rentang tanggal yang dipilih."
 
 msgid "Subscription"
-msgstr "Prenumeration"
+msgstr "Langganan"
 
 #: templates/booking.php:119 templates/booking.php:121
 msgid "Email"
-msgstr "E-post"
+msgstr "Email"
 
 #: templates/booking.php:83 templates/booking.php:85
 msgid "First Name"
-msgstr "Förnamn"
+msgstr "Nama Depan"
 
 #: templates/booking.php:96 templates/booking.php:98
 msgid "Last Name"
-msgstr "Efternamn"
+msgstr "Nama Belakang"
 
 #: templates/booking.php:66
 msgid "Title"
-msgstr "Titel"
+msgstr "Judul"
 
 #: templates/booking.php:69
 msgid "Mr."
-msgstr "Herr"
+msgstr "Tn."
 
 #: templates/booking.php:74
 msgid "Mrs."
-msgstr "Fru"
+msgstr "Ny."
 
 msgid "Miss"
-msgstr "Fröken"
+msgstr "Nona"
 
 msgid "Dr"
-msgstr "Doktor"
+msgstr "Dr"
 
 #: templates/booking.php:108 templates/booking.php:110
 msgid "Phone Number"
-msgstr "Telefonnummer"
+msgstr "Nomor Telepon"
 
 #: templates/booking.php:143
 msgid "Submit"
-msgstr "Boka"
+msgstr "Kirim"
 
 #: templates/booking.php:8
 msgid "Please fill out all the required fields"
-msgstr "Fyll i alla obligatoriska fält"
+msgstr "Silahkan mengisi semua bidang yang diperlukan"
 
 msgid "Successfully connected"
-msgstr "Anslutningen lyckades"
+msgstr "Sukses terhubung"
 
 #: admin/templates/config.php:31
 msgid "Your token is wrong; please try again or generate another one in Sagenda’s backend."
-msgstr "Ditt token är fel, försök igen eller generera ett nytt token i Sagenda's backend."
+msgstr "token Anda salah; coba lagi atau menghasilkan satu sama lain di backend Sagenda ini."
 
 msgid "An error has occurred. Booking wasn't saved."
-msgstr "Ett fel har uppstått. Bokningen sparades inte."
+msgstr ""
+"\n"
+"Sebuah kesalahan telah terjadi. Pemesanan tidak disimpan."

@@ -1,34 +1,171 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Sagenda\n"
-"POT-Creation-Date: 2016-06-16 18:41+0200\n"
-"PO-Revision-Date: 2016-06-16 18:43+0200\n"
-"Last-Translator: David Imboden <info<this is at>iteration.info>\n"
+"Project-Id-Version: VERSION\n"
+"POT-Creation-Date: 2017-03-06 12:43+0000\n"
+"PO-Revision-Date: 2017-03-06 15:57+0100\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
-"X-Generator: Poedit 1.8.8\n"
-"X-Poedit-Basepath: ../..\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: sagenda-wp\n"
-"X-Poedit-SearchPath-1: .\n"
-"X-Poedit-SearchPathExcluded-0: sagenda-wp/doc\n"
-"X-Poedit-SearchPathExcluded-1: sagenda-wp/tests\n"
-"X-Poedit-SearchPathExcluded-2: sagenda-wp/assets\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+"Last-Translator: David Imboden <info<this is at>iteration.info>\n"
+"X-Generator: Poedit 1.8.12\n"
 
-#~ msgid ""
-#~ "No events found for the bookable item within the selected date range."
-#~ msgstr ""
-#~ "لم يتم العثور على أحداث للمفردة القابلة للحجز في نطاق التاريخ المحدد."
+#: admin/templates/config.php:37
+msgid "NOT CONNECTED"
+msgstr "غير متصل"
 
-#~ msgid ""
-#~ "To create a free account : <a href=\"https://sagenda.net/Accounts/Register"
-#~ "\">https://sagenda.net/Accounts/Register</a>"
-#~ msgstr ""
-#~ "لتكوين حساب مجانا :\n"
-#~ " <a href=\"https://sagenda.net/Accounts/Register\" target=\"_blank"
-#~ "\">https://sagenda.net/Accounts/Register</a>"
+#: admin/templates/config.php:37
+msgid "CONNECTED"
+msgstr "متصل"
+
+#: admin/templates/config.php:37
+msgid "Sagenda Authentication Settings"
+msgstr "توثيق إعدادات بساجندا"
+
+#: admin/templates/config.php:44
+msgid "Sagenda Authentication Code"
+msgstr "كود التثبيت لSagenda"
+
+#: admin/templates/config.php:54
+msgid "Save Changes"
+msgstr "حفظ التعديلات"
+
+msgid "Current Status"
+msgstr "الوضع الحالى"
+
+#: admin/templates/config.php:47
+msgid "Click here to get your Authentication code."
+msgstr "انقر هنا للحصول على كود التوثيق"
+
+msgid "<strong>[sagenda-wp]</strong> add this shortcode either in a post or page where you want to display the Sagenda form."
+msgstr "<strong>[sagenda-wp]</strong>إضافة هذا الرمز القصير إما في وظيفة أو الصفحة التي ترغب في عرض النموذج Sagenda."
+
+msgid "<strong>[sagenda-wp bookableitem=\"my bookable item name\"]</strong> if you want to display only one bookable item on that page. Pay attention : if your bookable item is name \"My Item\", bookableitem=\"my item\" or bookableitem=\"My Item\" will be correct, but \"bookableitem=\"myitem\" not!"
+msgstr "<strong>[sagenda-wp bookableitem=\"my bookable item name\"]</strong> إذا كنت ترغب في عرض واحد فقط البند يمكن الحجز به على هذه الصفحة. الاهتمام: إذا البند الحجوزات الخاص بك هو اسم \"البند الخاص بي\"، bookableitem = \"مادتي\" أو bookableitem = \"البند الخاص بي\" سوف تكون صحيحة، ولكن \"bookableitem =\" myitem \"لا!"
+
+#: admin/templates/config.php:57
+msgid "If you want to use a shortcode outside of the WordPress post or page editor, you can use this snippet to output it from the shortcode’s handler(s): <pre>echo do_shortcode([sagenda-wp])</pre>"
+msgstr ""
+"إذا كنت ترغب في استخدام الرمز القصير خارج WordPress أو محرر الصفحة، يمكنك استخدام هذا الكود لاستخراجه من معالج الرموز القصيرة\n"
+"): <pre>echo do_shortcode([sagenda-wp])</pre>"
+
+msgid "NOTE: You first need to register on Sagenda and then you will get a Authentication token which you will use to validate this Sagenda Plugin."
+msgstr "ملاحظة: تحتاج أولا للتسجيل في Sagenda وبعد ذلك سوف تحصل على رمز مصادقة التي سوف تستخدم للتحقق من صحة  ربط Sagenda ."
+
+msgid "Read more"
+msgstr "اقراء المزيد"
+
+msgid "Create a free account "
+msgstr "انشاء حساب مجانى"
+
+msgid "About integration in your WP WebSite :"
+msgstr "عن التكامل فى موقعك WP:"
+
+msgid "How to get the token :"
+msgstr "كيف تحصل على العملة الافتراضية (توكن):"
+
+msgid "Useful links :"
+msgstr "روابط مفيدة:"
+
+msgid "Back"
+msgstr "السابق"
+
+#: templates/reservation.php:43
+msgid "You successfully subscribed to the event."
+msgstr "تم اشتراكك بنجاح.حدث."
+
+msgid "You didn't configure Sagenda properly please enter your authentication code in Settings"
+msgstr "لم يتم تثبيت ساجندا بشكل صحيح الرجاء إدخال رمز التوثيق في إعدادات"
+
+msgid "Search for all the events between"
+msgstr "البحث فى جميع ما بين الاحداث"
+
+msgid "From"
+msgstr "من"
+
+msgid "To"
+msgstr "الى"
+
+msgid "Please choose a bookable item"
+msgstr "الرجاء اختيار البند المتاح للحجز"
+
+msgid "Location"
+msgstr "الموقع"
+
+#: templates/booking.php:130
+msgid "Description"
+msgstr "الوصف"
+
+#: templates/reservation.php:139
+msgid "Create a free Booking Account on Sagenda!"
+msgstr "انشاء حساب مجانى للحجز على Sagenda!"
+
+msgid "Search"
+msgstr "بحث"
+
+#: templates/reservation.php:127
+msgid "Click an event to book It:"
+msgstr "انقر على حدث لحجزه:"
+
+msgid "Help"
+msgstr "مساعدة"
+
+msgid "No event found for the bookable item within the selected date range."
+msgstr "لم يتم العثور على البند المتاح للحجز في نطاق التاريخ المحدد للحدث."
+
+msgid "Subscription"
+msgstr "رسوم اشتراك"
+
+#: templates/booking.php:119 templates/booking.php:121
+msgid "Email"
+msgstr "البريد الالكترونى"
+
+#: templates/booking.php:83 templates/booking.php:85
+msgid "First Name"
+msgstr "الإسم"
+
+#: templates/booking.php:96 templates/booking.php:98
+msgid "Last Name"
+msgstr "اللقب"
+
+#: templates/booking.php:66
+msgid "Title"
+msgstr "اللقب الوظيفى"
+
+#: templates/booking.php:69
+msgid "Mr."
+msgstr "السيد"
+
+#: templates/booking.php:74
+msgid "Mrs."
+msgstr "السيدة"
+
+msgid "Miss"
+msgstr "الانسة"
+
+msgid "Dr"
+msgstr "دكتور"
+
+#: templates/booking.php:108 templates/booking.php:110
+msgid "Phone Number"
+msgstr "رقم الهاتف"
+
+#: templates/booking.php:143
+msgid "Submit"
+msgstr "اشترك"
+
+#: templates/booking.php:8
+msgid "Please fill out all the required fields"
+msgstr "يرجى ملء جميع الحقول المطلوبة"
+
+msgid "Successfully connected"
+msgstr "تم الاتصال بنجاح"
+
+#: admin/templates/config.php:31
+msgid "Your token is wrong; please try again or generate another one in Sagenda’s backend."
+msgstr "خطاء فى العملة الافطرادية(توكن) الخاصة بك.من فضلك حاول مرة أخرى او قم بعمل رمز آخر فى خلفية ساجندا."
+
+msgid "An error has occurred. Booking wasn't saved."
+msgstr "حدث اكتشاف خطاء.لم يتم حفظ الحجز."

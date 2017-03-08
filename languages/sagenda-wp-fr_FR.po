@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sagenda-wp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-20 16:51+0100\n"
-"PO-Revision-Date: 2017-01-20 17:02+0100\n"
+"POT-Creation-Date: 2017-03-08 15:04+0100\n"
+"PO-Revision-Date: 2017-03-08 15:05+0100\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -15,42 +15,42 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.12\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: tests\n"
 "X-Poedit-SearchPathExcluded-1: assets\n"
 "X-Poedit-SearchPathExcluded-2: doc\n"
 
-#: controllers/AdminTokenController.php:29
+#: controllers/AdminTokenController.php:28
 msgid "NOT CONNECTED"
 msgstr "NON CONNECTÉ"
 
-#: controllers/AdminTokenController.php:34
+#: controllers/AdminTokenController.php:33
 msgid "CONNECTED"
 msgstr "CONNECTÉ"
 
-#: controllers/AdminTokenController.php:38
+#: controllers/AdminTokenController.php:37
 msgid "Sagenda Authentication Settings"
 msgstr "Paramètres d'authentification de Sagenda"
 
-#: controllers/AdminTokenController.php:39
+#: controllers/AdminTokenController.php:38
 msgid "Sagenda Authentication Code"
 msgstr "Code d'authentification de Sagenda"
 
-#: controllers/AdminTokenController.php:40
+#: controllers/AdminTokenController.php:39
 msgid "Save Changes"
 msgstr "Sauver les changements"
 
-#: controllers/AdminTokenController.php:41
+#: controllers/AdminTokenController.php:40
 msgid "Current Status"
 msgstr "Statut actuel"
 
-#: controllers/AdminTokenController.php:42
+#: controllers/AdminTokenController.php:41
 msgid "Click here to get your Authentication code."
 msgstr "Cliquez ici pour obtenir votre code d'authentification."
 
-#: controllers/AdminTokenController.php:43
+#: controllers/AdminTokenController.php:42
 #, fuzzy
 msgid ""
 "<strong>[sagenda-wp]</strong> add this shortcode either in a post or page "
@@ -59,7 +59,7 @@ msgstr ""
 "[sagenda-wp] ajoutez ce shortcode dans un article ou une page pour afficher "
 "Sagenda."
 
-#: controllers/AdminTokenController.php:44
+#: controllers/AdminTokenController.php:43
 msgid ""
 "<strong>[sagenda-wp bookableitem=\"my bookable item name\"]</strong> if you "
 "want to display only one bookable item on that page. Pay attention : if your "
@@ -67,7 +67,7 @@ msgid ""
 "\"My Item\" will be correct, but \"bookableitem=\"myitem\" not!"
 msgstr ""
 
-#: controllers/AdminTokenController.php:45
+#: controllers/AdminTokenController.php:44
 msgid ""
 "If you want to use a shortcode outside of the WordPress post or page editor, "
 "you can use this snippet to output it from the shortcode’s handler(s): "
@@ -76,7 +76,7 @@ msgstr ""
 "Si vous souhaitez afficher Sagenda en dehors d'une page ou d'un article vous "
 "pouvez utiliser le snippet : <pre>echo do_shortcode('[sagenda-wp]')</pre>"
 
-#: controllers/AdminTokenController.php:46
+#: controllers/AdminTokenController.php:45
 msgid ""
 "NOTE: You first need to register on Sagenda and then you will get a "
 "Authentication token which you will use to validate this Sagenda Plugin."
@@ -85,28 +85,28 @@ msgstr ""
 "obtenir un code d'authentification que vous utiliserez dans le plugin "
 "WordPress pour vous identifier. "
 
-#: controllers/AdminTokenController.php:47
+#: controllers/AdminTokenController.php:46
 msgid "Read more"
 msgstr "En savoir plus"
 
-#: controllers/AdminTokenController.php:48
+#: controllers/AdminTokenController.php:47
 msgid "Create a free account "
 msgstr "Créez un compte gratuit sur Sagenda"
 
-#: controllers/AdminTokenController.php:49
+#: controllers/AdminTokenController.php:48
 msgid "About integration in your WP WebSite :"
 msgstr "A propos de l’intégration dans votre site WordPress :"
 
-#: controllers/AdminTokenController.php:50
+#: controllers/AdminTokenController.php:49
 msgid "How to get the token :"
 msgstr "Comment obtenir le code d’authentification?"
 
-#: controllers/AdminTokenController.php:51
+#: controllers/AdminTokenController.php:50
 msgid "Useful links :"
 msgstr "Liens utiles :"
 
 #: controllers/InformationMessageController.php:23
-#: controllers/SubscriptionController.php:50
+#: controllers/SubscriptionController.php:49
 msgid "Back"
 msgstr "Retour"
 
@@ -141,7 +141,7 @@ msgid "Location"
 msgstr "Emplacement"
 
 #: controllers/SearchController.php:83
-#: controllers/SubscriptionController.php:48
+#: controllers/SubscriptionController.php:47
 msgid "Description"
 msgstr "Description"
 
@@ -158,7 +158,7 @@ msgid "Click an event to book It:"
 msgstr "Cliquez un évènement pour le réserver:"
 
 #: controllers/SearchController.php:89
-#: controllers/SubscriptionController.php:51
+#: controllers/SubscriptionController.php:50
 msgid "Help"
 msgstr "Aide"
 
@@ -169,51 +169,51 @@ msgstr ""
 "Pas d’évènement trouvé pour l’élément réservable sélectioné dans la plage de "
 "temps sélectionné."
 
-#: controllers/SubscriptionController.php:36
+#: controllers/SubscriptionController.php:35
 msgid "Subscription"
 msgstr "Description"
 
-#: controllers/SubscriptionController.php:37
+#: controllers/SubscriptionController.php:36
 msgid "Email"
 msgstr "Courriel"
 
-#: controllers/SubscriptionController.php:38
+#: controllers/SubscriptionController.php:37
 msgid "First Name"
 msgstr "Prénom"
 
-#: controllers/SubscriptionController.php:39
+#: controllers/SubscriptionController.php:38
 msgid "Last Name"
 msgstr "Nom"
 
-#: controllers/SubscriptionController.php:40
+#: controllers/SubscriptionController.php:39
 msgid "Title"
 msgstr "Titre"
 
-#: controllers/SubscriptionController.php:41
+#: controllers/SubscriptionController.php:40
 msgid "Mr."
 msgstr "M"
 
-#: controllers/SubscriptionController.php:42
+#: controllers/SubscriptionController.php:41
 msgid "Mrs."
 msgstr "Mme"
 
-#: controllers/SubscriptionController.php:43
+#: controllers/SubscriptionController.php:42
 msgid "Miss"
 msgstr "Mlle"
 
-#: controllers/SubscriptionController.php:44
+#: controllers/SubscriptionController.php:43
 msgid "Dr"
 msgstr "Dr"
 
-#: controllers/SubscriptionController.php:47
+#: controllers/SubscriptionController.php:46
 msgid "Phone Number"
 msgstr "Numéro de télephone"
 
-#: controllers/SubscriptionController.php:49
+#: controllers/SubscriptionController.php:48
 msgid "Submit"
 msgstr "Envoyer"
 
-#: controllers/SubscriptionController.php:76
+#: controllers/SubscriptionController.php:75
 msgid "Please fill out all the required fields"
 msgstr "Merci de remplir tous les champs demandés."
 
