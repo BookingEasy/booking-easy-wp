@@ -1,257 +1,349 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2016-06-06 19:56+0000\n"
-"PO-Revision-Date: 2016-06-06 19:56+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2017-03-08 22:23+0100\n"
+"PO-Revision-Date: 2017-03-08 22:23+0100\n"
+"Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
 
-#: admin/templates/config.php:37
+#: controllers/AdminTokenController.php:28
 msgid "NOT CONNECTED"
 msgstr "NEPŘIPOJENO"
 
-#: admin/templates/config.php:37
+#: controllers/AdminTokenController.php:33
 msgid "CONNECTED"
 msgstr "PŘIPOJENO"
 
-#: admin/templates/config.php:37
+#: controllers/AdminTokenController.php:37
 msgid "Sagenda Authentication Settings"
 msgstr "Sagenda - Nastavení autentizace"
 
-#: admin/templates/config.php:44
+#: controllers/AdminTokenController.php:38
 msgid "Sagenda Authentication Code"
 msgstr "Sagenda - Autentizační kód"
 
-#: admin/templates/config.php:54
+#: controllers/AdminTokenController.php:39
 msgid "Save Changes"
 msgstr "Uložit změny"
 
+#: controllers/AdminTokenController.php:40
 msgid "Current Status"
 msgstr "Aktuální stav"
 
-#: admin/templates/config.php:47
+#: controllers/AdminTokenController.php:41
 msgid "Click here to get your Authentication code."
 msgstr "Klikněte zde pro získání autentizačního kódu."
 
-#: admin/templates/config.php:56
-msgid "[sagenda-wp] add this shortcode either in a post or page where you want to display the Sagenda form."
-msgstr "[Sagenda-wp] přidejte tento zkrácený kód buď do příspěvku nebo na stránku, kde chcete zobrazit formulář agendy."
+#: controllers/AdminTokenController.php:42
+#, fuzzy
+#| msgid ""
+#| "[sagenda-wp] add this shortcode either in a post or page where you want "
+#| "to display the Sagenda form."
+msgid ""
+"<strong>[sagenda-wp]</strong> add this shortcode either in a post or page "
+"where you want to display the Sagenda form."
+msgstr ""
+"[Sagenda-wp] přidejte tento zkrácený kód buď do příspěvku nebo na stránku, "
+"kde chcete zobrazit formulář agendy."
 
-#: admin/templates/config.php:57
-msgid "If you want to use a shortcode outside of the WordPress post or page editor, you can use this snippet to output it from the shortcode’s handler(s): <pre>echo do_shortcode([sagenda-wp])</pre>"
-msgstr "Chcete-li použít zkrácený kód mimo WordPress nebo editor stránek, můžete použít tento snippet jako výstup z shortcode’s handler(s): <pre> echo do_shortcode ([sagenda-wp]) </ pre>"
+#: controllers/AdminTokenController.php:43
+msgid ""
+"<strong>[sagenda-wp bookableitem=\"my bookable item name\"]</strong> if you "
+"want to display only one bookable item on that page. Pay attention : if your "
+"bookable item is name \"My Item\", bookableitem=\"my item\" or bookableitem="
+"\"My Item\" will be correct, but \"bookableitem=\"myitem\" not!"
+msgstr ""
 
-msgid "NOTE: You first need to register on Sagenda and then you will get a Authentication token which you will use to validate this Sagenda Plugin."
-msgstr "** Poznámka: Nejprve je nutné se zaregistrovat na Sagenda a poté obdržíte Autentizační token, který budete používat k ověření tohoto pluginu. **"
+#: controllers/AdminTokenController.php:44
+msgid ""
+"If you want to use a shortcode outside of the WordPress post or page editor, "
+"you can use this snippet to output it from the shortcode’s handler(s): "
+"<pre>echo do_shortcode([sagenda-wp])</pre>"
+msgstr ""
+"Chcete-li použít zkrácený kód mimo WordPress nebo editor stránek, můžete "
+"použít tento snippet jako výstup z shortcode’s handler(s): <pre> echo "
+"do_shortcode ([sagenda-wp]) </ pre>"
 
+#: controllers/AdminTokenController.php:45
+msgid ""
+"NOTE: You first need to register on Sagenda and then you will get a "
+"Authentication token which you will use to validate this Sagenda Plugin."
+msgstr ""
+"** Poznámka: Nejprve je nutné se zaregistrovat na Sagenda a poté obdržíte "
+"Autentizační token, který budete používat k ověření tohoto pluginu. **"
+
+#: controllers/AdminTokenController.php:46
 msgid "Read more"
 msgstr "Čtěte dále"
 
+#: controllers/AdminTokenController.php:47
 msgid "Create a free account "
-msgstr "Vytvoření bezplatného účtu:  <a href=\"https://sagenda.net/Accounts/Login\" target=\"_blank\">https://sagenda.net/Accounts/Login</a>"
+msgstr ""
+"Vytvoření bezplatného účtu:  <a href=\"https://sagenda.net/Accounts/Login\" "
+"target=\"_blank\">https://sagenda.net/Accounts/Login</a>"
 
+#: controllers/AdminTokenController.php:48
 msgid "About integration in your WP WebSite :"
 msgstr "K integraci do Vaší WP prezentace"
 
+#: controllers/AdminTokenController.php:49
 msgid "How to get the token :"
 msgstr "Jak získat token:"
 
+#: controllers/AdminTokenController.php:50
 msgid "Useful links :"
 msgstr "Užitečné odkazy :"
 
-#: templates/booking.php:142
-msgid "Back to Calendar"
-msgstr "Zpět do kalendáře"
+#: controllers/InformationMessageController.php:23
+#: controllers/SubscriptionController.php:49
+msgid "Back"
+msgstr ""
 
-#: templates/reservation.php:9
-msgid "Your Sagenda account is not connected:"
-msgstr "Váš účet  Sagenda není připojen:"
-
-#: templates/reservation.php:12
-msgid "1. Create a free account on <a href='https://sagenda.net/Accounts/Register'>Sagenda.</a> (set up your bookable items and events)."
-msgstr "1. Vytvořte si účet zdarma <a href='https://sagenda.net/Accounts/Register' target=\"_blank\"> Sagenda. </a> (Nastavte si rezervace a události)."
-
-#: templates/reservation.php:15
-msgid "2. Copy your token (from the backend of sagenda.net Settings / account)"
-msgstr "2. Zkopírujte token (z admin sekce sagenda.net Nastavení / účet)"
-
-#: templates/reservation.php:43
+#: controllers/InformationMessageController.php:24
 msgid "You successfully subscribed to the event."
 msgstr "Úspěšně jste se přihlásili k položce."
 
+#: controllers/SearchController.php:51
+msgid ""
+"You didn't configure Sagenda properly please enter your authentication code "
+"in Settings"
+msgstr ""
+
+#: controllers/SearchController.php:78
 msgid "Search for all the events between"
 msgstr "Prohledat všechny položky mezi"
 
+#: controllers/SearchController.php:79
 msgid "From"
-msgstr "Chcete-li zobrazit Sagendu mimo stránku nebo článek můžete použít zkrácený kód: : <pre>echo do_shortcode('[sagenda-wp]')</pre>"
+msgstr ""
+"Chcete-li zobrazit Sagendu mimo stránku nebo článek můžete použít zkrácený "
+"kód: : <pre>echo do_shortcode('[sagenda-wp]')</pre>"
 
+#: controllers/SearchController.php:80
 msgid "To"
 msgstr "Na"
 
+#: controllers/SearchController.php:81
 msgid "Please choose a bookable item"
 msgstr "Vyberte prosím položku pro objednání"
 
+#: controllers/SearchController.php:82
 msgid "Location"
 msgstr "Umístění"
 
-#: templates/booking.php:130
+#: controllers/SearchController.php:83
+#: controllers/SubscriptionController.php:47
 msgid "Description"
 msgstr "Popis"
 
-#: templates/reservation.php:139
+#: controllers/SearchController.php:84
 msgid "Create a free Booking Account on Sagenda!"
 msgstr "Vytvořte si zdarma účet v rezervačním systému Sagenda!"
 
+#: controllers/SearchController.php:85
 msgid "Search"
 msgstr "Hledat"
 
-#: templates/reservation.php:56 templates/reservation.php:84
-msgid "Start date"
-msgstr "Počáteční datum"
-
-#: templates/reservation.php:68 templates/reservation.php:95
-msgid "End Date"
-msgstr "Konečné datum"
-
-#: templates/reservation.php:107
-msgid "Bookable Items"
-msgstr "Položka k rezervaci"
-
-#: templates/reservation.php:127
+#: controllers/SearchController.php:86
 msgid "Click an event to book It:"
 msgstr "Pro rezervaci klikněte na událost:"
 
+#: controllers/SearchController.php:89
+msgid "book-it!"
+msgstr ""
+
+#: controllers/SearchController.php:90
+#: controllers/SubscriptionController.php:50
 msgid "Help"
 msgstr "Pomoc"
 
+#: controllers/SearchController.php:92
 msgid "No event found for the bookable item within the selected date range."
 msgstr "V rámci zvoleného časového období nebyly nalezeny žádné volné termíny."
 
+#: controllers/SubscriptionController.php:35
 msgid "Subscription"
 msgstr "Popis"
 
-#: templates/booking.php:119 templates/booking.php:121
+#: controllers/SubscriptionController.php:36
 msgid "Email"
 msgstr "Email"
 
-#: templates/booking.php:83 templates/booking.php:85
+#: controllers/SubscriptionController.php:37
 msgid "First Name"
 msgstr "Jméno"
 
-#: templates/booking.php:96 templates/booking.php:98
+#: controllers/SubscriptionController.php:38
 msgid "Last Name"
 msgstr "Příjmení"
 
-#: templates/booking.php:18
-msgid "Paid Event Information"
-msgstr "Informace o platbě"
-
-#: templates/booking.php:22 templates/reservation.php:110
-msgid "Bookable Item"
-msgstr "Položka pro rezervaci"
-
-#: templates/booking.php:26
-msgid "Event Title"
-msgstr "Název akce"
-
-#: templates/booking.php:30
-msgid "Payment Amount"
-msgstr "Částka k úhradě"
-
-#: templates/booking.php:34
-msgid "Payment Note"
-msgstr "Podrobnosti o platbě"
-
-#: templates/booking.php:38
-msgid "You will be redirected to the paypal website to complete your payment and booking"
-msgstr "Pro dokončení platby a rezervaca budete přesměrováni na PayPal internetové stránky"
-
-#: templates/booking.php:66
+#: controllers/SubscriptionController.php:39
 msgid "Title"
 msgstr "Titul"
 
-#: templates/booking.php:69
+#: controllers/SubscriptionController.php:40
 msgid "Mr."
 msgstr "Pan"
 
-#: templates/booking.php:74
+#: controllers/SubscriptionController.php:41
 msgid "Mrs."
 msgstr "Paní"
 
+#: controllers/SubscriptionController.php:42
 msgid "Miss"
 msgstr "Slečna"
 
+#: controllers/SubscriptionController.php:43
 msgid "Dr"
 msgstr "Dr"
 
-#: templates/booking.php:108 templates/booking.php:110
+#: controllers/SubscriptionController.php:46
 msgid "Phone Number"
 msgstr "Telefonní číslo"
 
-#: templates/booking.php:143
+#: controllers/SubscriptionController.php:48
 msgid "Submit"
 msgstr "Potvrdit"
 
-#: admin/templates/footer.php:2
-msgid "**NOTE: You first need to register on Sagenda and then you will get a Authentication token which you will use to validate this Sagenda Plugin. **"
-msgstr "** Poznámka: Nejprve je nutné se zaregistrovat na Sagenda a poté obdržíte Autentizační token, který budete používat k ověření tohoto pluginu. **"
-
-#: admin/templates/footer.php:3
-msgid "You can read more information about <a href=\"http://www.sagenda.com/add-booking-system-website/add-booking-plugin-wordpress-website/\">Sagenda WordPress plugin</a>"
-msgstr "Pro více informací o  <a href=\"http://www.sagenda.com/add-booking-system-website/add-booking-plugin-wordpress-website/\" target=\"_blank\">Sagenda WordPress plugin</a>"
-
-#: admin/templates/footer.php:4
-msgid "To create a free account : <a href=\"https://sagenda.net/Accounts/Login\">https://sagenda.net/Accounts/Login</a>"
-msgstr "Pro vytvoření bezplatného účtu:  <a href=\"https://sagenda.net/Accounts/Login\" target=\"_blank\">https://sagenda.net/Accounts/Login</a>"
-
-#: templates/booking.php:8
+#: controllers/SubscriptionController.php:75
 msgid "Please fill out all the required fields"
 msgstr "Vyplňte prosím všechna požadovaná pole"
 
+#: webservices/SagendaAPI.php:27
 msgid "Successfully connected"
 msgstr "Úspěšně připojeno"
 
-#: classes/shortcode.php:169
-msgid "No events found for the bookable item within the selected date range."
-msgstr "V rámci zvoleného časového období nebyly nalezeny žádné volné termíny."
+#: webservices/SagendaAPI.php:32
+msgid ""
+"Your token is wrong; please try again or generate another one in Sagenda’s "
+"backend."
+msgstr ""
+"Chybný token; Zkuste to prosím znovu nebo si vygenerujte nový v Sagenda "
+"admin rozhraní."
 
-#: admin/templates/footer.php:4
-msgid "To create a free account : <a href=\"https://sagenda.net/Accounts/Register\">https://sagenda.net/Accounts/Register</a>"
-msgstr "Pro vytvoření bezplatného účtu : <a href=\"https://sagenda.net/Accounts/Register\" target=\"_blank\">https://sagenda.net/Accounts/Register</a>"
-
-#: admin/templates/config.php:9
-msgid "Sagenda for WordPress: Sagenda Settings"
-msgstr "Sagenda pro WordPress: Sagenda Nastavení"
-
-#: admin/templates/config.php:20 templates/reservation.php:22
-msgid "You should enable curl service in your PHP/Apache configuration."
-msgstr "Měli byste umožnit spuštění curl služby ve vaší konfiguraci PHP / Apache."
-
-#: admin/templates/config.php:25
-msgid "It looks like Sagenda’s WebServices failed to connect to Internet and is blocked by the server’s firewall. Please contact your hosting provider support service and ask them to unblock Sagenda’s WebServices. You can give them our WP link as reference:"
-msgstr "Vypadá to, že Sagenda WebServices se nepodařilo připojit k Internetu a je blokována firewallem serveru. Obraťte se na službu podpory poskytovatele hostingu a požádatejte ji, aby odblokovala Sagenda WebServices. Můžete dát jim náš WP link jako referenci:"
-
-#: admin/templates/config.php:31
-msgid "Your token is wrong; please try again or generate another one in Sagenda’s backend."
-msgstr "Chybný token; Zkuste to prosím znovu nebo si vygenerujte nový v Sagenda admin rozhraní."
-
+#: webservices/SagendaAPI.php:85
 msgid "An error has occurred. Booking wasn't saved."
 msgstr "Došlo k chybě. Rezervace nebyla uložena."
 
-#: widgets/widget.php:12
-msgid "Reservation Widget"
-msgstr "Widget Rezervace"
+#~ msgid "Back to Calendar"
+#~ msgstr "Zpět do kalendáře"
 
-#: widgets/widget.php:12
-msgid "Display the Reservation Form"
-msgstr "Zobrazit rezervační formulář"
+#~ msgid "Your Sagenda account is not connected:"
+#~ msgstr "Váš účet  Sagenda není připojen:"
 
-#: widgets/widget.php:20
-msgid "SAGENDA"
-msgstr "SAGENDA"
+#~ msgid ""
+#~ "1. Create a free account on <a href='https://sagenda.net/Accounts/"
+#~ "Register'>Sagenda.</a> (set up your bookable items and events)."
+#~ msgstr ""
+#~ "1. Vytvořte si účet zdarma <a href='https://sagenda.net/Accounts/"
+#~ "Register' target=\"_blank\"> Sagenda. </a> (Nastavte si rezervace a "
+#~ "události)."
 
+#~ msgid ""
+#~ "2. Copy your token (from the backend of sagenda.net Settings / account)"
+#~ msgstr "2. Zkopírujte token (z admin sekce sagenda.net Nastavení / účet)"
+
+#~ msgid "Start date"
+#~ msgstr "Počáteční datum"
+
+#~ msgid "End Date"
+#~ msgstr "Konečné datum"
+
+#~ msgid "Bookable Items"
+#~ msgstr "Položka k rezervaci"
+
+#~ msgid "Paid Event Information"
+#~ msgstr "Informace o platbě"
+
+#~ msgid "Bookable Item"
+#~ msgstr "Položka pro rezervaci"
+
+#~ msgid "Event Title"
+#~ msgstr "Název akce"
+
+#~ msgid "Payment Amount"
+#~ msgstr "Částka k úhradě"
+
+#~ msgid "Payment Note"
+#~ msgstr "Podrobnosti o platbě"
+
+#~ msgid ""
+#~ "You will be redirected to the paypal website to complete your payment and "
+#~ "booking"
+#~ msgstr ""
+#~ "Pro dokončení platby a rezervaca budete přesměrováni na PayPal "
+#~ "internetové stránky"
+
+#~ msgid ""
+#~ "**NOTE: You first need to register on Sagenda and then you will get a "
+#~ "Authentication token which you will use to validate this Sagenda Plugin. "
+#~ "**"
+#~ msgstr ""
+#~ "** Poznámka: Nejprve je nutné se zaregistrovat na Sagenda a poté obdržíte "
+#~ "Autentizační token, který budete používat k ověření tohoto pluginu. **"
+
+#~ msgid ""
+#~ "You can read more information about <a href=\"http://www.sagenda.com/add-"
+#~ "booking-system-website/add-booking-plugin-wordpress-website/\">Sagenda "
+#~ "WordPress plugin</a>"
+#~ msgstr ""
+#~ "Pro více informací o  <a href=\"http://www.sagenda.com/add-booking-system-"
+#~ "website/add-booking-plugin-wordpress-website/\" target=\"_blank\">Sagenda "
+#~ "WordPress plugin</a>"
+
+#~ msgid ""
+#~ "To create a free account : <a href=\"https://sagenda.net/Accounts/Login"
+#~ "\">https://sagenda.net/Accounts/Login</a>"
+#~ msgstr ""
+#~ "Pro vytvoření bezplatného účtu:  <a href=\"https://sagenda.net/Accounts/"
+#~ "Login\" target=\"_blank\">https://sagenda.net/Accounts/Login</a>"
+
+#~ msgid ""
+#~ "No events found for the bookable item within the selected date range."
+#~ msgstr ""
+#~ "V rámci zvoleného časového období nebyly nalezeny žádné volné termíny."
+
+#~ msgid ""
+#~ "To create a free account : <a href=\"https://sagenda.net/Accounts/Register"
+#~ "\">https://sagenda.net/Accounts/Register</a>"
+#~ msgstr ""
+#~ "Pro vytvoření bezplatného účtu : <a href=\"https://sagenda.net/Accounts/"
+#~ "Register\" target=\"_blank\">https://sagenda.net/Accounts/Register</a>"
+
+#~ msgid "Sagenda for WordPress: Sagenda Settings"
+#~ msgstr "Sagenda pro WordPress: Sagenda Nastavení"
+
+#~ msgid "You should enable curl service in your PHP/Apache configuration."
+#~ msgstr ""
+#~ "Měli byste umožnit spuštění curl služby ve vaší konfiguraci PHP / Apache."
+
+#~ msgid ""
+#~ "It looks like Sagenda’s WebServices failed to connect to Internet and is "
+#~ "blocked by the server’s firewall. Please contact your hosting provider "
+#~ "support service and ask them to unblock Sagenda’s WebServices. You can "
+#~ "give them our WP link as reference:"
+#~ msgstr ""
+#~ "Vypadá to, že Sagenda WebServices se nepodařilo připojit k Internetu a je "
+#~ "blokována firewallem serveru. Obraťte se na službu podpory poskytovatele "
+#~ "hostingu a požádatejte ji, aby odblokovala Sagenda WebServices. Můžete "
+#~ "dát jim náš WP link jako referenci:"
+
+#~ msgid "Reservation Widget"
+#~ msgstr "Widget Rezervace"
+
+#~ msgid "Display the Reservation Form"
+#~ msgstr "Zobrazit rezervační formulář"
+
+#~ msgid "SAGENDA"
+#~ msgstr "SAGENDA"

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sagenda\n"
-"POT-Creation-Date: 2017-03-08 15:36+0100\n"
-"PO-Revision-Date: 2017-03-08 15:42+0100\n"
+"POT-Creation-Date: 2017-03-08 22:25+0100\n"
+"PO-Revision-Date: 2017-03-08 22:25+0100\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -166,7 +166,7 @@ msgstr ""
 msgid "Click an event to book It:"
 msgstr "Clicca su un evento per prenotare:"
 
-#: controllers/SearchController.php:89 controllers/SearchController.php:113
+#: controllers/SearchController.php:89
 msgid "book-it!"
 msgstr "Prenotalo!"
 

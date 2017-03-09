@@ -3,6 +3,8 @@ Are you a dev?
 You can contribute on github -> https://github.com/Sagenda/sagenda-wp
 But remember : “Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.”
 
+Need doc ? Generated it with Doxygen (http://www.stack.nl/~dimitri/doxygen/download.html#srcbin) using the doxygen file on root folder.
+
 == Views ==
 Views are rendered with TWIG template engine (http://twig.sensiolabs.org)
 Responsiveness is manage with Twitter bootstrap (http://getbootstrap.com/) and included into a bootstrap-wrapper in order to avoid conflict.
