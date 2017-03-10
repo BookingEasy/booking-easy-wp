@@ -125,6 +125,6 @@ class SagendaAPI
     // print_r($availableData);
     // echo"<br>------------END get availability----------<br>";
 
-    return \Unirest\Request::get($this->apiUrl."Events/GetAvailability/".$token."/".$fromDate."/".$toDate."?bookableItemId=".$bookableItemId)->body;
+    return \Unirest\Request::get($this->apiUrl."Events/GetAvailability/".$token."/".$fromDate."/".$toDate."?bookableItemId=".$bookableItemId);
   }
 }

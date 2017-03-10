@@ -73,6 +73,9 @@ class SearchController {
 
       $fromDate = $this->getFromDate();
       $toDate = $this->getToDate();
+      $availability = $sagendaAPI->getAvailability(get_option('mrs1_authentication_code'), $this->convertPickadateToWebserviceDateFormat($fromDate), $this->convertPickadateToWebserviceDateFormat($toDate), $selectedBookableItem->Id);
+
+      $total = count($availability->body);
 
       return $twig->render($this->view, array(
         'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
@@ -96,12 +99,25 @@ class SearchController {
         'descriptionValue'              => $selectedBookableItem->Description,
         'selectedId'                    => $selectedBookableItem->SelectedId,
         'bookableItems'                 => $bookableItems,
-        'availability'                  => $sagendaAPI->getAvailability(get_option('mrs1_authentication_code'), $this->convertPickadateToWebserviceDateFormat($fromDate), $this->convertPickadateToWebserviceDateFormat($toDate), $selectedBookableItem->Id),
+        'availability'                  => $availability->body,
         'errorMessage'                  => $errorMessage,
+        'paginationTotal'         => $total,
+        'paginationStep'         => ceil($total/10),
+        'paginationSelected'         => $this->getPagination(),
         'bookableItemSelectedByShortcode'=> $bookableItemSelectedByShortcode,
         'currentUrl'                      =>home_url()
       ));
     }
+  }
+
+  private function getPagination()
+  {
+    $paginationSelected = intval($_GET['paginationSelected']);
+    if($paginationSelected === null  || $paginationSelected === 0)
+    {
+      $paginationSelected = 1;
+    }
+    return $paginationSelected;
   }
 
   /**
@@ -117,10 +133,10 @@ class SearchController {
       $selectedId = $this->findBookableItemElementInList($bookableItems, $bookableItemSelectedByShortcode);
     }
     else {
-      $selectedId = 0;
-      if(isset($_POST['bookableItems']))
+      $selectedId = UrlHelper::getInput("bookableItems");
+      if($selectedId == null)
       {
-        $selectedId = $_POST['bookableItems'];
+        $selectedId = 0;
       }
     }
 
@@ -188,19 +204,12 @@ class SearchController {
   */
   private function getFromDate()
   {
-    //echo "<br>-->>>>>get from date = ";
-    if(isset($_POST['fromDate_submit']))
+    $fromDate = UrlHelper::getInput("fromDate_submit");
+    if($fromDate != null)
     {
-      //echo $_POST['fromDate_submit'];
-      //echo "<br>";
-      return $_POST['fromDate_submit'];
+      return $fromDate;
     }
-    else
-    {
-      //echo "<br>";
-      //print_r(date($this->numaricDateFormat, mktime(0, 0, 0, date("m"), date("d"), date("Y"))));
-      return date($this->numaricDateFormat, mktime(0, 0, 0, date("m"), date("d"), date("Y")));
-    }
+    return date($this->numaricDateFormat, mktime(0, 0, 0, date("m"), date("d"), date("Y")));
   }
 
   /**
@@ -209,19 +218,12 @@ class SearchController {
   */
   private function getToDate()
   {
-    //echo "<br>-->>>>>get to date = ";
-    if(isset($_POST['toDate_submit']))
+    $toDate = UrlHelper::getInput("toDate_submit");
+    if($toDate)
     {
-      //echo $_POST['toDate_submit'];
-      //echo "<br>";
-      return $_POST['toDate_submit'];
+      return $toDate;
     }
-    else
-    {
-      //echo "<br>";
-      //print_r(date($this->numaricDateFormat, mktime(0, 0, 0, date("m"), date("d") + 7, date("Y"))));
-      return date($this->numaricDateFormat, mktime(0, 0, 0, date("m"), date("d") + 7, date("Y")));
-    }
+    return date($this->numaricDateFormat, mktime(0, 0, 0, date("m"), date("d") + 7, date("Y")));
   }
 
   /**
