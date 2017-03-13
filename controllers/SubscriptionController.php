@@ -49,6 +49,13 @@ class SubscriptionController
         'back'                          => __('Back', 'sagenda-wp'),
         'help'                          => __( 'Help', 'sagenda-wp' ),
         'helpURL'                       => UrlHelper::getHelpUrl(get_bloginfo('language')),
+        'YourSelectedBooking'                          => __( 'Your selected booking :', 'sagenda-wp' ),
+        'EventName'                          => __( 'Event Name', 'sagenda-wp' ),
+        'PaymentAmount'                          => __( 'Payment Amount', 'sagenda-wp' ),
+        'LetsBookIt'                          => __( 'Now, let\'s book it! Please fill out the form below.', 'sagenda-wp' ),
+
+
+
       ));
     }
   }

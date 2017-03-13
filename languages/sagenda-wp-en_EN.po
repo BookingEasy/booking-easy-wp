@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sagenda\n"
-"POT-Creation-Date: 2017-03-08 22:25+0100\n"
-"PO-Revision-Date: 2017-03-08 22:26+0100\n"
+"POT-Creation-Date: 2017-03-13 22:07+0100\n"
+"PO-Revision-Date: 2017-03-13 22:08+0100\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: Sagenda <send us a message from sagenda.com>\n"
 "Language: en_US\n"
@@ -124,53 +124,53 @@ msgstr ""
 "You didn't configure Sagenda properly please enter your authentication code "
 "in Settings"
 
-#: controllers/SearchController.php:78
+#: controllers/SearchController.php:81
 msgid "Search for all the events between"
 msgstr "Search for all the events between"
 
-#: controllers/SearchController.php:79
+#: controllers/SearchController.php:82
 msgid "From"
 msgstr "From"
 
-#: controllers/SearchController.php:80
+#: controllers/SearchController.php:83
 msgid "To"
 msgstr "To"
 
-#: controllers/SearchController.php:81
+#: controllers/SearchController.php:84
 msgid "Please choose a bookable item"
 msgstr "Please choose a bookable item"
 
-#: controllers/SearchController.php:82
+#: controllers/SearchController.php:85
 msgid "Location"
 msgstr "Location"
 
-#: controllers/SearchController.php:83
+#: controllers/SearchController.php:86
 #: controllers/SubscriptionController.php:47
 msgid "Description"
 msgstr "Description"
 
-#: controllers/SearchController.php:84
+#: controllers/SearchController.php:87
 msgid "Create a free Booking Account on Sagenda!"
 msgstr "Create a free Booking Account on Sagenda!"
 
-#: controllers/SearchController.php:85
+#: controllers/SearchController.php:88
 msgid "Search"
 msgstr "Search"
 
-#: controllers/SearchController.php:86
+#: controllers/SearchController.php:89
 msgid "Click an event to book It:"
 msgstr "Click an event to book It:"
 
-#: controllers/SearchController.php:89
+#: controllers/SearchController.php:92
 msgid "book-it!"
 msgstr "book-it!"
 
-#: controllers/SearchController.php:90
+#: controllers/SearchController.php:93
 #: controllers/SubscriptionController.php:50
 msgid "Help"
 msgstr "Help"
 
-#: controllers/SearchController.php:92
+#: controllers/SearchController.php:95
 msgid "No event found for the bookable item within the selected date range."
 msgstr "No event found for the bookable item within the selected date range."
 
@@ -218,7 +218,23 @@ msgstr "Phone Number"
 msgid "Submit"
 msgstr "Submit"
 
-#: controllers/SubscriptionController.php:75
+#: controllers/SubscriptionController.php:52
+msgid "Your selected booking :"
+msgstr "Your selected booking :"
+
+#: controllers/SubscriptionController.php:53
+msgid "Event Name"
+msgstr "Event Name"
+
+#: controllers/SubscriptionController.php:54
+msgid "Payment Amount"
+msgstr "Payment Amount"
+
+#: controllers/SubscriptionController.php:55
+msgid "Now, let's book it! Please fill out the form below."
+msgstr "Now, let's book it! Please fill out the form below."
+
+#: controllers/SubscriptionController.php:82
 msgid "Please fill out all the required fields"
 msgstr "Please fill out all the required fields"
 
@@ -279,12 +295,6 @@ msgstr "An error has occurred. Booking wasn't saved."
 
 #~ msgid "Bookable Item"
 #~ msgstr "Bookable Item"
-
-#~ msgid "Event Title"
-#~ msgstr "Event Title"
-
-#~ msgid "Payment Amount"
-#~ msgstr "Payment Amount"
 
 #~ msgid "Payment Note"
 #~ msgstr "Payment Note"

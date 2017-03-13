@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sagenda-wp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-08 20:58+0100\n"
-"PO-Revision-Date: 2017-03-08 22:06+0100\n"
+"POT-Creation-Date: 2017-03-13 22:08+0100\n"
+"PO-Revision-Date: 2017-03-13 22:09+0100\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -126,53 +126,53 @@ msgstr ""
 "Vous n’avez pas configuré Sagenda correctement, merci d’entrer votre code "
 "d’authentification dans les Paramètres."
 
-#: controllers/SearchController.php:78
+#: controllers/SearchController.php:81
 msgid "Search for all the events between"
 msgstr "Rechercher tous les évènements entre :"
 
-#: controllers/SearchController.php:79
+#: controllers/SearchController.php:82
 msgid "From"
 msgstr "De"
 
-#: controllers/SearchController.php:80
+#: controllers/SearchController.php:83
 msgid "To"
 msgstr "A"
 
-#: controllers/SearchController.php:81
+#: controllers/SearchController.php:84
 msgid "Please choose a bookable item"
 msgstr "Merci de choisir un élément réservable"
 
-#: controllers/SearchController.php:82
+#: controllers/SearchController.php:85
 msgid "Location"
 msgstr "Emplacement"
 
-#: controllers/SearchController.php:83
+#: controllers/SearchController.php:86
 #: controllers/SubscriptionController.php:47
 msgid "Description"
 msgstr "Description"
 
-#: controllers/SearchController.php:84
+#: controllers/SearchController.php:87
 msgid "Create a free Booking Account on Sagenda!"
 msgstr "Créez un compte gratuit sur Sagenda!"
 
-#: controllers/SearchController.php:85
+#: controllers/SearchController.php:88
 msgid "Search"
 msgstr "Recherche"
 
-#: controllers/SearchController.php:86
+#: controllers/SearchController.php:89
 msgid "Click an event to book It:"
 msgstr "Cliquez un évènement pour le réserver:"
 
-#: controllers/SearchController.php:89
+#: controllers/SearchController.php:92
 msgid "book-it!"
 msgstr "réservez!"
 
-#: controllers/SearchController.php:90
+#: controllers/SearchController.php:93
 #: controllers/SubscriptionController.php:50
 msgid "Help"
 msgstr "Aide"
 
-#: controllers/SearchController.php:92
+#: controllers/SearchController.php:95
 msgid "No event found for the bookable item within the selected date range."
 msgstr ""
 "Pas d’évènement trouvé pour l’élément réservable sélectioné dans la plage de "
@@ -222,7 +222,23 @@ msgstr "Numéro de télephone"
 msgid "Submit"
 msgstr "Envoyer"
 
-#: controllers/SubscriptionController.php:75
+#: controllers/SubscriptionController.php:52
+msgid "Your selected booking :"
+msgstr "Votre évènement sélectionné :"
+
+#: controllers/SubscriptionController.php:53
+msgid "Event Name"
+msgstr "Nom de l’évènement"
+
+#: controllers/SubscriptionController.php:54
+msgid "Payment Amount"
+msgstr "Montant du paiement"
+
+#: controllers/SubscriptionController.php:55
+msgid "Now, let's book it! Please fill out the form below."
+msgstr "Réservons! Merci de remplir de formulaire ci-dessous."
+
+#: controllers/SubscriptionController.php:82
 msgid "Please fill out all the required fields"
 msgstr "Merci de remplir tous les champs demandés."
 
@@ -283,12 +299,6 @@ msgstr "Une erreur est survenue. La réservation n’a pas été sauvée."
 
 #~ msgid "Bookable Item"
 #~ msgstr "Element réservable"
-
-#~ msgid "Event Title"
-#~ msgstr "Titre de l’évènement"
-
-#~ msgid "Payment Amount"
-#~ msgstr "Montant du paiement"
 
 #~ msgid "Payment Note"
 #~ msgstr "Note de paiement"

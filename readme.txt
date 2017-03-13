@@ -64,17 +64,23 @@ Follow these steps to install Sagenda:
 3. Copy your token (from the backend of sagenda.net Settings / account settings) to your WordPress installation (backend of wp / Settings / Sagenda).
 4. Use the shortcode [sagenda-wp] in a page or an article or ( you can also display only one "bookable item" : [sagenda-wp bookableitem="my bookable item name"]).
 
+SUPPORT THIPS : any error message? try to update to the last version of WordPress and use PHP 7 or higher !
+
 == Screenshots ==
 1. How to identify my Sagenda account in WordPress? Copy the authentication code (token) from your Sagenda account and paste it into your WordPress installation
 
 == Upgrade Notice ==
+= 1.3.0 =
+* ADDED : Pagination for your events.
+
+== Changelog ==
+
 = 1.2.0 =
 * NOTICE : As we rebuilded everything from scratch you will have some translations missing, don't hesitate to add them on OneSky, we will push a new version every 2 weeks : http://osp7icw.oneskyapp.com/admin/project/dashboard/project/101655
 * IMPROVED : Frontend layout using Twitter bootstrap.
 * ADDED : Shortcode management to display only one bookable item, please just use it so : [sagenda-wp bookableitem="my bookable item name"]
 * TESTED : Compatibility of the reservation plugin with WordPress 4.7.3
 
-== Changelog ==
 
 = 1.1.11 =
 * Improved : French translations.
