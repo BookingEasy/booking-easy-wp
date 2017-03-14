@@ -3,30 +3,30 @@
 
 
 <div class="row">
-<div class="col-xs-12 text-left">
-  <h2>{{ subscription }}</h2>
-</div>
+  <div class="col-xs-12 text-left">
+    <h2>{{ subscription }}</h2>
+  </div>
 </div>
 
 <br />
 <form action="" method="post" data-toggle="validator" id="form-subscription-submit">
 
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title">{{YourSelectedBooking}}</h3>
+  <div>
+    <div >
+      <h3>{{YourSelectedBooking}}</h3>
     </div>
-    <div class="panel-body">
-      {{booking.DateDisplay}}
+    <div>
+      <strong>{{booking.DateDisplay}}</strong>
     </div>
 
     {% if booking.IsPaidEvent == "1" %}
-    <div class="panel-footer" style="font-style:italic">
+    <div  style="font-style:italic">
       {{EventName}} : {{booking.EventTitle}} <br>
       {{PaymentAmount}} : {{booking.PaymentAmount}} {{booking.PaymentCurrency}}
     </div>
     {% endif  %}
-
-    <div class="panel-footer" style="font-style:italic">{{LetsBookIt}}</div>
+ <br>
+    <div style="font-style:italic">{{LetsBookIt}}</div>
   </div>
 
   {% if warning is not empty  %}
@@ -75,7 +75,7 @@
 </form>
 
 <script type="text/javascript">
-  jQuery(document).ready(function ($) {
+jQuery(document).ready(function ($) {
   $("#submit-subscription-button").click(function() {
     if({{booking.IsPaidEvent}} == "1"){
       $("#form-subscription-submit").submit();
