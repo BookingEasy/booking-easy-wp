@@ -1,6 +1,6 @@
 {% extends "wrapper.twig" %}
 {% block content %}
-	{% if result is not empty %}
+	{% if result is not empty %} 
 	  <div class="alert alert-{{bootstrapAlertType}}" role="alert">Please pay for your event</div>
 	  <div class="col-xs-6 text-left"><a href="{{result}}"><button type="button" class="btn btn-warning">Pay</button></a></div>
 	{% else %}

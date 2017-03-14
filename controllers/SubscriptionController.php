@@ -75,7 +75,6 @@ class SubscriptionController
       {
         $result = $this->setBooking($booking);
         $redirectUrl = $result[ReturnUrl];
-        //print_r($result[ReturnUrl]);
         $didSucceed = true;
       }
       else {

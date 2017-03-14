@@ -1,33 +1,29 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sagenda-wp\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-08 22:22+0100\n"
-"PO-Revision-Date: 2017-03-12 23:17+0100\n"
+"POT-Creation-Date: 2017-03-14 15:25+0100\n"
+"PO-Revision-Date: 2017-03-14 15:25+0100\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
-"Language-Team: sagenda <send us a message from sagenda.com>\n"
-"Language: de_DE\n"
+"Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.12\n"
-"X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: assets\n"
 
 #: controllers/AdminTokenController.php:28
 msgid "NOT CONNECTED"
-msgstr "NICHT VERBUNDEN"
+msgstr "Nicht verbunden"
 
 #: controllers/AdminTokenController.php:33
 msgid "CONNECTED"
-msgstr "VERBUNDEN"
+msgstr "Verbunden"
 
 #: controllers/AdminTokenController.php:37
 msgid "Sagenda Authentication Settings"
@@ -43,23 +39,19 @@ msgstr "Änderungen speichern"
 
 #: controllers/AdminTokenController.php:40
 msgid "Current Status"
-msgstr ""
+msgstr "Aktueller Status"
 
 #: controllers/AdminTokenController.php:41
 msgid "Click here to get your Authentication code."
-msgstr "Klicken Sie hier, um Ihren Code zur Authentifizierung zu bekommen."
+msgstr "Klicken Sie hier, um Ihren Authentifizierungs-Code zu bekommen."
 
 #: controllers/AdminTokenController.php:42
-#, fuzzy
-#| msgid ""
-#| "[sagenda-wp] add this shortcode either in a post or page where you want "
-#| "to display the Sagenda form."
 msgid ""
 "<strong>[sagenda-wp]</strong> add this shortcode either in a post or page "
 "where you want to display the Sagenda form."
 msgstr ""
-"[sagenda-wp] fügen Sie diesen short code in jedem Artikel oder jeder Seite "
-"ein, wo Sie das Sagenda-Formular anzeigen wollen."
+"<strong>[sagenda-wp]</strong> fügen Sie diesen short code in dem Artikel "
+"oder der Seite ein, in der Sie das Sagenda-Formular anzeigen wollen."
 
 #: controllers/AdminTokenController.php:43
 msgid ""
@@ -68,6 +60,10 @@ msgid ""
 "bookable item is name \"My Item\", bookableitem=\"my item\" or bookableitem="
 "\"My Item\" will be correct, but \"bookableitem=\"myitem\" not!"
 msgstr ""
+"<strong>[sagenda-wp bookableitem=\"my bookable item name\"]</strong> wenn "
+"Sie nur ein bookable item auf dieser Seite anzeigen wollen. Bitte beachten "
+"Sie: Wenn ihr bookable item \"My Item\" heißt, ist bookableitem=\"my item\" "
+"oder bookableitem=\"My Item\" richtig, aber \"bookableitem=\"myitem\" nicht!"
 
 #: controllers/AdminTokenController.php:44
 msgid ""
@@ -75,120 +71,113 @@ msgid ""
 "you can use this snippet to output it from the shortcode’s handler(s): "
 "<pre>echo do_shortcode([sagenda-wp])</pre>"
 msgstr ""
-"Wenn Sie einen short code verwenden wollen, der nicht zum WordPress Artikel- "
-"oder Seiteneditor gehört, können Sie diesen code benutzen, um Ihren shortcut "
-"einzufügen: <pre> echo do_shortcode([sagenda-wp])</pre>"
+"Wenn Sie den Shortcode außerhalb des WordPress Beitrags- oder SeitenEditors "
+"benutzen möchten, verwenden Sie folgendes Code-Stückchen um es vom Shortcode-"
+"Handler ausgeben zu lassen: <pre>echo do_shortcode([sagenda-wp])</pre>"
 
 #: controllers/AdminTokenController.php:45
-#, fuzzy
-#| msgid ""
-#| "**NOTE: You first need to register on Sagenda and then you will get a "
-#| "Authentication token which you will use to validate this Sagenda Plugin. "
-#| "**"
 msgid ""
 "NOTE: You first need to register on Sagenda and then you will get a "
 "Authentication token which you will use to validate this Sagenda Plugin."
 msgstr ""
-"** Hinweis: Sie müssen sich zuerst auf Sagenda registrieren, dann erhalten "
-"Sie einen Authentifizierungs-Code (Token), den Sie verwenden, um dieses "
-"Sagenda Plugin zu validieren. **"
+"ACHTUNG: Sie müssen sich erst bei Sagenda anmelden, und bekommen dort den "
+"Authentifizierungsschlüssel, den für das Sagenda Plugin brauchen."
 
 #: controllers/AdminTokenController.php:46
 msgid "Read more"
-msgstr ""
+msgstr "Weiterlesen"
 
 #: controllers/AdminTokenController.php:47
-#, fuzzy
-#| msgid "Create a free Booking Account on Sagenda!"
 msgid "Create a free account "
-msgstr "Erstellen Sie einen kostenlosen Buchungs-Account bei Sagenda"
+msgstr "Ein kostenloses Konto eröffnen "
 
 #: controllers/AdminTokenController.php:48
 msgid "About integration in your WP WebSite :"
-msgstr ""
+msgstr "Über die Einbindung in Ihre WordPress Webseite:"
 
 #: controllers/AdminTokenController.php:49
 msgid "How to get the token :"
-msgstr ""
+msgstr "Wie man den Schlüssel bekommt:"
 
 #: controllers/AdminTokenController.php:50
 msgid "Useful links :"
-msgstr ""
+msgstr "Nützliche Links"
 
 #: controllers/InformationMessageController.php:23
 #: controllers/SubscriptionController.php:49
 msgid "Back"
-msgstr ""
+msgstr "Zurück"
 
 #: controllers/InformationMessageController.php:24
 msgid "You successfully subscribed to the event."
-msgstr "Sie haben sich erfolgreich für das Ereignis angemeldet"
+msgstr "Sie haben sich erfolgreich für die Veranstaltung angemeldet."
 
 #: controllers/SearchController.php:51
 msgid ""
 "You didn't configure Sagenda properly please enter your authentication code "
 "in Settings"
 msgstr ""
-
-#: controllers/SearchController.php:78
-msgid "Search for all the events between"
-msgstr ""
-
-#: controllers/SearchController.php:79
-msgid "From"
-msgstr ""
-
-#: controllers/SearchController.php:80
-msgid "To"
-msgstr ""
+"Sie haben Sagenda nicht richtig eingerichtet, bitte geben Sie Ihren "
+"Authentifizierungscode in den Einstellungen ein."
 
 #: controllers/SearchController.php:81
-msgid "Please choose a bookable item"
-msgstr ""
+msgid "Search for all the events between"
+msgstr "Suchen Sie nach allen Terminen zwischen"
 
 #: controllers/SearchController.php:82
-msgid "Location"
-msgstr ""
+msgid "From"
+msgstr "von"
 
 #: controllers/SearchController.php:83
+msgid "To"
+msgstr "bis"
+
+#: controllers/SearchController.php:84
+msgid "Please choose a bookable item"
+msgstr "Bitte wählen Sie ein Angebot"
+
+#: controllers/SearchController.php:85
+msgid "Location"
+msgstr "Ort"
+
+#: controllers/SearchController.php:86
 #: controllers/SubscriptionController.php:47
 msgid "Description"
 msgstr "Beschreibung"
 
-#: controllers/SearchController.php:84
+#: controllers/SearchController.php:87
 msgid "Create a free Booking Account on Sagenda!"
-msgstr "Erstellen Sie einen kostenlosen Buchungs-Account bei Sagenda"
+msgstr "Richten Sie eine kostenloses Buchungskonto bei Sagenda ein!"
 
-#: controllers/SearchController.php:85
+#: controllers/SearchController.php:88
 msgid "Search"
-msgstr ""
+msgstr "Suchen"
 
-#: controllers/SearchController.php:86
+#: controllers/SearchController.php:89
 msgid "Click an event to book It:"
 msgstr "Klicken Sie auf ein Ereignis, um es zu buchen"
 
-#: controllers/SearchController.php:89
+#: controllers/SearchController.php:92
 msgid "book-it!"
-msgstr ""
+msgstr "Buchen!"
 
-#: controllers/SearchController.php:90
+#: controllers/SearchController.php:93
 #: controllers/SubscriptionController.php:50
 msgid "Help"
-msgstr ""
+msgstr "Hilfe"
 
-#: controllers/SearchController.php:92
+#: controllers/SearchController.php:95
 msgid "No event found for the bookable item within the selected date range."
 msgstr ""
+"Kein Termin für das buchbare Element im ausgewählten Zeitraum gefunden."
 
 #: controllers/SubscriptionController.php:35
-#, fuzzy
-#| msgid "Description"
 msgid "Subscription"
-msgstr "Beschreibung"
+msgstr "Abonnement"
 
 #: controllers/SubscriptionController.php:36
 msgid "Email"
-msgstr "Email"
+msgstr "E-Mail"
 
 #: controllers/SubscriptionController.php:37
 msgid "First Name"
@@ -200,7 +189,7 @@ msgstr "Nachname"
 
 #: controllers/SubscriptionController.php:39
 msgid "Title"
-msgstr "Anrede"
+msgstr "Titel"
 
 #: controllers/SubscriptionController.php:40
 msgid "Mr."
@@ -212,23 +201,39 @@ msgstr "Frau"
 
 #: controllers/SubscriptionController.php:42
 msgid "Miss"
-msgstr ""
+msgstr "Frau"
 
 #: controllers/SubscriptionController.php:43
 msgid "Dr"
-msgstr ""
+msgstr "Dr."
 
 #: controllers/SubscriptionController.php:46
 msgid "Phone Number"
-msgstr "Telefonnummer"
+msgstr "Telefon"
 
 #: controllers/SubscriptionController.php:48
 msgid "Submit"
-msgstr "Abschicken"
+msgstr "Absenden"
 
-#: controllers/SubscriptionController.php:75
+#: controllers/SubscriptionController.php:52
+msgid "Your selected booking :"
+msgstr "Sie haben folgende Buchung ausgewählt:"
+
+#: controllers/SubscriptionController.php:53
+msgid "Event Name"
+msgstr "Termin Name"
+
+#: controllers/SubscriptionController.php:54
+msgid "Payment Amount"
+msgstr "Zahlungskonto"
+
+#: controllers/SubscriptionController.php:55
+msgid "Now, let's book it! Please fill out the form below."
+msgstr "Jetzt buchen! Bitte füllen Sie unten das Formular aus."
+
+#: controllers/SubscriptionController.php:81
 msgid "Please fill out all the required fields"
-msgstr "Bitte füllen Sie alle Pflichtfelder aus"
+msgstr "Bitte füllen Sie die erforderlichen Felder aus."
 
 #: webservices/SagendaAPI.php:27
 msgid "Successfully connected"
@@ -239,101 +244,10 @@ msgid ""
 "Your token is wrong; please try again or generate another one in Sagenda’s "
 "backend."
 msgstr ""
-"Ihr Authentifizierung Code (token) ist falsch, bitte versuchen Sie es noch "
-"einmal oder erstellen Sie eine neue Wertmarke in Sagenda Backend."
+"Ihr Token ist falsch. Bitte versuchen Sie es noch eimal oder erzeugen Sie "
+"ein neues auf Sagendas Webseite."
 
 #: webservices/SagendaAPI.php:85
 msgid "An error has occurred. Booking wasn't saved."
 msgstr ""
 "Es ist ein Fehler aufgetreten. Die Buchung konnte nicht gespeichert werden."
-
-#~ msgid "Sagenda for WordPress: Sagenda Settings"
-#~ msgstr "Sagenda für WordPress: Sagenda Einstellungen"
-
-#~ msgid "You should enable curl service in your PHP/Apache configuration."
-#~ msgstr ""
-#~ "Sie solleten die Einstellung 'curl service' in Ihrer PHP/Apache "
-#~ "Konfiguration aktivieren."
-
-#~ msgid ""
-#~ "It looks like Sagenda’s WebServices failed to connect to Internet and is "
-#~ "blocked by the server’s firewall. Please contact your hosting provider "
-#~ "support service and ask them to unblock Sagenda’s WebServices. You can "
-#~ "give them our WP link as reference:"
-#~ msgstr ""
-#~ "Es scheint, dass Sagendas Webservice nicht auf das Internet zugreifen "
-#~ "kann und von der Firewall auf dem Server blockiert wird.Bitte "
-#~ "kontaktieren Sie den Support Ihres Hosting-Anbieters und bitten Sie ihn, "
-#~ "Sagendas Webservice freizuschalten. Sie können ihm unseren WP-link als "
-#~ "Referenz geben:"
-
-#~ msgid ""
-#~ "You can read more information about <a href=\"http://www.sagenda.com/add-"
-#~ "booking-system-website/add-booking-plugin-wordpress-website/\">Sagenda "
-#~ "WordPress plugin</a>"
-#~ msgstr ""
-#~ "Sie können weitere Informationen über <a href=\"http://www.sagenda.com/"
-#~ "add-booking-system-website/add-booking-plugin-wordpress-website/ target="
-#~ "\"_blank\"\">Sagenda WordPress plugin</a> lesen."
-
-#~ msgid ""
-#~ "To create a free account : <a href=\"https://sagenda.net/Accounts/Register"
-#~ "\">https://sagenda.net/Accounts/Register</a>"
-#~ msgstr ""
-#~ "Erstellen Sie einen kostenlosen Account bei  <a href=\"https://sagenda."
-#~ "net/Accounts/Register\" target=\"_blank\">https://sagenda.net/Accounts/"
-#~ "Register</a>"
-
-#~ msgid "Bookable Item"
-#~ msgstr "Buchbarer Termin"
-
-#, fuzzy
-#~ msgid "Event Title"
-#~ msgstr "Anrede"
-
-#~ msgid "Back to Calendar"
-#~ msgstr "Zurück zum Kalender"
-
-#~ msgid "Your Sagenda account is not connected:"
-#~ msgstr "Sie sind nicht mit Ihren Sagenda-Account angemeldet"
-
-#~ msgid ""
-#~ "1. Create a free account on <a href='https://sagenda.net/Accounts/"
-#~ "Register'>Sagenda.</a> (set up your bookable items and events)."
-#~ msgstr ""
-#~ "1. Erstellen Sie einen kostenlosen Account bei <a href='https://sagenda."
-#~ "net/Accounts/Register' target=\"_blank\">Sagenda.</a> (Erstellen Sie Ihre "
-#~ "buchbaren Termine und Ereignisse)."
-
-#~ msgid ""
-#~ "2. Copy your token (from the backend of sagenda.net Settings / account)"
-#~ msgstr ""
-#~ "2. Kopieren Sie Ihren Code (aus dem Backend von sagenda.net "
-#~ "Einstellungen / Account"
-
-#~ msgid "Start date"
-#~ msgstr "Datum des Beginns"
-
-#~ msgid "End Date"
-#~ msgstr "Datum des Endes"
-
-#~ msgid "Bookable Items"
-#~ msgstr "Buchbare Termine"
-
-#~ msgid "Reservation Widget"
-#~ msgstr "Widget für Reservierungen"
-
-#~ msgid "Display the Reservation Form"
-#~ msgstr "Zeigen Sie das Reservierungsformular an"
-
-#~ msgid "SAGENDA"
-#~ msgstr "SAGENDA"
-
-#~ msgid "Courtesy"
-#~ msgstr "Anrede"
-
-#~ msgid "Mrs"
-#~ msgstr "Frau"
-
-#~ msgid "You didn’t connected your Sagenda account :"
-#~ msgstr "Sie sind nicht mit Ihren Sagenda-Account angemeldet"

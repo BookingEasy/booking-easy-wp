@@ -22,6 +22,9 @@ Using this WP plugin is a better way to display your booking on your WP frontend
 
 **NOTE: You need to register an account on the Sagenda site and then you will get an authentication code which you will use to validate your Sagenda plugin.**
 
+SAGENDA WP PLUGIN 1.2.X REQUIRE PHP >5.6, 7 IS PREFERED !
+FOR YOUR OWN SAFETY DON'T USE PHP VERSION OLDER THAN 5.6 THERE IS NO SECURITY PATCH -> http://php.net/supported-versions.php
+
 = LANGUAGE / TRANSLATIONS =
 
   Chinese Simplified - 简体中文
@@ -70,8 +73,10 @@ SUPPORT THIPS : any error message? try to update to the last version of WordPres
 1. How to identify my Sagenda account in WordPress? Copy the authentication code (token) from your Sagenda account and paste it into your WordPress installation
 
 == Upgrade Notice ==
-= 1.3.0 =
-* ADDED : Pagination for your events.
+= 1.2.1 =
+* ADDED : Pagination for your events (booking list).
+* FIXED : A problem with a .js.
+* Improved : French and German translations.
 
 == Changelog ==
 
