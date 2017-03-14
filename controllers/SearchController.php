@@ -90,8 +90,6 @@ class SearchController {
         'dateFormat'                    => PickadateHelper::getPickadateDateFormat(),
         'pickerTranslated'              => $pickerTranslated,
         'bookIt'                          => __( 'book-it!', 'sagenda-wp' ),
-        'help'                          => __( 'Help', 'sagenda-wp' ),
-        'helpURL'                       => UrlHelper::getHelpUrl(get_bloginfo('language')),
         'warningNoBookingFound'         => __('No event found for the bookable item within the selected date range.', 'sagenda-wp'),
         'fromDate'                      => $fromDate,
         'toDate'                        => $toDate,

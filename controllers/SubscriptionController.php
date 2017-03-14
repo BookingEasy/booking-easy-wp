@@ -47,8 +47,6 @@ class SubscriptionController
         'description'                   => __('Description', 'sagenda-wp'),
         'submit'                        => __('Submit', 'sagenda-wp'),
         'back'                          => __('Back', 'sagenda-wp'),
-        'help'                          => __( 'Help', 'sagenda-wp' ),
-        'helpURL'                       => UrlHelper::getHelpUrl(get_bloginfo('language')),
         'YourSelectedBooking'                          => __( 'Your selected booking :', 'sagenda-wp' ),
         'EventName'                          => __( 'Event Name', 'sagenda-wp' ),
         'PaymentAmount'                          => __( 'Payment Amount', 'sagenda-wp' ),
