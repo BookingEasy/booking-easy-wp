@@ -4,7 +4,7 @@ Donate link: http://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, BnB
 Requires at least: 3.0
 Tested up to: 4.7.3
-Stable tag: 1.2.1
+Stable tag: 1.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,12 +73,22 @@ SUPPORT THIPS : any error message? try to update to the last version of WordPres
 1. How to identify my Sagenda account in WordPress? Copy the authentication code (token) from your Sagenda account and paste it into your WordPress installation
 
 == Upgrade Notice ==
+= 1.2.4 =
+* FIXED : Important bug when using several bookable items.
+
+
+== Changelog ==
+
+= 1.2.3 =
+* BETA version.
+
+= 1.2.2 =
+* BETA version.
+
 = 1.2.1 =
 * ADDED : Pagination for your events (booking list).
 * FIXED : A problem with a .js.
 * Improved : French and German translations.
-
-== Changelog ==
 
 = 1.2.0 =
 * NOTICE : As we rebuilded everything from scratch you will have some translations missing, don't hesitate to add them on OneSky, we will push a new version every 2 weeks : http://osp7icw.oneskyapp.com/admin/project/dashboard/project/101655

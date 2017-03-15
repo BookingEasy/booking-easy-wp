@@ -15,9 +15,9 @@
 <ul class="list-group">
   {% for event in availability|slice((paginationSelected-1)*10,10) %}
   {% if event.IsPaidEvent == true%}
-  <a href="?EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}&EventScheduleId={{event.EventScheduleId}}&isPadEvent={{event.IsPaidEvent}}&paymentAmount={{event.PaymentAmount}}&paymentCurrency={{event.PaymentCurrency}}&eventTitle={{event.EventTitle}}&currentUrl={{currentUrl}}"> <li class="list-group-item"><span class="badge">{{bookIt}}</span>{{event.DateDisplay}} : {{event.PaymentAmount}} {{event.PaymentCurrency}} : Paid Event : {{event.EventTitle}}</li></a>
+  <a href="?bookableItemId={{bookableItemId}}&EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}&EventScheduleId={{event.EventScheduleId}}&isPadEvent={{event.IsPaidEvent}}&paymentAmount={{event.PaymentAmount}}&paymentCurrency={{event.PaymentCurrency}}&eventTitle={{event.EventTitle}}&currentUrl={{currentUrl}}"> <li class="list-group-item"><span class="badge">{{bookIt}}</span>{{event.DateDisplay}} : {{event.PaymentAmount}} {{event.PaymentCurrency}} : Paid Event : {{event.EventTitle}}</li></a>
   {% else %}
-  <a href="?EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}&EventScheduleId={{event.EventScheduleId}}&isPadEvent=0&eventTitle={{event.EventTitle}}&currentUrl={{currentUrl}}"> <li class="list-group-item"><span class="badge">{{bookIt}}</span>{{event.DateDisplay}} : {{event.EventTitle}}</li></a>
+  <a href="?bookableItemId={{bookableItemId}}&EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}&EventScheduleId={{event.EventScheduleId}}&isPadEvent=0&eventTitle={{event.EventTitle}}&currentUrl={{currentUrl}}"> <li class="list-group-item"><span class="badge">{{bookIt}}</span>{{event.DateDisplay}} : {{event.EventTitle}}</li></a>
   {% endif %}
   {% endfor %}
 </ul>

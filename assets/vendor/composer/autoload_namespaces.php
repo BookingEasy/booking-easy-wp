@@ -9,5 +9,4 @@ return array(
     'Unirest' => array($vendorDir . '/mashape/unirest-php/src'),
     'Twig_Extensions_' => array($vendorDir . '/twig/extensions/lib'),
     'Twig_' => array($baseDir . '/lib'),
-    'Psr\\Log\\' => array($vendorDir . '/psr/log'),
 );

@@ -52,8 +52,6 @@ class SubscriptionController
         'PaymentAmount'                          => __( 'Payment Amount', 'sagenda-wp' ),
         'LetsBookIt'                          => __( 'Now, let\'s book it! Please fill out the form below.', 'sagenda-wp' ),
 
-
-
       ));
     }
   }

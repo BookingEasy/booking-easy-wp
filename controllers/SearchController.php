@@ -96,6 +96,7 @@ class SearchController {
         'locationValue'                 => $selectedBookableItem->Location,
         'descriptionValue'              => $selectedBookableItem->Description,
         'selectedId'                    => $selectedBookableItem->SelectedId,
+        'bookableItemId'          => $selectedBookableItem->Id,
         'bookableItems'                 => $bookableItems,
         'availability'                  => $availability->body,
         'errorMessage'                  => $errorMessage,
@@ -134,14 +135,27 @@ class SearchController {
       $selectedId = UrlHelper::getInput("bookableItems");
       if($selectedId == null)
       {
-        $selectedId = 0;
+        $bookableItemId = UrlHelper::getInput("bookableItemId");
+        if($bookableItemId === null)
+        {
+          $selectedId = 0;
+        }
       }
     }
 
     $bookableItem = new BookableItem();
     $bookableItem->Location = $bookableItems[$selectedId]->Location;
     $bookableItem->Description = $bookableItems[$selectedId]->Description;
-    $bookableItem->Id = $bookableItems[$selectedId]->Id;
+
+    if($bookableItemId === null)
+    {
+      $bookableItem->Id = $bookableItems[$selectedId]->Id;
+    }
+    else
+    {
+      $bookableItem->Id =$bookableItemId ;
+    }
+
     $bookableItem->SelectedId = $selectedId;
     return $bookableItem;
   }

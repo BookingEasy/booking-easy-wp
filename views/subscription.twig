@@ -21,11 +21,10 @@
 
     {% if booking.IsPaidEvent == "1" %}
     <div  style="font-style:italic">
-      {{EventName}} : {{booking.EventTitle}} <br>
       {{PaymentAmount}} : {{booking.PaymentAmount}} {{booking.PaymentCurrency}}
     </div>
     {% endif  %}
- <br>
+    <br>
     <div style="font-style:italic">{{LetsBookIt}}</div>
   </div>
 
