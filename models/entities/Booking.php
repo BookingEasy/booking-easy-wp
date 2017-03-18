@@ -5,6 +5,7 @@ class Booking
   public $ApiToken = "";
   public $EventIdentifier = "";
   public $BookableItemId = "";
+  public $BookableItemName= "";
   public $EventScheduleId = "";
   public $Courtesy = "";
   public $FirstName = "";

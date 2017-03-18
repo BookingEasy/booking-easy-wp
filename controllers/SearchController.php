@@ -62,7 +62,7 @@ class SearchController {
 
     if($this->isEventClicked())
     {
-      return $this->callSubscription($twig, $selectedBookableItem->Id);
+      return $this->callSubscription($twig, $selectedBookableItem);
     }
     else
     {
@@ -93,6 +93,7 @@ class SearchController {
         'warningNoBookingFound'         => __('No event found for the bookable item within the selected date range.', 'sagenda-wp'),
         'fromDate'                      => $fromDate,
         'toDate'                        => $toDate,
+        'bookableItemName'                 => $selectedBookableItem->Name,
         'locationValue'                 => $selectedBookableItem->Location,
         'descriptionValue'              => $selectedBookableItem->Description,
         'selectedId'                    => $selectedBookableItem->SelectedId,
@@ -190,13 +191,15 @@ class SearchController {
   * Collect booking information and lauch the Subscription view
   * @param  object  $twig   TWIG template renderer
   */
-  private function callSubscription($twig, $bookableItemId)
+  private function callSubscription($twig, $bookableItem)
   {
     $booking = new Booking();
     $booking->ApiToken = get_option('mrs1_authentication_code');
     $booking->EventScheduleId = $_GET['EventScheduleId'];
     $booking->DateDisplay = $_GET['DateDisplay']; // TODO : replace this by start end date with API v2.0
-    $booking->BookableItemId = $bookableItemId;
+    $booking->BookableItemId = $bookableItem->Id;
+
+    $booking->BookableItemName= $_GET['bookableItemName'];
     $booking->EventIdentifier = $_GET['EventIdentifier'];
 
     $booking->EventTitle = $_GET['eventTitle'];

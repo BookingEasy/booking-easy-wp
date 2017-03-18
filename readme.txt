@@ -22,7 +22,7 @@ Using this WP plugin is a better way to display your booking on your WP frontend
 
 **NOTE: You need to register an account on the Sagenda site and then you will get an authentication code which you will use to validate your Sagenda plugin.**
 
-SAGENDA WP PLUGIN 1.2.X REQUIRE PHP >5.6, 7 IS PREFERED !
+SAGENDA WP PLUGIN 1.2.X REQUIRE PHP 5.6 or 7.x  !
 FOR YOUR OWN SAFETY DON'T USE PHP VERSION OLDER THAN 5.6 THERE IS NO SECURITY PATCH -> http://php.net/supported-versions.php
 
 = LANGUAGE / TRANSLATIONS =
@@ -74,6 +74,9 @@ SUPPORT THIPS : any error message? try to update to the last version of WordPres
 
 == Upgrade Notice ==
 = 1.2.4 =
+SAGENDA WP PLUGIN 1.2.X REQUIRE PHP 5.6 or 7.x  !
+FOR YOUR OWN SAFETY DON'T USE PHP VERSION OLDER THAN 5.6 THERE IS NO SECURITY PATCH -> http://php.net/supported-versions.php
+
 * FIXED : Important bug when using several bookable items.
 
 

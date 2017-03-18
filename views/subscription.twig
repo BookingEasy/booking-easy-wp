@@ -1,7 +1,6 @@
 {% extends "wrapper.twig" %}
 {% block content %}
 
-
 <div class="row">
   <div class="col-xs-12 text-left">
     <h2>{{ subscription }}</h2>
@@ -14,6 +13,9 @@
   <div>
     <div >
       <h3>{{YourSelectedBooking}}</h3>
+    </div>
+    <div>
+      <strong>{{booking.BookableItemName}}</strong>
     </div>
     <div>
       <strong>{{booking.DateDisplay}}</strong>
