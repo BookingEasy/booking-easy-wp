@@ -4,7 +4,7 @@
 * Plugin Name:       Sagenda
 * Plugin URI:        http://www.sagenda.com/
 * Description:       Sagenda is a free Online Booking / Scheduling / Reservation System, which gives customers the opportunity to choose the date and the time of an appointment according to your preferences.
-* Version:           1.2.4
+* Version:           1.2.5
 * Author:            sagenda
 * Author URI:        http://www.sagenda.com/
 * License:           GPLv2
@@ -16,7 +16,7 @@
 */
 define('SAGENDA_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('SAGENDA_PLUGIN_URL', plugins_url('/', __FILE__));
-include_once( SAGENDA_PLUGIN_DIR . 'initializer.php' );
+
 
 /**
 * Load tranlations of the plugin
@@ -31,10 +31,32 @@ add_action('plugins_loaded', 'sagenda_load_textdomain');
 * @param  string  $atts   a list of parameter allowing more options to the shortcode
 */
 function sagenda_main( $atts ){
-	$initializer = new Sagenda\Initializer();
-	return $initializer->initFrontend($atts);
+	if(is_PHP_version_OK() == true)
+	{
+		include_once( SAGENDA_PLUGIN_DIR . 'initializer.php' );
+		$initializer = new Sagenda\Initializer();
+		return $initializer->initFrontend($atts);
+	}
 }
 add_shortcode( 'sagenda-wp', 'sagenda_main' );
+
+/**
+* Check the version of PHP used by the server. Display a message in case of error. Unirest project require php >=5.4 
+* @return true if version is ok, false if version is too old.
+*/
+function is_PHP_version_OK(){
+	if(version_compare(phpversion(), '5.4.0','<'))
+	{
+		echo "You are runing an outdated version of PHP !"."<br>" ;
+		echo "Your version is : ". phpversion()."<br>";
+		echo "Minimal version : "."5.4.0<br>";
+		echo "Recommended version : 5.6 - 7.x  (all version <5.6 are \"End of life\" and don't have security fixes!)"."<br>";
+		echo "Please read offical PHP recommendations <a href=\"http://php.net/supported-versions.php\">http://php.net/supported-versions.php</a><br>" ;
+		echo "Please update your PHP version form your admin panel. If you don't know how to do it please contact your WebMaster or your Hosting provider!" ;
+		return false;
+	}
+	return true ;
+}
 
 /**
 * Include CSS, JavaScript in the head section of the plugin.
@@ -51,7 +73,7 @@ function head_code_sagenda(){
 	$headcode .= '<script src="'.SAGENDA_PLUGIN_URL.'assets/vendor/bootstrap-validator/validator.min.js"></script>';
 
 	// bootstrap calendar
- 	$headcode .= '<link rel="stylesheet" href="'.SAGENDA_PLUGIN_URL.'assets/vendor/bootstrap-calendar-0.2.5/css/calendar.css" >';
+	$headcode .= '<link rel="stylesheet" href="'.SAGENDA_PLUGIN_URL.'assets/vendor/bootstrap-calendar-0.2.5/css/calendar.css" >';
 
 	// pickadate
 	$headcode .= '<link rel="stylesheet" href="'.SAGENDA_PLUGIN_URL.'assets/vendor/pickadate/lib/compressed/themes/default.css" id="theme_base">';
@@ -77,10 +99,14 @@ add_action('admin_head', 'head_code_sagenda');
 * Action hooks for adding admin page
 */
 function sagenda_admin() {
-	$initializer = new Sagenda\Initializer();
-	echo $initializer->initAdminSettings();
+	if(is_PHP_version_OK() == true)
+	{
+		include_once( SAGENDA_PLUGIN_DIR . 'initializer.php' );
+		$initializer = new Sagenda\Initializer();
+		echo $initializer->initAdminSettings();
+	}
 }
 function sagenda_admin_actions() {
-    add_options_page("Sagenda", "Sagenda", 1, "Sagenda", "sagenda_admin");
+	add_options_page("Sagenda", "Sagenda", 1, "Sagenda", "sagenda_admin");
 }
 add_action('admin_menu', 'sagenda_admin_actions');

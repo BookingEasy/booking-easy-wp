@@ -52,6 +52,9 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 
 == Installation ==
 
+SAGENDA WP PLUGIN 1.2.X REQUIRE PHP >=5.4   !
+FOR YOUR OWN SAFETY DON'T USE PHP VERSION OLDER THAN 5.6 THERE IS NO SECURITY PATCH -> http://php.net/supported-versions.php
+
 How to install this booking plugin into my WordPress website?
 
 [youtube https://www.youtube.com/watch?v=wCEmJg2hWgw]
@@ -74,9 +77,8 @@ SUPPORT THIPS : any error message? try to update to the last version of WordPres
 
 == Upgrade Notice ==
 = 1.2.5 =
-SAGENDA WP PLUGIN 1.2.X REQUIRE PHP 5.6 or 7.x  !
-FOR YOUR OWN SAFETY DON'T USE PHP VERSION OLDER THAN 5.6 THERE IS NO SECURITY PATCH -> http://php.net/supported-versions.php
 * Improved : Polish and Dutch translations.
+* ADDED : warning message if hosting is runing an older version that PHP 5.4.
 
 == Changelog ==
 
