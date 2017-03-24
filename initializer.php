@@ -4,13 +4,13 @@ use Sagenda\Controllers\SearchController;
 use Sagenda\Controllers\SubscriptionController;
 use Sagenda\Controllers\AdminTokenController;
 use Sagenda\Controllers\InformationMessageController;
-//use Sagenda\Controllers\CalendarController;
+use Sagenda\Controllers\CalendarController;
 use Sagenda\Helpers\ArrayHelper;
 //use Sagenda\webservices\SagendaAPI;
 //use Sagenda\models\Entities\Booking;
 include_once( SAGENDA_PLUGIN_DIR . 'controllers/SearchController.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'controllers/SubscriptionController.php' );
-//include_once( SAGENDA_PLUGIN_DIR . 'controllers/CalendarController.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'controllers/CalendarController.php' );
 //require_once( SAGENDA_PLUGIN_DIR . 'webservices/SagendaAPI.php' );
 //include_once( SAGENDA_PLUGIN_DIR . 'models/entities/Booking.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'controllers/AdminTokenController.php' );
@@ -34,7 +34,6 @@ class initializer {
   function initFrontend($shorcodeParametersArray)
   {
     $twig = self::initTwig();
-
     $shortcode = ArrayHelper::getElementIfSetAndNotEmpty($shorcodeParametersArray, 'view');
 
     if(strcasecmp($shortcode, "calendar") == 0)
@@ -54,8 +53,7 @@ class initializer {
   */
   function initAdminSettings()
   {
-      $twig = self::initTwig();
-
+    $twig = self::initTwig();
     $adminTokenController = new AdminTokenController();
     return $adminTokenController->showAdminTokenSettingsPage($twig);
   }
@@ -79,5 +77,5 @@ class initializer {
   );
   //$twig->addExtension(new Twig_Extension_Debug());
   return $twig;
-  }
+}
 }

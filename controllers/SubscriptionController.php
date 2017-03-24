@@ -26,6 +26,7 @@ class SubscriptionController
     $booking = $this->fillBookingWithFormValues($booking);
     $result = $this->setBookingWithSubmissionCheck($booking);
 
+    $sagendaAPI = new sagendaAPI();
     $sagendaAPI->getBookableItems(get_option('mrs1_authentication_code'));
 
     if($result['didSucceed'] == true)

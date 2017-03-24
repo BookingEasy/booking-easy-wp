@@ -4,7 +4,7 @@ Donate link: http://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, BnB
 Requires at least: 3.0
 Tested up to: 4.7.3
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,14 +73,15 @@ SUPPORT THIPS : any error message? try to update to the last version of WordPres
 1. How to identify my Sagenda account in WordPress? Copy the authentication code (token) from your Sagenda account and paste it into your WordPress installation
 
 == Upgrade Notice ==
-= 1.2.4 =
+= 1.2.5 =
 SAGENDA WP PLUGIN 1.2.X REQUIRE PHP 5.6 or 7.x  !
 FOR YOUR OWN SAFETY DON'T USE PHP VERSION OLDER THAN 5.6 THERE IS NO SECURITY PATCH -> http://php.net/supported-versions.php
-
-* FIXED : Important bug when using several bookable items.
-
+* Improved : Polish and Dutch translations.
 
 == Changelog ==
+
+= 1.2.4 =
+* FIXED : Important bug when using several bookable items.
 
 = 1.2.3 =
 * BETA version.
