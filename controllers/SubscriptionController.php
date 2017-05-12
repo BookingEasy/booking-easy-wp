@@ -29,6 +29,9 @@ class SubscriptionController
     $sagendaAPI = new sagendaAPI();
     $sagendaAPI->getBookableItems(get_option('mrs1_authentication_code'));
 
+
+    print_r($booking);
+    
     if($result['didSucceed'] == true)
     {
       $informationMessageController = new InformationMessageController();
@@ -74,7 +77,7 @@ class SubscriptionController
       if($booking->isReadyForSubmission())
       {
         $result = $this->setBooking($booking);
-        $redirectUrl = $result[ReturnUrl];
+        $redirectUrl = $result[ReturnUrl]."#sagenda";
         $didSucceed = true;
       }
       else {

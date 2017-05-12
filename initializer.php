@@ -32,15 +32,15 @@ class initializer {
     $twig = self::initTwig();
     $shortcode = ArrayHelper::getElementIfSetAndNotEmpty($shorcodeParametersArray, 'view');
 
-    if(strcasecmp($shortcode, "calendar") == 0)
+    /*if(strcasecmp($shortcode, "calendar") == 0)
     {
       $calendarController = new CalendarController();
       return $calendarController->showCalendar($twig, $shorcodeParametersArray);
     }
-    else {
+    else {*/
       $searchController = new SearchController();
       return $searchController->showSearch($twig, $shorcodeParametersArray);
-    }
+    //}
   }
 
   /**

@@ -25,6 +25,25 @@ Using this WP plugin is a better way to display your booking on your WP frontend
 SAGENDA WP PLUGIN 1.2.X REQUIRE PHP 5.6 or 7.x  !
 FOR YOUR OWN SAFETY DON'T USE PHP VERSION OLDER THAN 5.6 THERE IS NO SECURITY PATCH -> http://php.net/supported-versions.php
 
+=Installation=
+
+How to install this booking plugin into my WordPress website?
+
+[youtube https://www.youtube.com/watch?v=wCEmJg2hWgw]
+
+How to create a Sagenda’s account in video?
+
+[youtube https://www.youtube.com/watch?v=T-NXXxPSTQs]
+
+Follow these steps to install Sagenda:
+
+1. Download the booking plugin into the **/wp-content/plugins/** folder and activate the plugin.
+2. Create a free account on https://sagenda.net/Accounts/Register (setup your “bookable items” and events).
+3. Copy your token (from the backend of sagenda.net Settings / account settings) to your WordPress installation (backend of wp / Settings / Sagenda).
+4. Use the shortcode [sagenda-wp] in a page or an article or ( you can also display only one "bookable item" : [sagenda-wp bookableitem="my bookable item name"]).
+
+SUPPORT THIPS : any error message? try to update to the last version of WordPress and use PHP 7 or higher !
+
 = LANGUAGE / TRANSLATIONS =
 
   Chinese Simplified - 简体中文
@@ -50,27 +69,6 @@ Want more languages? Help us -> we re-builded the module from scratch : http://o
 
 Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sagenda-wp
 
-== Installation ==
-
-SAGENDA WP PLUGIN 1.2.X REQUIRE PHP >=5.4   !
-FOR YOUR OWN SAFETY DON'T USE PHP VERSION OLDER THAN 5.6 THERE IS NO SECURITY PATCH -> http://php.net/supported-versions.php
-
-How to install this booking plugin into my WordPress website?
-
-[youtube https://www.youtube.com/watch?v=wCEmJg2hWgw]
-
-How to create a Sagenda’s account in video?
-
-[youtube https://www.youtube.com/watch?v=T-NXXxPSTQs]
-
-Follow these steps to install Sagenda:
-
-1. Download the booking plugin into the **/wp-content/plugins/** folder and activate the plugin.
-2. Create a free account on https://sagenda.net/Accounts/Register (setup your “bookable items” and events).
-3. Copy your token (from the backend of sagenda.net Settings / account settings) to your WordPress installation (backend of wp / Settings / Sagenda).
-4. Use the shortcode [sagenda-wp] in a page or an article or ( you can also display only one "bookable item" : [sagenda-wp bookableitem="my bookable item name"]).
-
-SUPPORT THIPS : any error message? try to update to the last version of WordPress and use PHP 7 or higher !
 
 == Screenshots ==
 1. How to identify my Sagenda account in WordPress? Copy the authentication code (token) from your Sagenda account and paste it into your WordPress installation
@@ -78,7 +76,7 @@ SUPPORT THIPS : any error message? try to update to the last version of WordPres
 == Upgrade Notice ==
 = 1.2.5 =
 * Improved : Polish and Dutch translations.
-* ADDED : warning message if hosting is runing an older version that PHP 5.4.
+* ADDED : warning message if hosting is running an older version that PHP 5.4.
 
 == Changelog ==
 
