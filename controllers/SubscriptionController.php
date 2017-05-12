@@ -29,9 +29,6 @@ class SubscriptionController
     $sagendaAPI = new sagendaAPI();
     $sagendaAPI->getBookableItems(get_option('mrs1_authentication_code'));
 
-
-    print_r($booking);
-    
     if($result['didSucceed'] == true)
     {
       $informationMessageController = new InformationMessageController();
