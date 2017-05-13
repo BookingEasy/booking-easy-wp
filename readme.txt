@@ -77,6 +77,7 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 = 1.2.6 =
 * Improved : Dutch translations.
 * FIXED : Improved message if event can't be paid.
+* ADDED : date / time format is now sync with WordPress settings. You can change the way sagenda display date and time by changing the settings of your WP website under : "Settings / General / Date Format + Time Format".
 
 == Changelog ==
 
@@ -246,6 +247,8 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 **Can I get a general overview?**
 Yes, please read : [Introducing Sagenda](http://www.sagenda.com/introducing-sagenda/)
 
+**Can I change the date / time format?**
+You can change the way sagenda display date and time by changing the settings of your WP website under : "Settings / General / Date Format + Time Format". This is only valid for the WP plugin (not the iframe integration).
 
 **How can I integrate it in on my WordPress website?**
 

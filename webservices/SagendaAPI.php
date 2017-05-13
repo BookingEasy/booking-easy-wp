@@ -53,30 +53,18 @@ class SagendaAPI
     $didSucceed = true;
     $wsName = "SetBooking";
 
-    // echo "this is booking part <br>";
-    // print_r($booking);
-    // echo "<br>";
-    // echo"<br>--is paid event-------<br>";
-    // print_r($booking->IsPaidEvent);
-    // echo"<br>---------------------<br>";
-
     if($withPayment == "1")
     {
       $wsName = "SetBookingWithPayment";
     }
-    // echo "<br>";
-    // echo"<br>--is paid event -- withPayment-------<br>";
-    // print_r($withPayment);
-    // echo"<br>---------------------<br>";
 
-      $result = Unirest\Request::post($this->apiUrl."Events/".$wsName,
-      //$result = \Unirest\Request::post("https://sagenda-sagenda-v1.p.mashape.com/Events/".$wsName,
-      array(
-        "X-Mashape-Key" => "1qj2G3vQg5mshgOPxMAFsmrfleIap1lPGN8jsn8v0qG4AIuFJa",
-        "Content-Type" => "application/json",
-        "Accept" => "application/json"
-      ),
-      $booking->toJson());
+    $result = Unirest\Request::post($this->apiUrl."Events/".$wsName,
+    array(
+      "X-Mashape-Key" => "1qj2G3vQg5mshgOPxMAFsmrfleIap1lPGN8jsn8v0qG4AIuFJa",
+      "Content-Type" => "application/json",
+      "Accept" => "application/json"
+    ),
+    $booking->toJson());
 
     if($result->Message == "An error has occurred.")
     {
@@ -86,22 +74,8 @@ class SagendaAPI
 
     $apiOutput = json_decode($result->raw_body);
 
-
-    // echo "<br>";
-    // echo"<br>--withPayment output result-------<br>";
-    // print_r($result);
-    // echo"<br>---Redirect------------------<br>";
-    // print_r($apiOutput->ReturnUrl);
-    // echo"<br>-----------------------------<br>";
-
-    if($apiOutput->ReturnUrl != ""){
-      //header('Location: ' .$apiOutput->ReturnUrl, true, 301);
-     // die();
-
-      //redirect($apiOutput->ReturnUrl);
-      // wp_redirect( $apiOutput->ReturnUrl );
-      // exit;
-
+    if($apiOutput->ReturnUrl != "")
+    {
       return array('didSucceed' => $didSucceed, 'Message' => $message, 'ReturnUrl' => $apiOutput->ReturnUrl);
     }
 
@@ -125,17 +99,8 @@ class SagendaAPI
   {
     foreach ($bookings->body as $booking)
     {
-    $dateFrom = self::setDateTimeFormatByProofingValue($booking->From);
-    //  $dateFrom = \DateTime::createFromFormat('d M Y h:i A', $booking->From)->format(get_option( 'date_format' )." ".get_option( 'time_format' ));
-    $dateTo = self::setDateTimeFormatByProofingValue($booking->To);
-
-      //$dateTo = \DateTime::createFromFormat('h:i A', $booking->To)->format(get_option( 'time_format' ));
-
-      $booking->DateDisplay = $dateFrom." - ".$dateTo;
+      $booking->DateDisplay = self::setDateTimeFormatByProofingValue($booking->From)." - ".self::setDateTimeFormatByProofingValue($booking->To);
     }
-
-    //print_r($bookings);
-
     return $bookings;
   }
 
@@ -165,7 +130,13 @@ class SagendaAPI
   */
   private static function setDateTime($datetime)
   {
-      return \DateTime::createFromFormat('d M Y h:i A', $datetime)->format(get_option( 'date_format' )." ".get_option( 'time_format' ));
+    setlocale(LC_TIME, get_locale());
+    $date = \DateTime::createFromFormat('d M Y h:i A', $datetime);
+    $date = strftime(self::convertDateTimeFormatLetterToStrftimeFormatLetter(get_option( 'date_format' )), $date->getTimestamp());
+
+    $time = \DateTime::createFromFormat('d M Y h:i A', $datetime)->format(get_option( 'time_format' ));
+
+    return $date ." ". $time ;
   }
 
   /**
@@ -174,15 +145,45 @@ class SagendaAPI
   */
   private static function setDate($date)
   {
-      return \DateTime::createFromFormat('d M Y', $date)->format(get_option( 'date_format' ));
+    setlocale(LC_TIME, get_locale());
+    $date = \DateTime::createFromFormat('d M Y', $date);
+    return strftime(self::convertDateTimeFormatLetterToStrftimeFormatLetter(get_option( 'date_format' )), $date->getTimestamp());
   }
 
-    /**
-    * Set the time format according to WP values
-    * @param  string  $time   time to be setup
-    */
+  /**
+  * Set the time format according to WP values
+  * @param  string  $time   time to be setup
+  */
   private static function setTime($time)
   {
-      return \DateTime::createFromFormat('h:i A', $time)->format(get_option( 'time_format' ));
+    return \DateTime::createFromFormat('h:i A', $time)->format(get_option( 'time_format' ));
   }
+
+  /**
+  * In php object DateTime and strftime are not using the same abreviation for formatting char, this method helps to convert.
+  * For example :
+  * F => %B
+  * @param  string  $value   the
+  */
+  private static function convertDateTimeFormatLetterToStrftimeFormatLetter($value)
+  {
+    $value = str_replace("F", "%B", $value);
+    $value = str_replace("M", "%b", $value);
+    $value = str_replace("j", "%e", $value);
+    $value = str_replace("d", "%d", $value);
+    $value = str_replace("Y", "%Y", $value);
+    $value = str_replace("y", "%y", $value);
+    $value = str_replace("m", "%m", $value);
+    $value = str_replace("n", "%m", $value);
+
+    $value = str_replace("G", "%k", $value);
+    $value = str_replace("H", "%H", $value);
+    $value = str_replace("g", "%l", $value);
+    $value = str_replace("h", "%I", $value);
+    $value = str_replace("i", "%M", $value);
+    $value = str_replace("s", "%S", $value);
+
+    return $value;
+  }
+
 }
