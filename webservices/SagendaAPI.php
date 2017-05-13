@@ -23,7 +23,6 @@ class SagendaAPI
   public function validateAccount($token)
   {
     $result = \Unirest\Request::get($this->apiUrl."ValidateAccount/".$token)->body;
-    //print_r($result);
     $message = __('Successfully connected','sagenda-wp');
     $didSucceed = true;
     //TODO : use a better checking error code system than string comparaison
@@ -41,7 +40,6 @@ class SagendaAPI
   */
   public function getBookableItems($token)
   {
-    //echo $this->apiUrl."<br>";
     return \Unirest\Request::get($this->apiUrl."Events/GetBookableItemList/".$token)->body;
   }
 
@@ -116,15 +114,75 @@ class SagendaAPI
   */
   public function getAvailability($token, $fromDate, $toDate, $bookableItemId)
   {
+    return self::setDateTimeFormat(\Unirest\Request::get($this->apiUrl."Events/GetAvailability/".$token."/".$fromDate."/".$toDate."?bookableItemId=".$bookableItemId));
+  }
 
-    // $availableData = Unirest\Request::get($this->apiUrl."Events/GetAvailability/".$token."/".$fromDate."/".$toDate."?bookableItemId=".$bookableItemId)->body;
+  /**
+  * Set the date and time format according to WP values
+  * @param  array  $bookings   List of bookings
+  */
+  private static function setDateTimeFormat($bookings)
+  {
+    foreach ($bookings->body as $booking)
+    {
+    $dateFrom = self::setDateTimeFormatByProofingValue($booking->From);
+    //  $dateFrom = \DateTime::createFromFormat('d M Y h:i A', $booking->From)->format(get_option( 'date_format' )." ".get_option( 'time_format' ));
+    $dateTo = self::setDateTimeFormatByProofingValue($booking->To);
 
-    // echo"<br>------------get availability----------<br>";
-    // print_r($this->apiUrl."Events/GetAvailability/".$token."/".$fromDate."/".$toDate."?bookableItemId=".$bookableItemId);
-    // echo "<br>";
-    // print_r($availableData);
-    // echo"<br>------------END get availability----------<br>";
+      //$dateTo = \DateTime::createFromFormat('h:i A', $booking->To)->format(get_option( 'time_format' ));
 
-    return \Unirest\Request::get($this->apiUrl."Events/GetAvailability/".$token."/".$fromDate."/".$toDate."?bookableItemId=".$bookableItemId);
+      $booking->DateDisplay = $dateFrom." - ".$dateTo;
+    }
+
+    //print_r($bookings);
+
+    return $bookings;
+  }
+
+  /**
+  * Check input value before setting correct date format, time format or datetime format
+  * @param  string  $date   date to be setup
+  */
+  private static function setDateTimeFormatByProofingValue($date)
+  {
+    if(strpos($date, 'AM') !== false || strpos($date, 'PM') !== false)
+    {
+      if(strlen($date) > 7)
+      {
+        return self::setDateTime($date);
+      }
+      return self::setTime($date);
+    }
+    else
+    {
+      return self::setDate($date);
+    }
+  }
+
+  /**
+  * Set the date and time format according to WP values
+  * @param  string  $datetime   datetime to be setup
+  */
+  private static function setDateTime($datetime)
+  {
+      return \DateTime::createFromFormat('d M Y h:i A', $datetime)->format(get_option( 'date_format' )." ".get_option( 'time_format' ));
+  }
+
+  /**
+  * Set the date format according to WP values
+  * @param  string  $date   date to be setup
+  */
+  private static function setDate($date)
+  {
+      return \DateTime::createFromFormat('d M Y', $date)->format(get_option( 'date_format' ));
+  }
+
+    /**
+    * Set the time format according to WP values
+    * @param  string  $time   time to be setup
+    */
+  private static function setTime($time)
+  {
+      return \DateTime::createFromFormat('h:i A', $time)->format(get_option( 'time_format' ));
   }
 }
