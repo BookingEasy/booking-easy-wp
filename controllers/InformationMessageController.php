@@ -22,6 +22,8 @@ class InformationMessageController
       'result'                       => $result,
       'back'                          => __('Back', 'sagenda-wp'),
       'message'                       => __('You successfully subscribed to the event.', 'sagenda-wp'),
+      'pleasePay'                       => __('Please pay for your event', 'sagenda-wp'),
+      'pay'                        => __('Pay', 'sagenda-wp'),
       'bootstrapAlertType'            => "success",
     ));
   }

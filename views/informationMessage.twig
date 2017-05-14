@@ -7,8 +7,8 @@
 	<div class="col-xs-6 text-left"><a href="?"><button type="button" class="btn btn-warning">{{ back }}</button></a></div>
 </div>
 {% else %}
-<div class="alert alert-{{bootstrapAlertType}}" role="alert">Please pay for your event</div>
-<div class="col-xs-6 text-left"><a href="{{result}}"><button type="button" class="btn btn-warning">Pay</button></a></div>
+<div class="alert alert-{{bootstrapAlertType}}" role="alert">{{pleasePay}}</div>
+<div class="col-xs-6 text-left"><a href="{{result}}"><button type="button" class="btn btn-warning">{{pay}}</button></a></div>
 {% endif %}
 
 {% endblock  %}
