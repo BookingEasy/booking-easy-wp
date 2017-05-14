@@ -205,7 +205,7 @@ class SearchController {
 
     $booking->EventTitle = $_GET['eventTitle'];
     //payment Related
-    $booking->IsPaidEvent = $_GET['isPadEvent'];
+    $booking->IsPaidEvent = $_GET['isPaidEvent'];
     $booking->PaymentAmount = $_GET['paymentAmount'];
     $booking->PaymentCurrency = $_GET['paymentCurrency'];
     $booking->HostUrlLocation = $_GET['currentUrl'];
