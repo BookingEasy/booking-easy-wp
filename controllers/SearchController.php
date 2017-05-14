@@ -106,7 +106,17 @@ class SearchController {
         'paginationSelected'         => $this->getPagination(),
         'bookableItemSelectedByShortcode'=> $bookableItemSelectedByShortcode,
         'currentUrl'                      =>home_url(),
-        'existingUrlQuery'  =>UrlHelper::getQuery($_SERVER['REQUEST_URI'])
+        'existingUrlQuery'  =>UrlHelper::getQuery($_SERVER['REQUEST_URI']),
+        /*'urlPaidEvent'  =>URLHelper::updateQuery(UrlHelper::getQuery($_SERVER['REQUEST_URI']),
+        array(
+          'bookableItemName'=>$selectedBookableItem->Name,
+          'bookableItemId'=>$selectedBookableItem->Id,
+
+          'EventIdentifier'=>$selectedBookableItem->Id,
+                'bookableItemId'=>$selectedBookableItem->Id,
+          )),*/
+
+        // EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}&EventScheduleId={{event.EventScheduleId}}&isPaidEvent=1&paymentAmount={{event.PaymentAmount}}&paymentCurrency={{event.PaymentCurrency}}&eventTitle={{event.EventTitle}}&currentUrl={{currentUrl}}
       ));
     }
   }

@@ -39,7 +39,7 @@ class SagendaAPI
 
   /**
   * Get the bookable items for the given account
-  * @param  string  $token   The token identifing the sagenda's account
+  * @param  string          $token                The token identifing the sagenda's account
   */
   public function getBookableItems($token)
   {
@@ -48,8 +48,8 @@ class SagendaAPI
 
   /**
   * Set a booking without payment
-  * @param  string    $token          The token identifing the sagenda's account
-  * @param  boolean   $withPayment    True if should manage payment, false if booking should not be paid online.
+  * @param  string          $token                The token identifing the sagenda's account
+  * @param  boolean     $withPayment    True if should manage payment, false if booking should not be paid online.
   */
   public function setBooking($booking, $withPayment)
   {
@@ -74,6 +74,8 @@ class SagendaAPI
       $message = __("An error has occurred. Booking wasn't saved.", 'sagenda-wp');
       $didSucceed = false;
     }
+
+    print_r($result->raw_body);
 
     $apiOutput = json_decode($result->raw_body);
 
@@ -110,7 +112,7 @@ class SagendaAPI
         }
       }
     }
-    
+
     return $bookings;
   }
 }

@@ -75,6 +75,9 @@ class SubscriptionController
       if($booking->isReadyForSubmission())
       {
         $result = $this->setBooking($booking);
+
+        print_r($result);
+
         $redirectUrl = $result[ReturnUrl]."#sagenda";
         $didSucceed = true;
       }
