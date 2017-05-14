@@ -105,7 +105,8 @@ class SearchController {
         'paginationStep'         => ceil($total/10),
         'paginationSelected'         => $this->getPagination(),
         'bookableItemSelectedByShortcode'=> $bookableItemSelectedByShortcode,
-        'currentUrl'                      =>home_url()
+        'currentUrl'                      =>home_url(),
+        'existingUrlQuery'  =>UrlHelper::getQuery($_SERVER['REQUEST_URI'])
       ));
     }
   }
@@ -248,20 +249,7 @@ class SearchController {
   */
   private function convertPickadateToWebserviceDateFormat($pickadateDate)
   {
-    // echo " <br>======= --->>>>>>>>> convert pickadate=";
-    // echo"<br>----------------Format--------------------------<br>";
-    // print_r($this->sagendaAPIv1DateFormat);
-    // echo"<br>--pickadateDate---------------------------------<br>";
-    // print_r($pickadateDate);
-    // echo"<br>-pickadateDateFormat----------------------------<br>";
-    // print_r($pickadateDateFormat);
-    // echo"<br>------------------Call date converter-----------<br>";
     $convDate = $this->GetConvertedDateToEng($pickadateDate);
-    // print_r($convDate);
-    //echo"<br>------------------Call date converter-----------<br>";
-    //print_r(\DateTime::createFromFormat($this->pickadateDateFormat, $pickadateDate)->format($this->sagendaAPIv1DateFormat));
-
-
     return \DateTime::createFromFormat($this->pickadateDateFormat, $convDate)->format($this->sagendaAPIv1DateFormat);
   }
 

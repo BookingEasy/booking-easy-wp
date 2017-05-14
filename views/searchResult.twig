@@ -15,9 +15,9 @@
 <ul class="list-group">
   {% for event in availability|slice((paginationSelected-1)*10,10) %}
   {% if event.IsPaidEvent == true%}
-  <a href="?bookableItemName={{bookableItemName}}&bookableItemId={{bookableItemId}}&EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}&EventScheduleId={{event.EventScheduleId}}&isPadEvent={{event.IsPaidEvent}}&paymentAmount={{event.PaymentAmount}}&paymentCurrency={{event.PaymentCurrency}}&eventTitle={{event.EventTitle}}&currentUrl={{currentUrl}}#sagenda"> <li class="list-group-item"><span class="badge">{{bookIt}}</span>{{event.DateDisplay}} : {{event.PaymentAmount}} {{event.PaymentCurrency}} : Paid Event : {{event.EventTitle}}</li></a>
+  <a href="?{{existingUrlQuery}}bookableItemName={{bookableItemName}}&bookableItemId={{bookableItemId}}&EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}&EventScheduleId={{event.EventScheduleId}}&isPadEvent={{event.IsPaidEvent}}&paymentAmount={{event.PaymentAmount}}&paymentCurrency={{event.PaymentCurrency}}&eventTitle={{event.EventTitle}}&currentUrl={{currentUrl}}#sagenda"> <li class="list-group-item"><span class="badge">{{bookIt}}</span>{{event.DateDisplay}} : {{event.PaymentAmount}} {{event.PaymentCurrency}} : Paid Event : {{event.EventTitle}}</li></a>
   {% else %}
-  <a href="?bookableItemName={{bookableItemName}}&bookableItemId={{bookableItemId}}&EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}&EventScheduleId={{event.EventScheduleId}}&isPadEvent=0&eventTitle={{event.EventTitle}}&currentUrl={{currentUrl}}#sagenda"> <li class="list-group-item"><span class="badge">{{bookIt}}</span>{{event.DateDisplay}} : {{event.EventTitle}}</li></a>
+  <a href="?{{existingUrlQuery}}bookableItemName={{bookableItemName}}&bookableItemId={{bookableItemId}}&EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}&EventScheduleId={{event.EventScheduleId}}&isPadEvent=0&eventTitle={{event.EventTitle}}&currentUrl={{currentUrl}}#sagenda"> <li class="list-group-item"><span class="badge">{{bookIt}}</span>{{event.DateDisplay}} : {{event.EventTitle}}</li></a>
   {% endif %}
   {% endfor %}
 </ul>
@@ -33,7 +33,7 @@
     </li>
     {% else %}
     <li >
-      <a href="?paginationSelected={{paginationSelected-1}}&bookableItems={{selectedId}}&fromDate_submit={{fromDate}}&toDate_submit={{toDate}}" aria-label="Previous">
+      <a href="?{{existingUrlQuery}}paginationSelected={{paginationSelected-1}}&bookableItems={{selectedId}}&fromDate_submit={{fromDate}}&toDate_submit={{toDate}}" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
       </a>
     </li>

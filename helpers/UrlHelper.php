@@ -26,4 +26,18 @@ class UrlHelper{
     return $selectedId;
   }
 
+  /**
+  * Get the query part of an URL (after ?) and add a "&" at the end if query is not null
+  * @param  string  $url - url to parse
+  * @return string  content of the url with "?" and the following code
+  */
+ public static function getQuery($url)
+ {
+   if($url !== null)
+   {
+     return parse_url($url, PHP_URL_QUERY)."&";
+   }
+   return ;
+ }
+
 }
