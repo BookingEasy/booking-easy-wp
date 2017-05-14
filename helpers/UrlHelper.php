@@ -40,4 +40,14 @@ class UrlHelper{
    return ;
  }
 
+ /**
+ * Remove just one query from the URL
+ * @param  string  $url - url to parse
+ * @param  string  $query - the query name
+ * @return string   - the url without the given query name nor its value
+ */
+ public static function removeQuery($url, $query) {
+     return preg_replace('/([?&])'.$query.'=[^&]+(&|$)/','$1',$url);
+ }
+
 }
