@@ -100,10 +100,17 @@ class SagendaAPI
   */
   private static function setDateTimeFormat($bookings)
   {
-    foreach ($bookings->body as $booking)
+    if($bookings !== null)
     {
-      $booking->DateDisplay = DateHelper::setDateTimeFormat($booking->From)." - ".DateHelper::setDateTimeFormat($booking->To);
+      if($bookings->body !== null)
+      {
+        foreach ($bookings->body as $booking)
+        {
+          $booking->DateDisplay = DateHelper::setDateTimeFormat($booking->From)." - ".DateHelper::setDateTimeFormat($booking->To);
+        }
+      }
     }
+    
     return $bookings;
   }
 }
