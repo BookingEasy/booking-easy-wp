@@ -23,4 +23,10 @@ class UrlHelperTest extends PHPUnit_Framework_TestCase
         $output = UrlHelper::removeQuery("http://www.sagenda.com/wp-admin/test/mypage.html?test=coucou&id=3", "test");
         $this->assertContains ("http://www.sagenda.com/wp-admin/test/mypage.html?id=3", $output);
     }
+
+    public function testUpdateQuery()
+    {
+        $output = UrlHelper::updateQuery("http://www.sagenda.com/wp-admin/test/mypage.html?test=coucou&id=3", array('test'=>'coucou2'));
+        $this->assertContains ("http://www.sagenda.com/wp-admin/test/mypage.html?test=coucou2&id=3", $output);
+    }
 }

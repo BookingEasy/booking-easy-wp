@@ -50,4 +50,30 @@ class UrlHelper{
      return preg_replace('/([?&])'.$query.'=[^&]+(&|$)/','$1',$url);
  }
 
+ /**
+ * Update one or several queries from the URL
+ * @param  string  $url - url to parse
+ * @param  string  $array - array of query / values
+ * @return string   - the url with updated queries
+ */
+ public static function updateQuery($url, $array) {
+   $url_decomposition = parse_url ($url);
+    $cut_url = explode('?', $url);
+    $queries = array_key_exists('query',$url_decomposition)?$url_decomposition['query']:false;
+    $queries_array = array ();
+    if ($queries) {
+        $cut_queries   = explode('&', $queries);
+        foreach ($cut_queries as $k => $v) {
+            if ($v)
+            {
+                $tmp = explode('=', $v);
+                if (sizeof($tmp ) < 2) $tmp[1] = true;
+                $queries_array[$tmp[0]] = urldecode($tmp[1]);
+            }
+        }
+    }
+    $newQueries = array_merge($queries_array,$array);
+    return $cut_url[0].'?'.http_build_query($newQueries);
+ }
+
 }
