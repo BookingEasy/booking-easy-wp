@@ -34,7 +34,6 @@ class Booking
     &&  !empty($this->Courtesy)
     &&  !empty($this->FirstName)
     &&  !empty($this->LastName)
-    &&  !empty($this->PhoneNumber)
     &&  !empty($this->Email)
     &&  !empty($this->EventIdentifier))
     {
