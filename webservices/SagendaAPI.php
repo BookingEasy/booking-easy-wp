@@ -75,8 +75,6 @@ class SagendaAPI
       $didSucceed = false;
     }
 
-    print_r($result->raw_body);
-
     $apiOutput = json_decode($result->raw_body);
 
     if($apiOutput->ReturnUrl != "")
