@@ -16,7 +16,7 @@ class SagendaAPI
   protected $apiUrl = 'http://sagenda.net/api/'; //Live Server
   //protected $apiUrl = 'http://localhost:49815/api/'; //local Server
   //protected $apiUrl = 'http://sagenda-dev.apphb.com/api/'; //staging test for payment Server
-  //protected $apiUrl = 'http://e35a3822.ngrok.io/api/'; //ngrok test for payment Server
+  //protected $apiUrl = 'http://5478cbc9.ngrok.io/api/'; //ngrok test for payment Server
 
   /**
   * Validate the Sagenda's account with the token in order to check if we get access
@@ -93,7 +93,7 @@ class SagendaAPI
   */
   public function getAvailability($token, $fromDate, $toDate, $bookableItemId)
   {
-    return self::setDateTimeFormat(\Unirest\Request::get($this->apiUrl."Events/GetAvailability/".$token."/".$fromDate."/".$toDate."?bookableItemId=".$bookableItemId));
+    return self::setDateTimeFormat(\Unirest\Request::get($this->apiUrl."Events/GetAvailability/".$token."/".rawurlencode($fromDate)."/".rawurlencode($toDate)."?bookableItemId=".$bookableItemId));
   }
 
   /**
