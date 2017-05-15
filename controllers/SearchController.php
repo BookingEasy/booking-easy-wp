@@ -279,11 +279,9 @@ class SearchController {
     return false;
   }
 
-  private function GetConvertedDateToEng($inputDate){
-    //print_r($inputDate);
+  private function GetConvertedDateToEng($inputDate)
+  {
     $token = explode(" ", $inputDate);
-    //print_r($token);
-
     $month = "Jan";
 
     switch ($token[1])

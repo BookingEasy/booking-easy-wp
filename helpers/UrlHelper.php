@@ -35,7 +35,7 @@ class UrlHelper{
  {
    if($url !== null)
    {
-     return parse_url($url, PHP_URL_QUERY)."&";
+     return parse_url($url, PHP_URL_QUERY);
    }
    return ;
  }
