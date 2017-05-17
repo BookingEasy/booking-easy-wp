@@ -55,7 +55,7 @@ class SubscriptionController
         'EventName'                          => __( 'Event Name', 'sagenda-wp' ),
         'PaymentAmount'                          => __( 'Payment Amount', 'sagenda-wp' ),
         'LetsBookIt'                          => __( 'Now, let\'s book it! Please fill out the form below.', 'sagenda-wp' ),
-      //  'existingUrlQuery'  =>UrlHelper::getQuery($_SERVER['REQUEST_URI']),
+        //  'existingUrlQuery'  =>UrlHelper::getQuery($_SERVER['REQUEST_URI']),
         'backUrlQuery'  =>UrlHelper::removeQuery(UrlHelper::getQuery($_SERVER['REQUEST_URI']),"EventIdentifier"),
       ));
     }
@@ -75,9 +75,6 @@ class SubscriptionController
       if($booking->isReadyForSubmission())
       {
         $result = $this->setBooking($booking);
-
-        print_r($result);
-
         $redirectUrl = $result[ReturnUrl]."#sagenda";
         $didSucceed = true;
       }

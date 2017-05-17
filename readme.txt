@@ -3,7 +3,7 @@ Contributors: sagenda
 Donate link: http://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, BnB
 Requires at least: 3.0
-Tested up to: 4.7.3
+Tested up to: 4.7.5
 Stable tag: 1.2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -75,14 +75,16 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 
 == Upgrade Notice ==
 = 1.2.6 =
-* Improved : Dutch translations.
+* IMPROVED : Dutch translations.
 * FIXED : Improved message if event can't be paid.
+* FIXED : Important bug in case of PayPal payment since last PayPal API update.
 * ADDED : date / time format is now sync with WordPress settings. You can change the way sagenda display date and time by changing the settings of your WP website under : "Settings / General / Date Format + Time Format".
+* TESTED : Compatibility with WP 4.7.5 and 4.7.4
 
 == Changelog ==
 
 = 1.2.5 =
-* Improved : Polish and Dutch translations.
+* IMPROVED : Polish and Dutch translations.
 * ADDED : warning message if hosting is running an older version that PHP 5.4.
 
 = 1.2.4 =
@@ -97,7 +99,7 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 = 1.2.1 =
 * ADDED : Pagination for your events (booking list).
 * FIXED : A problem with a .js.
-* Improved : French and German translations.
+* IMPROVED : French and German translations.
 
 = 1.2.0 =
 * NOTICE : As we rebuilded everything from scratch you will have some translations missing, don't hesitate to add them on OneSky, we will push a new version every 2 weeks : http://osp7icw.oneskyapp.com/admin/project/dashboard/project/101655
@@ -107,7 +109,7 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 
 
 = 1.1.11 =
-* Improved : French translations.
+* IMPROVED : French translations.
 * TESTED : Compatibility of the reservation plugin with WordPress 4.7
 
 = 1.1.10 =
@@ -118,7 +120,7 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 * TESTED : Compatibility of the reservation plugin with WordPress 4.5.2
 
 = 1.1.8 =
-* Improved : overall translations updated.
+* IMPROVED : overall translations updated.
 * TESTED : Compatibility of the reservation plugin with WordPress 4.5
 
 = 1.1.7 =
