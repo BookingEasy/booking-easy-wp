@@ -13,9 +13,9 @@ class SagendaAPI
   /**
   * @var string - url of the API
   */
-  //protected $apiUrl = 'http://sagenda.net/api/'; //Live Server
+  protected $apiUrl = 'http://sagenda.net/api/'; //Live Server
   //protected $apiUrl = 'http://localhost:49815/api/'; //local Server
-  protected $apiUrl = 'http://sagenda-dev.apphb.com/api/'; //staging test for payment Server
+  //protected $apiUrl = 'http://sagenda-dev.apphb.com/api/'; //staging test for payment Server
   //protected $apiUrl = 'http://5478cbc9.ngrok.io/api/'; //ngrok test for payment Server
 
   /**
