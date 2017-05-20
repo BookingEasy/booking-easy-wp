@@ -106,13 +106,7 @@ class SagendaAPI
       {
         foreach ($bookings->body as $booking)
         {
-          print_r($booking);
-
-          echo "before=".$booking->DateDisplay ;
-          echo "<br/>from=".$booking->From;
-          echo "<br/>to=".$booking->To ;
           $booking->DateDisplay = DateHelper::setDateTimeFormat($booking->From)." - ".DateHelper::setDateTimeFormat($booking->To);
-          echo "<br/>after=".$booking->DateDisplay ;
         }
       }
     }

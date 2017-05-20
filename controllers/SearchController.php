@@ -35,6 +35,32 @@ class SearchController {
   private $sagendaAPIv1DateFormat = "d M Y";
   private $numaricDateFormat = "d m Y";
 
+  /**
+  * Check if autentication is registred
+  * @return   boolean    true if correctly configured, otherwise false.
+  */
+  private function isAutenticationCodeConfigured()
+  {
+    if (empty(get_option('mrs1_authentication_code')))
+    {
+      return false ;
+    }
+    return true;
+  }
+
+  /**
+  * Check if there's at least one bookable item.
+  * @param    Array   The list of bookable items.
+  * @return   boolean    true if correctly configured, otherwise false.
+  */
+  private function isBookableItemConfigured($bookableItems)
+  {
+    if (empty($bookableItems))
+    {
+      return false ;
+    }
+    return true;
+  }
 
   /**
   * Display the search events form
@@ -43,20 +69,27 @@ class SearchController {
   */
   public function showSearch($twig, $shorcodeParametersArray)
   {
-    if (get_option('mrs1_authentication_code') == null)
+    if($this->isAutenticationCodeConfigured() === false)
     {
       return $twig->render($this->view, array(
         'isError'                  => true,
         'hideSearchForm'           => true,
         'errorMessage'             => __( "You didn't configure Sagenda properly please enter your authentication code in Settings", 'sagenda-wp' ),
       ));
-      return;
     }
 
     $bookableItemSelectedByShortcode = ArrayHelper::getElementIfSetAndNotEmpty($shorcodeParametersArray, 'bookableitem');
-
     $sagendaAPI = new sagendaAPI();
     $bookableItems = $sagendaAPI->getBookableItems(get_option('mrs1_authentication_code'));
+
+    if($this->isBookableItemConfigured($bookableItems) === false)
+    {
+      return $twig->render($this->view, array(
+        'isError'                  => true,
+        'hideSearchForm'           => true,
+        'errorMessage'             => __( "You didn't add any Bookable item, please configure your Sagenda's account properly !", 'sagenda-wp' ),
+      ));
+    }
 
     $selectedBookableItem = $this->getSelectedBookableItem($bookableItemSelectedByShortcode, $bookableItems);
 
@@ -74,10 +107,10 @@ class SearchController {
       $fromDate = $this->getFromDate();
       $toDate = $this->getToDate();
       $availability = $sagendaAPI->getAvailability(get_option('mrs1_authentication_code'), $this->convertPickadateToWebserviceDateFormat($fromDate), $this->convertPickadateToWebserviceDateFormat($toDate), $selectedBookableItem->Id);
-
       $total = count($availability->body);
 
       return $twig->render($this->view, array(
+        'hideSearchForm'        => false,
         'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
         'fromLabel'                     => __( 'From', 'sagenda-wp' ),
         'toLabel'                       => __( 'To', 'sagenda-wp' ),
@@ -106,228 +139,221 @@ class SearchController {
         'paginationSelected'         => $this->getPagination(),
         'bookableItemSelectedByShortcode'=> $bookableItemSelectedByShortcode,
         'currentUrl'                      =>home_url(),
-        'existingUrlQuery'  =>UrlHelper::getQuery($_SERVER['REQUEST_URI']),
-        /*'urlPaidEvent'  =>URLHelper::updateQuery(UrlHelper::getQuery($_SERVER['REQUEST_URI']),
-        array(
-          'bookableItemName'=>$selectedBookableItem->Name,
-          'bookableItemId'=>$selectedBookableItem->Id,
-
-          'EventIdentifier'=>$selectedBookableItem->Id,
-                'bookableItemId'=>$selectedBookableItem->Id,
-          )),*/
-
-        // EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}&EventScheduleId={{event.EventScheduleId}}&isPaidEvent=1&paymentAmount={{event.PaymentAmount}}&paymentCurrency={{event.PaymentCurrency}}&eventTitle={{event.EventTitle}}&currentUrl={{currentUrl}}
-      ));
+        'existingUrlQuery'  =>UrlHelper::getQuery($_SERVER['REQUEST_URI']),      ));
+      }
     }
-  }
 
-  private function getPagination()
-  {
-    $paginationSelected = intval($_GET['paginationSelected']);
-    if($paginationSelected === null  || $paginationSelected === 0)
+    /**
+    * Get the selected pagination index.
+    * @return   int    The index of the selected pagination
+    */
+    private function getPagination()
     {
-      $paginationSelected = 1;
-    }
-    return $paginationSelected;
-  }
-
-  /**
-  * Get the selected bookable item, priority is selected by shortcode (if any), if not then selected by dropdownlist.
-  * @param    String    The name of the bookable item selected by shortcode such as [sagenda-wp bookableitem="name"]
-  * @param    Array     List of bookableitems
-  * @return   Object    The selected bookable item
-  */
-  private function getSelectedBookableItem($bookableItemSelectedByShortcode, $bookableItems)
-  {
-    if(isset($bookableItemSelectedByShortcode))
-    {
-      $selectedId = $this->findBookableItemElementInList($bookableItems, $bookableItemSelectedByShortcode);
-    }
-    else {
-      $selectedId = UrlHelper::getInput("bookableItems");
-      if($selectedId == null)
+      $paginationSelected = intval($_GET['paginationSelected']);
+      if($paginationSelected === null  || $paginationSelected === 0)
       {
-        $bookableItemId = UrlHelper::getInput("bookableItemId");
-        if($bookableItemId === null)
+        $paginationSelected = 1;
+      }
+      return $paginationSelected;
+    }
+
+    /**
+    * Get the selected bookable item, priority is selected by shortcode (if any), if not then selected by dropdownlist.
+    * @param    String    The name of the bookable item selected by shortcode such as [sagenda-wp bookableitem="name"]
+    * @param    Array     List of bookableitems
+    * @return   Object    The selected bookable item
+    */
+    private function getSelectedBookableItem($bookableItemSelectedByShortcode, $bookableItems)
+    {
+      if(isset($bookableItemSelectedByShortcode))
+      {
+        $selectedId = $this->findBookableItemElementInList($bookableItems, $bookableItemSelectedByShortcode);
+      }
+      else {
+        $selectedId = UrlHelper::getInput("bookableItems");
+        if($selectedId == null)
         {
-          $selectedId = 0;
+          $bookableItemId = UrlHelper::getInput("bookableItemId");
+          if($bookableItemId === null)
+          {
+            $selectedId = 0;
+          }
         }
       }
-    }
 
-    $bookableItem = new BookableItem();
-    $bookableItem->Location = $bookableItems[$selectedId]->Location;
-    $bookableItem->Description = $bookableItems[$selectedId]->Description;
+      $bookableItem = new BookableItem();
+      $bookableItem->Location = $bookableItems[$selectedId]->Location;
+      $bookableItem->Description = $bookableItems[$selectedId]->Description;
 
-    if($bookableItemId === null)
-    {
-      $bookableItem->Id = $bookableItems[$selectedId]->Id;
-    }
-    else
-    {
-      $bookableItem->Id =$bookableItemId ;
-    }
-
-    $bookableItem->SelectedId = $selectedId;
-    return $bookableItem;
-  }
-
-  /**
-  * Find the index of the given bookable items name in list.
-  * @param    Array   A list of bookable items.
-  * @param    String  The bookable item name searched.
-  * @return   0 to n index of the found element, -1 if not found.
-  */
-  private function findBookableItemElementInList($bookableItems, $name)
-  {
-    $i = 0;
-    foreach ($bookableItems as $value) {
-      if(strtolower($value->Name) == strtolower($name))
-      return $i;
-      $i = $i+1;
-    }
-    return -1;
-  }
-
-  /**
-  * Inform if the user has clicked an event in order to trigger subscription.
-  * @return   boolean true if event is selected, false if event is not selected by the user.
-  */
-  private function isEventClicked()
-  {
-    return isset($_GET['EventIdentifier']);
-  }
-
-  /**
-  * Collect booking information and lauch the Subscription view
-  * @param  object  $twig   TWIG template renderer
-  */
-  private function callSubscription($twig, $bookableItem)
-  {
-    $booking = new Booking();
-    $booking->ApiToken = get_option('mrs1_authentication_code');
-    $booking->EventScheduleId = $_GET['EventScheduleId'];
-    $booking->DateDisplay = $_GET['DateDisplay']; // TODO : replace this by start end date with API v2.0
-    $booking->BookableItemId = $bookableItem->Id;
-
-    $booking->BookableItemName= $_GET['bookableItemName'];
-    $booking->EventIdentifier = $_GET['EventIdentifier'];
-
-    $booking->EventTitle = $_GET['eventTitle'];
-    //payment Related
-    $booking->IsPaidEvent = $_GET['isPaidEvent'];
-    $booking->PaymentAmount = $_GET['paymentAmount'];
-    $booking->PaymentCurrency = $_GET['paymentCurrency'];
-    $booking->HostUrlLocation = $_GET['currentUrl'];
-    //TODO : add payment info
-    $subscriptionController = new SubscriptionController();
-    return $subscriptionController->showSubscription($twig, $booking );
-  }
-
-  /**
-  * Get the "From" Date accoding to POST form sumit and give a default value if no form has been submitted
-  * @return   date  The "From" date
-  */
-  private function getFromDate()
-  {
-    $fromDate = UrlHelper::getInput("fromDate_submit");
-    if($fromDate != null)
-    {
-      return $fromDate;
-    }
-    return date($this->numaricDateFormat, mktime(0, 0, 0, date("m"), date("d"), date("Y")));
-  }
-
-  /**
-  * Get the "To" Date accoding to POST form sumit and give a default value if no form has been submitted
-  * @return   date  The "To" date
-  */
-  private function getToDate()
-  {
-    $toDate = UrlHelper::getInput("toDate_submit");
-    if($toDate)
-    {
-      return $toDate;
-    }
-    return date($this->numaricDateFormat, mktime(0, 0, 0, date("m"), date("d") + 7, date("Y")));
-  }
-
-  /**
-  * Make a pickadate Dateformat ready to be used by Webserivce
-  * @param    date  Pickadate date
-  * @return   date  Formatted date for WS
-  */
-  private function convertPickadateToWebserviceDateFormat($pickadateDate)
-  {
-    $convDate = $this->GetConvertedDateToEng($pickadateDate);
-    return \DateTime::createFromFormat($this->pickadateDateFormat, $convDate)->format($this->sagendaAPIv1DateFormat);
-  }
-
-  /**
-  * Check if a translation is needed for the picker if the WP settings is not in English
-  * @return   boolean           true if need translation, false if WP is set in English
-  */
-  private function needPickerTranslation()
-  {
-    if(strlen(get_bloginfo('language'))>=2)
-    {
-      if(strcmp(strtolower(substr(get_bloginfo('language'), 0, 2)),"en") <> 0)
+      if($bookableItemId === null)
       {
-        return true;
+        $bookableItem->Id = $bookableItems[$selectedId]->Id;
       }
+      else
+      {
+        $bookableItem->Id =$bookableItemId ;
+      }
+
+      $bookableItem->SelectedId = $selectedId;
+      return $bookableItem;
     }
-    return false;
-  }
 
-  private function GetConvertedDateToEng($inputDate)
-  {
-    $token = explode(" ", $inputDate);
-    $month = "Jan";
-
-    switch ($token[1])
+    /**
+    * Find the index of the given bookable items name in list.
+    * @param    Array   A list of bookable items.
+    * @param    String  The bookable item name searched.
+    * @return   0 to n index of the found element, -1 if not found.
+    */
+    private function findBookableItemElementInList($bookableItems, $name)
     {
-      case 1:
-      $month = "Jan";
-      break;
-      case 2:
-      $month = "Feb";
-      break;
-      case 3:
-      $month = "Mar";
-      break;
-      case 4:
-      $month = "Apr";
-      break;
-      case 5:
-      $month = "May";
-      break;
-      case 6:
-      $month = "June";
-      break;
-      case 7:
-      $month = "July";
-      break;
-      case 8:
-      $month = "Aug";
-      break;
-      case 9:
-      $month = "Sept";
-      break;
-      case 10:
-      $month = "Oct";
-      break;
-      case 11:
-      $month = "Nov";
-      break;
-      case 12:
-      $month = "Dec";
-      break;
-      default:
-      $month = "Jan";
+      $i = 0;
+      foreach ($bookableItems as $value) {
+        if(strtolower($value->Name) == strtolower($name))
+        return $i;
+        $i = $i+1;
+      }
+      return -1;
     }
 
-    $dateBuild = $month." ".$token[0].", ".$token[2];
+    /**
+    * Inform if the user has clicked an event in order to trigger subscription.
+    * @return   boolean true if event is selected, false if event is not selected by the user.
+    */
+    private function isEventClicked()
+    {
+      return isset($_GET['EventIdentifier']);
+    }
 
-    return $dateBuild;
+    /**
+    * Collect booking information and lauch the Subscription view
+    * @param  object  $twig   TWIG template renderer
+    */
+    private function callSubscription($twig, $bookableItem)
+    {
+      $booking = new Booking();
+      $booking->ApiToken = get_option('mrs1_authentication_code');
+      $booking->EventScheduleId = $_GET['EventScheduleId'];
+      $booking->DateDisplay = $_GET['DateDisplay']; // TODO : replace this by start end date with API v2.0
+      $booking->BookableItemId = $bookableItem->Id;
+
+      $booking->BookableItemName= $_GET['bookableItemName'];
+      $booking->EventIdentifier = $_GET['EventIdentifier'];
+
+      $booking->EventTitle = $_GET['eventTitle'];
+      //payment Related
+      $booking->IsPaidEvent = $_GET['isPaidEvent'];
+      $booking->PaymentAmount = $_GET['paymentAmount'];
+      $booking->PaymentCurrency = $_GET['paymentCurrency'];
+      $booking->HostUrlLocation = $_GET['currentUrl'];
+      //TODO : add payment info
+      $subscriptionController = new SubscriptionController();
+      return $subscriptionController->showSubscription($twig, $booking );
+    }
+
+    /**
+    * Get the "From" Date accoding to POST form sumit and give a default value if no form has been submitted
+    * @return   date  The "From" date
+    */
+    private function getFromDate()
+    {
+      $fromDate = UrlHelper::getInput("fromDate_submit");
+      if($fromDate != null)
+      {
+        return $fromDate;
+      }
+      return date($this->numaricDateFormat, mktime(0, 0, 0, date("m"), date("d"), date("Y")));
+    }
+
+    /**
+    * Get the "To" Date accoding to POST form sumit and give a default value if no form has been submitted
+    * @return   date  The "To" date
+    */
+    private function getToDate()
+    {
+      $toDate = UrlHelper::getInput("toDate_submit");
+      if($toDate)
+      {
+        return $toDate;
+      }
+      return date($this->numaricDateFormat, mktime(0, 0, 0, date("m"), date("d") + 7, date("Y")));
+    }
+
+    /**
+    * Make a pickadate Dateformat ready to be used by Webserivce
+    * @param    date  Pickadate date
+    * @return   date  Formatted date for WS
+    */
+    private function convertPickadateToWebserviceDateFormat($pickadateDate)
+    {
+      $convDate = $this->GetConvertedDateToEng($pickadateDate);
+      return \DateTime::createFromFormat($this->pickadateDateFormat, $convDate)->format($this->sagendaAPIv1DateFormat);
+    }
+
+    /**
+    * Check if a translation is needed for the picker if the WP settings is not in English
+    * @return   boolean           true if need translation, false if WP is set in English
+    */
+    private function needPickerTranslation()
+    {
+      if(strlen(get_bloginfo('language'))>=2)
+      {
+        if(strcmp(strtolower(substr(get_bloginfo('language'), 0, 2)),"en") <> 0)
+        {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    private function GetConvertedDateToEng($inputDate)
+    {
+      $token = explode(" ", $inputDate);
+      $month = "Jan";
+
+      switch ($token[1])
+      {
+        case 1:
+        $month = "Jan";
+        break;
+        case 2:
+        $month = "Feb";
+        break;
+        case 3:
+        $month = "Mar";
+        break;
+        case 4:
+        $month = "Apr";
+        break;
+        case 5:
+        $month = "May";
+        break;
+        case 6:
+        $month = "June";
+        break;
+        case 7:
+        $month = "July";
+        break;
+        case 8:
+        $month = "Aug";
+        break;
+        case 9:
+        $month = "Sept";
+        break;
+        case 10:
+        $month = "Oct";
+        break;
+        case 11:
+        $month = "Nov";
+        break;
+        case 12:
+        $month = "Dec";
+        break;
+        default:
+        $month = "Jan";
+      }
+
+      $dateBuild = $month." ".$token[0].", ".$token[2];
+
+      return $dateBuild;
+    }
   }
-}

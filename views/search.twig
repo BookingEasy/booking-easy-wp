@@ -6,6 +6,7 @@
 <div class="alert alert-danger" role="alert">{{errorMessage}}</div>
 {% endif %}
 
+{% if hideSearchForm == false %}
 <div class="row">
   <div class="col-xs-12 text-left">
     <h2>{{ searchForEventsBetween }}</h2>
@@ -23,7 +24,7 @@
     <input id="toDate" data-value="{{toDate}}" class="datepickerTo form-control" name="toDate" type="text"  >
   </div>
 
-{% if bookableItemSelectedByShortcode is null  %}
+  {% if bookableItemSelectedByShortcode is null  %}
   <div class="form-group">
     <label for="bookableItems">{{ bookableItemsLabel }}</label>
     <select class="form-control" id="bookableItems" name="bookableItems" onchange="this.form.submit()">
@@ -78,19 +79,19 @@ var picker = $input.pickadate('picker')
 </script>
 
 <script type="text/javascript">
-  jQuery(document).ready(function ($) {
+jQuery(document).ready(function ($) {
 
   $("#fromDate").change(function() {
-   $("#submitDateSearch").submit();
+    $("#submitDateSearch").submit();
   });
 
   $("#toDate").change(function() {
-   $("#submitDateSearch").submit();
+    $("#submitDateSearch").submit();
   });
 });
 </script>
 
-
+{% endif %}
 {% block searchResult %}
 
 {% endblock %}
