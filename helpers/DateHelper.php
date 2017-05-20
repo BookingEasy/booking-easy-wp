@@ -45,6 +45,11 @@ class DateHelper{
     */
     private static function setDate($date, $format)
     {
+      if($date===null)
+      {
+        return;
+      }
+
       setlocale(LC_TIME, get_locale());
       return strftime(self::convertDateTimeFormatLetterToStrftimeFormatLetter(get_option( 'date_format' )), \DateTime::createFromFormat($format, $date)->getTimestamp());
     }

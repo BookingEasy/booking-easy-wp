@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: sagenda-wp\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-13 22:08+0100\n"
-"PO-Revision-Date: 2017-03-13 22:09+0100\n"
+"PO-Revision-Date: 2017-05-18 08:52+0200\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.2\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: tests\n"
@@ -87,7 +87,7 @@ msgid ""
 msgstr ""
 "REMARQUE: Vous devez premièrement vous enregistrer sur Sagenda.net pour "
 "obtenir un code d'authentification que vous utiliserez dans le plugin "
-"WordPress pour vous identifier. "
+"WordPress pour vous identifier."
 
 #: controllers/AdminTokenController.php:46
 msgid "Read more"
@@ -95,7 +95,7 @@ msgstr "En savoir plus"
 
 #: controllers/AdminTokenController.php:47
 msgid "Create a free account "
-msgstr "Créez un compte gratuit sur Sagenda"
+msgstr "Créez un compte gratuit sur Sagenda "
 
 #: controllers/AdminTokenController.php:48
 msgid "About integration in your WP WebSite :"
@@ -103,7 +103,7 @@ msgstr "A propos de l’intégration dans votre site WordPress :"
 
 #: controllers/AdminTokenController.php:49
 msgid "How to get the token :"
-msgstr "Comment obtenir le code d’authentification?"
+msgstr "Comment obtenir le code d’authentification? "
 
 #: controllers/AdminTokenController.php:50
 msgid "Useful links :"
@@ -124,11 +124,11 @@ msgid ""
 "in Settings"
 msgstr ""
 "Vous n’avez pas configuré Sagenda correctement, merci d’entrer votre code "
-"d’authentification dans les Paramètres."
+"d’authentification dans les Paramètres"
 
 #: controllers/SearchController.php:81
 msgid "Search for all the events between"
-msgstr "Rechercher tous les évènements entre :"
+msgstr "Rechercher tous les évènements entre"
 
 #: controllers/SearchController.php:82
 msgid "From"

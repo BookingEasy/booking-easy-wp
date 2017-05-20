@@ -22,6 +22,13 @@ Using this WP plugin is a better way to display your booking on your WP frontend
 
 **NOTE: You need to register an account on the Sagenda site and then you will get an authentication code which you will use to validate your Sagenda plugin.**
 
+**Shortcode**
+You can use Sagenda as shortcode in any page or plugin :
+[sagenda-wp] in a page or an article ( you can also display only one "bookable item" : [sagenda-wp bookableitem="my bookable item name"]).
+
+
+
+
 SAGENDA WP PLUGIN 1.2.X REQUIRE PHP 5.6 or 7.x  !
 FOR YOUR OWN SAFETY DON'T USE PHP VERSION OLDER THAN 5.6 THERE IS NO SECURITY PATCH -> http://php.net/supported-versions.php
 
@@ -40,7 +47,7 @@ Follow these steps to install Sagenda:
 1. Download the booking plugin into the **/wp-content/plugins/** folder and activate the plugin.
 2. Create a free account on https://sagenda.net/Accounts/Register (setup your “bookable items” and events).
 3. Copy your token (from the backend of sagenda.net Settings / account settings) to your WordPress installation (backend of wp / Settings / Sagenda).
-4. Use the shortcode [sagenda-wp] in a page or an article or ( you can also display only one "bookable item" : [sagenda-wp bookableitem="my bookable item name"]).
+4. Use the shortcode [sagenda-wp] in a page or an article ( you can also display only one "bookable item" : [sagenda-wp bookableitem="my bookable item name"]).
 
 SUPPORT THIPS : any error message? try to update to the last version of WordPress and use PHP 7 or higher !
 
