@@ -171,10 +171,10 @@ class SearchController {
       }
       else {
         $selectedId = UrlHelper::getInput("bookableItems");
-        if($selectedId == null)
+        if(empty($selectedId))
         {
           $bookableItemId = UrlHelper::getInput("bookableItemId");
-          if($bookableItemId === null)
+          if(empty($bookableItemId))
           {
             $selectedId = 0;
           }
@@ -184,8 +184,9 @@ class SearchController {
       $bookableItem = new BookableItem();
       $bookableItem->Location = $bookableItems[$selectedId]->Location;
       $bookableItem->Description = $bookableItems[$selectedId]->Description;
+      $bookableItem->Name = $bookableItems[$selectedId]->Name;
 
-      if($bookableItemId === null)
+      if(empty($bookableItemId))
       {
         $bookableItem->Id = $bookableItems[$selectedId]->Id;
       }
@@ -235,7 +236,6 @@ class SearchController {
       $booking->EventScheduleId = $_GET['EventScheduleId'];
       $booking->DateDisplay = $_GET['DateDisplay']; // TODO : replace this by start end date with API v2.0
       $booking->BookableItemId = $bookableItem->Id;
-      print_r($bookableItem);
       $booking->BookableItemName= $_GET['bookableItemName'];
       $booking->EventIdentifier = $_GET['EventIdentifier'];
       $booking->EventTitle = $_GET['eventTitle'];

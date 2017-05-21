@@ -26,10 +26,6 @@ class SubscriptionController
     $booking = $this->fillBookingWithFormValues($booking);
     $result = $this->setBookingWithSubmissionCheck($booking);
 
-    // is this necessary? 
-    //$sagendaAPI = new sagendaAPI();
-    //$sagendaAPI->getBookableItems(get_option('mrs1_authentication_code'));
-
     if($result['didSucceed'] == true)
     {
       $informationMessageController = new InformationMessageController();
@@ -56,7 +52,6 @@ class SubscriptionController
         'EventName'                          => __( 'Event Name', 'sagenda-wp' ),
         'PaymentAmount'                          => __( 'Payment Amount', 'sagenda-wp' ),
         'LetsBookIt'                          => __( 'Now, let\'s book it! Please fill out the form below.', 'sagenda-wp' ),
-        //  'existingUrlQuery'  =>UrlHelper::getQuery($_SERVER['REQUEST_URI']),
         'backUrlQuery'  =>UrlHelper::removeQuery(UrlHelper::getQuery($_SERVER['REQUEST_URI']),"EventIdentifier"),
       ));
     }

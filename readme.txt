@@ -81,6 +81,12 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 1. How to identify my Sagenda account in WordPress? Copy the authentication code (token) from your Sagenda account and paste it into your WordPress installation
 
 == Upgrade Notice ==
+
+= 1.2.7 =
+* FIXED : Add name bookable item in reservation form in plugin (WP-37)
+
+== Changelog ==
+
 = 1.2.6 =
 * IMPROVED : Dutch translations.
 * FIXED : Improved message if event can't be paid.
@@ -88,8 +94,6 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 * FIXED : Important bug in case the event more than 24 hours long (Fixed in API v1).
 * ADDED : date / time format is now sync with WordPress settings. You can change the way sagenda display date and time by changing the settings of your WP website under : "Settings / General / Date Format + Time Format".
 * TESTED : Compatibility with WP 4.7.5 and 4.7.4
-
-== Changelog ==
 
 = 1.2.5 =
 * IMPROVED : Polish and Dutch translations.
