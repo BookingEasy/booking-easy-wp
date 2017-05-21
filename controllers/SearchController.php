@@ -235,10 +235,9 @@ class SearchController {
       $booking->EventScheduleId = $_GET['EventScheduleId'];
       $booking->DateDisplay = $_GET['DateDisplay']; // TODO : replace this by start end date with API v2.0
       $booking->BookableItemId = $bookableItem->Id;
-
+      print_r($bookableItem);
       $booking->BookableItemName= $_GET['bookableItemName'];
       $booking->EventIdentifier = $_GET['EventIdentifier'];
-
       $booking->EventTitle = $_GET['eventTitle'];
       //payment Related
       $booking->IsPaidEvent = $_GET['isPaidEvent'];
