@@ -305,6 +305,11 @@ class SearchController {
       return false;
     }
 
+    /**
+    * Convert the month from nb to text format
+    * @param    date         Formated with nb only
+    * @return   date           Date formated MM DD, YYYY
+    */
     private function GetConvertedDateToEng($inputDate)
     {
       $token = explode(" ", $inputDate);
