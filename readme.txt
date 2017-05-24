@@ -84,6 +84,7 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 
 = 1.2.7 =
 * FIXED : Add name bookable item in reservation form in plugin (WP-37)
+* FIXED : Important bug on URL when using DIVI theme (WP-43), thanks to Daniel for reporting this!
 
 == Changelog ==
 
