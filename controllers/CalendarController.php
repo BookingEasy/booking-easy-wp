@@ -43,6 +43,7 @@ class CalendarController {
     }
 
     return $twig->render($this->view, array(
+      'SAGENDA_PLUGIN_URL' => SAGENDA_PLUGIN_URL,
       'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
     ));
 
