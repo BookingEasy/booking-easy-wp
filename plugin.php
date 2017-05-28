@@ -75,7 +75,7 @@ function head_code_sagenda(){
 	//$headcode .= '<link href="'.SAGENDA_PLUGIN_URL.'assets/css/styles.bundle.css" rel="stylesheet"/>';
 
 	// angular 4
-	$headcode .= '<link href="'.SAGENDA_PLUGIN_URL.'assets/css/styles.a1c8f377efd8dc8c96f4.bundle.css" rel="stylesheet"/>';
+	$headcode .= '<link href="'.SAGENDA_PLUGIN_URL.'assets/css/styles.ce11b057567cdbddcf7a.bundle.css" rel="stylesheet"/>';
 	$url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	$headcode .= '<base href="'.$url.'">';
 
