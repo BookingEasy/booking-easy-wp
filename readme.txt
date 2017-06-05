@@ -3,7 +3,7 @@ Contributors: sagenda
 Donate link: http://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, BnB
 Requires at least: 3.0
-Tested up to: 4.7.5
+Tested up to: 4.8
 Stable tag: 1.2.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -83,7 +83,8 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 == Upgrade Notice ==
 
 = 1.2.8 =
-*
+* TESTED : Compatibility with WP 4.8
+* IMPROVED : Translations.
 
 == Changelog ==
 
