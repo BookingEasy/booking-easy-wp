@@ -41,7 +41,8 @@ class SearchController {
   */
   private function isAutenticationCodeConfigured()
   {
-    if (empty(get_option('mrs1_authentication_code')))
+    // Note : don't use empty() here as he return wrong value see : https://stackoverflow.com/questions/1075534/cant-use-method-return-value-in-write-context
+    if (get_option('mrs1_authentication_code') !='')
     {
       return false ;
     }
