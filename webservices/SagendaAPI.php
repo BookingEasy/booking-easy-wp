@@ -29,7 +29,7 @@ class SagendaAPI
     $message = __('Successfully connected','sagenda-wp');
     $didSucceed = true;
     //TODO : use a better checking error code system than string comparaison
-    if($result->Message == "Error: API Token is invalid")
+    if($result->Message == "Error: API Token is invalid" || $result->Message == "")
     {
       $message = __('Your token is wrong; please try again or generate another one in Sagenda’s backend.', 'sagenda-wp');
       $didSucceed = false;

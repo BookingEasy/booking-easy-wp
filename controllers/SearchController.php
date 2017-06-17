@@ -42,7 +42,7 @@ class SearchController {
   private function isAutenticationCodeConfigured()
   {
     // Note : don't use empty() here as he return wrong value see : https://stackoverflow.com/questions/1075534/cant-use-method-return-value-in-write-context
-    if (get_option('mrs1_authentication_code') !='')
+    if ((get_option('mrs1_authentication_code')) == "")
     {
       return false ;
     }
@@ -56,7 +56,8 @@ class SearchController {
   */
   private function isBookableItemConfigured($bookableItems)
   {
-    if (empty($bookableItems))
+    // Note : don't use empty() here as he return wrong value see : https://stackoverflow.com/questions/1075534/cant-use-method-return-value-in-write-context
+    if ($bookableItems == "" || $bookableItems == null )
     {
       return false ;
     }
@@ -70,7 +71,9 @@ class SearchController {
   */
   public function showSearch($twig, $shorcodeParametersArray)
   {
-    if($this->isAutenticationCodeConfigured() === false)
+    $sagendaAPI = new sagendaAPI();
+
+    if($this->isAutenticationCodeConfigured() === false || $sagendaAPI->validateAccount(get_option('mrs1_authentication_code'))['didSucceed'] === false)
     {
       return $twig->render($this->view, array(
         'isError'                  => true,
@@ -78,69 +81,71 @@ class SearchController {
         'errorMessage'             => __( "You didn't configure Sagenda properly please enter your authentication code in Settings", 'sagenda-wp' ),
       ));
     }
-
-    $bookableItemSelectedByShortcode = ArrayHelper::getElementIfSetAndNotEmpty($shorcodeParametersArray, 'bookableitem');
-    $sagendaAPI = new sagendaAPI();
-    $bookableItems = $sagendaAPI->getBookableItems(get_option('mrs1_authentication_code'));
-
-    if($this->isBookableItemConfigured($bookableItems) === false)
-    {
-      return $twig->render($this->view, array(
-        'isError'                  => true,
-        'hideSearchForm'           => true,
-        'errorMessage'             => __( "You didn't add any Bookable item, please configure your Sagenda's account properly !", 'sagenda-wp' ),
-      ));
-    }
-
-    $selectedBookableItem = $this->getSelectedBookableItem($bookableItemSelectedByShortcode, $bookableItems);
-
-    if($this->isEventClicked())
-    {
-      return $this->callSubscription($twig, $selectedBookableItem);
-    }
     else
     {
-      if($this->needPickerTranslation())
+
+      $bookableItemSelectedByShortcode = ArrayHelper::getElementIfSetAndNotEmpty($shorcodeParametersArray, 'bookableitem');
+      $bookableItems = $sagendaAPI->getBookableItems(get_option('mrs1_authentication_code'));
+
+      if($this->isBookableItemConfigured($bookableItems) === false)
       {
-        $pickerTranslated = PickadateHelper::getPickadateCultureCode();
+        return $twig->render($this->view, array(
+          'isError'                  => true,
+          'hideSearchForm'           => true,
+          'errorMessage'             => __( "You didn't add any Bookable item, please configure your Sagenda's account properly !", 'sagenda-wp' ),
+        ));
       }
 
-      $fromDate = $this->getFromDate();
-      $toDate = $this->getToDate();
-      $availability = $sagendaAPI->getAvailability(get_option('mrs1_authentication_code'), $this->convertPickadateToWebserviceDateFormat($fromDate), $this->convertPickadateToWebserviceDateFormat($toDate), $selectedBookableItem->Id);
-      $total = count($availability->body);
+      $selectedBookableItem = $this->getSelectedBookableItem($bookableItemSelectedByShortcode, $bookableItems);
 
-      return $twig->render($this->view, array(
-        'hideSearchForm'        => false,
-        'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
-        'fromLabel'                     => __( 'From', 'sagenda-wp' ),
-        'toLabel'                       => __( 'To', 'sagenda-wp' ),
-        'bookableItemsLabel'            => __( 'Please choose a bookable item', 'sagenda-wp' ),
-        'locationLabel'                 => __( 'Location', 'sagenda-wp' ),
-        'descriptionLabel'              => __( 'Description', 'sagenda-wp' ),
-        'createAFreeBookingAccount'     => __( 'Create a free Booking Account on Sagenda!', 'sagenda-wp' ),
-        'search'                        => __( 'Search', 'sagenda-wp' ),
-        'clickAnEventToBookIt'          => __( 'Click an event to book It:', 'sagenda-wp' ),
-        'dateFormat'                    => PickadateHelper::getPickadateDateFormat(),
-        'pickerTranslated'              => $pickerTranslated,
-        'bookIt'                          => __( 'book-it!', 'sagenda-wp' ),
-        'warningNoBookingFound'         => __('No event found for the bookable item within the selected date range.', 'sagenda-wp'),
-        'fromDate'                      => $fromDate,
-        'toDate'                        => $toDate,
-        'bookableItemName'                 => $selectedBookableItem->Name,
-        'locationValue'                 => $selectedBookableItem->Location,
-        'descriptionValue'              => $selectedBookableItem->Description,
-        'selectedId'                    => $selectedBookableItem->SelectedId,
-        'bookableItemId'          => $selectedBookableItem->Id,
-        'bookableItems'                 => $bookableItems,
-        'availability'                  => $availability->body,
-        'errorMessage'                  => $errorMessage,
-        'paginationTotal'         => $total,
-        'paginationStep'         => ceil($total/10),
-        'paginationSelected'         => $this->getPagination(),
-        'bookableItemSelectedByShortcode'=> $bookableItemSelectedByShortcode,
-        'currentUrl'                      =>home_url(),
-        'existingUrlQuery'  =>UrlHelper::getQuery($_SERVER['REQUEST_URI']),      ));
+      if($this->isEventClicked())
+      {
+        return $this->callSubscription($twig, $selectedBookableItem);
+      }
+      else
+      {
+        if($this->needPickerTranslation())
+        {
+          $pickerTranslated = PickadateHelper::getPickadateCultureCode();
+        }
+
+        $fromDate = $this->getFromDate();
+        $toDate = $this->getToDate();
+        $availability = $sagendaAPI->getAvailability(get_option('mrs1_authentication_code'), $this->convertPickadateToWebserviceDateFormat($fromDate), $this->convertPickadateToWebserviceDateFormat($toDate), $selectedBookableItem->Id);
+        $total = count($availability->body);
+
+        return $twig->render($this->view, array(
+          'hideSearchForm'        => false,
+          'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
+          'fromLabel'                     => __( 'From', 'sagenda-wp' ),
+          'toLabel'                       => __( 'To', 'sagenda-wp' ),
+          'bookableItemsLabel'            => __( 'Please choose a bookable item', 'sagenda-wp' ),
+          'locationLabel'                 => __( 'Location', 'sagenda-wp' ),
+          'descriptionLabel'              => __( 'Description', 'sagenda-wp' ),
+          'createAFreeBookingAccount'     => __( 'Create a free Booking Account on Sagenda!', 'sagenda-wp' ),
+          'search'                        => __( 'Search', 'sagenda-wp' ),
+          'clickAnEventToBookIt'          => __( 'Click an event to book It:', 'sagenda-wp' ),
+          'dateFormat'                    => PickadateHelper::getPickadateDateFormat(),
+          'pickerTranslated'              => $pickerTranslated,
+          'bookIt'                          => __( 'book-it!', 'sagenda-wp' ),
+          'warningNoBookingFound'         => __('No event found for the bookable item within the selected date range.', 'sagenda-wp'),
+          'fromDate'                      => $fromDate,
+          'toDate'                        => $toDate,
+          'bookableItemName'                 => $selectedBookableItem->Name,
+          'locationValue'                 => $selectedBookableItem->Location,
+          'descriptionValue'              => $selectedBookableItem->Description,
+          'selectedId'                    => $selectedBookableItem->SelectedId,
+          'bookableItemId'          => $selectedBookableItem->Id,
+          'bookableItems'                 => $bookableItems,
+          'availability'                  => $availability->body,
+          'errorMessage'                  => $errorMessage,
+          'paginationTotal'         => $total,
+          'paginationStep'         => ceil($total/10),
+          'paginationSelected'         => $this->getPagination(),
+          'bookableItemSelectedByShortcode'=> $bookableItemSelectedByShortcode,
+          'currentUrl'                      =>home_url(),
+          'existingUrlQuery'  =>UrlHelper::getQuery($_SERVER['REQUEST_URI']),      ));
+        }
       }
     }
 
