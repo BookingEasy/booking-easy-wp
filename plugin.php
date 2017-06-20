@@ -67,7 +67,8 @@ function head_code_sagenda(){
 	// bootstrap
 	$headcode = '<link rel="stylesheet" href="'.SAGENDA_PLUGIN_URL.'assets/vendor/bootstrap/bootstrap-wrapper.css" >';
 	$headcode .= '<link rel="stylesheet" href="'.SAGENDA_PLUGIN_URL.'assets/vendor/bootstrap/bootstrap-theme-wrapper.css" >';
-	$headcode .= '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>';
+	// $headcode .= '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>';
+	$headcode .= '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>';
 
 	// angularJS bootstrap calendar
 	//$headcode .= '<link rel="stylesheet" type="text/css" href="'.SAGENDA_PLUGIN_URL.'assets/css/angular-calendar.css" />';
@@ -75,7 +76,7 @@ function head_code_sagenda(){
 	//$headcode .= '<link href="'.SAGENDA_PLUGIN_URL.'assets/css/styles.bundle.css" rel="stylesheet"/>';
 
 	// angular 4
-	$headcode .= '<link href="'.SAGENDA_PLUGIN_URL.'assets/css/styles.ce11b057567cdbddcf7a.bundle.css" rel="stylesheet"/>';
+	$headcode .= '<link href="'.SAGENDA_PLUGIN_URL.'assets/css/styles.bundle.css" rel="stylesheet"/>';
 	$url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	$headcode .= '<base href="'.$url.'">';
 
