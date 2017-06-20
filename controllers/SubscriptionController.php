@@ -2,9 +2,11 @@
 
 use Sagenda\webservices\sagendaAPI;
 use Sagenda\Helpers\UrlHelper;
+use Sagenda\Models\Entities\Booking;
 
 include_once( SAGENDA_PLUGIN_DIR . 'helpers/UrlHelper.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'webservices/SagendaAPI.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'models/entities/Booking.php' );
 
 /**
 * This controller will be responsible for displaying the subscription form in frontend in order to register the visitor's booking.
@@ -17,11 +19,35 @@ class SubscriptionController
   private $view = "subscription.twig" ;
 
   /**
+  * Collect booking information and lauch the Subscription view
+  * @param  object  $twig   TWIG template renderer
+  */
+  public function callSubscription($twig)
+  {
+    $booking = new Booking();
+    $booking->ApiToken = get_option('mrs1_authentication_code');
+    $booking->EventScheduleId = $_GET['EventScheduleId'];
+    $booking->DateDisplay = $_GET['DateDisplay']; // TODO : replace this by start end date with API v2.0
+    $booking->BookableItemId = $_GET['bookableItemId'];
+    $booking->BookableItemName= $_GET['bookableItemName'];
+    $booking->EventIdentifier = $_GET['EventIdentifier'];
+    $booking->EventTitle = $_GET['eventTitle'];
+    //payment Related
+    $booking->IsPaidEvent = $_GET['isPaidEvent'];
+    $booking->PaymentAmount = $_GET['paymentAmount'];
+    $booking->PaymentCurrency = $_GET['paymentCurrency'];
+    $booking->HostUrlLocation = $_GET['currentUrl'];
+    //TODO : add payment info
+    //$subscriptionController = new SubscriptionController();
+    return $this->showSubscription($twig, $booking );
+  }
+
+  /**
   * Display the subscription form
   * @param  object  $twig       TWIG template renderer
   * @param  object  $booking    Booking object
   */
-  public function showSubscription($twig, $booking)
+  private function showSubscription($twig, $booking)
   {
     $booking = $this->fillBookingWithFormValues($booking);
     $result = $this->setBookingWithSubmissionCheck($booking);

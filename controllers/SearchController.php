@@ -100,7 +100,9 @@ class SearchController {
 
       if($this->isEventClicked())
       {
-        return $this->callSubscription($twig, $selectedBookableItem);
+        //return $this->callSubscription($twig, $selectedBookableItem);
+        $subscriptionController = new SubscriptionController();
+        return $subscriptionController->callSubscription($twig);
       }
       else
       {
@@ -235,6 +237,7 @@ class SearchController {
     * Collect booking information and lauch the Subscription view
     * @param  object  $twig   TWIG template renderer
     */
+   /*
     private function callSubscription($twig, $bookableItem)
     {
       $booking = new Booking();
@@ -253,7 +256,7 @@ class SearchController {
       //TODO : add payment info
       $subscriptionController = new SubscriptionController();
       return $subscriptionController->showSubscription($twig, $booking );
-    }
+    }*/
 
     /**
     * Get the "From" Date accoding to POST form sumit and give a default value if no form has been submitted

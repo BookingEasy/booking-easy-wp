@@ -7,6 +7,7 @@ use Sagenda\Helpers\UrlHelper;
 use Sagenda\Models\Entities\Booking;
 use Sagenda\Models\Entities\BookableItem;
 
+
 include_once( SAGENDA_PLUGIN_DIR . 'helpers/PickadateHelper.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'helpers/UrlHelper.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'helpers/ArrayHelper.php' );
@@ -42,9 +43,16 @@ class CalendarController {
       return;
     }
 
+    if(isset($_GET['EventIdentifier']))
+    {
+      $subscriptionController = new SubscriptionController();
+      return $subscriptionController->callSubscription($twig);
+    }
+
     return $twig->render($this->view, array(
       'SAGENDA_PLUGIN_URL' => SAGENDA_PLUGIN_URL,
       'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
+      'token' => get_option('mrs1_authentication_code'),
     ));
 
   }
