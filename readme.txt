@@ -25,7 +25,7 @@ Using this WP plugin is a better way to display your booking on your WP frontend
 **Shortcode**
 You can use Sagenda as shortcode in any page or plugin :
 [sagenda-wp] in a page or an article ( you can also display only one "bookable item" : [sagenda-wp bookableitem="my bookable item name"]).
-
+Use the shortcode [sagenda-wp view="calendar"] to display a month / week / day view. [in BETA testing for now!]
 
 
 
@@ -48,6 +48,7 @@ Follow these steps to install Sagenda:
 2. Create a free account on https://sagenda.net/Accounts/Register (setup your “bookable items” and events).
 3. Copy your token (from the backend of sagenda.net Settings / account settings) to your WordPress installation (backend of wp / Settings / Sagenda).
 4. Use the shortcode [sagenda-wp] in a page or an article ( you can also display only one "bookable item" : [sagenda-wp bookableitem="my bookable item name"]).
+Use the shortcode [sagenda-wp view="calendar"] to display a month / week / day view. [in BETA testing for now!]
 
 SUPPORT THIPS : any error message? try to update to the last version of WordPress and use PHP 7 or higher !
 
@@ -321,6 +322,9 @@ Once bookable items and events saved, you can manage your Bookings in the dashbo
 
 **How to configure my account?**
 For more information please read our tutorial about [settings](http://www.sagenda.com/introducing-sagenda/sagenda-account-settings-integration/).
+
+**About Calendar View**
+If you want to change the day the calendar starts the week on, just change it under your WordPress settings : "Settings / General / Week Starts On".
 
 More on :
 [Sagenda Home](http://www.sagenda.com/support-faqs/)

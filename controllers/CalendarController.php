@@ -53,6 +53,7 @@ class CalendarController {
       'SAGENDA_PLUGIN_URL' => SAGENDA_PLUGIN_URL,
       'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
       'token' => get_option('mrs1_authentication_code'),
+      'weekStartsOn' => get_option('start_of_week'),
     ));
 
   }

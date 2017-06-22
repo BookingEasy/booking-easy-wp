@@ -92,23 +92,11 @@ function head_code_sagenda(){
 	echo $headcode;
 }
 
-/*
-function head_code_sagenda_calendar_angular(){
-
-	$headcode = '<base href="../../angular2Calendar/src/">';
-	$headcode .= '<link rel="stylesheet" type="text/css" href="../../angular2Calendar/node_modules/angular-calendar/dist/css/angular-calendar.css" />';
-	$headcode .= '<link rel="stylesheet" type="text/css" href="../../angular2Calendar/bower_components/bootstrap/dist/css/bootstrap.css" />';
-	$headcode .= '<meta name="viewport" content="width=device-width, initial-scale=1">';
-	$headcode .= '<link rel="icon" type="image/x-icon" href="favicon.ico">';
-
-	echo $headcode;
-}*/
 
 /**
 * Add it in the frontend
 */
 add_action('wp_head','head_code_sagenda');
-//add_action('wp_head','head_code_sagenda_calendar_angular');
 
 /**
 * Add it in the backend
