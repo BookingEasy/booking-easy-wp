@@ -32,7 +32,6 @@ class CalendarController {
   */
   public function showCalendar($twig, $shorcodeParametersArray)
   {
-
     if (get_option('mrs1_authentication_code') == null)
     {
       return $twig->render($this->view, array(
@@ -54,7 +53,7 @@ class CalendarController {
       'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
       'token' => get_option('mrs1_authentication_code'),
       'weekStartsOn' => get_option('start_of_week'),
+      'languageCultureShortName' => get_locale(),
     ));
-
   }
 }
