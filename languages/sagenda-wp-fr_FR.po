@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sagenda-wp\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-05 21:35+0200\n"
-"PO-Revision-Date: 2017-06-05 21:35+0200\n"
+"POT-Creation-Date: 2017-06-28 13:09+0200\n"
+"PO-Revision-Date: 2017-06-28 13:10+0200\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -109,7 +109,7 @@ msgstr "Comment obtenir le code d’authentification? "
 msgid "Useful links :"
 msgstr "Liens utiles :"
 
-#: controllers/CalendarController.php:40 controllers/SearchController.php:77
+#: controllers/CalendarController.php:40 controllers/SearchController.php:81
 msgid ""
 "You didn't configure Sagenda properly please enter your authentication code "
 "in Settings"
@@ -117,12 +117,36 @@ msgstr ""
 "Vous n’avez pas configuré Sagenda correctement, merci d’entrer votre code "
 "d’authentification dans les Paramètres"
 
-#: controllers/CalendarController.php:47 controllers/SearchController.php:114
+#: controllers/CalendarController.php:53 controllers/SearchController.php:121
 msgid "Search for all the events between"
 msgstr "Rechercher tous les évènements entre"
 
+#: controllers/CalendarController.php:58
+msgid "Next"
+msgstr "Prochain"
+
+#: controllers/CalendarController.php:59
+msgid "Today"
+msgstr "Aujourd’hui"
+
+#: controllers/CalendarController.php:60
+msgid "Previous"
+msgstr "Précédent"
+
+#: controllers/CalendarController.php:61
+msgid "Month"
+msgstr "Mois"
+
+#: controllers/CalendarController.php:62
+msgid "Week"
+msgstr "Semaine"
+
+#: controllers/CalendarController.php:63
+msgid "Day"
+msgstr "Jour"
+
 #: controllers/InformationMessageController.php:23
-#: controllers/SubscriptionController.php:50
+#: controllers/SubscriptionController.php:76
 msgid "Back"
 msgstr "Retour"
 
@@ -138,7 +162,7 @@ msgstr "Merci de payer pour votre évènement"
 msgid "Pay"
 msgstr "Payer"
 
-#: controllers/SearchController.php:90
+#: controllers/SearchController.php:95
 msgid ""
 "You didn't add any Bookable item, please configure your Sagenda's account "
 "properly !"
@@ -146,110 +170,110 @@ msgstr ""
 "Vous n’avez pas ajouté d’élément réservable, merci de configurer votre "
 "compte Sagenda correctement!"
 
-#: controllers/SearchController.php:115
+#: controllers/SearchController.php:122
 msgid "From"
 msgstr "De"
 
-#: controllers/SearchController.php:116
+#: controllers/SearchController.php:123
 msgid "To"
 msgstr "A"
 
-#: controllers/SearchController.php:117
+#: controllers/SearchController.php:124
 msgid "Please choose a bookable item"
 msgstr "Merci de choisir un élément réservable"
 
-#: controllers/SearchController.php:118
+#: controllers/SearchController.php:125
 msgid "Location"
 msgstr "Emplacement"
 
-#: controllers/SearchController.php:119
-#: controllers/SubscriptionController.php:48
+#: controllers/SearchController.php:126
+#: controllers/SubscriptionController.php:74
 msgid "Description"
 msgstr "Description"
 
-#: controllers/SearchController.php:120
+#: controllers/SearchController.php:127
 msgid "Create a free Booking Account on Sagenda!"
 msgstr "Créez un compte gratuit sur Sagenda!"
 
-#: controllers/SearchController.php:121
+#: controllers/SearchController.php:128
 msgid "Search"
 msgstr "Recherche"
 
-#: controllers/SearchController.php:122
+#: controllers/SearchController.php:129
 msgid "Click an event to book It:"
 msgstr "Cliquez un évènement pour le réserver:"
 
-#: controllers/SearchController.php:125
+#: controllers/SearchController.php:132
 msgid "book-it!"
 msgstr "réservez!"
 
-#: controllers/SearchController.php:126
+#: controllers/SearchController.php:133
 msgid "No event found for the bookable item within the selected date range."
 msgstr ""
 "Pas d’évènement trouvé pour l’élément réservable sélectioné dans la plage de "
 "temps sélectionné."
 
-#: controllers/SubscriptionController.php:36
+#: controllers/SubscriptionController.php:62
 msgid "Subscription"
 msgstr "Description"
 
-#: controllers/SubscriptionController.php:37
+#: controllers/SubscriptionController.php:63
 msgid "Email"
 msgstr "Courriel"
 
-#: controllers/SubscriptionController.php:38
+#: controllers/SubscriptionController.php:64
 msgid "First Name"
 msgstr "Prénom"
 
-#: controllers/SubscriptionController.php:39
+#: controllers/SubscriptionController.php:65
 msgid "Last Name"
 msgstr "Nom"
 
-#: controllers/SubscriptionController.php:40
+#: controllers/SubscriptionController.php:66
 msgid "Title"
 msgstr "Titre"
 
-#: controllers/SubscriptionController.php:41
+#: controllers/SubscriptionController.php:67
 msgid "Mr."
 msgstr "M"
 
-#: controllers/SubscriptionController.php:42
+#: controllers/SubscriptionController.php:68
 msgid "Mrs."
 msgstr "Mme"
 
-#: controllers/SubscriptionController.php:43
+#: controllers/SubscriptionController.php:69
 msgid "Miss"
 msgstr "Mlle"
 
-#: controllers/SubscriptionController.php:44
+#: controllers/SubscriptionController.php:70
 msgid "Dr"
 msgstr "Dr"
 
-#: controllers/SubscriptionController.php:47
+#: controllers/SubscriptionController.php:73
 msgid "Phone Number"
 msgstr "Numéro de télephone"
 
-#: controllers/SubscriptionController.php:49
+#: controllers/SubscriptionController.php:75
 msgid "Submit"
 msgstr "Envoyer"
 
-#: controllers/SubscriptionController.php:51
+#: controllers/SubscriptionController.php:77
 msgid "Your selected booking :"
 msgstr "Votre évènement sélectionné :"
 
-#: controllers/SubscriptionController.php:52
+#: controllers/SubscriptionController.php:78
 msgid "Event Name"
 msgstr "Nom de l’évènement"
 
-#: controllers/SubscriptionController.php:53
+#: controllers/SubscriptionController.php:79
 msgid "Payment Amount"
 msgstr "Montant du paiement"
 
-#: controllers/SubscriptionController.php:54
+#: controllers/SubscriptionController.php:80
 msgid "Now, let's book it! Please fill out the form below."
 msgstr "Réservons! Merci de remplir de formulaire ci-dessous."
 
-#: controllers/SubscriptionController.php:78
+#: controllers/SubscriptionController.php:104
 msgid "Please fill out all the required fields"
 msgstr "Merci de remplir tous les champs demandés"
 

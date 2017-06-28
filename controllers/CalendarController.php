@@ -54,6 +54,13 @@ class CalendarController {
       'token' => get_option('mrs1_authentication_code'),
       'weekStartsOn' => get_option('start_of_week'),
       'languageCultureShortName' => get_locale(),
+
+      'sagendaTranslationNext'        => __( 'Next', 'sagenda-wp' ),
+      'sagendaTranslationToday'        => __( 'Today', 'sagenda-wp' ),
+      'sagendaTranslationPrevious'        => __( 'Previous', 'sagenda-wp' ),
+      'sagendaTranslationMonth'        => __( 'Month', 'sagenda-wp' ),
+      'sagendaTranslationWeek'        => __( 'Week', 'sagenda-wp' ),
+      'sagendaTranslationDay'        => __( 'Day', 'sagenda-wp' ),
     ));
   }
 }

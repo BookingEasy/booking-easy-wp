@@ -4,7 +4,7 @@ Donate link: http://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, BnB
 Requires at least: 3.0
 Tested up to: 4.8
-Stable tag: 1.2.10
+Stable tag: 1.2.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,7 +48,7 @@ Follow these steps to install Sagenda:
 2. Create a free account on https://sagenda.net/Accounts/Register (setup your “bookable items” and events).
 3. Copy your token (from the backend of sagenda.net Settings / account settings) to your WordPress installation (backend of wp / Settings / Sagenda).
 4. Use the shortcode [sagenda-wp] in a page or an article ( you can also display only one "bookable item" : [sagenda-wp bookableitem="my bookable item name"]).
-Use the shortcode [sagenda-wp view="calendar"] to display a month / week / day view. [in BETA testing for now!]
+    OR Use the shortcode [sagenda-wp view="calendar"] to display a month / week / day view. [in BETA testing for now!]
 
 SUPPORT THIPS : any error message? try to update to the last version of WordPress and use PHP 7 or higher !
 
@@ -83,10 +83,14 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 
 == Upgrade Notice ==
 
+= 1.2.11 =
+* IMPROVED : 2nd beta version of a calendar view. Now managing translations.
+
+== Changelog ==
+
 = 1.2.10 =
 * ADDED : First beta version of a calendar view.
 
-== Changelog ==
 
 = 1.2.9 =
 * FIXED : Return type in bug of method empty() removed.
@@ -325,6 +329,7 @@ For more information please read our tutorial about [settings](http://www.sagend
 
 **About Calendar View**
 If you want to change the day the calendar starts the week on, just change it under your WordPress settings : "Settings / General / Week Starts On".
+If you want to change the language of the calendar, just change it under your WordPress settings : "Settings / General / Site Language".
 
 More on :
 [Sagenda Home](http://www.sagenda.com/support-faqs/)
