@@ -2,14 +2,15 @@
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 use Sagenda\webservices\sagendaAPI;
 use Sagenda\Helpers\PickadateHelper;
+use Sagenda\Helpers\DateHelper;
 use Sagenda\Helpers\ArrayHelper;
 use Sagenda\Helpers\UrlHelper;
 use Sagenda\Models\Entities\Booking;
 use Sagenda\Models\Entities\BookableItem;
 
-
 include_once( SAGENDA_PLUGIN_DIR . 'helpers/PickadateHelper.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'helpers/UrlHelper.php' );
+include_once( SAGENDA_PLUGIN_DIR . 'helpers/DateHelper.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'helpers/ArrayHelper.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'webservices/SagendaAPI.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'models/entities/Booking.php' );
@@ -54,10 +55,8 @@ class CalendarController {
       'token' => get_option('mrs1_authentication_code'),
       'weekStartsOn' => get_option('start_of_week'),
       'languageCultureShortName' => get_locale(),
-      'dateFormat' => get_option( 'date_format' ),
-      'timeFormat' => get_option( 'time_format' ),
-      'sagendaTranslationFrom'        => __( 'From', 'sagenda-wp' ),
-      'sagendaTranslationTo'        => __( 'To', 'sagenda-wp' ),
+      'dateFormat' => DateHelper::convertDateTimeFormatFromPHPToMomentjs(get_option( 'date_format' )),
+      'timeFormat' => DateHelper::convertDateTimeFormatFromPHPToMomentjs(get_option( 'time_format' )),
       'sagendaTranslationNext'        => __( 'Next', 'sagenda-wp' ),
       'sagendaTranslationToday'        => __( 'Today', 'sagenda-wp' ),
       'sagendaTranslationPrevious'        => __( 'Previous', 'sagenda-wp' ),
