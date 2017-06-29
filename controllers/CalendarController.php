@@ -54,7 +54,10 @@ class CalendarController {
       'token' => get_option('mrs1_authentication_code'),
       'weekStartsOn' => get_option('start_of_week'),
       'languageCultureShortName' => get_locale(),
-
+      'dateFormat' => get_option( 'date_format' ),
+      'timeFormat' => get_option( 'time_format' ),
+      'sagendaTranslationFrom'        => __( 'From', 'sagenda-wp' ),
+      'sagendaTranslationTo'        => __( 'To', 'sagenda-wp' ),
       'sagendaTranslationNext'        => __( 'Next', 'sagenda-wp' ),
       'sagendaTranslationToday'        => __( 'Today', 'sagenda-wp' ),
       'sagendaTranslationPrevious'        => __( 'Previous', 'sagenda-wp' ),
