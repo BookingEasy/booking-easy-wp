@@ -79,7 +79,8 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 
 
 == Screenshots ==
-1. How to identify my Sagenda account in WordPress? Copy the authentication code (token) from your Sagenda account and paste it into your WordPress installation
+1. Calendar view
+2. How to identify my Sagenda account in WordPress? Copy the authentication code (token) from your Sagenda account and paste it into your WordPress installation
 
 == Upgrade Notice ==
 = 1.2.13 =
