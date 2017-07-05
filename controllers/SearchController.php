@@ -176,15 +176,13 @@ class SearchController {
       {
         $selectedId = $this->findBookableItemElementInList($bookableItems, $bookableItemSelectedByShortcode);
       }
-      else {
+      else
+      {
         $selectedId = UrlHelper::getInput("bookableItems");
         if(empty($selectedId))
         {
           $bookableItemId = UrlHelper::getInput("bookableItemId");
-          if(empty($bookableItemId))
-          {
-            $selectedId = 0;
-          }
+          $selectedId = 0;
         }
       }
 

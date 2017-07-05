@@ -84,7 +84,8 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 
 == Upgrade Notice ==
 = 1.2.13 =
-* ...
+* FIXED : Bug when we select an event and click back, the location wasn't displayed again.
+* IMPROVED : 3rd beta version of a calendar view. First step of date and time format management. Improved background color for better readability.
 
 == Changelog ==
 
