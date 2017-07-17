@@ -97,18 +97,16 @@ class DateHelper{
   * Momentjs doc : http://momentjs.com/docs/#/displaying/
   * For example :
   * d => DD
-  * @param  string  $value   the
+  * @param  string  $value   the date format to be converted
   */
-  public static function convertDateTimeFormatFromPHPToMomentjs($value)
+  public static function convertDateFormatFromPHPToMomentjs($value)
   {
     // Day
+    $value = str_replace("D", "ddd", $value);
     $value = str_replace("d", "DD", $value);
     $value = str_replace("j", "D", $value);
     $value = str_replace("S", "Do", $value);
-
-    // Day of the week
     $value = str_replace("l", "dddd", $value);
-    $value = str_replace("D", "ddd", $value);
 
     // month
     $value = str_replace("M", "MMM", $value);
@@ -120,6 +118,19 @@ class DateHelper{
     $value = str_replace("Y", "YYYY", $value);
     $value = str_replace("y", "YY", $value);
 
+    return $value;
+  }
+
+  /**
+  * This method convert a PHP date time format to Momentjs date time format.
+  * PHP doc : https://codex.wordpress.org/fr:Modifier_Date_et_Heure
+  * Momentjs doc : http://momentjs.com/docs/#/displaying/
+  * For example :
+  * s => ss
+  * @param  string  $value   the date format to be converted
+  */
+  public static function convertTimeFormatFromPHPToMomentjs($value)
+  {
     // Heure
     $value = str_replace("h", "hh", $value);
     $value = str_replace("g", "h", $value);
