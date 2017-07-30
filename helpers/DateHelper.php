@@ -102,11 +102,16 @@ class DateHelper{
   public static function convertDateFormatFromPHPToMomentjs($value)
   {
     // Day
-    $value = str_replace("D", "ddd", $value);
-    $value = str_replace("d", "DD", $value);
-    $value = str_replace("j", "D", $value);
-    $value = str_replace("S", "Do", $value);
-    $value = str_replace("l", "dddd", $value);
+    if (strpos($value, 'jS') !== false) {
+      $value = str_replace("jS", "Do", $value);
+    }
+    else
+    {
+      $value = str_replace("D", "ddd", $value);
+      $value = str_replace("d", "DD", $value);
+      $value = str_replace("j", "D", $value);
+      $value = str_replace("l", "dddd", $value);
+    }
 
     // month
     $value = str_replace("M", "MMM", $value);
