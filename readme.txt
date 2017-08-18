@@ -4,7 +4,7 @@ Donate link: http://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, BnB
 Requires at least: 3.0
 Tested up to: 4.8
-Stable tag: 1.2.15
+Stable tag: 1.2.16
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,10 +85,14 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 4. How to identify my Sagenda account in WordPress? Copy the authentication code (token) from your Sagenda account and paste it into your WordPress installation
 
 == Upgrade Notice ==
+= 1.2.16 =
+* FIXED : Bug when using a date format using "S" parameter for another screen. 
+
+== Changelog ==
+
 = 1.2.15 =
 * FIXED : Bug when using a date format using "S" parameter.
 
-== Changelog ==
 
 = 1.2.14 =
 * IMPROVED :  new beta version of a calendar view. Improved date and time format management. Improved link color for better readability.

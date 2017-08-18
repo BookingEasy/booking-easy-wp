@@ -72,6 +72,11 @@ class DateHelper{
   */
   private static function convertDateTimeFormatLetterToStrftimeFormatLetter($value)
   {
+    // Day
+    if (strpos($value, 'jS') !== false) {
+      $value = str_replace("jS", "d", $value);
+    }
+
     $value = str_replace("F", "%B", $value);
     $value = str_replace("M", "%b", $value);
     $value = str_replace("j", "%e", $value);

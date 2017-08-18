@@ -13,7 +13,7 @@ class SagendaAPI
   /**
   * @var string - url of the API
   */
-  protected $apiUrl = 'http://sagenda.net/api/'; //Live Server
+  protected $apiUrl = 'https://sagenda.net/api/'; //Live Server
   //protected $apiUrl = 'http://localhost:49815/api/'; //local Server
   //protected $apiUrl = 'http://sagenda-dev.apphb.com/api/'; //staging test for payment Server
   //protected $apiUrl = 'http://5478cbc9.ngrok.io/api/'; //ngrok test for payment Server
@@ -29,7 +29,7 @@ class SagendaAPI
     $message = __('Successfully connected','sagenda-wp');
     $didSucceed = true;
     //TODO : use a better checking error code system than string comparaison
-    if($result->Message == "Error: API Token is invalid" || $result->Message == "")
+    if($result->Message == "Error: API Token is invalid")
     {
       $message = __('Your token is wrong; please try again or generate another one in Sagenda’s backend.', 'sagenda-wp');
       $didSucceed = false;
@@ -106,7 +106,13 @@ class SagendaAPI
       {
         foreach ($bookings->body as $booking)
         {
+          /* print_r($booking);
+
+          echo "before=".$booking->DateDisplay ;
+          echo "<br/>from=".$booking->From;
+          echo "<br/>to=".$booking->To ; */
           $booking->DateDisplay = DateHelper::setDateTimeFormat($booking->From)." - ".DateHelper::setDateTimeFormat($booking->To);
+          // echo "<br/>after=".$booking->DateDisplay ;
         }
       }
     }
