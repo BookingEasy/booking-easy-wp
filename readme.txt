@@ -86,7 +86,8 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 
 == Upgrade Notice ==
 = 1.2.16 =
-* FIXED : Bug when using a date format using "S" parameter for another screen. 
+* FIXED : Bug when using a date format using "S" parameter for another screen.
+* IMPROVED :  new beta version of a calendar view.
 
 == Changelog ==
 
