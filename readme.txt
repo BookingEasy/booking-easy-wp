@@ -1,10 +1,10 @@
 === Sagenda - Free booking system  ===
 Contributors: sagenda
 Donate link: http://www.sagenda.com/community/
-Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, BnB
+Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, PayPal
 Requires at least: 3.0
 Tested up to: 4.8
-Stable tag: 1.2.16
+Stable tag: 1.2.17
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,8 @@ Sagenda is an online booking software that helps your clients fix appointments a
 This is an “Online Booking System” which gives customers the opportunity to choose the date and the time of an appointment according to one's own preferences and the booking can now be done online.
 
 Using this WP plugin is a better way to display your booking on your WP frontend than using an iFrame. Using this Plugin will required a free Sagenda's account. To **create an account** please visit: [https://sagenda.net/Accounts/Register](https://sagenda.net/Accounts/Register)
+
+You can use PayPal as payment gateway to make your customers pay for bookings. They can pay via PayPal account but also via direct credit card payment (without creating a PayPal account). Following cards are accepted : Visa, MasterCard, American Express, Discover, JCB, Diner's Club, EnRoute...
 
 **NOTE: You need to register an account on the Sagenda site and then you will get an authentication code which you will use to validate your Sagenda plugin.**
 
@@ -85,11 +87,14 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 4. How to identify my Sagenda account in WordPress? Copy the authentication code (token) from your Sagenda account and paste it into your WordPress installation
 
 == Upgrade Notice ==
+= 1.2.17 =
+* FIXED : Bug during plugin activation. 
+
+== Changelog ==
+
 = 1.2.16 =
 * FIXED : Bug when using a date format using "S" parameter for another screen.
 * IMPROVED :  new beta version of a calendar view.
-
-== Changelog ==
 
 = 1.2.15 =
 * FIXED : Bug when using a date format using "S" parameter.
