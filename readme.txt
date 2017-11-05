@@ -3,6 +3,7 @@ Contributors: sagenda
 Donate link: http://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, PayPal
 Requires at least: 3.0
+Requires PHP: 5.6
 Tested up to: 4.8
 Stable tag: 1.2.17
 License: GPLv2 or later
@@ -88,7 +89,7 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 
 == Upgrade Notice ==
 = 1.2.17 =
-* FIXED : Bug during plugin activation. 
+* FIXED : Bug during plugin activation.
 
 == Changelog ==
 
