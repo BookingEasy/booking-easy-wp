@@ -27,8 +27,8 @@ You can use PayPal as payment gateway to make your customers pay for bookings. T
 
 **Shortcode**
 You can use Sagenda as shortcode in any page or plugin :
-[sagenda-wp] in a page or an article ( you can also display only one "bookable item" : [sagenda-wp bookableitem="my bookable item name"]).
-Use the shortcode [sagenda-wp view="calendar"] to display a month / week / day view. [in BETA testing for now!]
+[sagenda-wp] in a page or an article ( you can also display only one "bookable item" : `[sagenda-wp bookableitem="my bookable item name"]`).
+Use the shortcode `[sagenda-wp view="calendar"]` to display a month / week / day view. [in BETA testing for now!]
 
 
 
