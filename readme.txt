@@ -4,8 +4,8 @@ Donate link: http://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, PayPal
 Requires at least: 3.0
 Requires PHP: 5.6
-Tested up to: 4.8
-Stable tag: 1.2.17
+Tested up to: 4.9
+Stable tag: 1.2.18
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -87,11 +87,16 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 3. Subscription view
 4. How to identify my Sagenda account in WordPress? Copy the authentication code (token) from your Sagenda account and paste it into your WordPress installation
 
+
 == Upgrade Notice ==
-= 1.2.17 =
-* FIXED : Bug during plugin activation.
+= 1.2.18 =
+* TESTED : Compatibility with WP 4.9
+
 
 == Changelog ==
+
+= 1.2.17 =
+* FIXED : Bug during plugin activation.
 
 = 1.2.16 =
 * FIXED : Bug when using a date format using "S" parameter for another screen.
