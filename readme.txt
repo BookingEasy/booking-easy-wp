@@ -59,6 +59,8 @@ SUPPORT THIPS : any error message? try to update to the last version of WordPres
 
   Chinese Simplified - 简体中文
   Chinese Traditional - 繁體中文
+  Czech
+  Danish
   Dutch - Nederlands (Nederland)
   English
   French - Français (France)
@@ -91,6 +93,7 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 == Upgrade Notice ==
 = 1.2.18 =
 * TESTED : Compatibility with WP 4.9
+* IMPROVED : Czech translations.
 
 
 == Changelog ==
