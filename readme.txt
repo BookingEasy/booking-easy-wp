@@ -5,7 +5,7 @@ Tags: booking, appointment, scheduling, availability, reservation, rental, free,
 Requires at least: 3.0
 Requires PHP: 5.6
 Tested up to: 4.9
-Stable tag: 1.2.18
+Stable tag: 1.2.19
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,8 +27,11 @@ You can use PayPal as payment gateway to make your customers pay for bookings. T
 
 **Shortcode**
 You can use Sagenda as shortcode in any page or plugin :
-[sagenda-wp] in a page or an article ( you can also display only one "bookable item" : `[sagenda-wp bookableitem="my bookable item name"]`).
-Use the shortcode `[sagenda-wp view="calendar"]` to display a month / week / day view. [in BETA testing for now!]
+`[sagenda-wp]`
+in a page or an article ( you can also display only one "bookable item" : `[sagenda-wp bookableitem="my bookable item name"]`).
+Use the shortcode
+`[sagenda-wp view="calendar"]`
+to display a month / week / day view. [in BETA testing for now!]
 
 
 
@@ -50,8 +53,8 @@ Follow these steps to install Sagenda:
 1. Download the booking plugin into the **/wp-content/plugins/** folder and activate the plugin.
 2. Create a free account on https://sagenda.net/Accounts/Register (setup your “bookable items” and events).
 3. Copy your token (from the backend of sagenda.net Settings / account settings) to your WordPress installation (backend of wp / Settings / Sagenda).
-4. Use the shortcode [sagenda-wp] in a page or an article ( you can also display only one "bookable item" : [sagenda-wp bookableitem="my bookable item name"]).
-    OR Use the shortcode [sagenda-wp view="calendar"] to display a month / week / day view. [in BETA testing for now!]
+4. Use the shortcode `[sagenda-wp]` in a page or an article ( you can also display only one "bookable item" : `[sagenda-wp bookableitem="my bookable item name"]`).
+    OR Use the shortcode `[sagenda-wp view="calendar"]` to display a month / week / day view. [in BETA testing for now!]
 
 SUPPORT THIPS : any error message? try to update to the last version of WordPress and use PHP 7 or higher !
 
@@ -91,12 +94,17 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 
 
 == Upgrade Notice ==
-= 1.2.18 =
-* TESTED : Compatibility with WP 4.9
-* IMPROVED : Czech translations.
+= 1.2.19 =
+* FIXED : Bug if bookings are null.
+
 
 
 == Changelog ==
+
+= 1.2.18 =
+* TESTED : Compatibility with WP 4.9
+* IMPROVED : Czech translations.
+* IMPROVED : Readme files.
 
 = 1.2.17 =
 * FIXED : Bug during plugin activation.
