@@ -96,7 +96,7 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 == Upgrade Notice ==
 = 1.2.19 =
 * FIXED : Bug if bookings are null.
-
+* FIXED : Remove bootstrap reference in admin part (backend) to avoid conflict. 
 
 
 == Changelog ==

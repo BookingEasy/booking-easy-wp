@@ -24,16 +24,17 @@ class AdminTokenController
 
     $sagendaAPI = new sagendaAPI();
     $result = $sagendaAPI->validateAccount($tokenValue);
-    $bootstrapAlertType = "danger";
+    $color = "red";
     $connectedStatus = __( 'NOT CONNECTED', 'sagenda-wp' );
 
     if($result['didSucceed'] && $tokenValue != null )
     {
-      $bootstrapAlertType = "success";
+      $color = "green";
       $connectedStatus  = __( 'CONNECTED', 'sagenda-wp' );
     }
 
     return $twig->render($this->view, array(
+      'SAGENDA_PLUGIN_URL'                    => SAGENDA_PLUGIN_URL,
       'sagendaAuthenticationSettings'         => __( 'Sagenda Authentication Settings', 'sagenda-wp' ),
       'sagendaAuthenticationCode'             => __( 'Sagenda Authentication Code', 'sagenda-wp' ),
       'saveChanges'                           => __( 'Save Changes', 'sagenda-wp' ),
@@ -49,7 +50,7 @@ class AdminTokenController
       'howToGetTheTokenTitle'                 => __( 'How to get the token :', 'sagenda-wp' ),
       'usefulLinksTitle'                      => __( 'Useful links :', 'sagenda-wp' ),
       'result'                                => $result,
-      'bootstrapAlertType'                    => $bootstrapAlertType,
+      'color'                                 => $color,
       'connectedStatus'                       => $connectedStatus,
       'tokenValue'                            => $tokenValue,
     ));

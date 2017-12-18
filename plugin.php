@@ -105,7 +105,7 @@ add_action('wp_head','head_code_sagenda');
 /**
 * Add it in the backend
 */
-add_action('admin_head', 'head_code_sagenda');
+// add_action('admin_head', 'head_code_sagenda');
 
 /**
 * Action hooks for adding admin page
