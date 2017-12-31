@@ -4,7 +4,7 @@ Donate link: http://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, PayPal
 Requires at least: 3.0
 Requires PHP: 5.6
-Tested up to: 4.9
+Tested up to: 4.9.1
 Stable tag: 1.2.19
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -34,9 +34,11 @@ Use the shortcode
 to display a month / week / day view. [in BETA testing for now!]
 
 
-
+**Prerequisites**
 SAGENDA WP PLUGIN 1.2.X REQUIRE PHP 5.6 or 7.x  !
 FOR YOUR OWN SAFETY DON'T USE PHP VERSION OLDER THAN 5.6 THERE IS NO SECURITY PATCH -> http://php.net/supported-versions.php
+
+Sagenda WP plugin require the PHP "Curl extension" to be activated on your hosting to call web services.
 
 =Installation=
 
@@ -95,8 +97,10 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 
 == Upgrade Notice ==
 = 1.2.19 =
+HAPPY NEW YEAR 🎉, THIS IS THE LAST RELEASE OF 2017 :
 * FIXED : Bug if bookings are null.
-* FIXED : Remove bootstrap reference in admin part (backend) to avoid conflict. 
+* FIXED : Remove bootstrap reference in admin part (backend) to avoid conflict.
+* IMPROVED : Check if cURL is activated and display a message if not.
 
 
 == Changelog ==
@@ -177,7 +181,7 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 = 1.2.0 =
 * NOTICE : As we rebuilded everything from scratch you will have some translations missing, don't hesitate to add them on OneSky, we will push a new version every 2 weeks : http://osp7icw.oneskyapp.com/admin/project/dashboard/project/101655
 * IMPROVED : Frontend layout using Twitter bootstrap.
-* ADDED : Shortcode management to display only one bookable item, please just use it so : [sagenda-wp bookableitem="my bookable item name"]
+* ADDED : Shortcode management to display only one bookable item, please just use it so : `[sagenda-wp bookableitem="my bookable item name"]`
 * TESTED : Compatibility of the reservation plugin with WordPress 4.7.3
 
 

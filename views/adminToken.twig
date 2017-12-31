@@ -11,27 +11,28 @@
     <input type="text" id="sagendaAuthenticationCode" name="sagendaAuthenticationCode" class="form-control" placeholder="{{ sagendaAuthenticationCode }}" value="{{tokenValue}}">
   </div>
   <br />
-  <div class="row">
-    <div class="col-xs-6 text-left"><button type="submit" class="btn btn-success btn-lg">{{ saveChanges }}</button></div>
+  <div>
+    <div><button type="submit">{{ saveChanges }}</button></div>
   </div>
 </form>
 
 <h3>{{howToGetTheTokenTitle}}</h3>
 <p>{{registeringInfo}}</p>
 <br />
-<h3>{{aboutIntegrationTitle}} <span class="label label-default"><strong>[sagenda-wp]</strong><span></h3>
+<h3>{{aboutIntegrationTitle}}<strong>[sagenda-wp]</strong></h3>
 <p>{{shortCodeInfo|raw}}</p>
 <p>{{shortCodeInfoAdvanced|raw}}</p>
 <p>{{shortCodeInfoInPHP}}</p>
 <br />
 <h3>{{usefulLinksTitle}}</h3>
-<div class="row">
-  <div class="col-xs-6 text-center"><a href="https://www.youtube.com/watch?v=wCEmJg2hWgw" target="_blank"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> See video about WP plugin installation</button></a></div>
-  <div class="col-xs-6 text-center"><a href="http://www.sagenda.com/integrate-booking-system-website/add-booking-plugin-wordpress-website/" target="_blank"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon glyphicon-new-window" aria-hidden="true"></span>  {{ readMore }}</button></a></div>
-</div>
-<br />
-<div class="row">
-  <div class="col-xs-6 text-center"><a href="http://sagenda.net/Accounts/Register" target="_blank"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon glyphicon-new-window" aria-hidden="true"></span>  {{ createAccount }}</button></a></div>
-  <div class="col-xs-6 text-center"><a href="http://sagenda.net/Accounts/Login" target="_blank"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon glyphicon-new-window" aria-hidden="true"></span>  {{ clickHereToGetYourAuthenticationCode }}</button></a></div>
-</div>
-<br />
+
+<table style="width:100%">
+  <tr>
+    <th><a href="http://www.sagenda.com/integrate-booking-system-website/add-booking-plugin-wordpress-website/" target="_blank"><button type="button">{{ readMore }}</button></a></th>
+      <th><a href="http://sagenda.net/Accounts/Login" target="_blank"><button type="button">{{ clickHereToGetYourAuthenticationCode }}</button></a></th>
+  </tr>
+  <tr>
+    <th><a href="http://sagenda.net/Accounts/Register" target="_blank"><button type="button">{{ createAccount }}</button></a></th>
+    <th><a href="https://www.youtube.com/watch?v=wCEmJg2hWgw" target="_blank"><button type="button"> See video about WP plugin installation</button></a></th>
+  </tr>
+</table>

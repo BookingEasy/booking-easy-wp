@@ -4,7 +4,7 @@
 * Plugin Name:       Sagenda
 * Plugin URI:        http://www.sagenda.com/
 * Description:       Sagenda is a free Online Booking / Scheduling / Reservation System, which gives customers the opportunity to choose the date and the time of an appointment according to your preferences.
-* Version:           1.2.18
+* Version:           1.2.19
 * Author:            sagenda
 * Author URI:        http://www.sagenda.com/
 * License:           GPLv2
@@ -53,6 +53,20 @@ function is_PHP_version_OK(){
 		echo "Recommended version : 5.6 - 7.x  (all version <5.6 are \"End of life\" and don't have security fixes!)"."<br>";
 		echo "Please read offical PHP recommendations <a href=\"http://php.net/supported-versions.php\">http://php.net/supported-versions.php</a><br>" ;
 		echo "Please update your PHP version form your admin panel. If you don't know how to do it please contact your WebMaster or your Hosting provider!" ;
+		return false;
+	}
+	return true ;
+}
+
+/**
+* Check if CURL is enabled on the server, required for calling web services.
+* @return true if curl is enabled
+*/
+function is_CURL_Enabled(){
+	if(!function_exists('curl_version'))
+	{
+		echo "You need to install cURL module in your PHP server in order to make WebServices calls!"."<br>" ;
+		echo "More info there : <a href=\"http://php.net/manual/en/curl.installation.php\">http://php.net/manual/en/curl.installation.php</a><br>" ;
 		return false;
 	}
 	return true ;
@@ -111,13 +125,17 @@ add_action('wp_head','head_code_sagenda');
 * Action hooks for adding admin page
 */
 function sagenda_admin() {
-	if(is_PHP_version_OK() == true)
+	if(is_CURL_Enabled() === true)
 	{
-		include_once( SAGENDA_PLUGIN_DIR . 'initializer.php' );
-		$initializer = new Sagenda\Initializer();
-		echo $initializer->initAdminSettings();
+		if(is_PHP_version_OK() === true)
+		{
+			include_once( SAGENDA_PLUGIN_DIR . 'initializer.php' );
+			$initializer = new Sagenda\Initializer();
+			echo $initializer->initAdminSettings();
+		}
 	}
 }
+
 function sagenda_admin_actions() {
 	add_options_page("Sagenda", "Sagenda", "manage_options", "Sagenda", "sagenda_admin");
 }
