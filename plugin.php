@@ -31,11 +31,12 @@ add_action('plugins_loaded', 'sagenda_load_textdomain');
 * @param  string  $atts   a list of parameter allowing more options to the shortcode
 */
 function sagenda_main( $atts ){
-	if(is_PHP_version_OK() == true)
-	{
-		include_once( SAGENDA_PLUGIN_DIR . 'initializer.php' );
-		$initializer = new Sagenda\Initializer();
-		return $initializer->initFrontend($atts);
+	if(is_CURL_Enabled() === true) {
+		if(is_PHP_version_OK() == true) {
+			include_once( SAGENDA_PLUGIN_DIR . 'initializer.php' );
+			$initializer = new Sagenda\Initializer();
+			return $initializer->initFrontend($atts);
+		}
 	}
 }
 add_shortcode( 'sagenda-wp', 'sagenda_main' );
@@ -110,11 +111,33 @@ function head_code_sagenda(){
 	echo $headcode;
 }
 
+function head_code_sagenda_calendar(){
+
+	$headcode = '<script type="text/javascript" src="'.SAGENDA_PLUGIN_URL.'assets/angular/inline.bundle.js"></script>';
+	$headcode .= '<script type="text/javascript" src="'.SAGENDA_PLUGIN_URL.'assets/angular/polyfills.bundle.js"></script>';
+	$headcode .= '<script type="text/javascript" src="'.SAGENDA_PLUGIN_URL.'assets/angular/vendor.bundle.js"></script>';
+	$headcode .= '<script type="text/javascript" src="'.SAGENDA_PLUGIN_URL.'assets/angular/main.bundle.js"></script>';
+	$headcode .= '<script type="text/javascript" src="'.SAGENDA_PLUGIN_URL.'assets/angular/styles.bundle.js"></script>';
+	echo $headcode;
+}
+
+function add_theme_scripts() {
+  // wp_enqueue_style( 'style', get_stylesheet_uri() );
+	wp_enqueue_script( 'script', SAGENDA_PLUGIN_URL.'assets/angular/inline.bundle.js');
+	wp_enqueue_script( 'script', SAGENDA_PLUGIN_URL.'assets/angular/polyfills.bundle.js');
+	wp_enqueue_script( 'script', SAGENDA_PLUGIN_URL.'assets/angular/vendor.bundle.js');
+	wp_enqueue_script( 'script', SAGENDA_PLUGIN_URL.'assets/angular/main.bundle.js');
+  wp_enqueue_script( 'style', SAGENDA_PLUGIN_URL.'assets/angular/styles.bundle.js');
+
+}
+// add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
+
+//wp_enqueue_script( 'angular-bundle', SAGENDA_PLUGIN_URL.'assets/angular/styles.bundle.js', array() , null , true);
 
 /**
 * Add it in the frontend
 */
-add_action('wp_head','head_code_sagenda');
+// add_action('wp_head','head_code_sagenda_calendar');
 
 /**
 * Add it in the backend

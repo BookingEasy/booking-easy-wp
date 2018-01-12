@@ -1,25 +1,29 @@
 
-<app-root>Loading...</app-root>
-<!-- Angular4 version -->
-<script>
-window.sagendaToken = '{{token}}';
-window.sagendaWeekStartsOn = '{{weekStartsOn}}';
-window.sagendaLanguageCultureShortName = '{{languageCultureShortName}}';
-window.sagendaDateFormat = '{{dateFormat}}';
-window.sagendaTimeFormat = '{{timeFormat}}';
+<div class="sagenda" >
 
-// Translations
-window.sagendaTranslationNext = '{{sagendaTranslationNext}}';
-window.sagendaTranslationToday = '{{sagendaTranslationToday}}';
-window.sagendaTranslationPrevious = '{{sagendaTranslationPrevious}}';
-window.sagendaTranslationMonth= '{{sagendaTranslationMonth}}';
-window.sagendaTranslationWeek = '{{sagendaTranslationWeek}}';
-window.sagendaTranslationDay = '{{sagendaTranslationDay}}';
-window.sagendaTranslationFrom= '{{sagendaTranslationFrom}}';
-window.sagendaTranslationTo = '{{sagendaTranslationTo}}';
-</script>
+  <app-root>Sagenda is loading...</app-root>
+  <script>
+    window.sagendaToken = '{{token}}';
+    window.sagendaWeekStartsOn = '{{weekStartsOn}}';
+    window.sagendaLanguageCultureShortName = '{{languageCultureShortName}}';
+    window.sagendaDateFormat = '{{dateFormat}}';
+    window.sagendaTimeFormat = '{{timeFormat}}';
 
-<script type="text/javascript" src="{{SAGENDA_PLUGIN_URL}}assets/js/inline.bundle.js"></script>
-<script type="text/javascript" src="{{SAGENDA_PLUGIN_URL}}assets/js/polyfills.bundle.js"></script>
-<script type="text/javascript" src="{{SAGENDA_PLUGIN_URL}}assets/js/vendor.bundle.js"></script>
-<script type="text/javascript" src="{{SAGENDA_PLUGIN_URL}}assets/js/main.bundle.js"></script>
+    // Translations
+    window.sagendaTranslationNext = '{{sagendaTranslationNext}}';
+    window.sagendaTranslationToday = '{{sagendaTranslationToday}}';
+    window.sagendaTranslationPrevious = '{{sagendaTranslationPrevious}}';
+    window.sagendaTranslationMonth= '{{sagendaTranslationMonth}}';
+    window.sagendaTranslationWeek = '{{sagendaTranslationWeek}}';
+    window.sagendaTranslationDay = '{{sagendaTranslationDay}}';
+    window.sagendaTranslationFrom= '{{sagendaTranslationFrom}}';
+    window.sagendaTranslationTo = '{{sagendaTranslationTo}}';
+  </script>
+
+  <script type="text/javascript" src="{{SAGENDA_PLUGIN_URL}}assets/angular/inline.bundle.js"></script>
+  <script type="text/javascript" src="{{SAGENDA_PLUGIN_URL}}assets/angular/polyfills.bundle.js"></script>
+  <script type="text/javascript" src="{{SAGENDA_PLUGIN_URL}}assets/angular/vendor.bundle.js"></script>
+  <script type="text/javascript" src="{{SAGENDA_PLUGIN_URL}}assets/angular/main.bundle.js"></script>
+  <script type="text/javascript" src="{{SAGENDA_PLUGIN_URL}}assets/angular/styles.bundle.js"></script>
+
+</div>

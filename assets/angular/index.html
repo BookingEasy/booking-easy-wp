@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sagenda's frontend calendar</title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css"> -->
+</head>
+<body>
+<!-- Enable bootstrap 4 theme -->
+<!-- <script>window.__theme = 'bs4';</script> -->
+<div class="sagenda">
+<app-root>Sagenda is loading...</app-root>
+
+<!--    TODO : actual i18n system of Angular4 build a different website pro language, what is not acceptable. We will use this workaround of injecting translations. We will check if  Angular5 introduce a better i18n system.
+// window.sagendaToken = '1a93439dd5d74c3fad6d7b334235f089'; // test
+// window.sagendaToken = 'c8c49993b8814a99bb494a3f2420d277'; // dev
+-->
+
+<script>
+
+    window.sagendaToken = 'c8c49993b8814a99bb494a3f2420d277';
+    // window.sagendaToken = '1a93439dd5d74c3fad6d7b334235f089';
+    
+    window.sagendaWeekStartsOn = '1';
+    window.sagendaLanguageCultureShortName = 'fr_FR';
+    window.sagendaDateFormat = 'DD MMMM YYYY';
+    // window.sagendaDateFormat = 'YYYY-MM-DD';
+    window.sagendaTimeFormat = 'HH:mm';
+    window.sagendaTranslationNext = 'Suivant';
+    window.sagendaTranslationToday = "Aujourd'hui";
+    window.sagendaTranslationPrevious = 'Précédent';
+    window.sagendaTranslationMonth = 'Mois';
+    window.sagendaTranslationWeek = 'Semaine';
+    window.sagendaTranslationDay = 'Jour';
+
+    window.sagendaTranslationSubscriptionTitle = 'Courtesy';
+    window.sagendaTranslationSubscriptionTitleMrs = 'Mrs';
+    window.sagendaTranslationSubscriptionTitleMr = 'Mr';
+    window.sagendaTranslationSubscriptionTitleMiss = 'Miss';
+    window.sagendaTranslationSubscriptionTitleDr = 'Dr';
+    window.sagendaTranslationSubscriptionFirstName = 'Prénom';
+    window.sagendaTranslationSubscriptionLastName = 'Nom';
+
+    window.sagendaTranslationSubscriptionEmail = 'Email';
+    window.sagendaTranslationSubscriptionPhone = 'Téléphone';
+    window.sagendaTranslationSubscriptionDescription = 'Description';
+
+
+</script>
+</div>
+<script type="text/javascript" src="inline.bundle.js"></script><script type="text/javascript" src="polyfills.bundle.js"></script><script type="text/javascript" src="styles.bundle.js"></script><script type="text/javascript" src="vendor.bundle.js"></script><script type="text/javascript" src="main.bundle.js"></script></body>
+</html>
