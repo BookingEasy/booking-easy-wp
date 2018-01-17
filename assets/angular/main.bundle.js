@@ -20,7 +20,7 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n\n    <div *ngIf=\"currentAction===1 || currentAction===3\">\n        <div class=\"row\">\n            <div class=\"col text-center\">\n                <div class=\"btn-group\">\n                    <div class=\"btn btn-primary\" (click)=\"viewType = 'cal'\" [class.active]=\"viewType === 'cal'\">\n                        <img src=\"../assets/img/octicons/svg/calendar.svg\" width=\"25\" height=\"25\" alt=\"calendar\">\n                    </div>\n                    <div class=\"btn btn-primary\" (click)=\"viewType = 'list'\" [class.active]=\"viewType === 'list'\">\n                        <img src=\"../assets/img/octicons/svg/list-unordered.svg\" width=\"25\" height=\"25\" alt=\"list\">\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"row\">\n            <div class=\"col\">&nbsp;</div>\n        </div>\n\n        <div class=\"row\">\n            <div class=\"col text-center\">\n                <div *ngIf=\"currentAction===3\" class=\"alert alert-success\" role=\"alert\">\n                    <div>\n                        <strong>Thanks for your subscription!</strong>\n                    </div>\n                    <div>You will soon get a notification by email and optionally by SMS.</div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"row\">\n            <div class=\"col\">\n                <div *ngIf=\"viewType == 'list'; else calendarBlock\">\n                    <app-list (eventSelected)=\"handelCurrentAction($event)\"></app-list>\n                </div>\n                <ng-template #calendarBlock>\n                    <app-calendar (eventSelected)=\"handelCurrentAction($event)\"></app-calendar>\n                </ng-template>\n            </div>\n        </div>\n    </div>\n\n    <div *ngIf=\"currentAction===2\">\n        <app-subscription [calendarEvent]=\"calendarEvent\" (eventSelected)=\"handelCurrentAction($event)\"></app-subscription>\n    </div>\n</div>"
+module.exports = "<div class=\"container-fluid\">\n\n    <div *ngIf=\"currentAction===1 || currentAction===3\">\n        <!--\n        <div class=\"row\">\n            <div class=\"col text-center\">\n                <div class=\"btn-group\">\n                    <div class=\"btn btn-primary\" (click)=\"viewType = 'cal'\" [class.active]=\"viewType === 'cal'\">\n                        <img src=\"../assets/img/octicons/svg/calendar.svg\" width=\"25\" height=\"25\" alt=\"calendar\">\n                    </div>\n                    <div class=\"btn btn-primary\" (click)=\"viewType = 'list'\" [class.active]=\"viewType === 'list'\">\n                        <img src=\"../assets/img/octicons/svg/list-unordered.svg\" width=\"25\" height=\"25\" alt=\"list\">\n                    </div>\n                </div>\n            </div>\n        </div>\n    -->\n        <div class=\"row\">\n            <div class=\"col\">&nbsp;</div>\n        </div>\n\n        <div class=\"row\">\n            <div class=\"col text-center\">\n                <div *ngIf=\"currentAction===3\" class=\"alert alert-success\" role=\"alert\">\n                    <div>\n                        <strong>Thanks for your subscription!</strong>\n                    </div>\n                    <div>You will soon get a notification by email and optionally by SMS.</div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"row\">\n            <div class=\"col\">\n                <div *ngIf=\"viewType == 'list'; else calendarBlock\">\n                    <app-list (eventSelected)=\"handelCurrentAction($event)\"></app-list>\n                </div>\n                <ng-template #calendarBlock>\n                    <app-calendar (eventSelected)=\"handelCurrentAction($event)\"></app-calendar>\n                </ng-template>\n            </div>\n        </div>\n    </div>\n\n    <div *ngIf=\"currentAction===2\">\n        <app-subscription [calendarEvent]=\"calendarEvent\" (eventSelected)=\"handelCurrentAction($event)\"></app-subscription>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -106,7 +106,7 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__subscription_subscription_component__ = __webpack_require__("../../../../../src/app/subscription/subscription.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__calendar_calendar_component__ = __webpack_require__("../../../../../src/app/calendar/calendar.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__list_list_component__ = __webpack_require__("../../../../../src/app/list/list.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_common_locales_fr__ = __webpack_require__("../../../common/locales/fr.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -131,6 +131,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+// import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 
 
@@ -139,7 +140,7 @@ var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_6__angular_core__["G" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_6__angular_core__["H" /* NgModule */])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* AppComponent */],
                 __WEBPACK_IMPORTED_MODULE_14__subscription_subscription_component__["a" /* SubscriptionComponent */],
@@ -150,7 +151,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_1_app_previous_today_next_buttons_previous_today_next_buttons_component__["a" /* PreviousTodayNextComponent */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_17_ngx_bootstrap__["a" /* BsDropdownModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_17__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(),
+                // BsDropdownModule.forRoot(),
                 __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_9__angular_common__["a" /* CommonModule */],
                 __WEBPACK_IMPORTED_MODULE_7__angular_forms__["a" /* FormsModule */],
@@ -190,7 +192,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/calendar/calendar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row text-center\">\n    <div class=\"col-md-4\">\n        <div class=\"btn-group\">\n            <div class=\"btn btn-primary\" (click)=\"OnChangePreviousTodayNext()\" mwlCalendarPreviousView [view]=\"view\" [(viewDate)]=\"viewDate\">\n                {{ sagendaTranslationPrevious ? sagendaTranslationPrevious: 'Previous'}}\n            </div>\n            <div class=\"btn btn-secondary\" (click)=\"OnChangePreviousTodayNext()\" mwlCalendarToday [(viewDate)]=\"viewDate\">\n                {{ sagendaTranslationToday ? sagendaTranslationToday: 'Today'}}\n            </div>\n            <div class=\"btn btn-primary\" (click)=\"OnChangePreviousTodayNext()\" mwlCalendarNextView [view]=\"view\" [(viewDate)]=\"viewDate\">\n                {{ sagendaTranslationNext ? sagendaTranslationNext : 'Next'}}\n            </div>\n        </div>\n    </div>\n\n    <div class=\"col-md-4 text-center\">\n        <h1>{{ viewDate | calendarDate:(view + 'ViewTitle'): languageShortName }}</h1>\n    </div>\n    <div class=\"col-md-4\">\n        <div class=\"btn-group\">\n            <div class=\"btn btn-primary\" (click)=\"view = 'month'\" [class.active]=\"view === 'month'\">\n                {{ sagendaTranslationMonth ? sagendaTranslationMonth : 'Month'}}\n            </div>\n            <div class=\"btn btn-primary\" (click)=\"view = 'week'\" [class.active]=\"view === 'week'\">\n                {{ sagendaTranslationWeek ? sagendaTranslationWeek : 'Week'}}\n            </div>\n            <div class=\"btn btn-primary\" (click)=\"view = 'day'\" [class.active]=\"view === 'day'\">\n                {{ sagendaTranslationDay ? sagendaTranslationDay : 'Day'}}\n            </div>\n        </div>\n    </div>\n</div>\n\n<div class=\"row\">\n    <div class=\"col\">&nbsp;</div>\n</div>\n\n<div class=\"row\">\n    <div class=\"col text-center\">\n        <div class=\"btn-group\" dropdown>\n            <button dropdownToggle type=\"button\" class=\"btn btn-primary dropdown-toggle\">\n                {{selectedBookableItem ? selectedBookableItem.name : 'Please select...'}}\n                <span class=\"caret\"></span>\n            </button>\n            <ul *dropdownMenu class=\"dropdown-menu\" role=\"menu\">\n                <div *ngFor=\"let bookableItem of bookableItems\" (click)=\"OnChangeBookableItem(bookableItem)\">\n                    <li role=\"menuitem\">\n                        <a class=\"dropdown-item\" href=\"#\">{{bookableItem.name}}</a>\n                    </li>\n                </div>\n            </ul>\n        </div>\n    </div>\n</div>\n\n<div class=\"row\">\n    <div class=\"col\">&nbsp;</div>\n</div>\n\n<app-progress-bar></app-progress-bar>\n\n<div [ngSwitch]=\"view\">\n    <mwl-calendar-month-view [locale]=\"languageShortName\" weekStartsOn=\"{{weekStartsOn}}\" *ngSwitchCase=\"'month'\" [viewDate]=\"viewDate\"\n        [events]=\"events\" [refresh]=\"refresh\" [activeDayIsOpen]=\"activeDayIsOpen\" (dayClicked)=\"dayClicked($event.day)\" (eventClicked)=\"handleEvent('Clicked', $event.event)\"\n        (eventTimesChanged)=\"eventTimesChanged($event)\">\n    </mwl-calendar-month-view>\n    <mwl-calendar-week-view [locale]=\"languageShortName\" precision=\"minutes\" *ngSwitchCase=\"'week'\" [viewDate]=\"viewDate\" [events]=\"events\"\n        [refresh]=\"refresh\" (eventClicked)=\"handleEvent('Clicked', $event.event)\" (eventTimesChanged)=\"eventTimesChanged($event)\">\n    </mwl-calendar-week-view>\n    <mwl-calendar-day-view [locale]=\"languageShortName\" *ngSwitchCase=\"'day'\" [viewDate]=\"viewDate\" [events]=\"events\" [refresh]=\"refresh\"\n        (eventClicked)=\"handleEvent('Clicked', $event.event)\" (eventTimesChanged)=\"eventTimesChanged($event)\">\n    </mwl-calendar-day-view>\n</div>"
+module.exports = "<div class=\"row text-center\">\n    <div class=\"col-md-4\">\n        <div class=\"btn-group\">\n            <div class=\"btn btn-primary\" (click)=\"OnChangePreviousTodayNext()\" mwlCalendarPreviousView [view]=\"view\" [(viewDate)]=\"viewDate\">\n                {{ sagendaTranslationPrevious ? sagendaTranslationPrevious: 'Previous'}}\n            </div>\n            <div class=\"btn btn-secondary\" (click)=\"OnChangePreviousTodayNext()\" mwlCalendarToday [(viewDate)]=\"viewDate\">\n                {{ sagendaTranslationToday ? sagendaTranslationToday: 'Today'}}\n            </div>\n            <div class=\"btn btn-primary\" (click)=\"OnChangePreviousTodayNext()\" mwlCalendarNextView [view]=\"view\" [(viewDate)]=\"viewDate\">\n                {{ sagendaTranslationNext ? sagendaTranslationNext : 'Next'}}\n            </div>\n        </div>\n    </div>\n\n    <div class=\"col-md-4 text-center\">\n        <h2>{{ viewDate | calendarDate:(view + 'ViewTitle'): languageShortName }}</h2>\n    </div>\n    <div class=\"col-md-4\">\n        <div class=\"btn-group\">\n            <div class=\"btn btn-primary\" (click)=\"view = 'month'\" [class.active]=\"view === 'month'\">\n                {{ sagendaTranslationMonth ? sagendaTranslationMonth : 'Month'}}\n            </div>\n            <div class=\"btn btn-primary\" (click)=\"view = 'week'\" [class.active]=\"view === 'week'\">\n                {{ sagendaTranslationWeek ? sagendaTranslationWeek : 'Week'}}\n            </div>\n            <div class=\"btn btn-primary\" (click)=\"view = 'day'\" [class.active]=\"view === 'day'\">\n                {{ sagendaTranslationDay ? sagendaTranslationDay : 'Day'}}\n            </div>\n        </div>\n    </div>\n</div>\n\n<div class=\"row\">\n    <div class=\"col\">&nbsp;</div>\n</div>\n<!--\n<div class=\"row\">\n    <div class=\"col text-center\">\n        <div class=\"btn-group\" dropdown>\n            <button dropdownToggle type=\"button\" class=\"btn btn-primary dropdown-toggle\">\n                {{selectedBookableItem ? selectedBookableItem.name : 'Please select...'}}\n                <span class=\"caret\"></span>\n            </button>\n            <ul *dropdownMenu class=\"dropdown-menu\" role=\"menu\">\n                <div *ngFor=\"let bookableItem of bookableItems\" (click)=\"OnChangeBookableItem(bookableItem)\">\n                    <li role=\"menuitem\">\n                        <a class=\"dropdown-item\" href=\"#\">{{bookableItem.name}}</a>\n                    </li>\n                </div>\n            </ul>\n        </div>\n    </div>\n</div>\n-->\n\n\n<div class=\"row\">\n    <div class=\"col-md-4\">&nbsp;</div>\n    <div class=\"col-md-4  text-center\">\n        <div ngbDropdown class=\"d-inline-block\">\n            <button class=\"btn btn-outline-primary\" id=\"dropdownBookableItem\" ngbDropdownToggle>{{selectedBookableItem ? selectedBookableItem.name : 'Please select...'}}</button>\n            <div ngbDropdownMenu aria-labelledby=\"dropdownBookableItem\">\n                <div *ngFor=\"let bookableItem of bookableItems\" (click)=\"OnChangeBookableItem(bookableItem)\">\n                    <button class=\"dropdown-item\">{{bookableItem.name}}</button>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"col-md-4\">&nbsp;</div>\n</div>\n\n\n<div class=\"row\">\n    <div class=\"col\">&nbsp;</div>\n</div>\n\n<app-progress-bar></app-progress-bar>\n\n<div class=\"row\">\n    <div class=\"col\">&nbsp;</div>\n</div>\n\n<div [ngSwitch]=\"view\">\n    <mwl-calendar-month-view [locale]=\"languageShortName\" weekStartsOn=\"{{weekStartsOn}}\" *ngSwitchCase=\"'month'\" [viewDate]=\"viewDate\"\n        [events]=\"events\" [refresh]=\"refresh\" [activeDayIsOpen]=\"activeDayIsOpen\" (dayClicked)=\"dayClicked($event.day)\" (eventClicked)=\"handleEvent('Clicked', $event.event)\"\n        (eventTimesChanged)=\"eventTimesChanged($event)\">\n    </mwl-calendar-month-view>\n    <mwl-calendar-week-view [locale]=\"languageShortName\" precision=\"minutes\" *ngSwitchCase=\"'week'\" [viewDate]=\"viewDate\" [events]=\"events\"\n        [refresh]=\"refresh\" (eventClicked)=\"handleEvent('Clicked', $event.event)\" (eventTimesChanged)=\"eventTimesChanged($event)\">\n    </mwl-calendar-week-view>\n    <mwl-calendar-day-view [locale]=\"languageShortName\" *ngSwitchCase=\"'day'\" [viewDate]=\"viewDate\" [events]=\"events\" [refresh]=\"refresh\"\n        (eventClicked)=\"handleEvent('Clicked', $event.event)\" (eventTimesChanged)=\"eventTimesChanged($event)\">\n    </mwl-calendar-day-view>\n</div>"
 
 /***/ }),
 
@@ -236,7 +238,7 @@ var CalendarComponent = /** @class */ (function () {
         this.apiv3Service = apiv3Service;
         this.progressBarComponent = progressBarComponent;
         this.singletonService = singletonService;
-        this.eventSelected = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["t" /* EventEmitter */]();
+        this.eventSelected = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["v" /* EventEmitter */]();
         this.activeDayIsOpen = true;
         this.view = 'month';
         this.viewType = 'calendar';
@@ -274,12 +276,23 @@ var CalendarComponent = /** @class */ (function () {
         this.getEvents();
     };
     CalendarComponent.prototype.ngOnInit = function () {
+        this.getBearerToken();
+    };
+    /**
+     * Try to get the bearer token by the view (as for WordPress plugin), if not found (as for Angular dev environment, get the brearer token with the sagenda token).
+     */
+    CalendarComponent.prototype.getBearerToken = function () {
         var _this = this;
-        this.apiv3Service.getBearerToken('token', _window().window.sagendaToken).subscribe(function (objects) {
-            _this.bearerToken = objects;
-            _this.getBookableItems(_this.bearerToken);
-            _this.singletonService.setBearerToken(objects);
-        });
+        if (_window().window.sagendaBearerToken) {
+            this.bearerToken = _window().window.sagendaBearerToken;
+        }
+        else {
+            this.apiv3Service.getBearerToken('token', _window().window.sagendaToken).subscribe(function (objects) {
+                _this.bearerToken = objects;
+                _this.getBookableItems(_this.bearerToken);
+                _this.singletonService.setBearerToken(objects);
+            });
+        }
     };
     /**
      * Get events
@@ -348,7 +361,7 @@ var CalendarComponent = /** @class */ (function () {
         return 'en';
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["M" /* Output */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["N" /* Output */])(),
         __metadata("design:type", Object)
     ], CalendarComponent.prototype, "eventSelected", void 0);
     CalendarComponent = __decorate([
@@ -358,7 +371,7 @@ var CalendarComponent = /** @class */ (function () {
             changeDetection: __WEBPACK_IMPORTED_MODULE_2__angular_core__["i" /* ChangeDetectionStrategy */].OnPush,
             styles: [__webpack_require__("../../../../../src/app/calendar/calendar.component.css")],
         }),
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["y" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["z" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5__services_api3_service__["a" /* APIv3Service */], __WEBPACK_IMPORTED_MODULE_1__progress_bar_progress_bar_component__["a" /* ProgressBarComponent */], __WEBPACK_IMPORTED_MODULE_0__services_singleton_service__["a" /* SingletonService */]])
     ], CalendarComponent);
     return CalendarComponent;
@@ -427,7 +440,7 @@ var ListComponent = /** @class */ (function () {
         this.apiv3Service = apiv3Service;
         this.progressBarComponent = progressBarComponent;
         this.singletonService = singletonService;
-        this.eventSelected = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["t" /* EventEmitter */]();
+        this.eventSelected = new __WEBPACK_IMPORTED_MODULE_2__angular_core__["v" /* EventEmitter */]();
         this.bookableItems = [];
         this.events = [];
         this.sagendaDateFormat = _window().sagendaDateFormat;
@@ -474,7 +487,7 @@ var ListComponent = /** @class */ (function () {
         this.eventSelected.emit({ currentAction: 2, event: event });
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["M" /* Output */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["N" /* Output */])(),
         __metadata("design:type", Object)
     ], ListComponent.prototype, "eventSelected", void 0);
     ListComponent = __decorate([
@@ -641,8 +654,8 @@ var colors = {
 var APIv3Service = /** @class */ (function () {
     function APIv3Service(httpClient) {
         this.httpClient = httpClient;
-        // private baseUrl = 'https://sagenda-test.apphb.com/api/v3'; // TEST
-        this.baseUrl = 'https://sagenda.net/api/v3/'; // PROD
+        // private baseUrl = 'https://sagenda-test.apphb.com/api/'; // TEST
+        this.baseUrl = 'https://sagenda.net/api/'; // PROD
         this.webServicesDateFormat = 'YYYY-MM-DD';
     }
     // TODO : implements booking and lock
@@ -665,7 +678,7 @@ var APIv3Service = /** @class */ (function () {
             .set('Content-Type', 'application/json')
             .set('Authorization', 'Bearer ' + bearerToken);
         var results = this.httpClient
-            .post(this.baseUrl + 'events', query, {
+            .post(this.baseUrl + 'v3/events', query, {
             headers: headers
         })
             .catch(handleError);
@@ -680,18 +693,11 @@ var APIv3Service = /** @class */ (function () {
         if (type === 'token') {
             body = new __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["d" /* HttpParams */]()
                 .set('grant_type', 'api_token')
-                .set('api_token', apiToken); // PROD
+                .set('api_token', apiToken);
         }
-        /*
-        else {
-        body = new HttpParams()
-            .set('grant_type', 'password')
-            .set('username', 'vlad6226@gmail.com') // TEST
-            .set('password', '904628qq');
-    }*/
         var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["c" /* HttpHeaders */]().set('Content-Type', 'application/x-www-form-urlencoded');
         var bearerToken = this.httpClient
-            .post(this.baseUrl + 'token', body.toString(), { headers: headers }) // no need to add v3 for token
+            .post(this.baseUrl + 'token', body.toString(), { headers: headers }) // don't use v3/ folder
             .map(function (object) { return mapBearer(object); })
             .catch(handleError);
         return bearerToken;
@@ -705,7 +711,7 @@ var APIv3Service = /** @class */ (function () {
             .set('Content-Type', 'application/json')
             .set('Authorization', 'Bearer ' + bearerToken);
         var response = this.httpClient
-            .post(this.baseUrl + 'eventLocks', JSON.stringify(request), { headers: headers })
+            .post(this.baseUrl + 'v3/eventLocks', JSON.stringify(request), { headers: headers })
             .catch(handleError);
         return response;
     };
@@ -721,7 +727,7 @@ var APIv3Service = /** @class */ (function () {
             endDate = today;
         }
         var event$ = this.httpClient
-            .get(this.baseUrl + 'events/' + startDate.format(this.webServicesDateFormat) + '/' + endDate.format(this.webServicesDateFormat) + '/' + bookableItem.identifier, { headers: headers })
+            .get(this.baseUrl + 'v3/events/' + startDate.format(this.webServicesDateFormat) + '/' + endDate.format(this.webServicesDateFormat) + '/' + bookableItem.identifier, { headers: headers })
             .map(function (d) { return mapEvents(d, bookableItem, sagendaDateFormat, sagendaTimeFormat, cultureShortCode); })
             .catch(handleError);
         return event$;
@@ -729,7 +735,7 @@ var APIv3Service = /** @class */ (function () {
     APIv3Service.prototype.getBookableItems = function (bearerToken) {
         var headers = new __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', 'Bearer ' + bearerToken);
         var bi$ = this.httpClient
-            .get(this.baseUrl + 'bookableItems', { headers: headers })
+            .get(this.baseUrl + 'v3/bookableItems', { headers: headers })
             .map(mapBookableItems)
             .catch(handleError);
         return bi$;
@@ -738,7 +744,7 @@ var APIv3Service = /** @class */ (function () {
         return _window().sagendaToken;
     };
     APIv3Service = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]])
     ], APIv3Service);
     return APIv3Service;
@@ -856,7 +862,7 @@ var ProgressBarService = /** @class */ (function () {
         this.progressBarStatus.next(value);
     };
     ProgressBarService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* Injectable */])()
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* Injectable */])()
     ], ProgressBarService);
     return ProgressBarService;
 }());
@@ -899,7 +905,7 @@ var SingletonService = /** @class */ (function () {
         this._bearerToken.next(object);
     };
     SingletonService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["y" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["z" /* Injectable */])(),
         __metadata("design:paramtypes", [])
     ], SingletonService);
     return SingletonService;
@@ -968,7 +974,7 @@ var SubscriptionComponent = /** @class */ (function () {
         this.apiv3Service = apiv3Service;
         this.singletonService = singletonService;
         this.document = document;
-        this.eventSelected = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* EventEmitter */]();
+        this.eventSelected = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* EventEmitter */]();
         this.sagendaTranslationSubscriptionTitle = _window().sagendaTranslationSubscriptionTitle;
         this.sagendaTranslationSubscriptionTitleMrs = _window().sagendaTranslationSubscriptionTitleMrs;
         this.sagendaTranslationSubscriptionTitleMr = _window().sagendaTranslationSubscriptionTitleMr;
@@ -1027,11 +1033,11 @@ var SubscriptionComponent = /** @class */ (function () {
         }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Input */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Input */])(),
         __metadata("design:type", Object)
     ], SubscriptionComponent.prototype, "calendarEvent", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["M" /* Output */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["N" /* Output */])(),
         __metadata("design:type", Object)
     ], SubscriptionComponent.prototype, "eventSelected", void 0);
     SubscriptionComponent = __decorate([
@@ -1040,7 +1046,7 @@ var SubscriptionComponent = /** @class */ (function () {
             template: __webpack_require__("../../../../../src/app/subscription/subscription.component.html"),
             styles: [__webpack_require__("../../../../../src/app/subscription/subscription.component.css")]
         }),
-        __param(2, Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["x" /* Inject */])(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DOCUMENT */])),
+        __param(2, Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["y" /* Inject */])(__WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["b" /* DOCUMENT */])),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_api3_service__["a" /* APIv3Service */],
             __WEBPACK_IMPORTED_MODULE_0__services_singleton_service__["a" /* SingletonService */], Object])
     ], SubscriptionComponent);
@@ -1092,7 +1098,7 @@ var TimeleftPipe = /** @class */ (function () {
         ].join(' ');
     };
     TimeleftPipe = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Q" /* Pipe */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* Pipe */])({
             name: 'timeleft'
         })
     ], TimeleftPipe);
@@ -1133,7 +1139,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_12" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_11" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_3__app_app_module__["a" /* AppModule */]);
 

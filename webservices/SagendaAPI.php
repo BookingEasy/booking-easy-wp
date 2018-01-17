@@ -14,10 +14,46 @@ class SagendaAPI
   /**
   * @var string - url of the API
   */
-    protected $apiUrl = 'https://sagenda.net/api/'; //Live Server
+   protected $apiUrl = 'https://sagenda.net/api/'; //Live Server
+  //  protected $apiUrl = 'https://sagenda-test.apphb.com/api/'; // TEST
   //protected $apiUrl = 'http://localhost:49815/api/'; //local Server
   //protected $apiUrl = 'http://sagenda-dev.apphb.com/api/'; //staging test for payment Server
   //protected $apiUrl = 'http://5478cbc9.ngrok.io/api/'; //ngrok test for payment Server
+
+  public function convertAPITokenToBearerToken($token)
+  {
+    /*
+    $headers = array('Accept' => 'application/json');
+$data = array('name' => 'ahmad', 'company' => 'mashape');
+
+$body = Unirest\Request\Body::form($data);
+
+$response = Unirest\Request::post('http://mockbin.com/request', $headers, $body);
+*/
+
+    $headers = array('Accept' => 'application/json');
+    $data = array('grant_type' => 'api_token', 'api_token' => $token);
+    $body = Unirest\Request\Body::form($data);
+    $response = Unirest\Request::post($this->apiUrl."token", $headers, $body);
+
+/*
+    $result = \Unirest\Request::get($this->apiUrl."token/")->body;
+    $message = __('Successfully connected', 'sagenda-wp');
+    */
+    $didSucceed = true;
+    //TODO : use a better checking error code system than string comparaison
+    if ($result->Message == "Error: API Token is invalid") {
+        $message = __('Your token is wrong; please try again or generate another one in Sagenda’s backend.', 'sagenda-wp');
+        $didSucceed = false;
+    }
+return $response;
+    /*
+    return array(
+      'didSucceed' => $didSucceed,
+      'Message' => $message,
+      'bearerToken' => $bearerToken
+    );*/
+  }
 
   /**
   * Validate the Sagenda's account with the token in order to check if we get access

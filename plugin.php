@@ -92,10 +92,11 @@ function head_code_sagenda(){
 	// $headcode .= '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>';
 
 	// angular 4
+	/*
 	$headcode .= '<link href="'.SAGENDA_PLUGIN_URL.'assets/css/styles.bundle.css" rel="stylesheet"/>';
 	$url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	$headcode .= '<base href="'.$url.'">';
-
+	*/
 	//$headcode .= '<meta name="viewport" content="width=device-width, initial-scale=1">';
 
 	// bootstrap validator
@@ -123,11 +124,14 @@ function head_code_sagenda_calendar(){
 
 function add_theme_scripts() {
   // wp_enqueue_style( 'style', get_stylesheet_uri() );
+/*
 	wp_enqueue_script( 'script', SAGENDA_PLUGIN_URL.'assets/angular/inline.bundle.js');
 	wp_enqueue_script( 'script', SAGENDA_PLUGIN_URL.'assets/angular/polyfills.bundle.js');
 	wp_enqueue_script( 'script', SAGENDA_PLUGIN_URL.'assets/angular/vendor.bundle.js');
 	wp_enqueue_script( 'script', SAGENDA_PLUGIN_URL.'assets/angular/main.bundle.js');
   wp_enqueue_script( 'style', SAGENDA_PLUGIN_URL.'assets/angular/styles.bundle.js');
+*/
+  wp_enqueue_script( 'style', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js');
 
 }
 // add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
@@ -137,7 +141,7 @@ function add_theme_scripts() {
 /**
 * Add it in the frontend
 */
-// add_action('wp_head','head_code_sagenda_calendar');
+add_action('wp_head','head_code_sagenda');
 
 /**
 * Add it in the backend

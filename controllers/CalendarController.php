@@ -49,20 +49,23 @@ class CalendarController {
       return $subscriptionController->callSubscription($twig);
     }
 
+    $sagendaAPI = new sagendaAPI();
+
     return $twig->render($this->view, array(
-      'SAGENDA_PLUGIN_URL' => SAGENDA_PLUGIN_URL,
-      'searchForEventsBetween'        => __( 'Search for all the events between', 'sagenda-wp' ),
-      'token' => get_option('mrs1_authentication_code'),
-      'weekStartsOn' => get_option('start_of_week'),
-      'languageCultureShortName' => get_locale(),
-      'dateFormat' => DateHelper::convertDateFormatFromPHPToMomentjs(get_option( 'date_format' )),
-      'timeFormat' => DateHelper::convertTimeFormatFromPHPToMomentjs(get_option( 'time_format' )),
-      'sagendaTranslationNext'        => __( 'Next', 'sagenda-wp' ),
-      'sagendaTranslationToday'        => __( 'Today', 'sagenda-wp' ),
-      'sagendaTranslationPrevious'        => __( 'Previous', 'sagenda-wp' ),
-      'sagendaTranslationMonth'        => __( 'Month', 'sagenda-wp' ),
-      'sagendaTranslationWeek'        => __( 'Week', 'sagenda-wp' ),
-      'sagendaTranslationDay'        => __( 'Day', 'sagenda-wp' ),
+      'SAGENDA_PLUGIN_URL'          => SAGENDA_PLUGIN_URL,
+      'searchForEventsBetween'      => __( 'Search for all the events between', 'sagenda-wp' ),
+      'token'                       => get_option('mrs1_authentication_code'),
+      // 'bearerToken'                 => $sagendaAPI->convertAPITokenToBearerToken(get_option('mrs1_authentication_code')),
+      'weekStartsOn'                => get_option('start_of_week'),
+      'languageCultureShortName'    => get_locale(),
+      'dateFormat'                  => DateHelper::convertDateFormatFromPHPToMomentjs(get_option( 'date_format' )),
+      'timeFormat'                  => DateHelper::convertTimeFormatFromPHPToMomentjs(get_option( 'time_format' )),
+      'sagendaTranslationNext'      => __( 'Next', 'sagenda-wp' ),
+      'sagendaTranslationToday'     => __( 'Today', 'sagenda-wp' ),
+      'sagendaTranslationPrevious'  => __( 'Previous', 'sagenda-wp' ),
+      'sagendaTranslationMonth'     => __( 'Month', 'sagenda-wp' ),
+      'sagendaTranslationWeek'      => __( 'Week', 'sagenda-wp' ),
+      'sagendaTranslationDay'       => __( 'Day', 'sagenda-wp' ),
     ));
   }
 }
