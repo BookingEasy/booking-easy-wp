@@ -5,7 +5,7 @@ Tags: booking, appointment, scheduling, availability, reservation, rental, free,
 Requires at least: 3.0
 Requires PHP: 5.6
 Tested up to: 4.9.1
-Stable tag: 1.2.19
+Stable tag: 1.2.20
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,14 +96,24 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 
 
 == Upgrade Notice ==
+= 1.2.20 =
+* TESTED : Compatibility with WP 4.9.2
+* IMPROVED : Using new version of Sagenda API v3 and Angular v5 for the calendar view.
+* FIXED : added an isolation of bootstap CSS via a new class.
+
+
+== Changelog ==
+
+= 1.2.20 =
+* TESTED : Compatibility with WP 4.9.2
+* IMPROVED : Using new version of Sagenda API v3 and Angular v5 for the calendar view.
+* FIXED : added an isolation of bootstap CSS via a new class.
+
 = 1.2.19 =
 HAPPY NEW YEAR 🎉, THIS IS THE LAST RELEASE OF 2017 :
 * FIXED : Bug if bookings are null.
 * FIXED : Remove bootstrap reference in admin part (backend) to avoid conflict.
 * IMPROVED : Check if cURL is activated and display a message if not.
-
-
-== Changelog ==
 
 = 1.2.18 =
 * TESTED : Compatibility with WP 4.9
@@ -120,7 +130,6 @@ HAPPY NEW YEAR 🎉, THIS IS THE LAST RELEASE OF 2017 :
 = 1.2.15 =
 * FIXED : Bug when using a date format using "S" parameter.
 
-
 = 1.2.14 =
 * IMPROVED :  new beta version of a calendar view. Improved date and time format management. Improved link color for better readability.
 
@@ -128,11 +137,9 @@ HAPPY NEW YEAR 🎉, THIS IS THE LAST RELEASE OF 2017 :
 * FIXED : Bug when we select an event and click back, the location wasn't displayed again.
 * IMPROVED : 3rd beta version of a calendar view. First step of date and time format management. Improved background color for better readability.
 
-
 = 1.2.12 =
 * FIXED : Bug "Error: Notice: has_cap was called with an argument that is deprecated since version 2.0!"
 * FIXED : Warning "Notice: Undefined variable: headcode in /wp-content/plugins/sagenda/plugin.php on line 71"
-
 
 = 1.2.11 =
 * IMPROVED : 2nd beta version of a calendar view. Now managing translations.
@@ -142,7 +149,6 @@ HAPPY NEW YEAR 🎉, THIS IS THE LAST RELEASE OF 2017 :
 
 = 1.2.9 =
 * FIXED : Return type in bug of method empty() removed.
-
 
 = 1.2.8 =
 * TESTED : Compatibility with WP 4.8
@@ -184,7 +190,6 @@ HAPPY NEW YEAR 🎉, THIS IS THE LAST RELEASE OF 2017 :
 * ADDED : Shortcode management to display only one bookable item, please just use it so : `[sagenda-wp bookableitem="my bookable item name"]`
 * TESTED : Compatibility of the reservation plugin with WordPress 4.7.3
 
-
 = 1.1.11 =
 * IMPROVED : French translations.
 * TESTED : Compatibility of the reservation plugin with WordPress 4.7
@@ -222,21 +227,17 @@ HAPPY NEW YEAR 🎉, THIS IS THE LAST RELEASE OF 2017 :
 * ADDED : Russian translation of the wp booking plugin frontend and backend, thanks to Дмитрий Воробьев!
 * REMOVED : Events that should not be paid online are no more displayed as "Free events".
 
-
 = 1.1.1 =
 * ADDED : Korean translation of the wp booking plugin frontend and backend, thanks to 김현철!
 * IMPROVED : Dutch translations of new payment part of the frontend booking plugin, thanks to Nico.
 
-
 = 1.1.0 =
 * ADDED : The booking plugin is now able to manage payment with PayPal.
-
 
 = 1.0.20 =
 * ADDED : New video "WordPress - How to add a free booking plugin in 2 min" : https://www.youtube.com/watch?v=wCEmJg2hWgw
 * ADDED : Portuguese translation of the frontend reservation WP plugin.
 * TESTED : Compatibility of the reservation plugin with WordPress 4.4.1
-
 
 = 1.0.19 =
 * ADDED : Dutch translation of the frontend and backend reservation WP plugin. (thanks to Nico!)

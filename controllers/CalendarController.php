@@ -66,6 +66,16 @@ class CalendarController {
       'sagendaTranslationMonth'     => __( 'Month', 'sagenda-wp' ),
       'sagendaTranslationWeek'      => __( 'Week', 'sagenda-wp' ),
       'sagendaTranslationDay'       => __( 'Day', 'sagenda-wp' ),
+      'sagendaTranslationSubscriptionTitle'       => __( 'Title', 'sagenda-wp' ),
+      'sagendaTranslationSubscriptionTitleMrs'       => __( 'Mrs.', 'sagenda-wp' ),
+      'sagendaTranslationSubscriptionTitleMr'       => __( 'Mr.', 'sagenda-wp' ),
+      'sagendaTranslationSubscriptionTitleMiss'       => __( 'Miss', 'sagenda-wp' ),
+      'sagendaTranslationSubscriptionTitleDr'       => __( 'Dr', 'sagenda-wp' ),
+      'sagendaTranslationSubscriptionFirstName'       => __( 'First Name', 'sagenda-wp' ),
+      'sagendaTranslationSubscriptionLastName'       => __( 'Last Name', 'sagenda-wp' ),
+      'sagendaTranslationSubscriptionEmail'       => __( 'Email', 'sagenda-wp' ),
+      'sagendaTranslationSubscriptionPhone'       => __( 'Phone Number', 'sagenda-wp' ),
+      'sagendaTranslationSubscriptionDescription'       => __( 'Description', 'sagenda-wp' ),
     ));
   }
 }
