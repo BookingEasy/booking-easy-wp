@@ -22,37 +22,16 @@ class SagendaAPI
 
   public function convertAPITokenToBearerToken($token)
   {
-    /*
-    $headers = array('Accept' => 'application/json');
-$data = array('name' => 'ahmad', 'company' => 'mashape');
-
-$body = Unirest\Request\Body::form($data);
-
-$response = Unirest\Request::post('http://mockbin.com/request', $headers, $body);
-*/
-
-    $headers = array('Accept' => 'application/json');
-    $data = array('grant_type' => 'api_token', 'api_token' => $token);
-    $body = Unirest\Request\Body::form($data);
-    $response = Unirest\Request::post($this->apiUrl."token", $headers, $body);
-
-/*
-    $result = \Unirest\Request::get($this->apiUrl."token/")->body;
-    $message = __('Successfully connected', 'sagenda-wp');
-    */
-    $didSucceed = true;
-    //TODO : use a better checking error code system than string comparaison
-    if ($result->Message == "Error: API Token is invalid") {
-        $message = __('Your token is wrong; please try again or generate another one in Sagenda’s backend.', 'sagenda-wp');
-        $didSucceed = false;
+    try {
+        $headers = array('Accept' => 'application/x-www-form-urlencoded');
+        $data = array('grant_type' => 'api_token', 'api_token' => $token);
+        $response = Unirest\Request::post($this->apiUrl."token", $headers, $data);
     }
-return $response;
-    /*
-    return array(
-      'didSucceed' => $didSucceed,
-      'Message' => $message,
-      'bearerToken' => $bearerToken
-    );*/
+    catch (Exception $e) {
+        echo "Oups, I did it again : ".$e->getMessage();
+    }
+    echo $response->access_token;
+    return $response->access_token;
   }
 
   /**

@@ -5,7 +5,7 @@ Tags: booking, appointment, scheduling, availability, reservation, rental, free,
 Requires at least: 3.0
 Requires PHP: 5.6
 Tested up to: 4.9.1
-Stable tag: 1.2.20
+Stable tag: 1.2.21
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,9 +29,7 @@ You can use PayPal as payment gateway to make your customers pay for bookings. T
 You can use Sagenda as shortcode in any page or plugin :
 `[sagenda-wp]`
 in a page or an article ( you can also display only one "bookable item" : `[sagenda-wp bookableitem="my bookable item name"]`).
-Use the shortcode
-`[sagenda-wp view="calendar"]`
-to display a month / week / day view. [in BETA testing for now!]
+Use the shortcode : `[sagenda-wp view="calendar"]` to display a month / week / day view. [in BETA testing for now!]
 
 
 **Prerequisites**
@@ -96,11 +94,8 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 
 
 == Upgrade Notice ==
-= 1.2.20 =
-* TESTED : Compatibility with WP 4.9.2
-* IMPROVED : Using new version of Sagenda API v3 and Angular v5 for the calendar view.
-* FIXED : added an isolation of bootstap CSS via a new class.
-
+= 1.2.21 =
+* ...
 
 == Changelog ==
 
