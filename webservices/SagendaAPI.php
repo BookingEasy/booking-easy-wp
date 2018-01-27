@@ -23,16 +23,23 @@ class SagendaAPI
   public function convertAPITokenToBearerToken($token)
   {
     try {
-        $headers = array('Accept' => 'application/x-www-form-urlencoded');
+        echo "token = ".$token;
+        //$headers = array('Accept' => 'application/x-www-form-urlencoded');
+        $headers = array('Accept' => 'application/json', 'Content-Type' => 'application/x-www-form-urlencoded');
+        // $headers = array('Content-Type' => 'application/x-www-form-urlencoded');
         $data = array('grant_type' => 'api_token', 'api_token' => $token);
-        $response = Unirest\Request::post($this->apiUrl."token", $headers, $data);
-    }
+        $body = Unirest\Request\Body::json($data);
+        // $body = Unirest\Request\Body::form($data); 
+        // print_r($body) ;
+        $response = Unirest\Request::post($this->apiUrl."v3/token", json_encode($headers), $body);
+        }
     catch (Exception $e) {
-        echo "Oups, I did it again : ".$e->getMessage();
-    }
-    echo $response->access_token;
+          echo "Oups, I did it again : ".$e->getMessage();
+        }
+
+    print_r($response) ;
     return $response->access_token;
-  }
+    }
 
   /**
   * Validate the Sagenda's account with the token in order to check if we get access

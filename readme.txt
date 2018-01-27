@@ -95,7 +95,9 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 
 == Upgrade Notice ==
 = 1.2.21 =
-* ...
+⚠️ IMPORTANT ⚠️ UPDATE FOR CALENDAR VIEW USERS.
+* FIXED : a problem with the drop down list data of the calendar view.
+* FIXED : a problem of translations with other language than English and French in the calendar view.
 
 == Changelog ==
 

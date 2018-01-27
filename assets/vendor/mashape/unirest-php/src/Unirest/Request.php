@@ -82,6 +82,7 @@ class Request
      * Set default headers to send on every request
      *
      * @param array $headers headers array
+     * @return array
      */
     public static function defaultHeaders($headers)
     {
@@ -155,7 +156,7 @@ class Request
     }
 
     /**
-     * Set a coockie string for enabling coockie handling
+     * Set a cookie string for enabling cookie handling
      *
      * @param string $cookie
      */
@@ -165,7 +166,7 @@ class Request
     }
 
     /**
-     * Set a coockie file path for enabling coockie handling
+     * Set a cookie file path for enabling cookie handling
      *
      * $cookieFile must be a correct path with write permission
      *
@@ -228,7 +229,7 @@ class Request
      * @param mixed $parameters parameters to send in the querystring
      * @param string $username Authentication username (deprecated)
      * @param string $password Authentication password (deprecated)
-     * @return \Unirest\Response
+     * @return Response
      */
     public static function get($url, $headers = array(), $parameters = null, $username = null, $password = null)
     {
@@ -242,7 +243,7 @@ class Request
      * @param mixed $parameters parameters to send in the querystring
      * @param string $username Basic Authentication username (deprecated)
      * @param string $password Basic Authentication password (deprecated)
-     * @return \Unirest\Response
+     * @return Response
      */
     public static function head($url, $headers = array(), $parameters = null, $username = null, $password = null)
     {
@@ -256,7 +257,7 @@ class Request
      * @param mixed $parameters parameters to send in the querystring
      * @param string $username Basic Authentication username
      * @param string $password Basic Authentication password
-     * @return \Unirest\Response
+     * @return Response
      */
     public static function options($url, $headers = array(), $parameters = null, $username = null, $password = null)
     {
@@ -270,7 +271,7 @@ class Request
      * @param mixed $parameters parameters to send in the querystring
      * @param string $username Basic Authentication username (deprecated)
      * @param string $password Basic Authentication password (deprecated)
-     * @return \Unirest\Response
+     * @return Response
      */
     public static function connect($url, $headers = array(), $parameters = null, $username = null, $password = null)
     {
@@ -284,7 +285,7 @@ class Request
      * @param mixed $body POST body data
      * @param string $username Basic Authentication username (deprecated)
      * @param string $password Basic Authentication password (deprecated)
-     * @return \Unirest\Response response
+     * @return Response response
      */
     public static function post($url, $headers = array(), $body = null, $username = null, $password = null)
     {
@@ -298,7 +299,7 @@ class Request
      * @param mixed $body DELETE body data
      * @param string $username Basic Authentication username (deprecated)
      * @param string $password Basic Authentication password (deprecated)
-     * @return \Unirest\Response
+     * @return Response
      */
     public static function delete($url, $headers = array(), $body = null, $username = null, $password = null)
     {
@@ -312,7 +313,7 @@ class Request
      * @param mixed $body PUT body data
      * @param string $username Basic Authentication username (deprecated)
      * @param string $password Basic Authentication password (deprecated)
-     * @return \Unirest\Response
+     * @return Response
      */
     public static function put($url, $headers = array(), $body = null, $username = null, $password = null)
     {
@@ -326,7 +327,7 @@ class Request
      * @param mixed $body PATCH body data
      * @param string $username Basic Authentication username (deprecated)
      * @param string $password Basic Authentication password (deprecated)
-     * @return \Unirest\Response
+     * @return Response
      */
     public static function patch($url, $headers = array(), $body = null, $username = null, $password = null)
     {
@@ -340,7 +341,7 @@ class Request
      * @param mixed $body TRACE body data
      * @param string $username Basic Authentication username (deprecated)
      * @param string $password Basic Authentication password (deprecated)
-     * @return \Unirest\Response
+     * @return Response
      */
     public static function trace($url, $headers = array(), $body = null, $username = null, $password = null)
     {
@@ -387,21 +388,21 @@ class Request
      * @param array $headers additional headers to send
      * @param string $username Authentication username (deprecated)
      * @param string $password Authentication password (deprecated)
-     * @throws \Exception if a cURL error occurs
-     * @return \Unirest\Response
+     * @throws \Unirest\Exception if a cURL error occurs
+     * @return Response
      */
     public static function send($method, $url, $body = null, $headers = array(), $username = null, $password = null)
     {
         self::$handle = curl_init();
 
         if ($method !== Method::GET) {
-            curl_setopt(self::$handle, CURLOPT_CUSTOMREQUEST, $method);
+			if ($method === Method::POST) {
+				curl_setopt(self::$handle, CURLOPT_POST, true);
+			} else {
+				curl_setopt(self::$handle, CURLOPT_CUSTOMREQUEST, $method);
+			}
 
-            if (is_array($body) || $body instanceof \Traversable) {
-                curl_setopt(self::$handle, CURLOPT_POSTFIELDS, self::buildHTTPCurlQuery($body));
-            } else {
-                curl_setopt(self::$handle, CURLOPT_POSTFIELDS, $body);
-            }
+            curl_setopt(self::$handle, CURLOPT_POSTFIELDS, $body);
         } elseif (is_array($body)) {
             if (strpos($url, '?') !== false) {
                 $url .= '&';
@@ -419,8 +420,7 @@ class Request
             CURLOPT_MAXREDIRS => 10,
             CURLOPT_HTTPHEADER => self::getFormattedHeaders($headers),
             CURLOPT_HEADER => true,
-            //CURLOPT_SSL_VERIFYPEER => self::$verifyPeer,
-            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYPEER => self::$verifyPeer,
             //CURLOPT_SSL_VERIFYHOST accepts only 0 (false) or 2 (true). Future versions of libcurl will treat values 1 and 2 as equals
             CURLOPT_SSL_VERIFYHOST => self::$verifyHost === false ? 0 : 2,
             // If an empty string, '', is set, a header containing all supported encoding types is sent
@@ -473,7 +473,7 @@ class Request
         $info       = self::getInfo();
 
         if ($error) {
-            throw new \Exception($error);
+            throw new Exception($error);
         }
 
         // Split the full response in its headers and body
@@ -505,7 +505,7 @@ class Request
     {
         $formattedHeaders = array();
 
-        $combinedHeaders = array_change_key_case(array_merge((array) $headers, self::$defaultHeaders));
+        $combinedHeaders = array_change_key_case(array_merge(self::$defaultHeaders, (array) $headers));
 
         foreach ($combinedHeaders as $key => $val) {
             $formattedHeaders[] = self::getHeaderString($key, $val);
