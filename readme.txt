@@ -5,7 +5,7 @@ Tags: booking, appointment, scheduling, availability, reservation, rental, free,
 Requires at least: 3.0
 Requires PHP: 5.6
 Tested up to: 4.9.1
-Stable tag: 1.2.21
+Stable tag: 1.2.22
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,12 +94,15 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 
 
 == Upgrade Notice ==
+= 1.2.22 =
+* IMPROVED : Usage of the calendar view (beta).
+
+== Changelog ==
+
 = 1.2.21 =
 ⚠️ IMPORTANT ⚠️ UPDATE FOR CALENDAR VIEW USERS.
 * FIXED : a problem with the drop down list data of the calendar view.
 * FIXED : a problem of translations with other language than English and French in the calendar view.
-
-== Changelog ==
 
 = 1.2.20 =
 * TESTED : Compatibility with WP 4.9.2
