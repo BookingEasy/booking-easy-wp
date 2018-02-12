@@ -34,8 +34,8 @@ Use the shortcode : `[sagenda-wp view="calendar"]` to display a month / week / d
 
 
 **Prerequisites**
-SAGENDA WP PLUGIN 1.2.X REQUIRE PHP 5.6 or 7.x  !
-FOR YOUR OWN SAFETY DON'T USE PHP VERSION OLDER THAN 5.6 THERE IS NO SECURITY PATCH -> http://php.net/supported-versions.php
+SAGENDA WP PLUGIN 1.2.X REQUIRE ⚠️ PHP 5.6 or 7.x  !
+⚠️ FOR YOUR OWN SAFETY DON'T USE PHP VERSION OLDER THAN 5.6 THERE IS NO SECURITY PATCH ⚠️  -> http://php.net/supported-versions.php
 
 Sagenda WP plugin require the PHP "Curl extension" to be activated on your hosting to call web services.
 
@@ -104,10 +104,13 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 
 == Upgrade Notice ==
 = 1.2.24 =
+⚠️ AFTER EACH UPDATE PLEASE CLEANUP YOUR CACHE TO FULLY SEE CHANGES ⚠️
 * FIXED : a bug when selecting Javanese language from WordPress settings for Calendar view. Now fallback to English.
 * FIXED : a bug when selecting Tagalog language from WordPress settings for Calendar view. Now fallback to Filipino.
 * FIXED : a bug when selecting Occitan language from WordPress settings for Calendar view. Now fallback to French.
 * IMPROVED : Calendar customisation documentation for WordPress.
+* IMPROVED : Subscription view compatibility with WordPress's themes.
+
 
 == Changelog ==
 = 1.2.23 =

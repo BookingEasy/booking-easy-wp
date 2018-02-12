@@ -84,6 +84,7 @@ function head_code_sagenda(){
 
 	// bootstrap
  $headcode = '<link rel="stylesheet" href="'.SAGENDA_PLUGIN_URL.'assets/vendor/bootstrap/bootstrap-wrapper.css" >';
+ $headcode .= '<link href="https://unpkg.com/@angular/material@5.2.0/prebuilt-themes/indigo-pink.css" rel="stylesheet">';
  // $headcode .= '<link rel="stylesheet" href="'.SAGENDA_PLUGIN_URL.'assets/vendor/bootstrap/bootstrap-theme-wrapper.css" >';
 
 	// $headcode .= '<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>';
