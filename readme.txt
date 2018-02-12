@@ -4,8 +4,8 @@ Donate link: http://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, PayPal
 Requires at least: 3.0
 Requires PHP: 5.6
-Tested up to: 4.9.1
-Stable tag: 1.2.22
+Tested up to: 4.9.4
+Stable tag: 1.2.24
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,6 +29,7 @@ You can use PayPal as payment gateway to make your customers pay for bookings. T
 You can use Sagenda as shortcode in any page or plugin :
 `[sagenda-wp]`
 in a page or an article ( you can also display only one "bookable item" : `[sagenda-wp bookableitem="my bookable item name"]`).
+
 Use the shortcode : `[sagenda-wp view="calendar"]` to display a month / week / day view. [in BETA testing for now!]
 
 
@@ -38,7 +39,7 @@ FOR YOUR OWN SAFETY DON'T USE PHP VERSION OLDER THAN 5.6 THERE IS NO SECURITY PA
 
 Sagenda WP plugin require the PHP "Curl extension" to be activated on your hosting to call web services.
 
-=Installation=
+== Installation  ==
 
 How to install this booking plugin into my WordPress website?
 
@@ -57,6 +58,13 @@ Follow these steps to install Sagenda:
     OR Use the shortcode `[sagenda-wp view="calendar"]` to display a month / week / day view. [in BETA testing for now!]
 
 SUPPORT THIPS : any error message? try to update to the last version of WordPress and use PHP 7 or higher !
+
+**Calendar view settings**
+Sagenda's calendar view will read your WordPress Settings : myURL/wp-admin/options-general.php
+The language of the calendar will match "Site Language" parameter.
+The Date and time format will match "Date Format" / "Time Format" parameters.
+The calendar will start on "Week Starts On" parameter.
+
 
 = LANGUAGE / TRANSLATIONS =
 
@@ -80,6 +88,7 @@ SUPPORT THIPS : any error message? try to update to the last version of WordPres
   Russian - Русский (Россия)
   Spanish - Español (España)
   Swedish - Svenska (Sverige)
+  and more...
 
 Want more languages? Help us -> we re-builded the module from scratch : http://osp7icw.oneskyapp.com/admin/project/dashboard/project/101655
 
@@ -94,10 +103,19 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 
 
 == Upgrade Notice ==
-= 1.2.22 =
-* IMPROVED : Usage of the calendar view (beta).
+= 1.2.24 =
+* FIXED : a bug when selecting Javanese language from WordPress settings for Calendar view. Now fallback to English.
+* FIXED : a bug when selecting Tagalog language from WordPress settings for Calendar view. Now fallback to Filipino.
+* FIXED : a bug when selecting Occitan language from WordPress settings for Calendar view. Now fallback to French.
+* IMPROVED : Calendar customisation documentation for WordPress.
 
 == Changelog ==
+= 1.2.23 =
+* IMPROVED : Multi-culture of the calendar (beta).
+* TESTED : Compatibility with WP 4.9.4
+
+= 1.2.22 =
+* IMPROVED : Usage of the calendar view (beta).
 
 = 1.2.21 =
 ⚠️ IMPORTANT ⚠️ UPDATE FOR CALENDAR VIEW USERS.
@@ -342,7 +360,7 @@ Please read : [How to add a booking system to my website?](http://www.sagenda.co
 
 
 **How does my client know of the status of his/her booking request?**
-The online appointment scheduler sends personalized emails to all people concerned at every step of booking, confirmation or cancelling.
+The online appointment scheduler sends personalised emails to all people concerned at every step of booking, confirmation or cancelling. You can also subscribe for [SMS notifications and reminders](https://sagenda.net/ModuleCenter).
 
 
 **But the services I offer are very different from those offered by other businesses.**
@@ -358,7 +376,7 @@ This brilliant online appointment scheduler works on PC, Mac, iPhone and Android
 
 
 **Is that really free? And if yes, how are you making money then?**
-Yes, this is really free. We make profit because some big customers ask us customized versions of our booking tool and additional software development or module.
+Yes, this is really free. We make profit because some big customers ask us customised versions of our booking tool and additional software development or module.
 
 
 **What is a "Bookable Item"?**
@@ -370,7 +388,7 @@ This can be solved with "Events". For more information on please read our tutori
 
 
 **How to manage reservation (booking)?**
-Once bookable items and events saved, you can manage your Bookings in the dashboard. For more information please read our tutorial about [dashboard](http://www.sagenda.com/introducing-sagenda/sagenda-dashboard-manage-clients/).
+Once bookable items and events saved, you can brows your event in the [Booking screen](https://sagenda.net/Bookings/List). The dashboard will give you an overview of your account. For more information please read our tutorial about [dashboard](http://www.sagenda.com/introducing-sagenda/sagenda-dashboard-manage-clients/).
 
 
 **How to configure my account?**

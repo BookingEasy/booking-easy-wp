@@ -24,19 +24,31 @@ class SagendaAPI
   {
     try {
         echo "token = ".$token;
+        echo '<br/>';
         //$headers = array('Accept' => 'application/x-www-form-urlencoded');
-        $headers = array('Accept' => 'application/json', 'Content-Type' => 'application/x-www-form-urlencoded');
-        // $headers = array('Content-Type' => 'application/x-www-form-urlencoded');
-        $data = array('grant_type' => 'api_token', 'api_token' => $token);
-        $body = Unirest\Request\Body::json($data);
+        /*$headers = array(
+                "Content-Type" => "application/json",
+                "Accept" => "application/json");*/
+        $headers = array('Content-Type' => 'application/x-www-form-urlencoded');
+        $body = array("grant_type" => "api_token", "api_token" => $token);
+echo '<br/>';
+echo '<br/>';
+        print_r($body) ;
+        $body = Unirest\Request\Body::json($body);
         // $body = Unirest\Request\Body::form($data); 
-        // print_r($body) ;
-        $response = Unirest\Request::post($this->apiUrl."v3/token", json_encode($headers), $body);
+        echo '<br/>';
+        echo '<br/>';
+        print_r($body) ;
+        $response = Unirest\Request::post($this->apiUrl."v3/token",
+        array("Content-Type" => "application/x-www-form-urlencoded")
+        ,
+        Unirest\Request\Body::json(array("grant_type" => "api_token", "api_token" => $token)
+      ));
         }
     catch (Exception $e) {
           echo "Oups, I did it again : ".$e->getMessage();
         }
-
+        echo '<br/>';
     print_r($response) ;
     return $response->access_token;
     }
