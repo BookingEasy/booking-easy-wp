@@ -68,32 +68,15 @@ The calendar will start on "Week Starts On" parameter.
 
 = LANGUAGE / TRANSLATIONS =
 
-  Chinese Simplified - 简体中文
-  Chinese Traditional - 繁體中文
-  Czech
-  Danish
-  Dutch - Nederlands (Nederland)
-  English
-  French - Français (France)
-  German - Deutsch (Deutschland)
-  Hindi - हिन्दी (भारत)
-  Italian - Italiano (Italia)
-  Japanese - 日本語
-  Korean - 한국어
-  Polish - Polski
-  Portuguese - Português (Brasil)
-  Portuguese - Português (Europeu)
-  Romanian - Română (România)
-  Russian - Русский
-  Russian - Русский (Россия)
-  Spanish - Español (España)
-  Swedish - Svenska (Sverige)
-  and more...
+We are translated in many languages. Want more languages? Help us :
 
-Want more languages? Help us -> we re-builded the module from scratch : http://osp7icw.oneskyapp.com/admin/project/dashboard/project/101655
+Calendar public views :
+https://osp7icw.oneskyapp.com/admin/project/dashboard/project/142348
 
-Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sagenda-wp
+WordPress plugin txt :
+http://osp7icw.oneskyapp.com/admin/project/dashboard/project/101655
 
+We will add your translations in the next release!
 
 == Screenshots ==
 1. Calendar view
@@ -104,12 +87,15 @@ Are you a Dev and want to help? we are on GitHub : https://github.com/Sagenda/sa
 
 == Upgrade Notice ==
 = 1.2.24 =
-⚠️ AFTER EACH UPDATE PLEASE CLEANUP YOUR CACHE TO FULLY SEE CHANGES ⚠️
+HELP US WITH TRANSLATIONS OF NEW VIEWS : https://osp7icw.oneskyapp.com/admin/project/dashboard/project/142348
 * FIXED : a bug when selecting Javanese language from WordPress settings for Calendar view. Now fallback to English.
 * FIXED : a bug when selecting Tagalog language from WordPress settings for Calendar view. Now fallback to Filipino.
 * FIXED : a bug when selecting Occitan language from WordPress settings for Calendar view. Now fallback to French.
 * IMPROVED : Calendar customisation documentation for WordPress.
+* IMPROVED : New translation system.
+* IMPROVED : When click on back from the subscription screen, lock on event is released and page isn't reloaded.
 * IMPROVED : Subscription view compatibility with WordPress's themes.
+⚠️ AFTER EACH UPDATE PLEASE CLEANUP YOUR CACHE TO FULLY SEE CHANGES ⚠️
 
 
 == Changelog ==

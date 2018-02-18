@@ -60,22 +60,6 @@ class CalendarController {
       'languageCultureShortName'    => get_locale(),
       'dateFormat'                  => DateHelper::convertDateFormatFromPHPToMomentjs(get_option( 'date_format' )),
       'timeFormat'                  => DateHelper::convertTimeFormatFromPHPToMomentjs(get_option( 'time_format' )),
-      'sagendaTranslationNext'      => __( 'Next', 'sagenda-wp' ),
-      'sagendaTranslationToday'     => __( 'Today', 'sagenda-wp' ),
-      'sagendaTranslationPrevious'  => __( 'Previous', 'sagenda-wp' ),
-      'sagendaTranslationMonth'     => __( 'Month', 'sagenda-wp' ),
-      'sagendaTranslationWeek'      => __( 'Week', 'sagenda-wp' ),
-      'sagendaTranslationDay'       => __( 'Day', 'sagenda-wp' ),
-      'sagendaTranslationSubscriptionTitle'       => __( 'Title', 'sagenda-wp' ),
-      'sagendaTranslationSubscriptionTitleMrs'       => __( 'Mrs.', 'sagenda-wp' ),
-      'sagendaTranslationSubscriptionTitleMr'       => __( 'Mr.', 'sagenda-wp' ),
-      'sagendaTranslationSubscriptionTitleMiss'       => __( 'Miss', 'sagenda-wp' ),
-      'sagendaTranslationSubscriptionTitleDr'       => __( 'Dr', 'sagenda-wp' ),
-      'sagendaTranslationSubscriptionFirstName'       => __( 'First Name', 'sagenda-wp' ),
-      'sagendaTranslationSubscriptionLastName'       => __( 'Last Name', 'sagenda-wp' ),
-      'sagendaTranslationSubscriptionEmail'       => __( 'Email', 'sagenda-wp' ),
-      'sagendaTranslationSubscriptionPhone'       => __( 'Phone Number', 'sagenda-wp' ),
-      'sagendaTranslationSubscriptionDescription'       => __( 'Description', 'sagenda-wp' ),
     ));
   }
 }

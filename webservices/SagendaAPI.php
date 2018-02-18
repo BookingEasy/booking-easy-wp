@@ -29,21 +29,16 @@ class SagendaAPI
         /*$headers = array(
                 "Content-Type" => "application/json",
                 "Accept" => "application/json");*/
-        $headers = array('Content-Type' => 'application/x-www-form-urlencoded');
-        $body = array("grant_type" => "api_token", "api_token" => $token);
+        $headers = json_encode(array('Content-Type' => 'application/x-www-form-urlencoded'));
+        $body = json_encode(array("grant_type" => "api_token", "api_token" => $token));
 echo '<br/>';
 echo '<br/>';
         print_r($body) ;
-        $body = Unirest\Request\Body::json($body);
+        // $body = Unirest\Request\Body::json($body);
         // $body = Unirest\Request\Body::form($data); 
         echo '<br/>';
-        echo '<br/>';
         print_r($body) ;
-        $response = Unirest\Request::post($this->apiUrl."v3/token",
-        array("Content-Type" => "application/x-www-form-urlencoded")
-        ,
-        Unirest\Request\Body::json(array("grant_type" => "api_token", "api_token" => $token)
-      ));
+        $response = Unirest\Request::post($this->apiUrl."token", $headers , $body);
         }
     catch (Exception $e) {
           echo "Oups, I did it again : ".$e->getMessage();
