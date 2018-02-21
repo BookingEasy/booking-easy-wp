@@ -23,29 +23,20 @@ class SagendaAPI
   public function convertAPITokenToBearerToken($token)
   {
     try {
-        echo "token = ".$token;
-        echo '<br/>';
-        //$headers = array('Accept' => 'application/x-www-form-urlencoded');
-        /*$headers = array(
-                "Content-Type" => "application/json",
-                "Accept" => "application/json");*/
-        $headers = json_encode(array('Content-Type' => 'application/x-www-form-urlencoded'));
-        $body = json_encode(array("grant_type" => "api_token", "api_token" => $token));
-echo '<br/>';
-echo '<br/>';
-        print_r($body) ;
-        // $body = Unirest\Request\Body::json($body);
-        // $body = Unirest\Request\Body::form($data); 
-        echo '<br/>';
-        print_r($body) ;
-        $response = Unirest\Request::post($this->apiUrl."token", $headers , $body);
+        $body = "grant_type=api_token&api_token=".$token;
+        $response = Unirest\Request::post($this->apiUrl."token",
+        array(
+        "Content-Type" => "application/json",
+        "Accept" => "application/json"
+        ),
+        $body);
         }
     catch (Exception $e) {
           echo "Oups, I did it again : ".$e->getMessage();
         }
-        echo '<br/>';
-    print_r($response) ;
-    return $response->access_token;
+        print_r($response->body->access_token);
+    //return $response->access_token;
+    return $response->body->access_token;
     }
 
   /**
