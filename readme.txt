@@ -5,7 +5,7 @@ Tags: booking, appointment, scheduling, availability, reservation, rental, free,
 Requires at least: 3.0
 Requires PHP: 5.6
 Tested up to: 4.9.4
-Stable tag: 1.2.24
+Stable tag: 1.2.26
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,8 +30,7 @@ You can use Sagenda as shortcode in any page or plugin :
 `[sagenda-wp]`
 in a page or an article ( you can also display only one "bookable item" : `[sagenda-wp bookableitem="my bookable item name"]`).
 
-Use the shortcode : `[sagenda-wp view="calendar"]` to display a month / week / day view. [in BETA testing for now!]
-
+Or use the shortcode : `[sagenda-calendar-wp]` please install our new module [Sagenda Calendar https://wordpress.org/plugins/sagenda-calendar/]
 
 **Prerequisites**
 SAGENDA WP PLUGIN 1.2.X REQUIRE ⚠️ PHP 5.6 or 7.x  !
@@ -55,7 +54,7 @@ Follow these steps to install Sagenda:
 2. Create a free account on https://sagenda.net/Accounts/Register (setup your “bookable items” and events).
 3. Copy your token (from the backend of sagenda.net Settings / account settings) to your WordPress installation (backend of wp / Settings / Sagenda).
 4. Use the shortcode `[sagenda-wp]` in a page or an article ( you can also display only one "bookable item" : `[sagenda-wp bookableitem="my bookable item name"]`).
-    OR Use the shortcode `[sagenda-wp view="calendar"]` to display a month / week / day view. [in BETA testing for now!]
+    OR are you looking for the calendar view? please install our new module [Sagenda Calendar https://wordpress.org/plugins/sagenda-calendar/] to display a month / week / day view. [in BETA testing for now!]
 
 SUPPORT THIPS : any error message? try to update to the last version of WordPress and use PHP 7 or higher !
 
@@ -86,6 +85,17 @@ We will add your translations in the next release!
 
 
 == Upgrade Notice ==
+= 1.2.26 =
+⚠️ READ BEFORE UPDATE ⚠️
+If you use the Calendar view please install the new plugin and use the new shortcode `[sagenda-calendar-wp]`.
+* IMPROVED : CURLOPT_SSL_VERIFYPEER.
+👍 HELP US WITH TRANSLATIONS OF NEW CALENDAR VIEWS : https://osp7icw.oneskyapp.com/admin/project/dashboard/project/142348
+⚠️ AFTER EACH UPDATE PLEASE CLEANUP YOUR CACHE TO FULLY SEE CHANGES ⚠️
+
+== Changelog ==
+= 1.2.25 =
+* FIXED : temporary revert some features due to redirection caused by a "base" ref tag.
+
 = 1.2.24 =
 HELP US WITH TRANSLATIONS OF NEW VIEWS : https://osp7icw.oneskyapp.com/admin/project/dashboard/project/142348
 * FIXED : a bug when selecting Javanese language from WordPress settings for Calendar view. Now fallback to English.
@@ -98,7 +108,6 @@ HELP US WITH TRANSLATIONS OF NEW VIEWS : https://osp7icw.oneskyapp.com/admin/pro
 ⚠️ AFTER EACH UPDATE PLEASE CLEANUP YOUR CACHE TO FULLY SEE CHANGES ⚠️
 
 
-== Changelog ==
 = 1.2.23 =
 * IMPROVED : Multi-culture of the calendar (beta).
 * TESTED : Compatibility with WP 4.9.4

@@ -33,33 +33,9 @@ class CalendarController {
   */
   public function showCalendar($twig, $shorcodeParametersArray)
   {
-    if (get_option('mrs1_authentication_code') == null)
-    {
-      return $twig->render($this->view, array(
-        'isError'                  => true,
-        'hideSearchForm'           => true,
-        'errorMessage'             => __( "You didn't configure Sagenda properly please enter your authentication code in Settings", 'sagenda-wp' ),
-      ));
-      return;
-    }
-
-    if(isset($_GET['EventIdentifier']))
-    {
-      $subscriptionController = new SubscriptionController();
-      return $subscriptionController->callSubscription($twig);
-    }
-
     $sagendaAPI = new sagendaAPI();
 
     return $twig->render($this->view, array(
-      'SAGENDA_PLUGIN_URL'          => SAGENDA_PLUGIN_URL,
-      'searchForEventsBetween'      => __( 'Search for all the events between', 'sagenda-wp' ),
-      'token'                       => get_option('mrs1_authentication_code'),
-      'bearerToken'                 => $sagendaAPI->convertAPITokenToBearerToken(get_option('mrs1_authentication_code')),
-      'weekStartsOn'                => get_option('start_of_week'),
-      'languageCultureShortName'    => get_locale(),
-      'dateFormat'                  => DateHelper::convertDateFormatFromPHPToMomentjs(get_option( 'date_format' )),
-      'timeFormat'                  => DateHelper::convertTimeFormatFromPHPToMomentjs(get_option( 'time_format' )),
     ));
   }
 }

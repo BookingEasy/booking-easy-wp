@@ -109,7 +109,7 @@ class SearchController {
         {
           $pickerTranslated = PickadateHelper::getPickadateCultureCode();
         }
-
+        global $wp;
         $fromDate = $this->getFromDate();
         $toDate = $this->getToDate();
         $availability = $sagendaAPI->getAvailability(get_option('mrs1_authentication_code'), $this->convertPickadateToWebserviceDateFormat($fromDate), $this->convertPickadateToWebserviceDateFormat($toDate), $selectedBookableItem->Id);
@@ -128,24 +128,25 @@ class SearchController {
           'clickAnEventToBookIt'          => __( 'Click an event to book It:', 'sagenda-wp' ),
           'dateFormat'                    => PickadateHelper::getPickadateDateFormat(),
           'pickerTranslated'              => $pickerTranslated,
-          'bookIt'                          => __( 'book-it!', 'sagenda-wp' ),
+          'bookIt'                        => __( 'book-it!', 'sagenda-wp' ),
           'warningNoBookingFound'         => __('No event found for the bookable item within the selected date range.', 'sagenda-wp'),
           'fromDate'                      => $fromDate,
           'toDate'                        => $toDate,
-          'bookableItemName'                 => $selectedBookableItem->Name,
+          'bookableItemName'               => $selectedBookableItem->Name,
           'locationValue'                 => $selectedBookableItem->Location,
           'descriptionValue'              => $selectedBookableItem->Description,
           'selectedId'                    => $selectedBookableItem->SelectedId,
-          'bookableItemId'          => $selectedBookableItem->Id,
+          'bookableItemId'                => $selectedBookableItem->Id,
           'bookableItems'                 => $bookableItems,
           'availability'                  => $availability->body,
           'errorMessage'                  => $errorMessage,
-          'paginationTotal'         => $total,
-          'paginationStep'         => ceil($total/10),
-          'paginationSelected'         => $this->getPagination(),
+          'paginationTotal'               => $total,
+          'paginationStep'                => ceil($total/10),
+          'paginationSelected'            => $this->getPagination(),
           'bookableItemSelectedByShortcode'=> $bookableItemSelectedByShortcode,
-          'currentUrl'                      =>home_url(),
-          'existingUrlQuery'  =>UrlHelper::getQuery($_SERVER['REQUEST_URI']),      ));
+          'pageUrl'                        => home_url( $wp->request )."/",
+          'currentUrl'                     => home_url(),
+          'existingUrlQuery'               => UrlHelper::getQuery($_SERVER['REQUEST_URI']),      ));
         }
       }
     }

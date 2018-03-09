@@ -4,7 +4,7 @@
 * Plugin Name:       Sagenda
 * Plugin URI:        http://www.sagenda.com/
 * Description:       Sagenda is a free Online Booking / Scheduling / Reservation System, which gives customers the opportunity to choose the date and the time of an appointment according to your preferences.
-* Version:           1.2.24
+* Version:           1.2.26
 * Author:            sagenda
 * Author URI:        http://www.sagenda.com/
 * License:           GPLv2
@@ -77,36 +77,8 @@ function is_CURL_Enabled(){
 * Include CSS, JavaScript in the head section of the plugin.
 */
 function head_code_sagenda(){
-	// TODO : call the reference only when needed
-
-
-
-	// $headcode  = '<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">';
-	// $headcode .= '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">';
-
 	// bootstrap
- $headcode = '<link rel="stylesheet" href="'.SAGENDA_PLUGIN_URL.'assets/vendor/bootstrap/bootstrap-wrapper.css" >';
- $headcode .= '<link href="https://unpkg.com/@angular/material@5.2.0/prebuilt-themes/indigo-pink.css" rel="stylesheet">';
-
-	// required by Angular
- $headcode .= '<base href="'.SAGENDA_PLUGIN_URL.'assets/angular/">';
- $headcode .= '<link href="'.SAGENDA_PLUGIN_URL.'assets/angular/styles.bundle.css" rel="stylesheet"/>';
-
- // $headcode .= '<link rel="stylesheet" href="'.SAGENDA_PLUGIN_URL.'assets/vendor/bootstrap/bootstrap-theme-wrapper.css" >';
-
-	// $headcode .= '<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>';
-	// $headcode .= '<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>';
-	//$headcode .= '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>';
-	// $headcode .= '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>';
-
-	// angular 4
-	/*
-	$headcode .= '<link href="'.SAGENDA_PLUGIN_URL.'assets/css/styles.bundle.css" rel="stylesheet"/>';
-	$url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-	$headcode .= '<base href="'.$url.'">';
-	*/
-	//$headcode .= '<meta name="viewport" content="width=device-width, initial-scale=1">';
-
+ 	$headcode = '<link rel="stylesheet" href="'.SAGENDA_PLUGIN_URL.'assets/vendor/bootstrap/bootstrap-wrapper.css" >';
 	// bootstrap validator
 	$headcode .= '<script src="'.SAGENDA_PLUGIN_URL.'assets/vendor/bootstrap-validator/validator.min.js"></script>';
 
@@ -117,16 +89,6 @@ function head_code_sagenda(){
 	$headcode .= '<script src="'.SAGENDA_PLUGIN_URL.'assets/vendor/pickadate/lib/compressed/picker.date.js"></script>';
 	$headcode .= '<script src="'.SAGENDA_PLUGIN_URL.'assets/vendor/pickadate/lib/legacy.js"></script>';
 
-	echo $headcode;
-}
-
-function head_code_sagenda_calendar(){
-
-	$headcode = '<script type="text/javascript" src="'.SAGENDA_PLUGIN_URL.'assets/angular/inline.bundle.js"></script>';
-	$headcode .= '<script type="text/javascript" src="'.SAGENDA_PLUGIN_URL.'assets/angular/polyfills.bundle.js"></script>';
-	$headcode .= '<script type="text/javascript" src="'.SAGENDA_PLUGIN_URL.'assets/angular/vendor.bundle.js"></script>';
-	$headcode .= '<script type="text/javascript" src="'.SAGENDA_PLUGIN_URL.'assets/angular/main.bundle.js"></script>';
-	$headcode .= '<script type="text/javascript" src="'.SAGENDA_PLUGIN_URL.'assets/angular/styles.bundle.js"></script>';
 	echo $headcode;
 }
 
@@ -149,6 +111,7 @@ function add_theme_scripts() {
 /**
 * Add it in the frontend
 */
+
 add_action('wp_head','head_code_sagenda');
 
 /**

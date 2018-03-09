@@ -19,9 +19,9 @@
     {% for event in availability|slice((paginationSelected-1)*10,10) %}
     {% if event.IsPaidEvent == true%}
     {# currentUrl should not be the last value for compatiblity reason with some WP theme like DIVI (WP-43) #}
-    <a href="?{{existingUrlQuery}}bookableItemName={{bookableItemName}}&bookableItemId={{bookableItemId}}&EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}&EventScheduleId={{event.EventScheduleId}}&isPaidEvent=1&paymentAmount={{event.PaymentAmount}}&paymentCurrency={{event.PaymentCurrency}}&currentUrl={{currentUrl}}#sagenda&eventTitle={{event.EventTitle}}"> <li class="list-group-item"><span class="badge">{{bookIt}}</span>{{event.DateDisplay}} : {{event.PaymentAmount}} {{event.PaymentCurrency}} : Paid Event : {{event.EventTitle}}</li></a>
+    <a href="{{pageUrl}}?{{existingUrlQuery}}bookableItemName={{bookableItemName}}&bookableItemId={{bookableItemId}}&EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}&EventScheduleId={{event.EventScheduleId}}&isPaidEvent=1&paymentAmount={{event.PaymentAmount}}&paymentCurrency={{event.PaymentCurrency}}&currentUrl={{currentUrl}}#sagenda&eventTitle={{event.EventTitle}}"> <li class="list-group-item"><span class="badge">{{bookIt}}</span>{{event.DateDisplay}} : {{event.PaymentAmount}} {{event.PaymentCurrency}} : Paid Event : {{event.EventTitle}}</li></a>
     {% else %}
-    <a href="?{{existingUrlQuery}}bookableItemName={{bookableItemName}}&bookableItemId={{bookableItemId}}&EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}&EventScheduleId={{event.EventScheduleId}}&isPaidEvent=0&currentUrl={{currentUrl}}#sagenda&eventTitle={{event.EventTitle}}"> <li class="list-group-item"><span class="badge">{{bookIt}}</span>{{event.DateDisplay}} : {{event.EventTitle}}</li></a>
+    <a href="{{pageUrl}}?{{existingUrlQuery}}bookableItemName={{bookableItemName}}&bookableItemId={{bookableItemId}}&EventIdentifier={{event.EventIdentifier}}&DateDisplay={{event.DateDisplay}}&EventScheduleId={{event.EventScheduleId}}&isPaidEvent=0&currentUrl={{currentUrl}}#sagenda&eventTitle={{event.EventTitle}}"> <li class="list-group-item"><span class="badge">{{bookIt}}</span>{{event.DateDisplay}} : {{event.EventTitle}}</li></a>
     {% endif %}
     {% endfor %}
   </ul>

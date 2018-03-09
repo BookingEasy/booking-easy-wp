@@ -70,8 +70,14 @@
   </div>
 
   <div class="row">
-    <div class="col text-left"><a href="?{{backUrlQuery}}"><button type="button" class="btn btn-warning btn-lg">{{ back }}</button></a></div>
-    <div class="col text-right"><button type="button" id="submit-subscription-button" class="btn btn-success btn-lg">{{ submit }}</button></div>
+    <div class="col-xs-6 " (click)="OnBackClicked()">
+      <a href="{{pageUrl}}?{{backUrlQuery}}"><button type="button" class="btn btn-warning btn-lg">{{ back }}</button></a>
+    </div>
+    <div class="col-xs-6">
+         <span class="pull-right">
+           <button type="button" id="submit-subscription-button" class="btn btn-success btn-lg">{{ submit }}</button>
+         </span>
+    </div>
   </div>
 </form>
 

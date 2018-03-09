@@ -51,7 +51,8 @@ class SubscriptionController
   {
     $booking = $this->fillBookingWithFormValues($booking);
     $result = $this->setBookingWithSubmissionCheck($booking);
-
+    global $wp;
+    
     if($result['didSucceed'] == true)
     {
       $informationMessageController = new InformationMessageController();
@@ -74,11 +75,12 @@ class SubscriptionController
         'description'                   => __('Description', 'sagenda-wp'),
         'submit'                        => __('Submit', 'sagenda-wp'),
         'back'                          => __('Back', 'sagenda-wp'),
-        'YourSelectedBooking'                          => __( 'Your selected booking :', 'sagenda-wp' ),
-        'EventName'                          => __( 'Event Name', 'sagenda-wp' ),
-        'PaymentAmount'                          => __( 'Payment Amount', 'sagenda-wp' ),
-        'LetsBookIt'                          => __( 'Now, let\'s book it! Please fill out the form below.', 'sagenda-wp' ),
-        'backUrlQuery'  =>UrlHelper::removeQuery(UrlHelper::getQuery($_SERVER['REQUEST_URI']),"EventIdentifier"),
+        'YourSelectedBooking'           => __( 'Your selected booking :', 'sagenda-wp' ),
+        'EventName'                     => __( 'Event Name', 'sagenda-wp' ),
+        'PaymentAmount'                 => __( 'Payment Amount', 'sagenda-wp' ),
+        'LetsBookIt'                    => __( 'Now, let\'s book it! Please fill out the form below.', 'sagenda-wp' ),
+        'backUrlQuery'                  => UrlHelper::removeQuery(UrlHelper::getQuery($_SERVER['REQUEST_URI']),"EventIdentifier"),
+        'pageUrl'                       => home_url( $wp->request )."/",
       ));
     }
   }

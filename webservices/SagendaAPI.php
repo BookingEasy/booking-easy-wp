@@ -34,8 +34,7 @@ class SagendaAPI
     catch (Exception $e) {
           echo "Oups, I did it again : ".$e->getMessage();
         }
-        print_r($response->body->access_token);
-    //return $response->access_token;
+        //print_r($response->body->access_token);
     return $response->body->access_token;
     }
 
