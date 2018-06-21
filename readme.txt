@@ -4,7 +4,7 @@ Donate link: http://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, PayPal
 Requires at least: 3.0
 Requires PHP: 5.6
-Tested up to: 4.9.4
+Tested up to: 4.9.5
 Stable tag: 1.2.27
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
