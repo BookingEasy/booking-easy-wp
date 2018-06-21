@@ -56,7 +56,7 @@ class SubscriptionController
     if($result['didSucceed'] == true)
     {
       $informationMessageController = new InformationMessageController();
-      return $informationMessageController->showMessage($twig, $booking, $result[ReturnUrl]);
+      return $informationMessageController->showMessage($twig, $booking, $result['ReturnUrl']);
     }
     else {
       return $twig->render($this->view, array(
@@ -99,7 +99,7 @@ class SubscriptionController
       if($booking->isReadyForSubmission())
       {
         $result = $this->setBooking($booking);
-        $redirectUrl = $result[ReturnUrl]."#sagenda";
+        $redirectUrl = $result['ReturnUrl']."#sagenda";
         $didSucceed = true;
       }
       else {
