@@ -1,16 +1,37 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
-"POT-Creation-Date: 2017-03-24 13:49+0000\n"
-"PO-Revision-Date: 2017-03-24 14:50+0100\n"
+"POT-Creation-Date: 2018-07-08 19:57+0000\n"
+"PO-Revision-Date: 2018-07-08 22:03+0200\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: David Imboden <info<this is at>iteration.info>\n"
+"Last-Translator: \n"
 "X-Generator: Poedit 1.8.12\n"
+
+msgid "Next"
+msgstr "Volgende"
+
+msgid "Today"
+msgstr "Vandaag"
+
+msgid "Previous"
+msgstr "Voorgaande"
+
+msgid "Month"
+msgstr "Maand"
+
+msgid "Week"
+msgstr "Week"
+
+msgid "Day"
+msgstr "Dag"
+
+msgid "You didn't add any Bookable item, please configure your Sagenda's account properly !"
+msgstr "U hebt geen boekbaar item toegevoegd, configureer alstublieft uw Sagenda-account goed!"
 
 msgid "NOT CONNECTED"
 msgstr "NIET VERBONDEN"
@@ -60,17 +81,23 @@ msgstr "Hoe krijg je de token:"
 msgid "Useful links :"
 msgstr "Handige links:"
 
+msgid "You didn't configure Sagenda properly please enter your authentication code in Settings"
+msgstr "U heeft Sagenda niet correct geconfigureerd, gelieve uw authenticatiecode in instellingen in te vullen"
+
+msgid "Search for all the events between"
+msgstr "Zoek naar alle evenementen tussen"
+
 msgid "Back"
 msgstr "Terug"
 
 msgid "You successfully subscribed to the event."
 msgstr "Je bent met succes geabonneerd op het evenement."
 
-msgid "You didn't configure Sagenda properly please enter your authentication code in Settings"
-msgstr "U heeft Sagenda niet correct geconfigureerd, gelieve uw authenticatiecode in instellingen in te vullen"
+msgid "Please pay for your event"
+msgstr "Betaal alsjeblieft voor je evenement"
 
-msgid "Search for all the events between"
-msgstr "Zoek naar alle evenementen tussen"
+msgid "Pay"
+msgstr "Betalen"
 
 msgid "From"
 msgstr "Van"
@@ -100,7 +127,7 @@ msgid "book-it!"
 msgstr "Boeken!"
 
 msgid "Help"
-msgstr "Help"
+msgstr "Helpen"
 
 msgid "No event found for the bookable item within the selected date range."
 msgstr "Voor het boekbare item zijn geen evenementen gevonden binnen de geselecteerde datumrange."

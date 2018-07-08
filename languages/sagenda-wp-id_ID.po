@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
 "POT-Creation-Date: 2017-03-08 22:15+0100\n"
-"PO-Revision-Date: 2017-03-08 22:15+0100\n"
+"PO-Revision-Date: 2018-07-08 22:07+0200\n"
 "Last-Translator: David Imboden <info<this is at>iteration.info>\n"
 "Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
 "Language: id\n"
@@ -27,9 +27,7 @@ msgstr "Terhubung"
 
 #: controllers/AdminTokenController.php:37
 msgid "Sagenda Authentication Settings"
-msgstr ""
-"\n"
-" Pengaturan Sagenda Authentication "
+msgstr "Pengaturan Sagenda Authentication "
 
 #: controllers/AdminTokenController.php:38
 msgid "Sagenda Authentication Code"
@@ -41,59 +39,51 @@ msgstr "Simpan perubahan"
 
 #: controllers/AdminTokenController.php:40
 msgid "Current Status"
-msgstr ""
-"\n"
-"Status saat ini"
+msgstr "Status saat ini"
 
 #: controllers/AdminTokenController.php:41
 msgid "Click here to get your Authentication code."
-msgstr ""
-"\n"
-"Klik di sini untuk mendapatkan kode otentikasi Anda."
+msgstr "Klik di sini untuk mendapatkan kode otentikasi Anda."
 
 #: controllers/AdminTokenController.php:42
 msgid ""
-"<strong>[sagenda-wp]</strong> add this shortcode either in a post or page "
+"<strong>[sagenda-calendar-wp]</strong> add this shortcode either in a post or page "
 "where you want to display the Sagenda form."
 msgstr ""
-"\n"
-"<Strong> [sagenda-wp] </ strong> tambahkan shortcode ini baik dalam posting "
+"<Strong> [sagenda-calendar-wp] </ strong> tambahkan shortcode ini baik dalam posting "
 "atau halaman di mana Anda ingin menampilkan bentuk Sagenda."
 
 #: controllers/AdminTokenController.php:43
 msgid ""
-"<strong>[sagenda-wp bookableitem=\"my bookable item name\"]</strong> if you "
+"<strong>[sagenda-calendar-wp bookableitem=\"my bookable item name\"]</strong> if you "
 "want to display only one bookable item on that page. Pay attention : if your "
-"bookable item is name \"My Item\", bookableitem=\"my item\" or bookableitem="
-"\"My Item\" will be correct, but \"bookableitem=\"myitem\" not!"
+"bookable item is name \"My Item\", bookableitem=\"my item\" or bookableitem=\"My Item"
+"\" will be correct, but \"bookableitem=\"myitem\" not!"
 msgstr ""
-"\n"
-"<Strong> [sagenda-wp bookableitem = \"saya dapat dipesan nama item\"] </ "
-"strong> jika Anda ingin menampilkan hanya satu item dipesan di halaman "
-"tersebut. Perhatikan: jika item kartu kuning Anda adalah nama \"My Item\", "
-"bookableitem = \"item saya\" atau bookableitem = \"Barang saya\" akan benar, "
-"tetapi \"bookableitem =\" myitem \"tidak!"
+"<Strong> [sagenda-calendar-wp bookableitem = \"saya dapat dipesan nama item\"] </ "
+"strong> jika Anda ingin menampilkan hanya satu item dipesan di halaman tersebut. "
+"Perhatikan: jika item kartu kuning Anda adalah nama \"My Item\", bookableitem = "
+"\"item saya\" atau bookableitem = \"Barang saya\" akan benar, tetapi \"bookableitem ="
+"\" myitem \"tidak!"
 
 #: controllers/AdminTokenController.php:44
 msgid ""
-"If you want to use a shortcode outside of the WordPress post or page editor, "
-"you can use this snippet to output it from the shortcode’s handler(s): "
-"<pre>echo do_shortcode([sagenda-wp])</pre>"
+"If you want to use a shortcode outside of the WordPress post or page editor, you can "
+"use this snippet to output it from the shortcode’s handler(s): <pre>echo "
+"do_shortcode([sagenda-calendar-wp])</pre>"
 msgstr ""
-"\n"
-"Jika Anda ingin menggunakan shortcode di luar pos WordPress atau editor "
-"halaman, Anda dapat menggunakan potongan ini output dari pawang shortcode "
-"(s): <pre> gema do_shortcode ([sagenda-wp]) </ pre>"
+"Jika Anda ingin menggunakan shortcode di luar pos WordPress atau editor halaman, "
+"Anda dapat menggunakan potongan ini output dari pawang shortcode (s): <pre> gema "
+"do_shortcode ([sagenda-calendar-wp]) </ pre>"
 
 #: controllers/AdminTokenController.php:45
 msgid ""
-"NOTE: You first need to register on Sagenda and then you will get a "
-"Authentication token which you will use to validate this Sagenda Plugin."
+"NOTE: You first need to register on Sagenda and then you will get a Authentication "
+"token which you will use to validate this Sagenda Plugin."
 msgstr ""
-"\n"
-"CATATAN: Anda harus terlebih dahulu mendaftar di Sagenda dan kemudian Anda "
-"akan mendapatkan token otentikasi yang akan Anda gunakan untuk memvalidasi "
-"Sagenda Plugin ini."
+"CATATAN: Anda harus terlebih dahulu mendaftar di Sagenda dan kemudian Anda akan "
+"mendapatkan token otentikasi yang akan Anda gunakan untuk memvalidasi Sagenda Plugin "
+"ini."
 
 #: controllers/AdminTokenController.php:46
 msgid "Read more"
@@ -101,15 +91,11 @@ msgstr "Selanjutnya"
 
 #: controllers/AdminTokenController.php:47
 msgid "Create a free account "
-msgstr ""
-"\n"
-"Buat Akun gratis"
+msgstr "Buat Akun gratis"
 
 #: controllers/AdminTokenController.php:48
 msgid "About integration in your WP WebSite :"
-msgstr ""
-"\n"
-"Tentang integrasi di WebSite WP Anda:"
+msgstr "Tentang integrasi di WebSite WP Anda:"
 
 #: controllers/AdminTokenController.php:49
 msgid "How to get the token :"
@@ -130,11 +116,11 @@ msgstr "Anda berhasil berlangganan ke acara tersebut."
 
 #: controllers/SearchController.php:51
 msgid ""
-"You didn't configure Sagenda properly please enter your authentication code "
-"in Settings"
+"You didn't configure Sagenda properly please enter your authentication code in "
+"Settings"
 msgstr ""
-"Anda tidak mengkonfigurasi Sagenda dengan benar masukkan kode otentikasi "
-"Anda di Settings"
+"Anda tidak mengkonfigurasi Sagenda dengan benar masukkan kode otentikasi Anda di "
+"Settings"
 
 #: controllers/SearchController.php:78
 msgid "Search for all the events between"
@@ -156,8 +142,7 @@ msgstr "Silakan pilih item dipesan"
 msgid "Location"
 msgstr "Lokasi"
 
-#: controllers/SearchController.php:83
-#: controllers/SubscriptionController.php:47
+#: controllers/SearchController.php:83 controllers/SubscriptionController.php:47
 msgid "Description"
 msgstr "Keterangan"
 
@@ -177,17 +162,14 @@ msgstr "Klik sebuah acara untuk Booking:"
 msgid "book-it!"
 msgstr ""
 
-#: controllers/SearchController.php:90
-#: controllers/SubscriptionController.php:50
+#: controllers/SearchController.php:90 controllers/SubscriptionController.php:50
 msgid "Help"
 msgstr "Bantuan"
 
 #: controllers/SearchController.php:92
 msgid "No event found for the bookable item within the selected date range."
 msgstr ""
-"\n"
-"Tidak ada acara ditemukan untuk item kartu kuning dalam rentang tanggal yang "
-"dipilih."
+"Tidak ada acara ditemukan untuk item kartu kuning dalam rentang tanggal yang dipilih."
 
 #: controllers/SubscriptionController.php:35
 msgid "Subscription"
@@ -243,14 +225,10 @@ msgstr "Sukses terhubung"
 
 #: webservices/SagendaAPI.php:32
 msgid ""
-"Your token is wrong; please try again or generate another one in Sagenda’s "
-"backend."
+"Your token is wrong; please try again or generate another one in Sagenda’s backend."
 msgstr ""
-"token Anda salah; coba lagi atau menghasilkan satu sama lain di backend "
-"Sagenda ini."
+"token Anda salah; coba lagi atau menghasilkan satu sama lain di backend Sagenda ini."
 
 #: webservices/SagendaAPI.php:85
 msgid "An error has occurred. Booking wasn't saved."
-msgstr ""
-"\n"
-"Sebuah kesalahan telah terjadi. Pemesanan tidak disimpan."
+msgstr "Sebuah kesalahan telah terjadi. Pemesanan tidak disimpan."

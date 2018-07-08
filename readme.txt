@@ -4,8 +4,8 @@ Donate link: http://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, PayPal
 Requires at least: 3.0
 Requires PHP: 5.6
-Tested up to: 4.9.6
-Stable tag: 1.2.28
+Tested up to: 4.9.7
+Stable tag: 1.2.29
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -89,11 +89,16 @@ We will add your translations in the next release!
 
 
 == Upgrade Notice ==
+= 1.2.29 =
+* FIXED : Translations problem due to culture shortcode using another standard than WordPress.
+
+
+== Changelog ==
+
 = 1.2.28 =
 * FIXED : corrected "Warning: Use of undefined constant ReturnUrl - assumed 'ReturnUrl' (this will throw an Error in a future version of PHP)" warning.
 
 
-== Changelog ==
 = 1.2.27 =
 * IMPROVED : it is not possible to put on the same page : several Sagenda lists and one Sagenda calendar (not several due to Angular restrictions).
 
