@@ -37,14 +37,19 @@
   </div>
 {% endif %}
 
-<div class="form-group">
-  <label for="location">{{ locationLabel }}</label>
-  <input type="text" class="form-control" placeholder="{{locationValue}}" readonly>
-</div>
-<div class="form-group">
-  <label for="description">{{ descriptionLabel }}</label>
-  <input type="text" class="form-control" placeholder="{{ descriptionValue }}" readonly>
-</div>
+{% if locationValue is not null %}
+  <div class="form-group">
+    <label for="location">{{ locationLabel }}</label>
+    <input type="text" class="form-control" placeholder="{{locationValue}}" readonly>
+  </div>
+{% endif %}
+
+{% if descriptionValue is not null %}
+  <div class="form-group">
+    <label for="description">{{ descriptionLabel }}</label>
+    <p>{{ descriptionValue }}</p>
+  </div>
+{% endif %}
 
 </form>
 <div id="container"></div>
