@@ -4,8 +4,8 @@ Donate link: http://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, PayPal
 Requires at least: 3.0
 Requires PHP: 5.6
-Tested up to: 4.9.7
-Stable tag: 1.2.30
+Tested up to: 5.0
+Stable tag: 1.2.31
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,9 @@ The language of the calendar will match "Site Language" parameter.
 The Date and time format will match "Date Format" / "Time Format" parameters.
 The calendar will start on "Week Starts On" parameter.
 
+**Known issues**
+Problem with our plugin? are you using a caching system? Try to remove "w3 Total Cache" and use "Super Cache" or "WP Rocket".
+
 
 = LANGUAGE / TRANSLATIONS =
 
@@ -89,11 +92,16 @@ We will add your translations in the next release!
 
 
 == Upgrade Notice ==
+= 1.2.31 =
+* IMPROVED : Messaging.
+* TESTED : Compatibility with WordPress 5.
+
+
+== Changelog ==
 = 1.2.30 =
 * IMPROVED : Make description multiline.
 * IMPROVED : Display description and location only if value is set.
 
-== Changelog ==
 = 1.2.29 =
 * FIXED : Translations problem due to culture shortcode using another standard than WordPress.
 
