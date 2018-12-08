@@ -5,7 +5,7 @@ Tags: booking, appointment, scheduling, availability, reservation, rental, free,
 Requires at least: 3.0
 Requires PHP: 5.6
 Tested up to: 5.0
-Stable tag: 1.2.31
+Stable tag: 1.2.30
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,15 +92,15 @@ We will add your translations in the next release!
 
 
 == Upgrade Notice ==
-= 1.2.31 =
-* IMPROVED : Messaging.
-* TESTED : Compatibility with WordPress 5.
+
 
 
 == Changelog ==
 = 1.2.30 =
 * IMPROVED : Make description multiline.
 * IMPROVED : Display description and location only if value is set.
+* IMPROVED : Messaging.
+* TESTED : Compatibility with WordPress 5.
 
 = 1.2.29 =
 * FIXED : Translations problem due to culture shortcode using another standard than WordPress.
