@@ -78,6 +78,7 @@ class SearchController {
       return $twig->render($this->view, array(
         'isError'                  => true,
         'hideSearchForm'           => true,
+        'URL'       => SAGENDA_PLUGIN_URL,
         'errorMessage'             => __( "You didn't configure Sagenda properly please enter your authentication code in Settings", 'sagenda-wp' ),
       ));
     }

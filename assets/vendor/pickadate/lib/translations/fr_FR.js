@@ -17,6 +17,6 @@ jQuery.extend( jQuery.fn.pickadate.defaults, {
     labelYearSelect:"Sélectionner une année"
 });
 
-jQuery.extend( jQuery.fn.pickatime.defaults, {
-    clear: 'Effacer'
+jQuery.extend( jQuery.fn.pickatime = {
+    defaults: { clear: 'Effacer' }
 });

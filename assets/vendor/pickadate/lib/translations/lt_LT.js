@@ -18,7 +18,7 @@ jQuery.extend( jQuery.fn.pickadate.defaults, {
     formatSubmit: 'yyyy/mm/dd'
 });
 
-jQuery.extend( jQuery.fn.pickatime.defaults, {
+jQuery.extend( jQuery.fn.pickatime = { defaults: { 
     clear: 'Išvalyti',
-    format: 'HH:i'
+    format: 'HH:i'}
 });

@@ -14,6 +14,6 @@ jQuery.extend( jQuery.fn.pickadate.defaults, {
 	labelMonthPrev: 'ماه قبلی'
 });
 
-jQuery.extend( jQuery.fn.pickatime.defaults, {
-    clear: 'پاک کردن'
+jQuery.extend( jQuery.fn.pickatime = { defaults: { 
+    clear: 'پاک کردن'}
 });

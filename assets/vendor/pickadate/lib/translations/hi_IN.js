@@ -15,6 +15,6 @@ jQuery.extend( jQuery.fn.pickadate.defaults, {
     labelYearSelect: 'किसि एक वर्ष का चयन करें'
 });
 
-jQuery.extend( jQuery.fn.pickatime.defaults, {
-    clear: 'चुनी हुई तारीख को मिटाएँ'
+jQuery.extend( jQuery.fn.pickatime = { defaults: { 
+    clear: 'चुनी हुई तारीख को मिटाएँ'}
 });

@@ -82,6 +82,14 @@ function head_code_sagenda(){
 	// bootstrap validator
 	$headcode .= '<script src="'.SAGENDA_PLUGIN_URL.'assets/vendor/bootstrap-validator/validator.min.js"></script>';
 
+	// semantic-ui
+
+	// $headcode .= '<script src="'.SAGENDA_PLUGIN_URL.'assets/vendor/Semantic-UI/examples/assets/library/jquery.min.js"></script>';
+	// $headcode .= '<script src="'.SAGENDA_PLUGIN_URL.'assets/vendor/Semantic-UI/examples/assets/library/iframe.js"></script>';
+
+/* 	$headcode .= '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">';
+	$headcode .= '<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>';
+ */
 	// pickadate
 	$headcode .= '<link rel="stylesheet" href="'.SAGENDA_PLUGIN_URL.'assets/vendor/pickadate/lib/compressed/themes/default.css" id="theme_base">';
 	$headcode .= '<link rel="stylesheet" href="'.SAGENDA_PLUGIN_URL.'assets/vendor/pickadate/lib/compressed/themes/default.date.css" id="theme_date">';
