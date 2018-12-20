@@ -100,32 +100,17 @@ function head_code_sagenda(){
 	echo $headcode;
 }
 
-function add_theme_scripts() {
-  // wp_enqueue_style( 'style', get_stylesheet_uri() );
-/*
-	wp_enqueue_script( 'script', SAGENDA_PLUGIN_URL.'assets/angular/inline.bundle.js');
-	wp_enqueue_script( 'script', SAGENDA_PLUGIN_URL.'assets/angular/polyfills.bundle.js');
-	wp_enqueue_script( 'script', SAGENDA_PLUGIN_URL.'assets/angular/vendor.bundle.js');
-	wp_enqueue_script( 'script', SAGENDA_PLUGIN_URL.'assets/angular/main.bundle.js');
-  wp_enqueue_script( 'style', SAGENDA_PLUGIN_URL.'assets/angular/styles.bundle.js');
-*/
-//  wp_enqueue_script( 'style', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js');
-
+// include custom jQuery
+function sagenda_include_custom_jquery() {
+	// wp_deregister_script('jquery');
+	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', array('jquery'), '3.1.1', true);
 }
-// add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
-
-//wp_enqueue_script( 'angular-bundle', SAGENDA_PLUGIN_URL.'assets/angular/styles.bundle.js', array() , null , true);
+add_action('wp_enqueue_scripts', 'sagenda_include_custom_jquery');
 
 /**
 * Add it in the frontend
 */
-
 add_action('wp_head','head_code_sagenda');
-
-/**
-* Add it in the backend
-*/
-// add_action('admin_head', 'head_code_sagenda');
 
 /**
 * Action hooks for adding admin page
