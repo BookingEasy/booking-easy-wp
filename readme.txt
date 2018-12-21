@@ -5,7 +5,7 @@ Tags: booking, appointment, scheduling, availability, reservation, rental, free,
 Requires at least: 3.0
 Requires PHP: 5.6
 Tested up to: 5.0
-Stable tag: 1.2.31
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,12 +92,15 @@ We will add your translations in the next release!
 
 
 == Upgrade Notice ==
+= 1.3.0 =
+* IMPROVED : Improve layout.
+
+
+== Changelog ==
 = 1.2.31 =
 * FIXED : correct a JavaScript error message "Uncaught TypeError: Cannot read property 'defaults' of undefined"
 * FIXED : add jQuery in case he is not present.
 
-
-== Changelog ==
 = 1.2.30 =
 * IMPROVED : Make description multiline.
 * IMPROVED : Display description and location only if value is set.
