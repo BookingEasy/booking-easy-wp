@@ -1,20 +1,13 @@
 {% extends "wrapper.twig" %}
 {% block content %}
 
- <!-- <div class="row">-->
 {% if isError %}
 <div class="alert alert-danger" role="alert">{{errorMessage}}</div>
 {% endif %}
 
 {% if hideSearchForm == false %}
-<div class="row">
-  <div class="col-xs-12 text-left">
-    <h2>{{ searchForEventsBetween }}</h2>
-  </div>
-</div>
 
 <form action="" method="post" id="submitDateSearch">
-
   <ul uk-accordion>
     <li style="list-style: none;">
         <a class="uk-accordion-title" href="#" style="text-decoration:none;">{{ searchForEventsBetween }}</a>
@@ -30,7 +23,7 @@
         </div>
     </li>
   </ul>
-   
+
   {% if bookableItemSelectedByShortcode is null  %}
   <div class="form-group">
     <label for="bookableItems">{{ bookableItemsLabel }}</label>
@@ -61,7 +54,6 @@
 </form>
 <div id="container"></div>
 
-<!-- TODO : Check why this made a TypeError: undefined is not an object (evaluating 'jQuery.fn.pickatime.defaults') -->
 {% if pickerTranslated|length > 0 %}
 <script type="text/javascript">
 {{pickerTranslated|raw }}
