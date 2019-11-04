@@ -4,8 +4,8 @@ Donate link: http://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, PayPal
 Requires at least: 3.0
 Requires PHP: 5.6
-Tested up to: 5.2
-Stable tag: 1.3.1
+Tested up to: 5.3
+Stable tag: 1.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ Sagenda is a free online booking / scheduling / reservation module that helps yo
 
 == Description ==
 
-This plugin display as list view. Are you searching the calendar view ? Then please install our other module [Sagenda Calendar](https://wordpress.org/plugins/sagenda-calendar/) and use the shortcode : `[sagenda-calendar-wp]`
+This plugin display as list view. **Are you searching the calendar view ? Then please install our other module** [Sagenda Calendar](https://wordpress.org/plugins/sagenda-calendar/) and use the shortcode : `[sagenda-calendar-wp]`
 
 Sagenda is an online booking software that helps your clients fix appointments and meetings with you online. Sagenda is available at absolutely NO COST for you or your clients! And the best thing about it is that you may have an unlimited number of bookings and/or customers. Our users always come first; that’s why Sagenda doesn’t display ads!
 
@@ -94,13 +94,16 @@ We will add your translations in the next release!
 
 
 == Upgrade Notice ==
+= 1.3.2 =
+TESTED : WordPress 5.3
+
+
+== Changelog ==
 = 1.3.1 =
 IMPROVED : Added no index at the root of the plugin.
 TESTED : WordPress 5.1.1
 TESTED : PHP 7.3.1
 
-
-== Changelog ==
 = 1.3.0 =
 * IMPROVED : Improve layout by adding an accordion.
 
