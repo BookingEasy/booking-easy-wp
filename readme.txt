@@ -5,7 +5,7 @@ Tags: booking, appointment, scheduling, availability, reservation, rental, free,
 Requires at least: 3.0
 Requires PHP: 5.6
 Tested up to: 5.3
-Stable tag: 1.3.2
+Stable tag: 1.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,12 @@ Sagenda is a free online booking / scheduling / reservation module that helps yo
 
 == Description ==
 
-This plugin display as list view. **Are you searching the calendar view ? Then please install our other module** [Sagenda Calendar](https://wordpress.org/plugins/sagenda-calendar/) and use the shortcode : `[sagenda-calendar-wp]`
+This plugin display as list view and is our legacy module. Please considere switching to the new plugin :
+
+**Are you searching the calendar view ? Then please install our other module** 
+[Sagenda Calendar](https://wordpress.org/plugins/sagenda-calendar/) 
+and use the shortcode : `[sagenda-calendar-wp]`
+We highly recommend you this new version.
 
 Sagenda is an online booking software that helps your clients fix appointments and meetings with you online. Sagenda is available at absolutely NO COST for you or your clients! And the best thing about it is that you may have an unlimited number of bookings and/or customers. Our users always come first; that’s why Sagenda doesn’t display ads!
 
@@ -36,7 +41,7 @@ If you want a Calendar view, then please install our new module [Sagenda Calenda
 
 **Prerequisites**
 SAGENDA WP PLUGIN 1.2.X REQUIRE ⚠️ PHP 5.6 or 7.x  !
-⚠️ FOR YOUR OWN SAFETY DON'T USE PHP VERSION OLDER THAN 5.6 THERE IS NO SECURITY PATCH ⚠️
+⚠️ FOR YOUR OWN SAFETY DON'T USE PHP VERSION OLDER THAN 7.2 THERE IS NO SECURITY PATCH ⚠️
 [http://php.net/supported-versions.php](http://php.net/supported-versions.php)
 
 Sagenda WP plugin require the PHP "Curl extension" to be activated on your hosting to call web services.
@@ -94,15 +99,22 @@ We will add your translations in the next release!
 
 
 == Upgrade Notice ==
-= 1.3.2 =
-TESTED : WordPress 5.3
+= 1.3.3 =
+* TESTED : PHP 7.4
+* UPDATED : Updated composer package (phpunit-bridge) to solve security advisory GHSA-w2fr-65vp-mxw3 (moderate severity).
+
+
+
 
 
 == Changelog ==
+= 1.3.2 =
+* TESTED : WordPress 5.3
+
 = 1.3.1 =
-IMPROVED : Added no index at the root of the plugin.
-TESTED : WordPress 5.1.1
-TESTED : PHP 7.3.1
+* IMPROVED : Added no index at the root of the plugin.
+* TESTED : WordPress 5.1.1
+* TESTED : PHP 7.3.1
 
 = 1.3.0 =
 * IMPROVED : Improve layout by adding an accordion.
