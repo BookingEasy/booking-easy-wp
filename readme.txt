@@ -5,7 +5,7 @@ Tags: booking, appointment, scheduling, availability, reservation, rental, free,
 Requires at least: 3.0
 Requires PHP: 5.6
 Tested up to: 5.4
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -99,15 +99,19 @@ We will add your translations in the next release!
 
 
 == Upgrade Notice ==
-= 1.3.3 =
-* TESTED : PHP 7.4
-* UPDATED : Updated composer package (phpunit-bridge) to solve security advisory GHSA-w2fr-65vp-mxw3 (moderate severity).
-
+= 1.3.4 =
+* TESTED : WordPress 5.4
+* UPDATED : Translations (Estonian, Turkish, German, French, Indonesian).
 
 
 
 
 == Changelog ==
+= 1.3.3 =
+* TESTED : PHP 7.4
+* UPDATED : Updated composer package (phpunit-bridge) to solve security advisory GHSA-w2fr-65vp-mxw3 (moderate severity).
+
+
 = 1.3.2 =
 * TESTED : WordPress 5.3
 
