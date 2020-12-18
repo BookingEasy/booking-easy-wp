@@ -14,13 +14,13 @@ class UrlHelper{
   {
     if(isset($_POST[$value]))
     {
-      $selectedId = $_POST[$value];
+      $selectedId = sanitize_text_field($_POST[$value]);
     }
     else
     {
       if(isset($_GET[$value]))
       {
-        $selectedId = $_GET[$value];
+        $selectedId = sanitize_text_field($_GET[$value]);
       }
     }
     return $selectedId;

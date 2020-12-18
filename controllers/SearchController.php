@@ -7,6 +7,8 @@ use Sagenda\Helpers\ArrayHelper;
 use Sagenda\Helpers\UrlHelper;
 use Sagenda\Models\Entities\Booking;
 use Sagenda\Models\Entities\BookableItem;
+use Sagenda\Controllers\SubscriptionController;
+use Sagenda\Controllers\InformationMessageController;
 
 include_once(SAGENDA_PLUGIN_DIR . 'helpers/PickadateHelper.php');
 include_once(SAGENDA_PLUGIN_DIR . 'helpers/UrlHelper.php');
@@ -14,6 +16,8 @@ include_once(SAGENDA_PLUGIN_DIR . 'helpers/ArrayHelper.php');
 include_once(SAGENDA_PLUGIN_DIR . 'webservices/SagendaAPI.php');
 include_once(SAGENDA_PLUGIN_DIR . 'models/entities/Booking.php');
 include_once(SAGENDA_PLUGIN_DIR . 'models/entities/BookableItem.php');
+include_once(SAGENDA_PLUGIN_DIR . 'controllers/SubscriptionController.php');
+include_once(SAGENDA_PLUGIN_DIR . 'controllers/InformationMessageController.php');
 
 /**
  * This controller will be responsible for displaying the free events in frontend in order to be searched and booked by the visitor.
@@ -152,7 +156,7 @@ class SearchController
    */
   private function getPagination()
   {
-    $paginationSelected = intval($_GET['paginationSelected']);
+    $paginationSelected = intval(sanitize_text_field($_GET['paginationSelected']));
     if ($paginationSelected === null || $paginationSelected === 0) {
       $paginationSelected = 1;
     }

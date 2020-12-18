@@ -1,15 +1,18 @@
 === Sagenda - Free booking system  ===
 Contributors: sagenda
 Donate link: http://www.sagenda.com/community/
-Tags: booking, appointment, scheduling, availability, reservation, rental, free, accommodation, booking form, reservation form, event, PayPal
+Tags: booking, appointment, scheduling, availability, reservation, rental, accommodation, booking form, reservation form, event, PayPal
 Requires at least: 3.0
 Requires PHP: 5.6
-Tested up to: 5.5
-Stable tag: 1.3.4
+Tested up to: 5.6
+Stable tag: 1.3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Sagenda is a free online booking / scheduling / reservation module that helps your clients fix appointments at absolutely NO COST!
+PLEASE USE OUR NEW PLUGIN :
+[Sagenda Calendar](https://wordpress.org/plugins/sagenda-calendar/) 
+
+You will be able to use list view (Agenda style), Monthly, Weekly, Daily view.
 
 == Description ==
 
@@ -22,7 +25,7 @@ We highly recommend you this new version.
 
 Sagenda is an online booking software that helps your clients fix appointments and meetings with you online. Sagenda is available at absolutely NO COST for you or your clients! And the best thing about it is that you may have an unlimited number of bookings and/or customers. Our users always come first; that’s why Sagenda doesn’t display ads!
 
-[Contact & Support](http://www.sagenda.com/#contact "We love hearing from you!") | [YouTube Chanel](http://www.youtube.com/sagenda "Get a look at our tutorials!") | [Open an account](https://sagenda.net/Accounts/Register "Open a free account now!")
+[Contact & Support](https://iteration.atlassian.net/servicedesk/customer/portal/2 "We love hearing from you!") | [YouTube Chanel](http://www.youtube.com/sagenda "Get a look at our tutorials!") | [Open an account](https://sagenda.net/Accounts/Register "Open a free account now!")
 
 This is an “Online Booking System” which gives customers the opportunity to choose the date and the time of an appointment according to one's own preferences and the booking can now be done online.
 
@@ -41,7 +44,7 @@ If you want a Calendar view, then please install our new module [Sagenda Calenda
 
 **Prerequisites**
 SAGENDA WP PLUGIN 1.2.X REQUIRE ⚠️ PHP 5.6 or 7.x  !
-⚠️ FOR YOUR OWN SAFETY DON'T USE PHP VERSION OLDER THAN 7.2 THERE IS NO SECURITY PATCH ⚠️
+⚠️ FOR YOUR OWN SAFETY DON'T USE PHP VERSION OLDER THAN 7.3 THERE IS NO SECURITY PATCH ⚠️
 [http://php.net/supported-versions.php](http://php.net/supported-versions.php)
 
 Sagenda WP plugin require the PHP "Curl extension" to be activated on your hosting to call web services.
@@ -99,18 +102,22 @@ We will add your translations in the next release!
 
 
 == Upgrade Notice ==
-= 1.3.4 =
-* TESTED : WordPress 5.4
-* UPDATED : Translations (Estonian, Turkish, German, French, Indonesian).
 
+= 1.3.5 =
+* TESTED : WordPress 5.6
+* TESTED : PHP 7.4
+* IMPROVED : Review new WordPress regulations.
 
 
 
 == Changelog ==
+= 1.3.4 =
+* TESTED : WordPress 5.4
+* UPDATED : Translations (Estonian, Turkish, German, French, Indonesian).
+
 = 1.3.3 =
 * TESTED : PHP 7.4
 * UPDATED : Updated composer package (phpunit-bridge) to solve security advisory GHSA-w2fr-65vp-mxw3 (moderate severity).
-
 
 = 1.3.2 =
 * TESTED : WordPress 5.3

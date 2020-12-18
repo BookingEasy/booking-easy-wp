@@ -1,20 +1,14 @@
 <?php namespace Sagenda;
 
 use Sagenda\Controllers\SearchController;
-use Sagenda\Controllers\SubscriptionController;
 use Sagenda\Controllers\AdminTokenController;
-use Sagenda\Controllers\InformationMessageController;
 use Sagenda\Controllers\CalendarController;
 use Sagenda\Helpers\ArrayHelper;
 
 include_once( SAGENDA_PLUGIN_DIR . 'controllers/SearchController.php' );
-include_once( SAGENDA_PLUGIN_DIR . 'controllers/SubscriptionController.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'controllers/CalendarController.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'controllers/AdminTokenController.php' );
-include_once( SAGENDA_PLUGIN_DIR . 'controllers/InformationMessageController.php' );
 include_once( SAGENDA_PLUGIN_DIR . 'helpers/ArrayHelper.php' );
-
-// TODO : did we need include once if we already use namespace?
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
@@ -67,11 +61,7 @@ class initializer
         \Twig_Autoloader::register();
         $loader = new \Twig_Loader_Filesystem(SAGENDA_PLUGIN_DIR.'/views');
 
-        // TODO : should we use caching system?
-        //$twig = new Twig_Environment($loader, array('cache' => '/path/to/compilation_cache',));
-
-        // TODO : remove debug before production
-        $twig = new \Twig_Environment($loader, array('debug' => true,)
+        $twig = new \Twig_Environment($loader, array('debug' => false,)
         );
       //$twig->addExtension(new Twig_Extension_Debug());
         return $twig;

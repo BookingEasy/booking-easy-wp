@@ -4,7 +4,7 @@
  * Plugin Name:       Sagenda
  * Plugin URI:        http://www.sagenda.com/
  * Description:       Sagenda is a free Online Booking / Scheduling / Reservation System, which gives customers the opportunity to choose the date and the time of an appointment according to your preferences.
- * Version:           1.3.4
+ * Version:           1.3.5
  * Author:            sagenda
  * Author URI:        http://www.sagenda.com/
  * License:           GPLv2
@@ -33,8 +33,8 @@ add_action('plugins_loaded', 'sagenda_load_textdomain');
  */
 function sagenda_main($atts)
 {
-	if (is_CURL_Enabled() === true) {
-		if (is_PHP_version_OK() == true) {
+	if (sagenda_is_CURL_Enabled() === true) {
+		if (sagenda_is_PHP_version_OK() == true) {
 			include_once(SAGENDA_PLUGIN_DIR . 'initializer.php');
 			$initializer = new Sagenda\Initializer();
 			return $initializer->initFrontend($atts);
@@ -47,13 +47,13 @@ add_shortcode('sagenda-wp', 'sagenda_main');
  * Check the version of PHP used by the server. Display a message in case of error. Unirest project require php >=5.4
  * @return true if version is ok, false if version is too old.
  */
-function is_PHP_version_OK()
+function sagenda_is_PHP_version_OK()
 {
-	if (version_compare(phpversion(), '5.4.0', '<')) {
+	if (version_compare(phpversion(), '7.2.0', '<')) {
 		echo "You are runing an outdated version of PHP !" . "<br>";
 		echo "Your version is : " . phpversion() . "<br>";
-		echo "Minimal version : " . "5.4.0<br>";
-		echo "Recommended version : 5.6 - 7.x  (all version <5.6 are \"End of life\" and don't have security fixes!)" . "<br>";
+		echo "Minimal version : " . "7.2.0<br>";
+		echo "Recommended version : 7.3 - 8.x  (all version <7.3 are \"End of life\" and don't have security fixes!)" . "<br>";
 		echo "Please read offical PHP recommendations <a href=\"http://php.net/supported-versions.php\">http://php.net/supported-versions.php</a><br>";
 		echo "Please update your PHP version form your admin panel. If you don't know how to do it please contact your WebMaster or your Hosting provider!";
 		return false;
@@ -65,7 +65,7 @@ function is_PHP_version_OK()
  * Check if CURL is enabled on the server, required for calling web services.
  * @return true if curl is enabled
  */
-function is_CURL_Enabled()
+function sagenda_is_CURL_Enabled()
 {
 	if (!function_exists('curl_version')) {
 		echo "You need to install cURL module in your PHP server in order to make WebServices calls!" . "<br>";
@@ -75,53 +75,30 @@ function is_CURL_Enabled()
 	return true;
 }
 
-/**
- * Include CSS, JavaScript in the head section of the plugin.
- */
-function head_code_sagenda()
+function sagenda_include_custom_script()
 {
-	// bootstrap
-	$headcode = '<link rel="stylesheet" href="' . SAGENDA_PLUGIN_URL . 'assets/vendor/bootstrap/bootstrap-wrapper.css" >';
-	// bootstrap validator
-	$headcode .= '<script src="' . SAGENDA_PLUGIN_URL . 'assets/vendor/bootstrap-validator/validator.min.js"></script>';
+	wp_enqueue_script('bootstrapValidator', SAGENDA_PLUGIN_URL . 'assets/vendor/bootstrap-validator/validator.min.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script('uikit', SAGENDA_PLUGIN_URL . 'assets/uikit/uikit.min.js');
+	wp_enqueue_script('uikitIcons', SAGENDA_PLUGIN_URL . 'assets/uikit/uikit-icons.min.js');
+	wp_enqueue_script('picker', SAGENDA_PLUGIN_URL . 'assets/vendor/pickadate/lib/compressed/picker.js');
+	wp_enqueue_script('pickerDate', SAGENDA_PLUGIN_URL . 'assets/vendor/pickadate/lib/compressed/picker.date.js');
+	wp_enqueue_script('pickerLegacy', SAGENDA_PLUGIN_URL . 'assets/vendor/pickadate/lib/legacy.js');
 
-	// uikit Accordion
-	$headcode .= '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/css/uikit.min.css" />';
-	$headcode .= '<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit.min.js"></script>';
-	$headcode .= '<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit-icons.min.js"></script>';
+	wp_enqueue_style( 'sagenda', SAGENDA_PLUGIN_URL . 'assets/vendor/bootstrap/bootstrap-wrapper.css');
+	wp_enqueue_style( 'uikit', SAGENDA_PLUGIN_URL . 'assets/uikit/uikit.min.css');
 
-	// pickadate
-	$headcode .= '<link rel="stylesheet" href="' . SAGENDA_PLUGIN_URL . 'assets/vendor/pickadate/lib/compressed/themes/default.css" id="theme_base">';
-	$headcode .= '<link rel="stylesheet" href="' . SAGENDA_PLUGIN_URL . 'assets/vendor/pickadate/lib/compressed/themes/default.date.css" id="theme_date">';
-	$headcode .= '<script src="' . SAGENDA_PLUGIN_URL . 'assets/vendor/pickadate/lib/compressed/picker.js"></script>';
-	$headcode .= '<script src="' . SAGENDA_PLUGIN_URL . 'assets/vendor/pickadate/lib/compressed/picker.date.js"></script>';
-	$headcode .= '<script src="' . SAGENDA_PLUGIN_URL . 'assets/vendor/pickadate/lib/legacy.js"></script>';
-
-	echo $headcode;
+	wp_enqueue_style( 'pickadateDefault', SAGENDA_PLUGIN_URL . 'assets/vendor/pickadate/lib/compressed/themes/default.css');
+	wp_enqueue_style( 'pickadateDate', SAGENDA_PLUGIN_URL . 'assets/vendor/pickadate/lib/compressed/themes/default.date.css');
 }
-
-// include custom jQuery
-function sagenda_include_custom_jquery()
-{
-	// wp_deregister_script('jquery');
-	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', array('jquery'), '3.4.1', true);
-	wp_enqueue_script('jquery', 'https://cdn.jsdelivr.net/npm/bellows-ui@6.0.1/dist/bellows.min.js"></script>', array(), '', true);
-
-}
-add_action('wp_enqueue_scripts', 'sagenda_include_custom_jquery');
-
-/**
- * Add it in the frontend
- */
-add_action('wp_head', 'head_code_sagenda');
+add_action('wp_enqueue_scripts', 'sagenda_include_custom_script');
 
 /**
  * Action hooks for adding admin page
  */
 function sagenda_admin()
 {
-	if (is_CURL_Enabled() === true) {
-		if (is_PHP_version_OK() === true) {
+	if (sagenda_is_CURL_Enabled() === true) {
+		if (sagenda_is_PHP_version_OK() === true) {
 			include_once(SAGENDA_PLUGIN_DIR . 'initializer.php');
 			$initializer = new Sagenda\Initializer();
 			echo $initializer->initAdminSettings();

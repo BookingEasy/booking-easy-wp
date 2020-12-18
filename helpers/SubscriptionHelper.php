@@ -15,17 +15,17 @@ class SubscriptionHelper
   {
     $booking = new Booking();
     $booking->ApiToken = get_option('mrs1_authentication_code');
-    $booking->EventScheduleId = $_GET['EventScheduleId'];
-    $booking->DateDisplay = $_GET['DateDisplay']; // TODO : replace this by start end date with API v2.0
+    $booking->EventScheduleId = sanitize_text_field($_GET['EventScheduleId']);
+    $booking->DateDisplay = sanitize_text_field($_GET['DateDisplay']); // TODO : replace this by start end date with API v2.0
     $booking->BookableItemId = $bookableItem->Id;
-    $booking->BookableItemName= $_GET['bookableItemName'];
-    $booking->EventIdentifier = $_GET['EventIdentifier'];
-    $booking->EventTitle = $_GET['eventTitle'];
+    $booking->BookableItemName= sanitize_text_field($_GET['bookableItemName']);
+    $booking->EventIdentifier = sanitize_text_field($_GET['EventIdentifier']);
+    $booking->EventTitle = sanitize_text_field($_GET['eventTitle']);
     //payment Related
-    $booking->IsPaidEvent = $_GET['isPaidEvent'];
-    $booking->PaymentAmount = $_GET['paymentAmount'];
-    $booking->PaymentCurrency = $_GET['paymentCurrency'];
-    $booking->HostUrlLocation = $_GET['currentUrl'];
+    $booking->IsPaidEvent = sanitize_text_field($_GET['isPaidEvent']);
+    $booking->PaymentAmount = sanitize_text_field($_GET['paymentAmount']);
+    $booking->PaymentCurrency = sanitize_text_field($_GET['paymentCurrency']);
+    $booking->HostUrlLocation = sanitize_text_field($_GET['currentUrl']);
     //TODO : add payment info
     $subscriptionController = new SubscriptionController();
     return $subscriptionController->showSubscription($twig, $booking );
