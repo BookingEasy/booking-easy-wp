@@ -137,7 +137,7 @@ class SubscriptionController
 
     if(isset($_POST['email']))
     {
-      $booking->Email = sanitize_text_field($_POST['email']);
+      $booking->Email = sanitize_email($_POST['email']);
     }
 
     if(isset($_POST['phone']))
