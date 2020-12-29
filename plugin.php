@@ -2,11 +2,11 @@
 /**
  * @wordpress-plugin
  * Plugin Name:       Sagenda
- * Plugin URI:        http://www.sagenda.com/
+ * Plugin URI:        https://www.sagenda.com/
  * Description:       Sagenda is a free Online Booking / Scheduling / Reservation System, which gives customers the opportunity to choose the date and the time of an appointment according to your preferences.
- * Version:           1.3.5
+ * Version:           1.3.6
  * Author:            sagenda
- * Author URI:        http://www.sagenda.com/
+ * Author URI:        https://www.sagenda.com/
  * License:           GPLv2
  * Domain Path:       /languages
  */
@@ -54,7 +54,7 @@ function sagenda_is_PHP_version_OK()
 		echo "Your version is : " . phpversion() . "<br>";
 		echo "Minimal version : " . "7.2.0<br>";
 		echo "Recommended version : 7.3 - 8.x  (all version <7.3 are \"End of life\" and don't have security fixes!)" . "<br>";
-		echo "Please read offical PHP recommendations <a href=\"http://php.net/supported-versions.php\">http://php.net/supported-versions.php</a><br>";
+		echo "Please read offical PHP recommendations <a href=\"https://php.net/supported-versions.php\">https://php.net/supported-versions.php</a><br>";
 		echo "Please update your PHP version form your admin panel. If you don't know how to do it please contact your WebMaster or your Hosting provider!";
 		return false;
 	}
@@ -69,7 +69,7 @@ function sagenda_is_CURL_Enabled()
 {
 	if (!function_exists('curl_version')) {
 		echo "You need to install cURL module in your PHP server in order to make WebServices calls!" . "<br>";
-		echo "More info there : <a href=\"http://php.net/manual/en/curl.installation.php\">http://php.net/manual/en/curl.installation.php</a><br>";
+		echo "More info there : <a href=\"https://php.net/manual/en/curl.installation.php\">https://php.net/manual/en/curl.installation.php</a><br>";
 		return false;
 	}
 	return true;

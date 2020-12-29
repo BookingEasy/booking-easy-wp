@@ -3,15 +3,15 @@ Are you a dev?
 You can contribute on github -> https://github.com/Sagenda/sagenda-wp
 But remember : “Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.”
 
-Need doc ? Generated it with Doxygen (http://www.stack.nl/~dimitri/doxygen/download.html#srcbin) using the doxygen file on root folder.
+Need doc ? Generated it with Doxygen (https://www.doxygen.nl/) using the doxygen file on root folder.
 
 == Views ==
-Views are rendered with TWIG template engine (http://twig.sensiolabs.org)
-Responsiveness is manage with Twitter bootstrap (http://getbootstrap.com/) and included into a bootstrap-wrapper in order to avoid conflict.
+Views are rendered with TWIG template engine (https://twig.sensiolabs.org)
+Responsiveness is manage with Twitter bootstrap (https://getbootstrap.com/) and included into a bootstrap-wrapper in order to avoid conflict.
 
 
 == Culture / i18n / Date format... ==
-You can contribute to text file there : http://osp7icw.oneskyapp.com/admin/projects
+You can contribute to text file there : https://osp7icw.oneskyapp.com/admin/projects
 The datepicker is a separate project, you can add translations in assets/vendor/pickadate/lib/translations.
 Don't hesitate to send us your new translations, we will add it in the next release and this will avoid update conflict for your later on.
 

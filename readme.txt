@@ -1,13 +1,13 @@
 === Sagenda - Free booking system  ===
 Contributors: sagenda
-Donate link: http://www.sagenda.com/community/
+Donate link: https://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, accommodation, booking form, reservation form, event, PayPal
 Requires at least: 3.0
 Requires PHP: 5.6
 Tested up to: 5.6
-Stable tag: 1.3.5
+Stable tag: 1.3.6
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 PLEASE USE OUR NEW PLUGIN :
 [Sagenda Calendar](https://wordpress.org/plugins/sagenda-calendar/) 
@@ -16,16 +16,14 @@ You will be able to use list view (Agenda style), Monthly, Weekly, Daily view.
 
 == Description ==
 
-This plugin display as list view and is our legacy module. Please considere switching to the new plugin :
-
-**Are you searching the calendar view ? Then please install our other module** 
+**This plugin display as list view and is our legacy module. Please considere switching to the new plugin :**
 [Sagenda Calendar](https://wordpress.org/plugins/sagenda-calendar/) 
 and use the shortcode : `[sagenda-calendar-wp]`
 We highly recommend you this new version.
 
 Sagenda is an online booking software that helps your clients fix appointments and meetings with you online. Sagenda is available at absolutely NO COST for you or your clients! And the best thing about it is that you may have an unlimited number of bookings and/or customers. Our users always come first; that’s why Sagenda doesn’t display ads!
 
-[Contact & Support](https://iteration.atlassian.net/servicedesk/customer/portal/2 "We love hearing from you!") | [YouTube Chanel](http://www.youtube.com/sagenda "Get a look at our tutorials!") | [Open an account](https://sagenda.net/Accounts/Register "Open a free account now!")
+[Contact & Support](https://iteration.atlassian.net/servicedesk/customer/portal/2 "We love hearing from you!") | [YouTube Chanel](https://www.youtube.com/sagenda "Get a look at our tutorials!") | [Open an account](https://sagenda.net/Accounts/Register "Open a free account now!")
 
 This is an “Online Booking System” which gives customers the opportunity to choose the date and the time of an appointment according to one's own preferences and the booking can now be done online.
 
@@ -43,11 +41,14 @@ in a page or an article, you can also display only one bookable item : `[sagenda
 If you want a Calendar view, then please install our new module [Sagenda Calendar](https://wordpress.org/plugins/sagenda-calendar/) and use the shortcode : `[sagenda-calendar-wp]`
 
 **Prerequisites**
-SAGENDA WP PLUGIN 1.2.X REQUIRE ⚠️ PHP 5.6 or 7.x  !
+SAGENDA WP PLUGIN REQUIRE ⚠️ PHP 5.6 or 7.x  !
 ⚠️ FOR YOUR OWN SAFETY DON'T USE PHP VERSION OLDER THAN 7.3 THERE IS NO SECURITY PATCH ⚠️
-[http://php.net/supported-versions.php](http://php.net/supported-versions.php)
+[https://php.net/supported-versions.php](https://php.net/supported-versions.php)
+
+Want to use PHP 8? Please switch to our new plugin [Sagenda Calendar](https://wordpress.org/plugins/sagenda-calendar/) and use the shortcode : `[sagenda-calendar-wp]`
 
 Sagenda WP plugin require the PHP "Curl extension" to be activated on your hosting to call web services.
+
 
 == Installation  ==
 
@@ -67,7 +68,7 @@ Follow these steps to install Sagenda:
 4. Use the shortcode `[sagenda-wp]` in a page or an article ( you can also display only one "bookable item" : `[sagenda-wp bookableitem="my bookable item name"]`).
     OR are you looking for the calendar view? please install our new module [Sagenda Calendar](https://wordpress.org/plugins/sagenda-calendar/) to display a month / week / day view. [in BETA testing for now!]
 
-SUPPORT THIPS : any error message? try to update to the last version of WordPress and use PHP 7 or higher !
+SUPPORT THIPS : any error message? try to update to the last version of WordPress and use PHP 7.4.x !
 
 **Calendar view settings**
 Sagenda's calendar view will read your WordPress Settings : myURL/wp-admin/options-general.php
@@ -87,7 +88,7 @@ Calendar public views :
 [https://osp7icw.oneskyapp.com/admin/project/dashboard/project/142348](https://osp7icw.oneskyapp.com/admin/project/dashboard/project/142348)
 
 WordPress plugin txt :
-[http://osp7icw.oneskyapp.com/admin/project/dashboard/project/101655](http://osp7icw.oneskyapp.com/admin/project/dashboard/project/101655)
+[https://osp7icw.oneskyapp.com/admin/project/dashboard/project/101655](https://osp7icw.oneskyapp.com/admin/project/dashboard/project/101655)
 
 Calendar view :
 [https://osp7icw.oneskyapp.com/admin/project/dashboard/project/142348](https://osp7icw.oneskyapp.com/admin/project/dashboard/project/142348)
@@ -103,14 +104,18 @@ We will add your translations in the next release!
 
 == Upgrade Notice ==
 
+= 1.3.6 =
+* TESTED : PHP 8.
+* END OF LIFE : Please switch to our new plugin : [Sagenda Calendar](https://wordpress.org/plugins/sagenda-calendar/) and use the shortcode : `[sagenda-calendar-wp]`
+
+
+
+== Changelog ==
 = 1.3.5 =
 * TESTED : WordPress 5.6
 * TESTED : PHP 7.4
 * IMPROVED : Review new WordPress regulations.
 
-
-
-== Changelog ==
 = 1.3.4 =
 * TESTED : WordPress 5.4
 * UPDATED : Translations (Estonian, Turkish, German, French, Indonesian).
@@ -264,7 +269,7 @@ HAPPY NEW YEAR 🎉, THIS IS THE LAST RELEASE OF 2017 :
 * IMPROVED : French and German translations.
 
 = 1.2.0 =
-* NOTICE : As we rebuilded everything from scratch you will have some translations missing, don't hesitate to add them on OneSky, we will push a new version every 2 weeks : http://osp7icw.oneskyapp.com/admin/project/dashboard/project/101655
+* NOTICE : As we rebuilded everything from scratch you will have some translations missing, don't hesitate to add them on OneSky, we will push a new version every 2 weeks : https://osp7icw.oneskyapp.com/admin/project/dashboard/project/101655
 * IMPROVED : Frontend layout using Twitter bootstrap.
 * ADDED : Shortcode management to display only one bookable item, please just use it so : `[sagenda-wp bookableitem="my bookable item name"]`
 * TESTED : Compatibility of the reservation plugin with WordPress 4.7.3
@@ -392,7 +397,7 @@ HAPPY NEW YEAR 🎉, THIS IS THE LAST RELEASE OF 2017 :
 
 = 1.0.2 =
 * FIXED : Fixed exception if WebServices can’t be reached.
-* FIXED : Fixed several compatibility and layout problem with several themes. -> Sagenda is working fine but can’t test by ourself all hosting provider, theme, plugin compatibility… If you find an issue we will be happy to help you, please contact us via : http://www.sagenda.com/#contact
+* FIXED : Fixed several compatibility and layout problem with several themes. -> Sagenda is working fine but can’t test by ourself all hosting provider, theme, plugin compatibility… If you find an issue we will be happy to help you, please contact us via : https://iteration.atlassian.net/servicedesk/customer/portal/2
 
 = 1.0.1 =
 * FIXED :  Compatibility issues with several themes and plugins.
@@ -404,20 +409,20 @@ HAPPY NEW YEAR 🎉, THIS IS THE LAST RELEASE OF 2017 :
 
 
 **Can I get a general overview?**
-Yes, please read : [Introducing Sagenda](http://www.sagenda.com/introducing-sagenda/)
+Yes, please read : [Introducing Sagenda](https://www.sagenda.com/introducing-sagenda/)
 
 **Can I change the date / time format?**
 You can change the way sagenda display date and time by changing the settings of your WP website under : "Settings / General / Date Format + Time Format". This is only valid for the WP plugin (not the iframe integration).
 
 **How can I integrate it in on my WordPress website?**
 
-1. By using iFrame, please read [http://www.sagenda.com/add-booking-system-website/](http://www.sagenda.com/add-booking-system-website/).
-2. By using the native WordPress plugin, please read : [http://www.sagenda.com/add-booking-system-website/add-booking-plugin-wordpress-website/](http://www.sagenda.com/add-booking-system-website/add-booking-plugin-wordpress-website/)
+1. By using iFrame, please read [https://www.sagenda.com/add-booking-system-website/](https://www.sagenda.com/add-booking-system-website/).
+2. By using the native WordPress plugin, please read : [https://www.sagenda.com/add-booking-system-website/add-booking-plugin-wordpress-website/](https://www.sagenda.com/add-booking-system-website/add-booking-plugin-wordpress-website/)
 
 
 **Do I need to create a new website for my patients to book online appointments with me?**
 No. You don’t need a separate, new website; "Sagenda" can be integrated into any website, as a new page or in a new space. This online appointment scheduler fits very well into any kind of website using iframe or specific modules for CMS.
-Please read : [How to add a booking system to my website?](http://www.sagenda.com/add-booking-system-website/)
+Please read : [How to add a booking system to my website?](https://www.sagenda.com/add-booking-system-website/)
 
 
 **How does my client know of the status of his/her booking request?**
@@ -429,7 +434,7 @@ Whatever your services are, our online appointment scheduler can be configured i
 
 
 **What if I have some feedback to improve your system?**
-[Write to us NOW!](http://www.sagenda.com/#contact-us) Our online appointment scheduler is continually evolving, and your feedback is taken into account during every update.
+[Write to us NOW!](https://iteration.atlassian.net/servicedesk/customer/portal/2) Our online appointment scheduler is continually evolving, and your feedback is taken into account during every update.
 
 
 **What about its compatibility of the booking system with my device?**
@@ -441,23 +446,23 @@ Yes, this is really free. We make profit because some big customers ask us custo
 
 
 **What is a "Bookable Item"?**
-Bookable items represent the service or business that is available to customers for booking, renting or sharing online. For more information on please read our tutorial about [Bookable items](http://www.sagenda.com/introducing-sagenda/sagenda-bookable-items-can-clients-book/).
+Bookable items represent the service or business that is available to customers for booking, renting or sharing online. For more information on please read our tutorial about [Bookable items](https://www.sagenda.com/introducing-sagenda/sagenda-bookable-items-can-clients-book/).
 
 
 **How to setup event, schedule and repetition?**
-This can be solved with "Events". For more information on please read our tutorial about [Events](http://www.sagenda.com/introducing-sagenda/sagenda-events-service-available-clients/).
+This can be solved with "Events". For more information on please read our tutorial about [Events](https://www.sagenda.com/introducing-sagenda/sagenda-events-service-available-clients/).
 
 
 **How to manage reservation (booking)?**
-Once bookable items and events saved, you can brows your event in the [Booking screen](https://sagenda.net/Bookings/List). The dashboard will give you an overview of your account. For more information please read our tutorial about [dashboard](http://www.sagenda.com/introducing-sagenda/sagenda-dashboard-manage-clients/).
+Once bookable items and events saved, you can brows your event in the [Booking screen](https://sagenda.net/Bookings/List). The dashboard will give you an overview of your account. For more information please read our tutorial about [dashboard](https://www.sagenda.com/introducing-sagenda/sagenda-dashboard-manage-clients/).
 
 
 **How to configure my account?**
-For more information please read our tutorial about [settings](http://www.sagenda.com/introducing-sagenda/sagenda-account-settings-integration/).
+For more information please read our tutorial about [settings](https://www.sagenda.com/introducing-sagenda/sagenda-account-settings-integration/).
 
 **About Calendar View**
 If you want to change the day the calendar starts the week on, just change it under your WordPress settings : "Settings / General / Week Starts On".
 If you want to change the language of the calendar, just change it under your WordPress settings : "Settings / General / Site Language".
 
 More on :
-[Sagenda Home](http://www.sagenda.com/)
+[Sagenda Home](https://www.sagenda.com/)
