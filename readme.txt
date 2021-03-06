@@ -4,7 +4,7 @@ Donate link: https://www.sagenda.com/community/
 Tags: booking, appointment, scheduling, availability, reservation, rental, accommodation, booking form, reservation form, event, PayPal
 Requires at least: 3.0
 Requires PHP: 5.6
-Tested up to: 5.6
+Tested up to: 5.7
 Stable tag: 1.3.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -104,13 +104,18 @@ We will add your translations in the next release!
 
 == Upgrade Notice ==
 
+= 1.3.7 =
+* TESTED : Wordpress 5.7
+* UPDATED : Translations.
+
+
+== Changelog ==
+
 = 1.3.6 =
 * TESTED : PHP 8.
 * END OF LIFE : Please switch to our new plugin : [Sagenda Calendar](https://wordpress.org/plugins/sagenda-calendar/) and use the shortcode : `[sagenda-calendar-wp]`
 
 
-
-== Changelog ==
 = 1.3.5 =
 * TESTED : WordPress 5.6
 * TESTED : PHP 7.4
