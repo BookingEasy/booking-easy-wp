@@ -5,7 +5,7 @@ Tags: booking, appointment, scheduling, availability, reservation, rental, accom
 Requires at least: 3.0
 Requires PHP: 5.6
 Tested up to: 5.7
-Stable tag: 1.3.6
+Stable tag: 1.3.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -104,12 +104,16 @@ We will add your translations in the next release!
 
 == Upgrade Notice ==
 
-= 1.3.7 =
-* TESTED : Wordpress 5.7
-* UPDATED : Translations.
+= 1.3.8 =
+* IMPROVED : Warn the admin to install "Sagenda Calendar" instead of "Sagenda" legacy plugin.
+* END OF LIFE : Please switch to our new plugin : [Sagenda Calendar](https://wordpress.org/plugins/sagenda-calendar/) and use the shortcode : `[sagenda-calendar-wp]`
 
 
 == Changelog ==
+
+= 1.3.7 =
+* TESTED : Wordpress 5.7
+* UPDATED : Translations.
 
 = 1.3.6 =
 * TESTED : PHP 8.

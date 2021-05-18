@@ -4,7 +4,7 @@
  * Plugin Name:       Sagenda
  * Plugin URI:        https://www.sagenda.com/
  * Description:       Sagenda is a free Online Booking / Scheduling / Reservation System, which gives customers the opportunity to choose the date and the time of an appointment according to your preferences.
- * Version:           1.3.6
+ * Version:           1.3.8
  * Author:            sagenda
  * Author URI:        https://www.sagenda.com/
  * License:           GPLv2
@@ -111,3 +111,11 @@ function sagenda_admin_actions()
 	add_options_page("Sagenda", "Sagenda", "manage_options", "Sagenda", "sagenda_admin");
 }
 add_action('admin_menu', 'sagenda_admin_actions');
+
+
+add_action('admin_notices', 'sagenda_admin_notice_update_plugin');
+
+function sagenda_admin_notice_update_plugin()
+{
+    echo '<div class="updated"><p>You are using our legacy plugin, please install <a href="https://wordpress.org/plugins/sagenda-calendar/" target="_blank">Sagenda Calendar</a> and use the shortcode : [sagenda-calendar-wp]</p><p>Once "Sagenda Calendar" activated you can remove "Sagenda" plugin and [sagenda-wp] shortcode.</p></div>';
+}
